@@ -6,42 +6,2082 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport"
+
+      content="width=device-width,
+
+      initial-scale=1,
+
+      maximum-scale=1,
+
+      user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="apple-mobile-web-app-title" content="Football Tracker">
 
 <title>Football Play Tracker</title>
 
 <style>
 
-*{box-sizing:border-box}
+* {
 
-body{
+    box-sizing: border-box;
 
- margin:0;
-
- background:#080b10;
-
- color:#f5f7fa;
-
- font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    -webkit-tap-highlight-color: transparent;
 
 }
 
-header{
+html, body {
 
- padding:22px 16px 12px;
+    margin: 0;
 
- text-align:center;
+    padding: 0;
 
- background:#10151c;
+    width: 100%;
 
- position:sticky;
+    min-height: 100%;
 
- top:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 
- z-index:5;
+    background: #f2f2f7;
+
+    color: #111;
 
 }
 
-h1{margin:0;font-size:27px}
+body {
 
-.sub{color:#9da7b3;margin-top
+    padding-bottom: 40px;
+
+}
+
+.header {
+
+    background: #111;
+
+    color: white;
+
+    padding: 18px 15px 15px;
+
+    text-align: center;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+}
+
+.header h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+}
+
+.header p {
+
+    margin: 5px 0 0;
+
+    font-size: 13px;
+
+    opacity: .75;
+
+}
+
+.container {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 12px;
+
+}
+
+/* TABS */
+
+.tabs {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7px;
+
+    margin-bottom: 12px;
+
+}
+
+.tab {
+
+    border: 0;
+
+    border-radius: 12px;
+
+    min-height: 48px;
+
+    background: #d9d9de;
+
+    color: #222;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+}
+
+.tab.active {
+
+    background: #111;
+
+    color: white;
+
+}
+
+/* CARDS */
+
+.card {
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 14px;
+
+    margin-bottom: 12px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.card h2 {
+
+    margin: 0 0 12px;
+
+    font-size: 19px;
+
+}
+
+/* STATS */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7px;
+
+    margin-bottom: 12px;
+
+}
+
+.stat {
+
+    background: #f2f2f7;
+
+    border-radius: 12px;
+
+    padding: 11px 5px;
+
+    text-align: center;
+
+}
+
+.stat-number {
+
+    font-size: 23px;
+
+    font-weight: 900;
+
+}
+
+.stat-label {
+
+    margin-top: 2px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+/* FORM */
+
+.form {
+
+    display: grid;
+
+    grid-template-columns: 1fr 85px;
+
+    gap: 8px;
+
+}
+
+select,
+
+input {
+
+    width: 100%;
+
+    height: 50px;
+
+    border: 1px solid #c7c7cc;
+
+    border-radius: 11px;
+
+    background: white;
+
+    padding: 0 10px;
+
+    font-size: 16px;
+
+    color: #111;
+
+}
+
+input[type="number"] {
+
+    text-align: center;
+
+}
+
+.add-button {
+
+    grid-column: 1 / -1;
+
+    height: 50px;
+
+    border: 0;
+
+    border-radius: 11px;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+}
+
+/* PLAY LIST */
+
+.play-list {
+
+    margin-top: 12px;
+
+}
+
+.play {
+
+    display: grid;
+
+    grid-template-columns: 38px 1fr 55px 36px;
+
+    align-items: center;
+
+    gap: 7px;
+
+    min-height: 60px;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+.play:last-child {
+
+    border-bottom: 0;
+
+}
+
+.play-number {
+
+    text-align: center;
+
+    color: #888;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+}
+
+.play-player {
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+}
+
+.play-type {
+
+    margin-top: 2px;
+
+    color: #888;
+
+    font-size: 11px;
+
+}
+
+.play-yards {
+
+    text-align: right;
+
+    font-size: 19px;
+
+    font-weight: 900;
+
+}
+
+.delete-button {
+
+    width: 34px;
+
+    height: 34px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #eee;
+
+    color: #555;
+
+    font-size: 20px;
+
+}
+
+.empty {
+
+    padding: 25px 5px;
+
+    text-align: center;
+
+    color: #888;
+
+    font-size: 14px;
+
+}
+
+/* PLAYER TABLE */
+
+.table-wrap {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+.player-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+.player-table th {
+
+    color: #777;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+}
+
+.player-table th,
+
+.player-table td {
+
+    padding: 10px 5px;
+
+    border-bottom: 1px solid #eee;
+
+    text-align: center;
+
+}
+
+.player-table th:first-child,
+
+.player-table td:first-child {
+
+    text-align: left;
+
+}
+
+.player-table td {
+
+    font-size: 13px;
+
+}
+
+.average {
+
+    font-weight: 900;
+
+}
+
+/* CONTROLS */
+
+.controls {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+}
+
+.secondary-button {
+
+    height: 46px;
+
+    border: 0;
+
+    border-radius: 11px;
+
+    background: #e5e5ea;
+
+    color: #111;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+.clear-button {
+
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 8px;
+
+    border: 0;
+
+    border-radius: 11px;
+
+    background: #e5e5ea;
+
+    color: #d00;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+/* TOAST */
+
+.toast {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform: translateX(-50%) translateY(100px);
+
+    background: #111;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    z-index: 999;
+
+    transition: transform .25s ease;
+
+}
+
+.toast.show {
+
+    transform: translateX(-50%) translateY(0);
+
+}
+
+/* DESKTOP */
+
+@media (min-width: 650px) {
+
+    .form {
+
+        grid-template-columns: 1fr 110px 120px;
+
+    }
+
+    .add-button {
+
+        grid-column: auto;
+
+    }
+
+    .tabs {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+    <h1>🏈 Football Play Tracker</h1>
+
+    <p>Track plays • yards • averages</p>
+
+</div>
+
+<div class="container">
+
+    <!-- TABS -->
+
+    <div class="tabs">
+
+        <button
+
+            class="tab active"
+
+            id="runningTab"
+
+            onclick="showSection('running')">
+
+            🏃 Running
+
+        </button>
+
+        <button
+
+            class="tab"
+
+            id="passingTab"
+
+            onclick="showSection('passing')">
+
+            🏈 Passing
+
+        </button>
+
+        <button
+
+            class="tab"
+
+            id="playersTab"
+
+            onclick="showSection('players')">
+
+            👥 Players
+
+        </button>
+
+    </div>
+
+    <!-- RUNNING SECTION -->
+
+    <section id="runningSection">
+
+        <div class="card">
+
+            <h2>Running Plays</h2>
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <div class="stat-number" id="runningCount">0</div>
+
+                    <div class="stat-label">PLAYS</div>
+
+                </div>
+
+                <div class="stat">
+
+                    <div class="stat-number" id="runningTotal">0</div>
+
+                    <div class="stat-label">TOTAL YARDS</div>
+
+                </div>
+
+                <div class="stat">
+
+                    <div class="stat-number" id="runningAverage">0.0</div>
+
+                    <div class="stat-label">AVG YARDS</div>
+
+                </div>
+
+            </div>
+
+            <div class="form">
+
+                <select id="runningPlayer">
+
+                    <option value="">Select Player</option>
+
+                </select>
+
+                <input
+
+                    id="runningYards"
+
+                    type="number"
+
+                    inputmode="decimal"
+
+                    step="0.1"
+
+                    placeholder="Yards"
+
+                >
+
+                <button
+
+                    class="add-button"
+
+                    onclick="addPlay('running')">
+
+                    + ADD RUNNING PLAY
+
+                </button>
+
+            </div>
+
+            <div
+
+                id="runningList"
+
+                class="play-list">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PASSING SECTION -->
+
+    <section
+
+        id="passingSection"
+
+        style="display:none;">
+
+        <div class="card">
+
+            <h2>Passing Plays</h2>
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <div class="stat-number" id="passingCount">0</div>
+
+                    <div class="stat-label">PLAYS</div>
+
+                </div>
+
+                <div class="stat">
+
+                    <div class="stat-number" id="passingTotal">0</div>
+
+                    <div class="stat-label">TOTAL YARDS</div>
+
+                </div>
+
+                <div class="stat">
+
+                    <div class="stat-number" id="passingAverage">0.0</div>
+
+                    <div class="stat-label">AVG YARDS</div>
+
+                </div>
+
+            </div>
+
+            <div class="form">
+
+                <select id="passingPlayer">
+
+                    <option value="">Select Player</option>
+
+                </select>
+
+                <input
+
+                    id="passingYards"
+
+                    type="number"
+
+                    inputmode="decimal"
+
+                    step="0.1"
+
+                    placeholder="Yards"
+
+                >
+
+                <button
+
+                    class="add-button"
+
+                    onclick="addPlay('passing')">
+
+                    + ADD PASSING PLAY
+
+                </button>
+
+            </div>
+
+            <div
+
+                id="passingList"
+
+                class="play-list">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PLAYER SECTION -->
+
+    <section
+
+        id="playersSection"
+
+        style="display:none;">
+
+        <div class="card">
+
+            <h2>Player Statistics</h2>
+
+            <div class="table-wrap">
+
+                <table class="player-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Player</th>
+
+                            <th>Plays</th>
+
+                            <th>Yards</th>
+
+                            <th>Avg</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="playerStats">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GAME CONTROLS -->
+
+    <div class="card">
+
+        <h2>Game Controls</h2>
+
+        <div class="controls">
+
+            <button
+
+                class="secondary-button"
+
+                onclick="exportData()">
+
+                Export
+
+            </button>
+
+            <button
+
+                class="secondary-button"
+
+                onclick="window.print()">
+
+                Print
+
+            </button>
+
+        </div>
+
+        <button
+
+            class="clear-button"
+
+            onclick="clearAllPlays()">
+
+            Clear All Plays
+
+        </button>
+
+    </div>
+
+</div>
+
+<div
+
+    id="toast"
+
+    class="toast">
+
+</div>
+
+<script>
+
+/*
+
+==================================================
+
+PLAYER ROSTER
+
+==================================================
+
+Add the rest of your players inside this list.
+
+Example:
+
+"#10 Smith, John",
+
+Make sure each player has a comma after it,
+
+except the last player.
+
+==================================================
+
+*/
+
+const players = [
+
+    "#36 Althouse, Frank",
+
+    "#12 Artrip, Carson",
+
+    "#6 Beas, Kai",
+
+    "#60 Boonstra, Brady",
+
+    "#88 Coan, Jaxson",
+
+    "#85 Cornwall, Jensen",
+
+    "#54 Evans, Noah",
+
+    "#32 Gillam, James",
+
+    "#11 Hannah, Knox"
+
+];
+
+/*
+
+==================================================
+
+GAME DATA
+
+==================================================
+
+*/
+
+let plays = [];
+
+try {
+
+    const saved =
+
+        localStorage.getItem("footballTrackerPlays");
+
+    if (saved) {
+
+        plays = JSON.parse(saved);
+
+    }
+
+    if (!Array.isArray(plays)) {
+
+        plays = [];
+
+    }
+
+} catch (error) {
+
+    plays = [];
+
+}
+
+/*
+
+==================================================
+
+INITIALIZE PLAYER DROPDOWNS
+
+==================================================
+
+*/
+
+function loadPlayers() {
+
+    const runningSelect =
+
+        document.getElementById("runningPlayer");
+
+    const passingSelect =
+
+        document.getElementById("passingPlayer");
+
+    players.forEach(function(player) {
+
+        const runningOption =
+
+            document.createElement("option");
+
+        runningOption.value = player;
+
+        runningOption.textContent = player;
+
+        runningSelect.appendChild(runningOption);
+
+        const passingOption =
+
+            document.createElement("option");
+
+        passingOption.value = player;
+
+        passingOption.textContent = player;
+
+        passingSelect.appendChild(passingOption);
+
+    });
+
+}
+
+/*
+
+==================================================
+
+SECTION NAVIGATION
+
+==================================================
+
+*/
+
+function showSection(section) {
+
+    const running =
+
+        document.getElementById("runningSection");
+
+    const passing =
+
+        document.getElementById("passingSection");
+
+    const playersSection =
+
+        document.getElementById("playersSection");
+
+    const runningTab =
+
+        document.getElementById("runningTab");
+
+    const passingTab =
+
+        document.getElementById("passingTab");
+
+    const playersTab =
+
+        document.getElementById("playersTab");
+
+    running.style.display =
+
+        section === "running"
+
+            ? "block"
+
+            : "none";
+
+    passing.style.display =
+
+        section === "passing"
+
+            ? "block"
+
+            : "none";
+
+    playersSection.style.display =
+
+        section === "players"
+
+            ? "block"
+
+            : "none";
+
+    runningTab.classList.toggle(
+
+        "active",
+
+        section === "running"
+
+    );
+
+    passingTab.classList.toggle(
+
+        "active",
+
+        section === "passing"
+
+    );
+
+    playersTab.classList.toggle(
+
+        "active",
+
+        section === "players"
+
+    );
+
+    if (section === "players") {
+
+        renderPlayerStats();
+
+    }
+
+}
+
+/*
+
+==================================================
+
+ADD PLAY
+
+==================================================
+
+*/
+
+function addPlay(type) {
+
+    const playerSelect =
+
+        document.getElementById(
+
+            type === "running"
+
+                ? "runningPlayer"
+
+                : "passingPlayer"
+
+        );
+
+    const yardsInput =
+
+        document.getElementById(
+
+            type === "running"
+
+                ? "runningYards"
+
+                : "passingYards"
+
+        );
+
+    const player =
+
+        playerSelect.value;
+
+    const yards =
+
+        parseFloat(yardsInput.value);
+
+    if (!player) {
+
+        showToast("Select a player first.");
+
+        playerSelect.focus();
+
+        return;
+
+    }
+
+    if (isNaN(yards)) {
+
+        showToast("Enter the yards gained.");
+
+        yardsInput.focus();
+
+        return;
+
+    }
+
+    const play = {
+
+        id:
+
+            Date.now() +
+
+            Math.random(),
+
+        type: type,
+
+        player: player,
+
+        yards: yards,
+
+        time:
+
+            new Date().toISOString()
+
+    };
+
+    plays.push(play);
+
+    saveData();
+
+    yardsInput.value = "";
+
+    playerSelect.focus();
+
+    showToast("Play added.");
+
+}
+
+/*
+
+==================================================
+
+DELETE PLAY
+
+==================================================
+
+*/
+
+function deletePlay(id) {
+
+    plays =
+
+        plays.filter(function(play) {
+
+            return play.id !== id;
+
+        });
+
+    saveData();
+
+    showToast("Play deleted.");
+
+}
+
+/*
+
+==================================================
+
+SAVE DATA
+
+==================================================
+
+*/
+
+function saveData() {
+
+    try {
+
+        localStorage.setItem(
+
+            "footballTrackerPlays",
+
+            JSON.stringify(plays)
+
+        );
+
+    } catch (error) {
+
+        console.log(
+
+            "Could not save data:",
+
+            error
+
+        );
+
+    }
+
+    renderAll();
+
+}
+
+/*
+
+==================================================
+
+RENDER EVERYTHING
+
+==================================================
+
+*/
+
+function renderAll() {
+
+    renderPlayList("running");
+
+    renderPlayList("passing");
+
+    updateStats();
+
+    renderPlayerStats();
+
+}
+
+/*
+
+==================================================
+
+RENDER PLAY LIST
+
+==================================================
+
+*/
+
+function renderPlayList(type) {
+
+    const list =
+
+        document.getElementById(
+
+            type === "running"
+
+                ? "runningList"
+
+                : "passingList"
+
+        );
+
+    const filtered =
+
+        plays.filter(function(play) {
+
+            return play.type === type;
+
+        });
+
+    if (filtered.length === 0) {
+
+        list.innerHTML =
+
+            '<div class="empty">No plays recorded yet.</div>';
+
+        return;
+
+    }
+
+    list.innerHTML = "";
+
+    filtered.forEach(function(play, index) {
+
+        const row =
+
+            document.createElement("div");
+
+        row.className = "play";
+
+        const number =
+
+            document.createElement("div");
+
+        number.className =
+
+            "play-number";
+
+        number.textContent =
+
+            index + 1;
+
+        const information =
+
+            document.createElement("div");
+
+        const player =
+
+            document.createElement("div");
+
+        player.className =
+
+            "play-player";
+
+        player.textContent =
+
+            play.player;
+
+        const playType =
+
+            document.createElement("div");
+
+        playType.className =
+
+            "play-type";
+
+        playType.textContent =
+
+            type === "running"
+
+                ? "Running Play"
+
+                : "Passing Play";
+
+        information.appendChild(player);
+
+        information.appendChild(playType);
+
+        const yards =
+
+            document.createElement("div");
+
+        yards.className =
+
+            "play-yards";
+
+        yards.textContent =
+
+            formatNumber(play.yards);
+
+        const deleteButton =
+
+            document.createElement("button");
+
+        deleteButton.className =
+
+            "delete-button";
+
+        deleteButton.textContent =
+
+            "×";
+
+        deleteButton.setAttribute(
+
+            "aria-label",
+
+            "Delete play"
+
+        );
+
+        deleteButton.onclick =
+
+            function() {
+
+                deletePlay(play.id);
+
+            };
+
+        row.appendChild(number);
+
+        row.appendChild(information);
+
+        row.appendChild(yards);
+
+        row.appendChild(deleteButton);
+
+        list.appendChild(row);
+
+    });
+
+}
+
+/*
+
+==================================================
+
+UPDATE RUNNING/PASSING STATS
+
+==================================================
+
+*/
+
+function updateStats() {
+
+    const running =
+
+        plays.filter(function(play) {
+
+            return play.type === "running";
+
+        });
+
+    const passing =
+
+        plays.filter(function(play) {
+
+            return play.type === "passing";
+
+        });
+
+    updateStatGroup(
+
+        running,
+
+        "runningCount",
+
+        "runningTotal",
+
+        "runningAverage"
+
+    );
+
+    updateStatGroup(
+
+        passing,
+
+        "passingCount",
+
+        "passingTotal",
+
+        "passingAverage"
+
+    );
+
+}
+
+/*
+
+==================================================
+
+STAT CALCULATIONS
+
+==================================================
+
+*/
+
+function updateStatGroup(
+
+    list,
+
+    countId,
+
+    totalId,
+
+    averageId
+
+) {
+
+    const count =
+
+        list.length;
+
+    const total =
+
+        list.reduce(
+
+            function(sum, play) {
+
+                return sum +
+
+                    Number(play.yards);
+
+            },
+
+            0
+
+        );
+
+    const average =
+
+        count === 0
+
+            ? 0
+
+            : total / count;
+
+    document.getElementById(
+
+        countId
+
+    ).textContent =
+
+        count;
+
+    document.getElementById(
+
+        totalId
+
+    ).textContent =
+
+        formatNumber(total);
+
+    document.getElementById(
+
+        averageId
+
+    ).textContent =
+
+        average.toFixed(1);
+
+}
+
+/*
+
+==================================================
+
+PLAYER STATISTICS
+
+==================================================
+
+*/
+
+function renderPlayerStats() {
+
+    const table =
+
+        document.getElementById(
+
+            "playerStats"
+
+        );
+
+    table.innerHTML = "";
+
+    players.forEach(function(player) {
+
+        const playerPlays =
+
+            plays.filter(function(play) {
+
+                return play.player === player;
+
+            });
+
+        const total =
+
+            playerPlays.reduce(
+
+                function(sum, play) {
+
+                    return sum +
+
+                        Number(play.yards);
+
+                },
+
+                0
+
+            );
+
+        const average =
+
+            playerPlays.length === 0
+
+                ? 0
+
+                : total / playerPlays.length;
+
+        const row =
+
+            document.createElement("tr");
+
+        const nameCell =
+
+            document.createElement("td");
+
+        nameCell.textContent =
+
+            player;
+
+        const playsCell =
+
+            document.createElement("td");
+
+        playsCell.textContent =
+
+            playerPlays.length;
+
+        const yardsCell =
+
+            document.createElement("td");
+
+        yardsCell.textContent =
+
+            formatNumber(total);
+
+        const averageCell =
+
+            document.createElement("td");
+
+        averageCell.className =
+
+            "average";
+
+        averageCell.textContent =
+
+            average.toFixed(1);
+
+        row.appendChild(nameCell);
+
+        row.appendChild(playsCell);
+
+        row.appendChild(yardsCell);
+
+        row.appendChild(averageCell);
+
+        table.appendChild(row);
+
+    });
+
+}
+
+/*
+
+==================================================
+
+NUMBER FORMATTING
+
+==================================================
+
+*/
+
+function formatNumber(number) {
+
+    const value =
+
+        Number(number);
+
+    if (Number.isInteger(value)) {
+
+        return String(value);
+
+    }
+
+    return value.toFixed(1);
+
+}
+
+/*
+
+==================================================
+
+CLEAR ALL PLAYS
+
+==================================================
+
+*/
+
+function clearAllPlays() {
+
+    if (plays.length === 0) {
+
+        showToast("There are no plays to clear.");
+
+        return;
+
+    }
+
+    const confirmed =
+
+        window.confirm(
+
+            "Delete every play from this game?"
+
+        );
+
+    if (!confirmed) {
+
+        return;
+
+    }
+
+    plays = [];
+
+    saveData();
+
+    showToast("All plays cleared.");
+
+}
+
+/*
+
+==================================================
+
+EXPORT DATA
+
+==================================================
+
+*/
+
+function exportData() {
+
+    if (plays.length === 0) {
+
+        showToast("No plays to export.");
+
+        return;
+
+    }
+
+    let output =
+
+        "FOOTBALL PLAY TRACKER\n";
+
+    output +=
+
+        "=====================\n\n";
+
+    const running =
+
+        plays.filter(function(play) {
+
+            return play.type === "running";
+
+        });
+
+    const passing =
+
+        plays.filter(function(play) {
+
+            return play.type === "passing";
+
+        });
+
+    output +=
+
+        "RUNNING PLAYS\n";
+
+    output +=
+
+        "-------------\n";
+
+    running.forEach(function(play, index) {
+
+        output +=
+
+            (index + 1) +
+
+            ". " +
+
+            play.player +
+
+            " - " +
+
+            formatNumber(play.yards) +
+
+            " yards\n";
+
+    });
+
+    const runningTotal =
+
+        running.reduce(
+
+            function(sum, play) {
+
+                return sum +
+
+                    Number(play.yards);
+
+            },
+
+            0
+
+        );
+
+    output +=
+
+        "\nRunning Plays: " +
+
+        running.length +
+
+        "\n";
+
+    output +=
+
+        "Running Yards: " +
+
+        formatNumber(runningTotal) +
+
+        "\n";
+
+    output +=
+
+        "Running Average: " +
+
+        (
+
+            running.length
+
+                ? runningTotal / running.length
+
+                : 0
+
+        ).toFixed(1) +
+
+        "\n\n";
+
+    output +=
+
+        "PASSING PLAYS\n";
+
+    output +=
+
+        "-------------\n";
+
+    passing.forEach(function(play, index) {
+
+        output +=
+
+            (index + 1) +
+
+            ". " +
+
+            play.player +
+
+            " - " +
+
+            formatNumber(play.yards) +
+
+            " yards\n";
+
+    });
+
+    const passingTotal =
+
+        passing.reduce(
+
+            function(sum, play) {
+
+                return sum +
+
+                    Number(play.yards);
+
+            },
+
+            0
+
+        );
+
+    output +=
+
+        "\nPassing Plays: " +
+
+        passing.length +
+
+        "\n";
+
+    output +=
+
+        "Passing Yards: " +
+
+        formatNumber(passingTotal) +
+
+        "\n";
+
+    output +=
+
+        "Passing Average: " +
+
+        (
+
+            passing.length
+
+                ? passingTotal / passing.length
+
+                : 0
+
+        ).toFixed(1) +
+
+        "\n";
+
+    const blob =
+
+        new Blob(
+
+            [output],
+
+            {
+
+                type:
+
+                    "text/plain;charset=utf-8"
+
+            }
+
+        );
+
+    const url =
+
+        URL.createObjectURL(blob);
+
+    const link =
+
+        document.createElement("a");
+
+    link.href = url;
+
+    link.download =
+
+        "football-play-tracker.txt";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+    setTimeout(function() {
+
+        URL.revokeObjectURL(url);
+
+    }, 1000);
+
+    showToast("Export created.");
+
+}
+
+/*
+
+==================================================
+
+TOAST MESSAGE
+
+==================================================
+
+*/
+
+let toastTimer = null;
+
+function showToast(message) {
+
+    const toast =
+
+        document.getElementById("toast");
+
+    toast.textContent =
+
+        message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer =
+
+        setTimeout(function() {
+
+            toast.classList.remove("show");
+
+        }, 1800);
+
+}
+
+/*
+
+==================================================
+
+KEYBOARD ENTER SUPPORT
+
+==================================================
+
+*/
+
+document.addEventListener(
+
+    "keydown",
+
+    function(event) {
+
+        if (event.key !== "Enter") {
+
+            return;
+
+        }
+
+        if (
+
+            document.activeElement &&
+
+            document.activeElement.id ===
+
+            "runningYards"
+
+        ) {
+
+            addPlay("running");
+
+        }
+
+        if (
+
+            document.activeElement &&
+
+            document.activeElement.id ===
+
+            "passingYards"
+
+        ) {
+
+            addPlay("passing");
+
+        }
+
+    }
+
+);
+
+/*
+
+==================================================
+
+START APP
+
+==================================================
+
+*/
+
+loadPlayers();
+
+renderAll();
+
+</script>
+
+</body>
+
+</html>
