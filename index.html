@@ -34,27 +34,25 @@
 
 }
 
-html, body {
+body {
 
     margin: 0;
-
-    padding: 0;
-
-    width: 100%;
-
-    min-height: 100%;
-
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 
     background: #f2f2f7;
 
     color: #111;
 
-}
+    font-family:
 
-body {
+        -apple-system,
 
-    padding-bottom: 40px;
+        BlinkMacSystemFont,
+
+        "Segoe UI",
+
+        Arial,
+
+        sans-serif;
 
 }
 
@@ -64,9 +62,9 @@ body {
 
     color: white;
 
-    padding: 18px 15px 15px;
-
     text-align: center;
+
+    padding: 16px 12px;
 
     position: sticky;
 
@@ -80,15 +78,13 @@ body {
 
     margin: 0;
 
-    font-size: 25px;
-
-    font-weight: 800;
+    font-size: 24px;
 
 }
 
 .header p {
 
-    margin: 5px 0 0;
+    margin: 4px 0 0;
 
     font-size: 13px;
 
@@ -98,23 +94,21 @@ body {
 
 .container {
 
-    width: 100%;
-
     max-width: 900px;
 
     margin: auto;
 
     padding: 12px;
 
-}
+    padding-bottom: 50px;
 
-/* TABS */
+}
 
 .tabs {
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
 
     gap: 7px;
 
@@ -128,11 +122,9 @@ body {
 
     border-radius: 12px;
 
-    min-height: 48px;
+    padding: 13px 5px;
 
     background: #d9d9de;
-
-    color: #222;
 
     font-size: 14px;
 
@@ -147,8 +139,6 @@ body {
     color: white;
 
 }
-
-/* CARDS */
 
 .card {
 
@@ -172,13 +162,11 @@ body {
 
 }
 
-/* STATS */
-
 .stats {
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
 
     gap: 7px;
 
@@ -192,9 +180,9 @@ body {
 
     border-radius: 12px;
 
-    padding: 11px 5px;
-
     text-align: center;
+
+    padding: 10px 4px;
 
 }
 
@@ -208,25 +196,11 @@ body {
 
 .stat-label {
 
-    margin-top: 2px;
-
     color: #777;
 
     font-size: 10px;
 
     font-weight: 700;
-
-}
-
-/* FORM */
-
-.form {
-
-    display: grid;
-
-    grid-template-columns: 1fr 85px;
-
-    gap: 8px;
 
 }
 
@@ -248,19 +222,19 @@ input {
 
     font-size: 16px;
 
-    color: #111;
-
 }
 
-input[type="number"] {
+.form {
 
-    text-align: center;
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
 
 }
 
 .add-button {
-
-    grid-column: 1 / -1;
 
     height: 50px;
 
@@ -278,49 +252,33 @@ input[type="number"] {
 
 }
 
-/* PLAY LIST */
-
-.play-list {
-
-    margin-top: 12px;
-
-}
-
 .play {
 
     display: grid;
 
-    grid-template-columns: 38px 1fr 55px 36px;
-
-    align-items: center;
+    grid-template-columns: 35px 1fr 55px 36px;
 
     gap: 7px;
 
-    min-height: 60px;
+    align-items: center;
+
+    min-height: 65px;
 
     border-bottom: 1px solid #eee;
 
 }
 
-.play:last-child {
-
-    border-bottom: 0;
-
-}
-
 .play-number {
-
-    text-align: center;
 
     color: #888;
 
-    font-size: 13px;
+    text-align: center;
 
     font-weight: 800;
 
 }
 
-.play-player {
+.play-name {
 
     font-size: 14px;
 
@@ -328,13 +286,13 @@ input[type="number"] {
 
 }
 
-.play-type {
+.play-player {
 
-    margin-top: 2px;
-
-    color: #888;
+    color: #777;
 
     font-size: 11px;
+
+    margin-top: 2px;
 
 }
 
@@ -354,15 +312,11 @@ input[type="number"] {
 
     height: 34px;
 
-    padding: 0;
-
     border: 0;
 
     border-radius: 50%;
 
     background: #eee;
-
-    color: #555;
 
     font-size: 20px;
 
@@ -370,27 +324,21 @@ input[type="number"] {
 
 .empty {
 
-    padding: 25px 5px;
-
     text-align: center;
+
+    padding: 25px 5px;
 
     color: #888;
 
-    font-size: 14px;
-
 }
 
-/* PLAYER TABLE */
-
 .table-wrap {
-
-    width: 100%;
 
     overflow-x: auto;
 
 }
 
-.player-table {
+table {
 
     width: 100%;
 
@@ -398,39 +346,33 @@ input[type="number"] {
 
 }
 
-.player-table th {
+th,
 
-    color: #777;
+td {
 
-    font-size: 11px;
-
-    text-transform: uppercase;
-
-}
-
-.player-table th,
-
-.player-table td {
-
-    padding: 10px 5px;
+    padding: 9px 5px;
 
     border-bottom: 1px solid #eee;
 
     text-align: center;
 
+    font-size: 13px;
+
 }
 
-.player-table th:first-child,
+th {
 
-.player-table td:first-child {
+    color: #777;
+
+    font-size: 11px;
+
+}
+
+th:first-child,
+
+td:first-child {
 
     text-align: left;
-
-}
-
-.player-table td {
-
-    font-size: 13px;
 
 }
 
@@ -439,8 +381,6 @@ input[type="number"] {
     font-weight: 900;
 
 }
-
-/* CONTROLS */
 
 .controls {
 
@@ -452,7 +392,7 @@ input[type="number"] {
 
 }
 
-.secondary-button {
+.secondary {
 
     height: 46px;
 
@@ -462,15 +402,11 @@ input[type="number"] {
 
     background: #e5e5ea;
 
-    color: #111;
-
-    font-size: 15px;
-
     font-weight: 800;
 
 }
 
-.clear-button {
+.clear {
 
     width: 100%;
 
@@ -486,23 +422,19 @@ input[type="number"] {
 
     color: #d00;
 
-    font-size: 15px;
-
     font-weight: 800;
 
 }
-
-/* TOAST */
 
 .toast {
 
     position: fixed;
 
-    left: 50%;
-
     bottom: 25px;
 
-    transform: translateX(-50%) translateY(100px);
+    left: 50%;
+
+    transform: translateX(-50%);
 
     background: #111;
 
@@ -512,43 +444,19 @@ input[type="number"] {
 
     border-radius: 25px;
 
-    font-size: 14px;
+    opacity: 0;
 
-    font-weight: 700;
+    pointer-events: none;
+
+    transition: opacity .2s;
 
     z-index: 999;
-
-    transition: transform .25s ease;
 
 }
 
 .toast.show {
 
-    transform: translateX(-50%) translateY(0);
-
-}
-
-/* DESKTOP */
-
-@media (min-width: 650px) {
-
-    .form {
-
-        grid-template-columns: 1fr 110px 120px;
-
-    }
-
-    .add-button {
-
-        grid-column: auto;
-
-    }
-
-    .tabs {
-
-        grid-template-columns: repeat(3, 1fr);
-
-    }
+    opacity: 1;
 
 }
 
@@ -562,307 +470,269 @@ input[type="number"] {
 
     <h1>🏈 Football Play Tracker</h1>
 
-    <p>Track plays • yards • averages</p>
+    <p>Play • Player • Yards • Average</p>
 
 </div>
 
 <div class="container">
 
-    <!-- TABS -->
+<div class="tabs">
 
-    <div class="tabs">
+<button class="tab active"
 
-        <button
+        id="trackerTab"
 
-            class="tab active"
+        onclick="showSection('tracker')">
 
-            id="runningTab"
+    📋 Tracker
 
-            onclick="showSection('running')">
+</button>
 
-            🏃 Running
+<button class="tab"
 
-        </button>
+        id="statsTab"
 
-        <button
+        onclick="showSection('stats')">
 
-            class="tab"
+    📊 Stats
 
-            id="passingTab"
+</button>
 
-            onclick="showSection('passing')">
+<button class="tab"
 
-            🏈 Passing
+        id="playsTab"
 
-        </button>
+        onclick="showSection('plays')">
 
-        <button
+    📖 Playbook
 
-            class="tab"
+</button>
 
-            id="playersTab"
+</div>
 
-            onclick="showSection('players')">
+<!-- TRACKER -->
 
-            👥 Players
+<section id="trackerSection">
 
-        </button>
+<div class="card">
 
-    </div>
+<h2>Add Play</h2>
 
-    <!-- RUNNING SECTION -->
+<div class="stats">
 
-    <section id="runningSection">
+<div class="stat">
 
-        <div class="card">
+<div class="stat-number" id="totalPlays">0</div>
 
-            <h2>Running Plays</h2>
+<div class="stat-label">PLAYS</div>
 
-            <div class="stats">
+</div>
 
-                <div class="stat">
+<div class="stat">
 
-                    <div class="stat-number" id="runningCount">0</div>
+<div class="stat-number" id="totalYards">0</div>
 
-                    <div class="stat-label">PLAYS</div>
+<div class="stat-label">YARDS</div>
 
-                </div>
+</div>
 
-                <div class="stat">
+<div class="stat">
 
-                    <div class="stat-number" id="runningTotal">0</div>
+<div class="stat-number" id="overallAverage">0.0</div>
 
-                    <div class="stat-label">TOTAL YARDS</div>
+<div class="stat-label">AVG</div>
 
-                </div>
+</div>
 
-                <div class="stat">
+</div>
 
-                    <div class="stat-number" id="runningAverage">0.0</div>
+<div class="form">
 
-                    <div class="stat-label">AVG YARDS</div>
+<select id="formation">
 
-                </div>
+<option value="">Select Formation</option>
 
-            </div>
+</select>
 
-            <div class="form">
+<select id="play">
 
-                <select id="runningPlayer">
+<option value="">Select Play</option>
 
-                    <option value="">Select Player</option>
+</select>
 
-                </select>
+<select id="player">
 
-                <input
+<option value="">Select Player</option>
 
-                    id="runningYards"
+</select>
 
-                    type="number"
+<input
 
-                    inputmode="decimal"
+    id="yards"
 
-                    step="0.1"
+    type="number"
 
-                    placeholder="Yards"
+    inputmode="decimal"
 
-                >
+    step="0.1"
 
-                <button
+    placeholder="Yards gained"
 
-                    class="add-button"
+>
 
-                    onclick="addPlay('running')">
+<button
 
-                    + ADD RUNNING PLAY
+    class="add-button"
 
-                </button>
+    onclick="addPlay()">
 
-            </div>
+    + ADD PLAY
 
-            <div
+</button>
 
-                id="runningList"
+</div>
 
-                class="play-list">
+</div>
 
-            </div>
+<div class="card">
 
-        </div>
+<h2>Play History</h2>
 
-    </section>
+<div id="history"></div>
 
-    <!-- PASSING SECTION -->
+</div>
 
-    <section
+</section>
 
-        id="passingSection"
+<!-- STATS -->
 
-        style="display:none;">
+<section id="statsSection"
 
-        <div class="card">
+         style="display:none;">
 
-            <h2>Passing Plays</h2>
+<div class="card">
 
-            <div class="stats">
+<h2>Player Statistics</h2>
 
-                <div class="stat">
+<div class="table-wrap">
 
-                    <div class="stat-number" id="passingCount">0</div>
+<table>
 
-                    <div class="stat-label">PLAYS</div>
+<thead>
 
-                </div>
+<tr>
 
-                <div class="stat">
+<th>Player</th>
 
-                    <div class="stat-number" id="passingTotal">0</div>
+<th>Plays</th>
 
-                    <div class="stat-label">TOTAL YARDS</div>
+<th>Yards</th>
 
-                </div>
+<th>Avg</th>
 
-                <div class="stat">
+</tr>
 
-                    <div class="stat-number" id="passingAverage">0.0</div>
+</thead>
 
-                    <div class="stat-label">AVG YARDS</div>
+<tbody id="playerStats"></tbody>
 
-                </div>
+</table>
 
-            </div>
+</div>
 
-            <div class="form">
+</div>
 
-                <select id="passingPlayer">
+<div class="card">
 
-                    <option value="">Select Player</option>
+<h2>Play Statistics</h2>
 
-                </select>
+<div class="table-wrap">
 
-                <input
+<table>
 
-                    id="passingYards"
+<thead>
 
-                    type="number"
+<tr>
 
-                    inputmode="decimal"
+<th>Play</th>
 
-                    step="0.1"
+<th>Times</th>
 
-                    placeholder="Yards"
+<th>Yards</th>
 
-                >
+<th>Avg</th>
 
-                <button
+</tr>
 
-                    class="add-button"
+</thead>
 
-                    onclick="addPlay('passing')">
+<tbody id="playStats"></tbody>
 
-                    + ADD PASSING PLAY
+</table>
 
-                </button>
+</div>
 
-            </div>
+</div>
 
-            <div
+</section>
 
-                id="passingList"
+<!-- PLAYBOOK -->
 
-                class="play-list">
+<section id="playsSection"
 
-            </div>
+         style="display:none;">
 
-        </div>
+<div class="card">
 
-    </section>
+<h2>Your Playbook</h2>
 
-    <!-- PLAYER SECTION -->
+<div id="playbookDisplay"></div>
 
-    <section
+</div>
 
-        id="playersSection"
+</section>
 
-        style="display:none;">
+<!-- CONTROLS -->
 
-        <div class="card">
+<div class="card">
 
-            <h2>Player Statistics</h2>
+<h2>Game Controls</h2>
 
-            <div class="table-wrap">
+<div class="controls">
 
-                <table class="player-table">
+<button
 
-                    <thead>
+    class="secondary"
 
-                        <tr>
+    onclick="exportData()">
 
-                            <th>Player</th>
+    Export
 
-                            <th>Plays</th>
+</button>
 
-                            <th>Yards</th>
+<button
 
-                            <th>Avg</th>
+    class="secondary"
 
-                        </tr>
+    onclick="window.print()">
 
-                    </thead>
+    Print
 
-                    <tbody id="playerStats">
+</button>
 
-                    </tbody>
+</div>
 
-                </table>
+<button
 
-            </div>
+    class="clear"
 
-        </div>
+    onclick="clearAll()">
 
-    </section>
+    Clear All Plays
 
-    <!-- GAME CONTROLS -->
+</button>
 
-    <div class="card">
-
-        <h2>Game Controls</h2>
-
-        <div class="controls">
-
-            <button
-
-                class="secondary-button"
-
-                onclick="exportData()">
-
-                Export
-
-            </button>
-
-            <button
-
-                class="secondary-button"
-
-                onclick="window.print()">
-
-                Print
-
-            </button>
-
-        </div>
-
-        <button
-
-            class="clear-button"
-
-            onclick="clearAllPlays()">
-
-            Clear All Plays
-
-        </button>
-
-    </div>
+</div>
 
 </div>
 
@@ -876,27 +746,11 @@ input[type="number"] {
 
 <script>
 
-/*
+/* =====================================================
 
-==================================================
+   PLAYERS
 
-PLAYER ROSTER
-
-==================================================
-
-Add the rest of your players inside this list.
-
-Example:
-
-"#10 Smith, John",
-
-Make sure each player has a comma after it,
-
-except the last player.
-
-==================================================
-
-*/
+   ===================================================== */
 
 const players = [
 
@@ -920,15 +774,305 @@ const players = [
 
 ];
 
-/*
+/* =====================================================
 
-==================================================
+   YOUR PLAYBOOK
 
-GAME DATA
+   ===================================================== */
 
-==================================================
+const playbook = {
 
-*/
+"Doubles Heavy (A)": [
+
+"(RT) 24 Dive Lead / (LT) 23 Dive Lead",
+
+"(RT) 21 IZ / (LT) 22 IZ",
+
+"(RT) 23 H Trap / (LT) 24 H Trap",
+
+"(RT) 26 OZ / (LT) 25 OZ",
+
+"(RT) 28 Toss / (LT) 27 Toss",
+
+"(RT) F Screen / (LT) F Screen",
+
+"(RT) 24 Trap / (LT) 23 Trap",
+
+"(RT) 24 Dive Lead K / (LT) 23 Dive Lead K",
+
+"(RT) 23 F Trap / (LT) 24 F Trap",
+
+"(RT) 30 Hitch / (LT) 30 Hitch",
+
+"(RT) 28 Toss / (LT) 27 Toss",
+
+"F Middle Screen",
+
+"(RT) 26 OZ / (LT) 25 OZ",
+
+"(RT) 30 Fade / (LT) 30 Fade",
+
+"(RT) 50 PoP Pass / (LT) 50 PoP Pass",
+
+"(RT) 30 Out / (LT) 30 Out",
+
+"(RT) 30 Slap / (LT) 30 Slap",
+
+"(RT) 50 Slip Pass / (LT) 50 Slip Pass",
+
+"(RT) 38 Jet Sweep / (LT) 47 Jet Sweep",
+
+"(RT) 38 Jet Sweep Load / (LT) 47 Jet Sweep Lead"
+
+],
+
+"Deuce (B)": [
+
+"(RT) 21 IZ / (LT) 22 IZ",
+
+"(RT) 26 OZ / (LT) 25 OZ",
+
+"(RT) 24 Trap / (LT) 23 Trap",
+
+"(RT) 28 Toss / (LT) 27 Toss",
+
+"22 IZ Right / 21 IZ Left",
+
+"26 OZ Right / 25 OZ Left"
+
+],
+
+"Doubles (C)": [
+
+"(RT) 24 Dive Lead / (LT) 23 Dive Lead",
+
+"(RT) 23 H Trap / (LT) 24 H Trap",
+
+"(RT) 26 OZ / (LT) 25 OZ",
+
+"(RT) 28 Toss / (LT) 27 Toss",
+
+"(RT) 50 PoP Pass / (LT) 50 PoP Pass",
+
+"(RT) 50 Slip Pass / (LT) 50 Slip Pass"
+
+],
+
+"30 Series": [
+
+"30 Hitch",
+
+"30 Fade",
+
+"30 Out",
+
+"30 Slap",
+
+"30 Bubble",
+
+"30 Wheel",
+
+"(RT) 30 Hitch / (LT) 30 Hitch",
+
+"(RT) 30 Slap / (LT) 30 Slap",
+
+"(RT) 30 Fade / (LT) 30 Fade",
+
+"(RT) 30 Vegas / (LT) 30 Vegas",
+
+"Rexy 30 Fade / Louey 30 Fade",
+
+"Rexy 30 Vegas / Louey 30 Vegas",
+
+"Rexy 30 Slap / Louey 30 Slap"
+
+],
+
+"50 Series": [
+
+"(RT) 50 Hitch / (LT) 50 Hitch",
+
+"(RT) 50 Fade / (LT) 50 Fade",
+
+"(RT) 50 Out / (LT) 50 Out",
+
+"(RT) 50 Slap / (LT) 50 Slap",
+
+"(RT) 50 Wheel / (LT) 50 Wheel",
+
+"(RT) 50 Vegas / (LT) 50 Vegas",
+
+"50 Hitch",
+
+"50 Fade",
+
+"50 Out",
+
+"50 Slap",
+
+"50 Wheel",
+
+"50 Vegas",
+
+"50 Hitch and Go",
+
+"(RT) 50Y Corner / (LT) 50Y Corner",
+
+"(RT) 50 Mesh / (LT) 50 Mesh",
+
+"(RT) Shield Screen / (LT) Shield Screen",
+
+"(RT) F Screen / (LT) F Screen",
+
+"(RT) Z Jailbreak / (LT) X Jailbreak"
+
+],
+
+"80/81 Series": [
+
+"(RT) 80 Hitch / (LT) 81 Hitch",
+
+"(RT) 80 Fade / (LT) 81 Fade",
+
+"(RT) 80 Out / (LT) 81 Out",
+
+"(RT) 80Y Corner / (LT) 81Y Corner",
+
+"Rexy 80 Flood / Louey 81 Flood",
+
+"(RT) 80 Flood / (LT) 81 Flood",
+
+"(RT) 80 Out / (LT) 81 Out"
+
+],
+
+"Motion Run": [
+
+"Jet RT 23 Trap / Jet LT 24 Trap",
+
+"38 Jet Sweep RT / 47 Jet Sweep LT",
+
+"38 Jet Sweep RT Load / 47 Jet Sweep LT Lead",
+
+"(RT) Jet L F Swing / (LT) Jet R F Swing",
+
+"(RT) 22 Dive RT / (LT) 21 Dive L",
+
+"(RT) 28 Toss / (LT) 27 Toss",
+
+"(RT) Zoom R / (LT) Zoom L",
+
+"Doubles F Toss Vegas",
+
+"Doubles 27 Toss Reverse RT"
+
+],
+
+"Motion Pass": [
+
+"Rexy 80 Flood / Louey 81 Flood",
+
+"Rexy 30 Fade / Louey 30 Fade",
+
+"Rexy 30 Vegas / Louey 30 Vegas",
+
+"Rexy 30 Slap / Louey 30 Slap",
+
+"(RT) 50 Hitch / (LT) 50 Hitch",
+
+"(RT) 50 Fade / (LT) 50 Fade",
+
+"(RT) 50 Out / (LT) 50 Out",
+
+"(RT) 50 Vegas / (LT) 50 Vegas"
+
+],
+
+"Trio (D)": [
+
+"(RT) Heavy 22 Blast / (LT) Heavy 21 Blast",
+
+"(RT) Heavy 22 Blast K / (RT) 21 Blast K",
+
+"(RT) 50 Mesh / (LT) 50 Mesh",
+
+"(RT) Shield Screen / (LT) Shield Screen",
+
+"(RT) 50Y Corner / (LT) 50Y Corner"
+
+],
+
+"Trips (D)": [
+
+"(RT) Louey 30 Slap / (LT) Rexy 30 Slap",
+
+"(RT) Louey 30 Fade / (LT) Rexy 30 Fade",
+
+"(RT) Louey 30 Wheel / (LT) Rexy 30 Wheel",
+
+"(RT) Louey 30 Vegas / (LT) Rexy 30 Vegas",
+
+"(RT) Jet L F Swing / (LT) Jet R F Swing",
+
+"(RT) 30 Hitch / (LT) 30 Hitch",
+
+"(RT) 30 Slap / (LT) 30 Slap",
+
+"(RT) 30 Fade / (LT) 30 Fade",
+
+"(RT) 30 Vegas / (LT) 30 Vegas",
+
+"(RT) 50 Hitch / (LT) 50 Hitch",
+
+"(RT) 50 Slap / (LT) 50 Slap",
+
+"(RT) 50 Fade / (LT) 50 Fade",
+
+"(RT) 50 Vegas / (LT) 50 Vegas",
+
+"(RT) 50 F Screen / (LT) 50 F Screen",
+
+"(RT) Z Jailbreak / (LT) X Jailbreak",
+
+"(RT) 80 Flood / (LT) 81 Flood",
+
+"(RT) 80 Out / (LT) 81 Out"
+
+],
+
+"Base Run": [
+
+"(RT) 22 Dive RT / (LT) 21 Dive L",
+
+"(RT) 28 Toss / (LT) 27 Toss",
+
+"(RT) Zoom R / (LT) Zoom L",
+
+"Doubles F Toss Vegas",
+
+"Doubles 27 Toss Reverse RT"
+
+],
+
+"Script": [
+
+"1st and 2nd Half Script"
+
+],
+
+"Other": [
+
+"Doubles Pass Double Pass"
+
+]
+
+};
+
+/* =====================================================
+
+   DATA
+
+   ===================================================== */
 
 let plays = [];
 
@@ -936,7 +1080,7 @@ try {
 
     const saved =
 
-        localStorage.getItem("footballTrackerPlays");
+        localStorage.getItem("footballTrackerData");
 
     if (saved) {
 
@@ -950,199 +1094,163 @@ try {
 
     }
 
-} catch (error) {
+} catch(e) {
 
     plays = [];
 
 }
 
-/*
+/* =====================================================
 
-==================================================
+   LOAD FORMATION DROPDOWN
 
-INITIALIZE PLAYER DROPDOWNS
+   ===================================================== */
 
-==================================================
+function loadFormations() {
 
-*/
+    const formation =
 
-function loadPlayers() {
+        document.getElementById("formation");
 
-    const runningSelect =
+    Object.keys(playbook).forEach(function(category) {
 
-        document.getElementById("runningPlayer");
-
-    const passingSelect =
-
-        document.getElementById("passingPlayer");
-
-    players.forEach(function(player) {
-
-        const runningOption =
+        const option =
 
             document.createElement("option");
 
-        runningOption.value = player;
+        option.value = category;
 
-        runningOption.textContent = player;
+        option.textContent = category;
 
-        runningSelect.appendChild(runningOption);
-
-        const passingOption =
-
-            document.createElement("option");
-
-        passingOption.value = player;
-
-        passingOption.textContent = player;
-
-        passingSelect.appendChild(passingOption);
+        formation.appendChild(option);
 
     });
 
 }
 
-/*
+/* =====================================================
 
-==================================================
+   LOAD PLAY DROPDOWN
 
-SECTION NAVIGATION
+   ===================================================== */
 
-==================================================
+function loadPlays() {
 
-*/
+    const formation =
 
-function showSection(section) {
+        document.getElementById("formation");
 
-    const running =
+    const play =
 
-        document.getElementById("runningSection");
+        document.getElementById("play");
 
-    const passing =
+    play.innerHTML =
 
-        document.getElementById("passingSection");
+        '<option value="">Select Play</option>';
 
-    const playersSection =
+    const selected =
 
-        document.getElementById("playersSection");
+        formation.value;
 
-    const runningTab =
+    if (!selected ||
 
-        document.getElementById("runningTab");
+        !playbook[selected]) {
 
-    const passingTab =
-
-        document.getElementById("passingTab");
-
-    const playersTab =
-
-        document.getElementById("playersTab");
-
-    running.style.display =
-
-        section === "running"
-
-            ? "block"
-
-            : "none";
-
-    passing.style.display =
-
-        section === "passing"
-
-            ? "block"
-
-            : "none";
-
-    playersSection.style.display =
-
-        section === "players"
-
-            ? "block"
-
-            : "none";
-
-    runningTab.classList.toggle(
-
-        "active",
-
-        section === "running"
-
-    );
-
-    passingTab.classList.toggle(
-
-        "active",
-
-        section === "passing"
-
-    );
-
-    playersTab.classList.toggle(
-
-        "active",
-
-        section === "players"
-
-    );
-
-    if (section === "players") {
-
-        renderPlayerStats();
+        return;
 
     }
 
+    playbook[selected].forEach(function(playName) {
+
+        const option =
+
+            document.createElement("option");
+
+        option.value = playName;
+
+        option.textContent = playName;
+
+        play.appendChild(option);
+
+    });
+
 }
 
-/*
+/* =====================================================
 
-==================================================
+   LOAD PLAYERS
 
-ADD PLAY
+   ===================================================== */
 
-==================================================
-
-*/
-
-function addPlay(type) {
-
-    const playerSelect =
-
-        document.getElementById(
-
-            type === "running"
-
-                ? "runningPlayer"
-
-                : "passingPlayer"
-
-        );
-
-    const yardsInput =
-
-        document.getElementById(
-
-            type === "running"
-
-                ? "runningYards"
-
-                : "passingYards"
-
-        );
+function loadPlayers() {
 
     const player =
 
-        playerSelect.value;
+        document.getElementById("player");
+
+    players.forEach(function(name) {
+
+        const option =
+
+            document.createElement("option");
+
+        option.value = name;
+
+        option.textContent = name;
+
+        player.appendChild(option);
+
+    });
+
+}
+
+/* =====================================================
+
+   ADD PLAY
+
+   ===================================================== */
+
+function addPlay() {
+
+    const formation =
+
+        document.getElementById("formation").value;
+
+    const play =
+
+        document.getElementById("play").value;
+
+    const player =
+
+        document.getElementById("player").value;
 
     const yards =
 
-        parseFloat(yardsInput.value);
+        parseFloat(
+
+            document.getElementById("yards").value
+
+        );
+
+    if (!formation) {
+
+        toast("Select a formation.");
+
+        return;
+
+    }
+
+    if (!play) {
+
+        toast("Select a play.");
+
+        return;
+
+    }
 
     if (!player) {
 
-        showToast("Select a player first.");
-
-        playerSelect.focus();
+        toast("Select a player.");
 
         return;
 
@@ -1150,15 +1258,13 @@ function addPlay(type) {
 
     if (isNaN(yards)) {
 
-        showToast("Enter the yards gained.");
-
-        yardsInput.focus();
+        toast("Enter the yards gained.");
 
         return;
 
     }
 
-    const play = {
+    plays.push({
 
         id:
 
@@ -1166,7 +1272,9 @@ function addPlay(type) {
 
             Math.random(),
 
-        type: type,
+        formation: formation,
+
+        play: play,
 
         player: player,
 
@@ -1176,349 +1284,213 @@ function addPlay(type) {
 
             new Date().toISOString()
 
-    };
+    });
 
-    plays.push(play);
+    save();
 
-    saveData();
+    document.getElementById("yards").value = "";
 
-    yardsInput.value = "";
-
-    playerSelect.focus();
-
-    showToast("Play added.");
+    toast("Play added.");
 
 }
 
-/*
+/* =====================================================
 
-==================================================
+   SAVE
 
-DELETE PLAY
+   ===================================================== */
 
-==================================================
+function save() {
 
-*/
+    localStorage.setItem(
 
-function deletePlay(id) {
+        "footballTrackerData",
 
-    plays =
+        JSON.stringify(plays)
 
-        plays.filter(function(play) {
+    );
 
-            return play.id !== id;
-
-        });
-
-    saveData();
-
-    showToast("Play deleted.");
+    render();
 
 }
 
-/*
+/* =====================================================
 
-==================================================
+   RENDER
 
-SAVE DATA
+   ===================================================== */
 
-==================================================
+function render() {
 
-*/
+    renderHistory();
 
-function saveData() {
-
-    try {
-
-        localStorage.setItem(
-
-            "footballTrackerPlays",
-
-            JSON.stringify(plays)
-
-        );
-
-    } catch (error) {
-
-        console.log(
-
-            "Could not save data:",
-
-            error
-
-        );
-
-    }
-
-    renderAll();
+    renderStats();
 
 }
 
-/*
+/* =====================================================
 
-==================================================
+   HISTORY
 
-RENDER EVERYTHING
+   ===================================================== */
 
-==================================================
+function renderHistory() {
 
-*/
+    const history =
 
-function renderAll() {
+        document.getElementById("history");
 
-    renderPlayList("running");
+    if (plays.length === 0) {
 
-    renderPlayList("passing");
-
-    updateStats();
-
-    renderPlayerStats();
-
-}
-
-/*
-
-==================================================
-
-RENDER PLAY LIST
-
-==================================================
-
-*/
-
-function renderPlayList(type) {
-
-    const list =
-
-        document.getElementById(
-
-            type === "running"
-
-                ? "runningList"
-
-                : "passingList"
-
-        );
-
-    const filtered =
-
-        plays.filter(function(play) {
-
-            return play.type === type;
-
-        });
-
-    if (filtered.length === 0) {
-
-        list.innerHTML =
+        history.innerHTML =
 
             '<div class="empty">No plays recorded yet.</div>';
+
+        updateTotals();
 
         return;
 
     }
 
-    list.innerHTML = "";
+    history.innerHTML = "";
 
-    filtered.forEach(function(play, index) {
+    plays
 
-        const row =
+        .slice()
 
-            document.createElement("div");
+        .reverse()
 
-        row.className = "play";
+        .forEach(function(item, reverseIndex) {
 
-        const number =
+            const number =
 
-            document.createElement("div");
+                plays.length -
 
-        number.className =
+                reverseIndex;
 
-            "play-number";
+            const row =
 
-        number.textContent =
+                document.createElement("div");
 
-            index + 1;
+            row.className = "play";
 
-        const information =
+            const numberDiv =
 
-            document.createElement("div");
+                document.createElement("div");
 
-        const player =
+            numberDiv.className =
 
-            document.createElement("div");
+                "play-number";
 
-        player.className =
+            numberDiv.textContent =
 
-            "play-player";
+                number;
 
-        player.textContent =
+            const info =
 
-            play.player;
+                document.createElement("div");
 
-        const playType =
+            const name =
 
-            document.createElement("div");
+                document.createElement("div");
 
-        playType.className =
+            name.className =
 
-            "play-type";
+                "play-name";
 
-        playType.textContent =
+            name.textContent =
 
-            type === "running"
+                item.play;
 
-                ? "Running Play"
+            const player =
 
-                : "Passing Play";
+                document.createElement("div");
 
-        information.appendChild(player);
+            player.className =
 
-        information.appendChild(playType);
+                "play-player";
 
-        const yards =
+            player.textContent =
 
-            document.createElement("div");
+                item.player +
 
-        yards.className =
+                " • " +
 
-            "play-yards";
+                item.formation;
 
-        yards.textContent =
+            info.appendChild(name);
 
-            formatNumber(play.yards);
+            info.appendChild(player);
 
-        const deleteButton =
+            const yards =
 
-            document.createElement("button");
+                document.createElement("div");
 
-        deleteButton.className =
+            yards.className =
 
-            "delete-button";
+                "play-yards";
 
-        deleteButton.textContent =
+            yards.textContent =
 
-            "×";
+                format(item.yards);
 
-        deleteButton.setAttribute(
+            const remove =
 
-            "aria-label",
+                document.createElement("button");
 
-            "Delete play"
+            remove.className =
 
-        );
+                "delete-button";
 
-        deleteButton.onclick =
+            remove.textContent =
 
-            function() {
+                "×";
 
-                deletePlay(play.id);
+            remove.onclick =
 
-            };
+                function() {
 
-        row.appendChild(number);
+                    deletePlay(item.id);
 
-        row.appendChild(information);
+                };
 
-        row.appendChild(yards);
+            row.appendChild(numberDiv);
 
-        row.appendChild(deleteButton);
+            row.appendChild(info);
 
-        list.appendChild(row);
+            row.appendChild(yards);
 
-    });
+            row.appendChild(remove);
 
-}
-
-/*
-
-==================================================
-
-UPDATE RUNNING/PASSING STATS
-
-==================================================
-
-*/
-
-function updateStats() {
-
-    const running =
-
-        plays.filter(function(play) {
-
-            return play.type === "running";
+            history.appendChild(row);
 
         });
 
-    const passing =
-
-        plays.filter(function(play) {
-
-            return play.type === "passing";
-
-        });
-
-    updateStatGroup(
-
-        running,
-
-        "runningCount",
-
-        "runningTotal",
-
-        "runningAverage"
-
-    );
-
-    updateStatGroup(
-
-        passing,
-
-        "passingCount",
-
-        "passingTotal",
-
-        "passingAverage"
-
-    );
+    updateTotals();
 
 }
 
-/*
+/* =====================================================
 
-==================================================
+   TOTALS
 
-STAT CALCULATIONS
+   ===================================================== */
 
-==================================================
-
-*/
-
-function updateStatGroup(
-
-    list,
-
-    countId,
-
-    totalId,
-
-    averageId
-
-) {
+function updateTotals() {
 
     const count =
 
-        list.length;
+        plays.length;
 
     const total =
 
-        list.reduce(
+        plays.reduce(
 
-            function(sum, play) {
+            function(sum,item) {
 
                 return sum +
 
-                    Number(play.yards);
+                    Number(item.yards);
 
             },
 
@@ -1528,15 +1500,15 @@ function updateStatGroup(
 
     const average =
 
-        count === 0
+        count
 
-            ? 0
+            ? total / count
 
-            : total / count;
+            : 0;
 
     document.getElementById(
 
-        countId
+        "totalPlays"
 
     ).textContent =
 
@@ -1544,15 +1516,15 @@ function updateStatGroup(
 
     document.getElementById(
 
-        totalId
+        "totalYards"
 
     ).textContent =
 
-        formatNumber(total);
+        format(total);
 
     document.getElementById(
 
-        averageId
+        "overallAverage"
 
     ).textContent =
 
@@ -1560,19 +1532,15 @@ function updateStatGroup(
 
 }
 
-/*
+/* =====================================================
 
-==================================================
+   PLAYER STATS
 
-PLAYER STATISTICS
+   ===================================================== */
 
-==================================================
+function renderStats() {
 
-*/
-
-function renderPlayerStats() {
-
-    const table =
+    const playerTable =
 
         document.getElementById(
 
@@ -1580,15 +1548,15 @@ function renderPlayerStats() {
 
         );
 
-    table.innerHTML = "";
+    playerTable.innerHTML = "";
 
     players.forEach(function(player) {
 
         const playerPlays =
 
-            plays.filter(function(play) {
+            plays.filter(function(item) {
 
-                return play.player === player;
+                return item.player === player;
 
             });
 
@@ -1596,11 +1564,11 @@ function renderPlayerStats() {
 
             playerPlays.reduce(
 
-                function(sum, play) {
+                function(sum,item) {
 
                     return sum +
 
-                        Number(play.yards);
+                        Number(item.yards);
 
                 },
 
@@ -1608,123 +1576,191 @@ function renderPlayerStats() {
 
             );
 
-        const average =
+        const avg =
 
-            playerPlays.length === 0
+            playerPlays.length
 
-                ? 0
+                ? total / playerPlays.length
 
-                : total / playerPlays.length;
+                : 0;
 
         const row =
 
             document.createElement("tr");
 
-        const nameCell =
+        row.innerHTML =
 
-            document.createElement("td");
+            "<td>" +
 
-        nameCell.textContent =
+            escapeHTML(player) +
 
-            player;
+            "</td>" +
 
-        const playsCell =
+            "<td>" +
 
-            document.createElement("td");
+            playerPlays.length +
 
-        playsCell.textContent =
+            "</td>" +
 
-            playerPlays.length;
+            "<td>" +
 
-        const yardsCell =
+            format(total) +
 
-            document.createElement("td");
+            "</td>" +
 
-        yardsCell.textContent =
+            "<td class='average'>" +
 
-            formatNumber(total);
+            avg.toFixed(1) +
 
-        const averageCell =
+            "</td>";
 
-            document.createElement("td");
-
-        averageCell.className =
-
-            "average";
-
-        averageCell.textContent =
-
-            average.toFixed(1);
-
-        row.appendChild(nameCell);
-
-        row.appendChild(playsCell);
-
-        row.appendChild(yardsCell);
-
-        row.appendChild(averageCell);
-
-        table.appendChild(row);
+        playerTable.appendChild(row);
 
     });
 
-}
-
-/*
-
-==================================================
-
-NUMBER FORMATTING
-
-==================================================
-
-*/
-
-function formatNumber(number) {
-
-    const value =
-
-        Number(number);
-
-    if (Number.isInteger(value)) {
-
-        return String(value);
-
-    }
-
-    return value.toFixed(1);
+    renderPlayStats();
 
 }
 
-/*
+/* =====================================================
 
-==================================================
+   PLAY STATS
 
-CLEAR ALL PLAYS
+   ===================================================== */
 
-==================================================
+function renderPlayStats() {
 
-*/
+    const table =
 
-function clearAllPlays() {
+        document.getElementById(
 
-    if (plays.length === 0) {
+            "playStats"
 
-        showToast("There are no plays to clear.");
+        );
+
+    table.innerHTML = "";
+
+    const grouped = {};
+
+    plays.forEach(function(item) {
+
+        if (!grouped[item.play]) {
+
+            grouped[item.play] = {
+
+                count: 0,
+
+                yards: 0
+
+            };
+
+        }
+
+        grouped[item.play].count++;
+
+        grouped[item.play].yards +=
+
+            Number(item.yards);
+
+    });
+
+    Object.keys(grouped)
+
+        .forEach(function(playName) {
+
+            const data =
+
+                grouped[playName];
+
+            const avg =
+
+                data.yards /
+
+                data.count;
+
+            const row =
+
+                document.createElement("tr");
+
+            row.innerHTML =
+
+                "<td>" +
+
+                escapeHTML(playName) +
+
+                "</td>" +
+
+                "<td>" +
+
+                data.count +
+
+                "</td>" +
+
+                "<td>" +
+
+                format(data.yards) +
+
+                "</td>" +
+
+                "<td class='average'>" +
+
+                avg.toFixed(1) +
+
+                "</td>";
+
+            table.appendChild(row);
+
+        });
+
+}
+
+/* =====================================================
+
+   DELETE
+
+   ===================================================== */
+
+function deletePlay(id) {
+
+    plays =
+
+        plays.filter(function(item) {
+
+            return item.id !== id;
+
+        });
+
+    save();
+
+    toast("Play deleted.");
+
+}
+
+/* =====================================================
+
+   CLEAR
+
+   ===================================================== */
+
+function clearAll() {
+
+    if (!plays.length) {
+
+        toast("No plays to clear.");
 
         return;
 
     }
 
-    const confirmed =
+    if (
 
-        window.confirm(
+        !confirm(
 
-            "Delete every play from this game?"
+            "Delete all plays from this game?"
 
-        );
+        )
 
-    if (!confirmed) {
+    ) {
 
         return;
 
@@ -1732,209 +1768,205 @@ function clearAllPlays() {
 
     plays = [];
 
-    saveData();
+    save();
 
-    showToast("All plays cleared.");
+    toast("All plays cleared.");
 
 }
 
-/*
+/* =====================================================
 
-==================================================
+   SECTIONS
 
-EXPORT DATA
+   ===================================================== */
 
-==================================================
+function showSection(section) {
 
-*/
+    document.getElementById(
+
+        "trackerSection"
+
+    ).style.display =
+
+        section === "tracker"
+
+            ? "block"
+
+            : "none";
+
+    document.getElementById(
+
+        "statsSection"
+
+    ).style.display =
+
+        section === "stats"
+
+            ? "block"
+
+            : "none";
+
+    document.getElementById(
+
+        "playsSection"
+
+    ).style.display =
+
+        section === "plays"
+
+            ? "block"
+
+            : "none";
+
+    document.getElementById(
+
+        "trackerTab"
+
+    ).classList.toggle(
+
+        "active",
+
+        section === "tracker"
+
+    );
+
+    document.getElementById(
+
+        "statsTab"
+
+    ).classList.toggle(
+
+        "active",
+
+        section === "stats"
+
+    );
+
+    document.getElementById(
+
+        "playsTab"
+
+    ).classList.toggle(
+
+        "active",
+
+        section === "plays"
+
+    );
+
+}
+
+/* =====================================================
+
+   PLAYBOOK DISPLAY
+
+   ===================================================== */
+
+function displayPlaybook() {
+
+    const container =
+
+        document.getElementById(
+
+            "playbookDisplay"
+
+        );
+
+    container.innerHTML = "";
+
+    Object.keys(playbook)
+
+        .forEach(function(category) {
+
+            const title =
+
+                document.createElement("h3");
+
+            title.textContent =
+
+                category;
+
+            container.appendChild(title);
+
+            playbook[category]
+
+                .forEach(function(play) {
+
+                    const item =
+
+                        document.createElement("div");
+
+                    item.style.padding =
+
+                        "7px 0";
+
+                    item.style.borderBottom =
+
+                        "1px solid #eee";
+
+                    item.textContent =
+
+                        play;
+
+                    container.appendChild(item);
+
+                });
+
+        });
+
+}
+
+/* =====================================================
+
+   EXPORT
+
+   ===================================================== */
 
 function exportData() {
 
-    if (plays.length === 0) {
+    if (!plays.length) {
 
-        showToast("No plays to export.");
+        toast("No plays to export.");
 
         return;
 
     }
 
-    let output =
+    let text =
 
-        "FOOTBALL PLAY TRACKER\n";
+        "FOOTBALL PLAY TRACKER\n\n";
 
-    output +=
+    plays.forEach(function(item,index) {
 
-        "=====================\n\n";
-
-    const running =
-
-        plays.filter(function(play) {
-
-            return play.type === "running";
-
-        });
-
-    const passing =
-
-        plays.filter(function(play) {
-
-            return play.type === "passing";
-
-        });
-
-    output +=
-
-        "RUNNING PLAYS\n";
-
-    output +=
-
-        "-------------\n";
-
-    running.forEach(function(play, index) {
-
-        output +=
+        text +=
 
             (index + 1) +
 
             ". " +
 
-            play.player +
+            item.formation +
 
-            " - " +
+            " | " +
 
-            formatNumber(play.yards) +
+            item.play +
 
-            " yards\n";
+            " | " +
 
-    });
+            item.player +
 
-    const runningTotal =
+            " | " +
 
-        running.reduce(
-
-            function(sum, play) {
-
-                return sum +
-
-                    Number(play.yards);
-
-            },
-
-            0
-
-        );
-
-    output +=
-
-        "\nRunning Plays: " +
-
-        running.length +
-
-        "\n";
-
-    output +=
-
-        "Running Yards: " +
-
-        formatNumber(runningTotal) +
-
-        "\n";
-
-    output +=
-
-        "Running Average: " +
-
-        (
-
-            running.length
-
-                ? runningTotal / running.length
-
-                : 0
-
-        ).toFixed(1) +
-
-        "\n\n";
-
-    output +=
-
-        "PASSING PLAYS\n";
-
-    output +=
-
-        "-------------\n";
-
-    passing.forEach(function(play, index) {
-
-        output +=
-
-            (index + 1) +
-
-            ". " +
-
-            play.player +
-
-            " - " +
-
-            formatNumber(play.yards) +
+            item.yards +
 
             " yards\n";
 
     });
-
-    const passingTotal =
-
-        passing.reduce(
-
-            function(sum, play) {
-
-                return sum +
-
-                    Number(play.yards);
-
-            },
-
-            0
-
-        );
-
-    output +=
-
-        "\nPassing Plays: " +
-
-        passing.length +
-
-        "\n";
-
-    output +=
-
-        "Passing Yards: " +
-
-        formatNumber(passingTotal) +
-
-        "\n";
-
-    output +=
-
-        "Passing Average: " +
-
-        (
-
-            passing.length
-
-                ? passingTotal / passing.length
-
-                : 0
-
-        ).toFixed(1) +
-
-        "\n";
 
     const blob =
 
         new Blob(
 
-            [output],
+            [text],
 
             {
 
@@ -1960,45 +1992,83 @@ function exportData() {
 
         "football-play-tracker.txt";
 
-    document.body.appendChild(link);
-
     link.click();
-
-    document.body.removeChild(link);
 
     setTimeout(function() {
 
         URL.revokeObjectURL(url);
 
-    }, 1000);
-
-    showToast("Export created.");
+    },1000);
 
 }
 
-/*
+/* =====================================================
 
-==================================================
+   FORMAT
 
-TOAST MESSAGE
+   ===================================================== */
 
-==================================================
+function format(number) {
 
-*/
+    const value =
 
-let toastTimer = null;
+        Number(number);
 
-function showToast(message) {
+    if (
 
-    const toast =
+        Number.isInteger(value)
+
+    ) {
+
+        return String(value);
+
+    }
+
+    return value.toFixed(1);
+
+}
+
+/* =====================================================
+
+   ESCAPE
+
+   ===================================================== */
+
+function escapeHTML(text) {
+
+    return String(text)
+
+        .replace(/&/g,"&amp;")
+
+        .replace(/</g,"&lt;")
+
+        .replace(/>/g,"&gt;")
+
+        .replace(/"/g,"&quot;")
+
+        .replace(/'/g,"&#039;");
+
+}
+
+/* =====================================================
+
+   TOAST
+
+   ===================================================== */
+
+let toastTimer;
+
+function toast(message) {
+
+    const element =
 
         document.getElementById("toast");
 
-    toast.textContent =
+    element.textContent =
 
         message;
 
-    toast.classList.add("show");
+    element.classList.add("show");
 
     clearTimeout(toastTimer);
 
@@ -2006,79 +2076,37 @@ function showToast(message) {
 
         setTimeout(function() {
 
-            toast.classList.remove("show");
+            element.classList.remove("show");
 
-        }, 1800);
+        },1800);
 
 }
 
-/*
+/* =====================================================
 
-==================================================
+   START
 
-KEYBOARD ENTER SUPPORT
+   ===================================================== */
 
-==================================================
+document
 
-*/
+    .getElementById("formation")
 
-document.addEventListener(
+    .addEventListener(
 
-    "keydown",
+        "change",
 
-    function(event) {
+        loadPlays
 
-        if (event.key !== "Enter") {
+    );
 
-            return;
-
-        }
-
-        if (
-
-            document.activeElement &&
-
-            document.activeElement.id ===
-
-            "runningYards"
-
-        ) {
-
-            addPlay("running");
-
-        }
-
-        if (
-
-            document.activeElement &&
-
-            document.activeElement.id ===
-
-            "passingYards"
-
-        ) {
-
-            addPlay("passing");
-
-        }
-
-    }
-
-);
-
-/*
-
-==================================================
-
-START APP
-
-==================================================
-
-*/
+loadFormations();
 
 loadPlayers();
 
-renderAll();
+displayPlaybook();
+
+render();
 
 </script>
 
