@@ -6,15 +6,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-
-      content="width=device-width,
-
-      initial-scale=1,
-
-      maximum-scale=1,
-
-      user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -42,17 +34,7 @@ body {
 
     color: #111;
 
-    font-family:
-
-        -apple-system,
-
-        BlinkMacSystemFont,
-
-        "Segoe UI",
-
-        Arial,
-
-        sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 
 }
 
@@ -98,9 +80,7 @@ body {
 
     margin: auto;
 
-    padding: 12px;
-
-    padding-bottom: 50px;
+    padding: 12px 12px 50px;
 
 }
 
@@ -256,13 +236,13 @@ input {
 
     display: grid;
 
-    grid-template-columns: 35px 1fr 55px 36px;
+    grid-template-columns: 32px 1fr 50px 36px;
 
     gap: 7px;
 
     align-items: center;
 
-    min-height: 65px;
+    min-height: 67px;
 
     border-bottom: 1px solid #eee;
 
@@ -460,6 +440,22 @@ td:first-child {
 
 }
 
+@media (min-width: 650px) {
+
+    .form {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .add-button {
+
+        grid-column: 1 / -1;
+
+    }
+
+}
+
 </style>
 
 </head>
@@ -550,7 +546,7 @@ td:first-child {
 
 <select id="formation">
 
-<option value="">Select Formation</option>
+<option value="">Select Formation / Group</option>
 
 </select>
 
@@ -606,9 +602,7 @@ td:first-child {
 
 <!-- STATS -->
 
-<section id="statsSection"
-
-         style="display:none;">
+<section id="statsSection" style="display:none;">
 
 <div class="card">
 
@@ -678,9 +672,7 @@ td:first-child {
 
 <!-- PLAYBOOK -->
 
-<section id="playsSection"
-
-         style="display:none;">
+<section id="playsSection" style="display:none;">
 
 <div class="card">
 
@@ -700,21 +692,17 @@ td:first-child {
 
 <div class="controls">
 
-<button
+<button class="secondary"
 
-    class="secondary"
-
-    onclick="exportData()">
+        onclick="exportData()">
 
     Export
 
 </button>
 
-<button
+<button class="secondary"
 
-    class="secondary"
-
-    onclick="window.print()">
+        onclick="window.print()">
 
     Print
 
@@ -722,11 +710,9 @@ td:first-child {
 
 </div>
 
-<button
+<button class="clear"
 
-    class="clear"
-
-    onclick="clearAll()">
+        onclick="clearAll()">
 
     Clear All Plays
 
@@ -736,19 +722,13 @@ td:first-child {
 
 </div>
 
-<div
-
-    id="toast"
-
-    class="toast">
-
-</div>
+<div id="toast" class="toast"></div>
 
 <script>
 
 /* =====================================================
 
-   PLAYERS
+   FULL 19-PLAYER ROSTER
 
    ===================================================== */
 
@@ -770,7 +750,27 @@ const players = [
 
     "#32 Gillam, James",
 
-    "#11 Hannah, Knox"
+    "#11 Hannah, Knox",
+
+    "#1 Hendrix, Cash",
+
+    "#28 Lawson, Briot",
+
+    "#2 McClurg, Ezra",
+
+    "#7 Rayls, Warren",
+
+    "#34 Scott, Noah",
+
+    "#3 Smith, Carson",
+
+    "#5 Whitacre, Gavin",
+
+    "#4 Word, Gavin",
+
+    "#77 Harrison, Isaiah",
+
+    "#23 Young, Ethan"
 
 ];
 
@@ -784,285 +784,283 @@ const playbook = {
 
 "Doubles Heavy (A)": [
 
-"(RT) 24 Dive Lead / (LT) 23 Dive Lead",
+    "(RT) 24 Dive Lead / (LT) 23 Dive Lead",
 
-"(RT) 21 IZ / (LT) 22 IZ",
+    "(RT) 21 IZ / (LT) 22 IZ",
 
-"(RT) 23 H Trap / (LT) 24 H Trap",
+    "(RT) 23 H Trap / (LT) 24 H Trap",
 
-"(RT) 26 OZ / (LT) 25 OZ",
+    "(RT) 26 OZ / (LT) 25 OZ",
 
-"(RT) 28 Toss / (LT) 27 Toss",
+    "(RT) 28 Toss / (LT) 27 Toss",
 
-"(RT) F Screen / (LT) F Screen",
+    "(RT) F Screen / (LT) F Screen",
 
-"(RT) 24 Trap / (LT) 23 Trap",
+    "(RT) 24 Trap / (LT) 23 Trap",
 
-"(RT) 24 Dive Lead K / (LT) 23 Dive Lead K",
+    "(RT) 24 Dive Lead K / (LT) 23 Dive Lead K",
 
-"(RT) 23 F Trap / (LT) 24 F Trap",
+    "(RT) 23 F Trap / (LT) 24 F Trap",
 
-"(RT) 30 Hitch / (LT) 30 Hitch",
+    "(RT) 30 Hitch / (LT) 30 Hitch",
 
-"(RT) 28 Toss / (LT) 27 Toss",
+    "(RT) 28 Toss / (LT) 27 Toss",
 
-"F Middle Screen",
+    "F Middle Screen",
 
-"(RT) 26 OZ / (LT) 25 OZ",
+    "(RT) 26 OZ / (LT) 25 OZ",
 
-"(RT) 30 Fade / (LT) 30 Fade",
+    "(RT) 30 Fade / (LT) 30 Fade",
 
-"(RT) 50 PoP Pass / (LT) 50 PoP Pass",
+    "(RT) 50 PoP Pass / (LT) 50 PoP Pass",
 
-"(RT) 30 Out / (LT) 30 Out",
+    "(RT) 30 Out / (LT) 30 Out",
 
-"(RT) 30 Slap / (LT) 30 Slap",
+    "(RT) 30 Slap / (LT) 30 Slap",
 
-"(RT) 50 Slip Pass / (LT) 50 Slip Pass",
+    "(RT) 50 Slip Pass / (LT) 50 Slip Pass",
 
-"(RT) 38 Jet Sweep / (LT) 47 Jet Sweep",
+    "(RT) 38 Jet Sweep / (LT) 47 Jet Sweep",
 
-"(RT) 38 Jet Sweep Load / (LT) 47 Jet Sweep Lead"
+    "(RT) 38 Jet Sweep Load / (LT) 47 Jet Sweep Lead"
 
 ],
 
 "Deuce (B)": [
 
-"(RT) 21 IZ / (LT) 22 IZ",
+    "(RT) 21 IZ / (LT) 22 IZ",
 
-"(RT) 26 OZ / (LT) 25 OZ",
+    "(RT) 26 OZ / (LT) 25 OZ",
 
-"(RT) 24 Trap / (LT) 23 Trap",
+    "(RT) 24 Trap / (LT) 23 Trap",
 
-"(RT) 28 Toss / (LT) 27 Toss",
+    "(RT) 28 Toss / (LT) 27 Toss",
 
-"22 IZ Right / 21 IZ Left",
+    "22 IZ Right / 21 IZ Left",
 
-"26 OZ Right / 25 OZ Left"
+    "26 OZ Right / 25 OZ Left"
 
 ],
 
 "Doubles (C)": [
 
-"(RT) 24 Dive Lead / (LT) 23 Dive Lead",
+    "(RT) 24 Dive Lead / (LT) 23 Dive Lead",
 
-"(RT) 23 H Trap / (LT) 24 H Trap",
+    "(RT) 23 H Trap / (LT) 24 H Trap",
 
-"(RT) 26 OZ / (LT) 25 OZ",
+    "(RT) 26 OZ / (LT) 25 OZ",
 
-"(RT) 28 Toss / (LT) 27 Toss",
+    "(RT) 28 Toss / (LT) 27 Toss",
 
-"(RT) 50 PoP Pass / (LT) 50 PoP Pass",
+    "(RT) 50 PoP Pass / (LT) 50 PoP Pass",
 
-"(RT) 50 Slip Pass / (LT) 50 Slip Pass"
-
-],
-
-"30 Series": [
-
-"30 Hitch",
-
-"30 Fade",
-
-"30 Out",
-
-"30 Slap",
-
-"30 Bubble",
-
-"30 Wheel",
-
-"(RT) 30 Hitch / (LT) 30 Hitch",
-
-"(RT) 30 Slap / (LT) 30 Slap",
-
-"(RT) 30 Fade / (LT) 30 Fade",
-
-"(RT) 30 Vegas / (LT) 30 Vegas",
-
-"Rexy 30 Fade / Louey 30 Fade",
-
-"Rexy 30 Vegas / Louey 30 Vegas",
-
-"Rexy 30 Slap / Louey 30 Slap"
-
-],
-
-"50 Series": [
-
-"(RT) 50 Hitch / (LT) 50 Hitch",
-
-"(RT) 50 Fade / (LT) 50 Fade",
-
-"(RT) 50 Out / (LT) 50 Out",
-
-"(RT) 50 Slap / (LT) 50 Slap",
-
-"(RT) 50 Wheel / (LT) 50 Wheel",
-
-"(RT) 50 Vegas / (LT) 50 Vegas",
-
-"50 Hitch",
-
-"50 Fade",
-
-"50 Out",
-
-"50 Slap",
-
-"50 Wheel",
-
-"50 Vegas",
-
-"50 Hitch and Go",
-
-"(RT) 50Y Corner / (LT) 50Y Corner",
-
-"(RT) 50 Mesh / (LT) 50 Mesh",
-
-"(RT) Shield Screen / (LT) Shield Screen",
-
-"(RT) F Screen / (LT) F Screen",
-
-"(RT) Z Jailbreak / (LT) X Jailbreak"
-
-],
-
-"80/81 Series": [
-
-"(RT) 80 Hitch / (LT) 81 Hitch",
-
-"(RT) 80 Fade / (LT) 81 Fade",
-
-"(RT) 80 Out / (LT) 81 Out",
-
-"(RT) 80Y Corner / (LT) 81Y Corner",
-
-"Rexy 80 Flood / Louey 81 Flood",
-
-"(RT) 80 Flood / (LT) 81 Flood",
-
-"(RT) 80 Out / (LT) 81 Out"
-
-],
-
-"Motion Run": [
-
-"Jet RT 23 Trap / Jet LT 24 Trap",
-
-"38 Jet Sweep RT / 47 Jet Sweep LT",
-
-"38 Jet Sweep RT Load / 47 Jet Sweep LT Lead",
-
-"(RT) Jet L F Swing / (LT) Jet R F Swing",
-
-"(RT) 22 Dive RT / (LT) 21 Dive L",
-
-"(RT) 28 Toss / (LT) 27 Toss",
-
-"(RT) Zoom R / (LT) Zoom L",
-
-"Doubles F Toss Vegas",
-
-"Doubles 27 Toss Reverse RT"
-
-],
-
-"Motion Pass": [
-
-"Rexy 80 Flood / Louey 81 Flood",
-
-"Rexy 30 Fade / Louey 30 Fade",
-
-"Rexy 30 Vegas / Louey 30 Vegas",
-
-"Rexy 30 Slap / Louey 30 Slap",
-
-"(RT) 50 Hitch / (LT) 50 Hitch",
-
-"(RT) 50 Fade / (LT) 50 Fade",
-
-"(RT) 50 Out / (LT) 50 Out",
-
-"(RT) 50 Vegas / (LT) 50 Vegas"
+    "(RT) 50 Slip Pass / (LT) 50 Slip Pass"
 
 ],
 
 "Trio (D)": [
 
-"(RT) Heavy 22 Blast / (LT) Heavy 21 Blast",
+    "(RT) Heavy 22 Blast / (LT) Heavy 21 Blast",
 
-"(RT) Heavy 22 Blast K / (RT) 21 Blast K",
+    "(RT) Heavy 22 Blast K / (RT) 21 Blast K",
 
-"(RT) 50 Mesh / (LT) 50 Mesh",
+    "(RT) 50 Mesh / (LT) 50 Mesh",
 
-"(RT) Shield Screen / (LT) Shield Screen",
+    "(RT) Shield Screen / (LT) Shield Screen",
 
-"(RT) 50Y Corner / (LT) 50Y Corner"
+    "(RT) 50Y Corner / (LT) 50Y Corner"
 
 ],
 
 "Trips (D)": [
 
-"(RT) Louey 30 Slap / (LT) Rexy 30 Slap",
+    "(RT) Louey 30 Slap / (LT) Rexy 30 Slap",
 
-"(RT) Louey 30 Fade / (LT) Rexy 30 Fade",
+    "(RT) Louey 30 Fade / (LT) Rexy 30 Fade",
 
-"(RT) Louey 30 Wheel / (LT) Rexy 30 Wheel",
+    "(RT) Louey 30 Wheel / (LT) Rexy 30 Wheel",
 
-"(RT) Louey 30 Vegas / (LT) Rexy 30 Vegas",
+    "(RT) Louey 30 Vegas / (LT) Rexy 30 Vegas",
 
-"(RT) Jet L F Swing / (LT) Jet R F Swing",
+    "(RT) Jet L F Swing / (LT) Jet R F Swing",
 
-"(RT) 30 Hitch / (LT) 30 Hitch",
+    "(RT) 30 Hitch / (LT) 30 Hitch",
 
-"(RT) 30 Slap / (LT) 30 Slap",
+    "(RT) 30 Slap / (LT) 30 Slap",
 
-"(RT) 30 Fade / (LT) 30 Fade",
+    "(RT) 30 Fade / (LT) 30 Fade",
 
-"(RT) 30 Vegas / (LT) 30 Vegas",
+    "(RT) 30 Vegas / (LT) 30 Vegas",
 
-"(RT) 50 Hitch / (LT) 50 Hitch",
+    "(RT) 50 Hitch / (LT) 50 Hitch",
 
-"(RT) 50 Slap / (LT) 50 Slap",
+    "(RT) 50 Slap / (LT) 50 Slap",
 
-"(RT) 50 Fade / (LT) 50 Fade",
+    "(RT) 50 Fade / (LT) 50 Fade",
 
-"(RT) 50 Vegas / (LT) 50 Vegas",
+    "(RT) 50 Vegas / (LT) 50 Vegas",
 
-"(RT) 50 F Screen / (LT) 50 F Screen",
+    "(RT) 50 F Screen / (LT) 50 F Screen",
 
-"(RT) Z Jailbreak / (LT) X Jailbreak",
+    "(RT) Z Jailbreak / (LT) X Jailbreak",
 
-"(RT) 80 Flood / (LT) 81 Flood",
+    "(RT) 80 Flood / (LT) 81 Flood",
 
-"(RT) 80 Out / (LT) 81 Out"
+    "(RT) 80 Out / (LT) 81 Out"
+
+],
+
+"30 Series": [
+
+    "30 Hitch",
+
+    "30 Fade",
+
+    "30 Out",
+
+    "30 Slap",
+
+    "30 Bubble",
+
+    "30 Wheel",
+
+    "(RT) 30 Hitch / (LT) 30 Hitch",
+
+    "(RT) 30 Slap / (LT) 30 Slap",
+
+    "(RT) 30 Fade / (LT) 30 Fade",
+
+    "(RT) 30 Vegas / (LT) 30 Vegas",
+
+    "Rexy 30 Fade / Louey 30 Fade",
+
+    "Rexy 30 Vegas / Louey 30 Vegas",
+
+    "Rexy 30 Slap / Louey 30 Slap"
+
+],
+
+"50 Series": [
+
+    "(RT) 50 Hitch / (LT) 50 Hitch",
+
+    "(RT) 50 Fade / (LT) 50 Fade",
+
+    "(RT) 50 Out / (LT) 50 Out",
+
+    "(RT) 50 Slap / (LT) 50 Slap",
+
+    "(RT) 50 Wheel / (LT) 50 Wheel",
+
+    "(RT) 50 Vegas / (LT) 50 Vegas",
+
+    "50 Hitch",
+
+    "50 Fade",
+
+    "50 Out",
+
+    "50 Slap",
+
+    "50 Wheel",
+
+    "50 Vegas",
+
+    "50 Hitch and Go",
+
+    "(RT) 50Y Corner / (LT) 50Y Corner",
+
+    "(RT) 50 Mesh / (LT) 50 Mesh",
+
+    "(RT) Shield Screen / (LT) Shield Screen",
+
+    "(RT) F Screen / (LT) F Screen",
+
+    "(RT) Z Jailbreak / (LT) X Jailbreak"
+
+],
+
+"80/81 Series": [
+
+    "(RT) 80 Hitch / (LT) 81 Hitch",
+
+    "(RT) 80 Fade / (LT) 81 Fade",
+
+    "(RT) 80 Out / (LT) 81 Out",
+
+    "(RT) 80Y Corner / (LT) 81Y Corner",
+
+    "Rexy 80 Flood / Louey 81 Flood",
+
+    "(RT) 80 Flood / (LT) 81 Flood"
+
+],
+
+"Motion Run": [
+
+    "Jet RT 23 Trap / Jet LT 24 Trap",
+
+    "38 Jet Sweep RT / 47 Jet Sweep LT",
+
+    "38 Jet Sweep RT Load / 47 Jet Sweep LT Lead",
+
+    "(RT) 22 Dive RT / (LT) 21 Dive L",
+
+    "(RT) 28 Toss / (LT) 27 Toss",
+
+    "(RT) Zoom R / (LT) Zoom L",
+
+    "Doubles F Toss Vegas",
+
+    "Doubles 27 Toss Reverse RT"
+
+],
+
+"Motion Pass": [
+
+    "Rexy 80 Flood / Louey 81 Flood",
+
+    "Rexy 30 Fade / Louey 30 Fade",
+
+    "Rexy 30 Vegas / Louey 30 Vegas",
+
+    "Rexy 30 Slap / Louey 30 Slap",
+
+    "(RT) 50 Hitch / (LT) 50 Hitch",
+
+    "(RT) 50 Fade / (LT) 50 Fade",
+
+    "(RT) 50 Out / (LT) 50 Out",
+
+    "(RT) 50 Vegas / (LT) 50 Vegas",
+
+    "(RT) Jet L F Swing / (LT) Jet R F Swing"
 
 ],
 
 "Base Run": [
 
-"(RT) 22 Dive RT / (LT) 21 Dive L",
+    "(RT) 22 Dive RT / (LT) 21 Dive L",
 
-"(RT) 28 Toss / (LT) 27 Toss",
+    "(RT) 28 Toss / (LT) 27 Toss",
 
-"(RT) Zoom R / (LT) Zoom L",
+    "(RT) Zoom R / (LT) Zoom L",
 
-"Doubles F Toss Vegas",
+    "Doubles F Toss Vegas",
 
-"Doubles 27 Toss Reverse RT"
+    "Doubles 27 Toss Reverse RT"
 
 ],
 
 "Script": [
 
-"1st and 2nd Half Script"
+    "1st and 2nd Half Script"
 
 ],
 
 "Other": [
 
-"Doubles Pass Double Pass"
+    "Doubles Pass Double Pass"
 
 ]
 
@@ -1070,7 +1068,7 @@ const playbook = {
 
 /* =====================================================
 
-   DATA
+   SAVED PLAYS
 
    ===================================================== */
 
@@ -1094,7 +1092,7 @@ try {
 
     }
 
-} catch(e) {
+} catch (e) {
 
     plays = [];
 
@@ -1102,27 +1100,27 @@ try {
 
 /* =====================================================
 
-   LOAD FORMATION DROPDOWN
+   LOAD FORMATIONS
 
    ===================================================== */
 
 function loadFormations() {
 
-    const formation =
+    const select =
 
         document.getElementById("formation");
 
-    Object.keys(playbook).forEach(function(category) {
+    Object.keys(playbook).forEach(function(group) {
 
         const option =
 
             document.createElement("option");
 
-        option.value = category;
+        option.value = group;
 
-        option.textContent = category;
+        option.textContent = group;
 
-        formation.appendChild(option);
+        select.appendChild(option);
 
     });
 
@@ -1130,7 +1128,7 @@ function loadFormations() {
 
 /* =====================================================
 
-   LOAD PLAY DROPDOWN
+   LOAD PLAYS
 
    ===================================================== */
 
@@ -1138,29 +1136,19 @@ function loadPlays() {
 
     const formation =
 
-        document.getElementById("formation");
+        document.getElementById("formation").value;
 
-    const play =
+    const select =
 
         document.getElementById("play");
 
-    play.innerHTML =
+    select.innerHTML =
 
         '<option value="">Select Play</option>';
 
-    const selected =
+    if (!formation) return;
 
-        formation.value;
-
-    if (!selected ||
-
-        !playbook[selected]) {
-
-        return;
-
-    }
-
-    playbook[selected].forEach(function(playName) {
+    playbook[formation].forEach(function(playName) {
 
         const option =
 
@@ -1170,7 +1158,7 @@ function loadPlays() {
 
         option.textContent = playName;
 
-        play.appendChild(option);
+        select.appendChild(option);
 
     });
 
@@ -1178,27 +1166,27 @@ function loadPlays() {
 
 /* =====================================================
 
-   LOAD PLAYERS
+   LOAD ALL 19 PLAYERS
 
    ===================================================== */
 
 function loadPlayers() {
 
-    const player =
+    const select =
 
         document.getElementById("player");
 
-    players.forEach(function(name) {
+    players.forEach(function(playerName) {
 
         const option =
 
             document.createElement("option");
 
-        option.value = name;
+        option.value = playerName;
 
-        option.textContent = name;
+        option.textContent = playerName;
 
-        player.appendChild(option);
+        select.appendChild(option);
 
     });
 
@@ -1258,7 +1246,7 @@ function addPlay() {
 
     if (isNaN(yards)) {
 
-        toast("Enter the yards gained.");
+        toast("Enter yards gained.");
 
         return;
 
@@ -1266,11 +1254,7 @@ function addPlay() {
 
     plays.push({
 
-        id:
-
-            Date.now() +
-
-            Math.random(),
+        id: Date.now() + Math.random(),
 
         formation: formation,
 
@@ -1280,9 +1264,7 @@ function addPlay() {
 
         yards: yards,
 
-        time:
-
-            new Date().toISOString()
+        time: new Date().toISOString()
 
     });
 
@@ -1316,7 +1298,7 @@ function save() {
 
 /* =====================================================
 
-   RENDER
+   RENDER EVERYTHING
 
    ===================================================== */
 
@@ -1324,7 +1306,11 @@ function render() {
 
     renderHistory();
 
-    renderStats();
+    updateTotals();
+
+    renderPlayerStats();
+
+    renderPlayStats();
 
 }
 
@@ -1346,127 +1332,95 @@ function renderHistory() {
 
             '<div class="empty">No plays recorded yet.</div>';
 
-        updateTotals();
-
         return;
 
     }
 
     history.innerHTML = "";
 
-    plays
+    plays.slice().reverse().forEach(function(item, index) {
 
-        .slice()
+        const row =
 
-        .reverse()
+            document.createElement("div");
 
-        .forEach(function(item, reverseIndex) {
+        row.className = "play";
 
-            const number =
+        const number =
 
-                plays.length -
+            document.createElement("div");
 
-                reverseIndex;
+        number.className = "play-number";
 
-            const row =
+        number.textContent =
 
-                document.createElement("div");
+            plays.length - index;
 
-            row.className = "play";
+        const info =
 
-            const numberDiv =
+            document.createElement("div");
 
-                document.createElement("div");
+        const name =
 
-            numberDiv.className =
+            document.createElement("div");
 
-                "play-number";
+        name.className = "play-name";
 
-            numberDiv.textContent =
+        name.textContent = item.play;
 
-                number;
+        const player =
 
-            const info =
+            document.createElement("div");
 
-                document.createElement("div");
+        player.className = "play-player";
 
-            const name =
+        player.textContent =
 
-                document.createElement("div");
+            item.player + " • " + item.formation;
 
-            name.className =
+        info.appendChild(name);
 
-                "play-name";
+        info.appendChild(player);
 
-            name.textContent =
+        const yards =
 
-                item.play;
+            document.createElement("div");
 
-            const player =
+        yards.className = "play-yards";
 
-                document.createElement("div");
+        yards.textContent =
 
-            player.className =
+            format(item.yards);
 
-                "play-player";
+        const remove =
 
-            player.textContent =
+            document.createElement("button");
 
-                item.player +
+        remove.className =
 
-                " • " +
+            "delete-button";
 
-                item.formation;
+        remove.textContent = "×";
 
-            info.appendChild(name);
+        remove.onclick =
 
-            info.appendChild(player);
+            function() {
 
-            const yards =
+                deletePlay(item.id);
 
-                document.createElement("div");
+            };
 
-            yards.className =
+        row.appendChild(number);
 
-                "play-yards";
+        row.appendChild(info);
 
-            yards.textContent =
+        row.appendChild(yards);
 
-                format(item.yards);
+        row.appendChild(remove);
 
-            const remove =
+        history.appendChild(row);
 
-                document.createElement("button");
-
-            remove.className =
-
-                "delete-button";
-
-            remove.textContent =
-
-                "×";
-
-            remove.onclick =
-
-                function() {
-
-                    deletePlay(item.id);
-
-                };
-
-            row.appendChild(numberDiv);
-
-            row.appendChild(info);
-
-            row.appendChild(yards);
-
-            row.appendChild(remove);
-
-            history.appendChild(row);
-
-        });
-
-    updateTotals();
+    });
 
 }
 
@@ -1478,19 +1432,15 @@ function renderHistory() {
 
 function updateTotals() {
 
-    const count =
-
-        plays.length;
+    const count = plays.length;
 
     const total =
 
         plays.reduce(
 
-            function(sum,item) {
+            function(sum, item) {
 
-                return sum +
-
-                    Number(item.yards);
+                return sum + Number(item.yards);
 
             },
 
@@ -1500,35 +1450,19 @@ function updateTotals() {
 
     const average =
 
-        count
+        count ? total / count : 0;
 
-            ? total / count
+    document.getElementById("totalPlays")
 
-            : 0;
+        .textContent = count;
 
-    document.getElementById(
+    document.getElementById("totalYards")
 
-        "totalPlays"
+        .textContent = format(total);
 
-    ).textContent =
+    document.getElementById("overallAverage")
 
-        count;
-
-    document.getElementById(
-
-        "totalYards"
-
-    ).textContent =
-
-        format(total);
-
-    document.getElementById(
-
-        "overallAverage"
-
-    ).textContent =
-
-        average.toFixed(1);
+        .textContent = average.toFixed(1);
 
 }
 
@@ -1538,17 +1472,13 @@ function updateTotals() {
 
    ===================================================== */
 
-function renderStats() {
+function renderPlayerStats() {
 
-    const playerTable =
+    const table =
 
-        document.getElementById(
+        document.getElementById("playerStats");
 
-            "playerStats"
-
-        );
-
-    playerTable.innerHTML = "";
+    table.innerHTML = "";
 
     players.forEach(function(player) {
 
@@ -1564,11 +1494,9 @@ function renderStats() {
 
             playerPlays.reduce(
 
-                function(sum,item) {
+                function(sum, item) {
 
-                    return sum +
-
-                        Number(item.yards);
+                    return sum + Number(item.yards);
 
                 },
 
@@ -1576,7 +1504,7 @@ function renderStats() {
 
             );
 
-        const avg =
+        const average =
 
             playerPlays.length
 
@@ -1590,35 +1518,21 @@ function renderStats() {
 
         row.innerHTML =
 
-            "<td>" +
+            "<td>" + escapeHTML(player) + "</td>" +
 
-            escapeHTML(player) +
+            "<td>" + playerPlays.length + "</td>" +
 
-            "</td>" +
-
-            "<td>" +
-
-            playerPlays.length +
-
-            "</td>" +
-
-            "<td>" +
-
-            format(total) +
-
-            "</td>" +
+            "<td>" + format(total) + "</td>" +
 
             "<td class='average'>" +
 
-            avg.toFixed(1) +
+            average.toFixed(1) +
 
             "</td>";
 
-        playerTable.appendChild(row);
+        table.appendChild(row);
 
     });
-
-    renderPlayStats();
 
 }
 
@@ -1632,11 +1546,7 @@ function renderPlayStats() {
 
     const table =
 
-        document.getElementById(
-
-            "playStats"
-
-        );
+        document.getElementById("playStats");
 
     table.innerHTML = "";
 
@@ -1664,59 +1574,43 @@ function renderPlayStats() {
 
     });
 
-    Object.keys(grouped)
+    Object.keys(grouped).forEach(function(playName) {
 
-        .forEach(function(playName) {
+        const data =
 
-            const data =
+            grouped[playName];
 
-                grouped[playName];
+        const average =
 
-            const avg =
+            data.yards / data.count;
 
-                data.yards /
+        const row =
 
-                data.count;
+            document.createElement("tr");
 
-            const row =
+        row.innerHTML =
 
-                document.createElement("tr");
+            "<td>" + escapeHTML(playName) + "</td>" +
 
-            row.innerHTML =
+            "<td>" + data.count + "</td>" +
 
-                "<td>" +
+            "<td>" + format(data.yards) + "</td>" +
 
-                escapeHTML(playName) +
+            "<td class='average'>" +
 
-                "</td>" +
+            average.toFixed(1) +
 
-                "<td>" +
+            "</td>";
 
-                data.count +
+        table.appendChild(row);
 
-                "</td>" +
-
-                "<td>" +
-
-                format(data.yards) +
-
-                "</td>" +
-
-                "<td class='average'>" +
-
-                avg.toFixed(1) +
-
-                "</td>";
-
-            table.appendChild(row);
-
-        });
+    });
 
 }
 
 /* =====================================================
 
-   DELETE
+   DELETE PLAY
 
    ===================================================== */
 
@@ -1738,7 +1632,7 @@ function deletePlay(id) {
 
 /* =====================================================
 
-   CLEAR
+   CLEAR ALL
 
    ===================================================== */
 
@@ -1752,15 +1646,7 @@ function clearAll() {
 
     }
 
-    if (
-
-        !confirm(
-
-            "Delete all plays from this game?"
-
-        )
-
-    ) {
+    if (!confirm("Delete all plays from this game?")) {
 
         return;
 
@@ -1776,89 +1662,65 @@ function clearAll() {
 
 /* =====================================================
 
-   SECTIONS
+   SECTION SWITCHING
 
    ===================================================== */
 
 function showSection(section) {
 
-    document.getElementById(
+    document.getElementById("trackerSection")
 
-        "trackerSection"
+        .style.display =
 
-    ).style.display =
+        section === "tracker" ? "block" : "none";
 
-        section === "tracker"
+    document.getElementById("statsSection")
 
-            ? "block"
+        .style.display =
 
-            : "none";
+        section === "stats" ? "block" : "none";
 
-    document.getElementById(
+    document.getElementById("playsSection")
 
-        "statsSection"
+        .style.display =
 
-    ).style.display =
+        section === "plays" ? "block" : "none";
 
-        section === "stats"
+    document.getElementById("trackerTab")
 
-            ? "block"
+        .classList.toggle(
 
-            : "none";
+            "active",
 
-    document.getElementById(
+            section === "tracker"
 
-        "playsSection"
+        );
 
-    ).style.display =
+    document.getElementById("statsTab")
 
-        section === "plays"
+        .classList.toggle(
 
-            ? "block"
+            "active",
 
-            : "none";
+            section === "stats"
 
-    document.getElementById(
+        );
 
-        "trackerTab"
+    document.getElementById("playsTab")
 
-    ).classList.toggle(
+        .classList.toggle(
 
-        "active",
+            "active",
 
-        section === "tracker"
+            section === "plays"
 
-    );
-
-    document.getElementById(
-
-        "statsTab"
-
-    ).classList.toggle(
-
-        "active",
-
-        section === "stats"
-
-    );
-
-    document.getElementById(
-
-        "playsTab"
-
-    ).classList.toggle(
-
-        "active",
-
-        section === "plays"
-
-    );
+        );
 
 }
 
 /* =====================================================
 
-   PLAYBOOK DISPLAY
+   DISPLAY PLAYBOOK
 
    ===================================================== */
 
@@ -1866,53 +1728,37 @@ function displayPlaybook() {
 
     const container =
 
-        document.getElementById(
-
-            "playbookDisplay"
-
-        );
+        document.getElementById("playbookDisplay");
 
     container.innerHTML = "";
 
-    Object.keys(playbook)
+    Object.keys(playbook).forEach(function(group) {
 
-        .forEach(function(category) {
+        const title =
 
-            const title =
+            document.createElement("h3");
 
-                document.createElement("h3");
+        title.textContent = group;
 
-            title.textContent =
+        container.appendChild(title);
 
-                category;
+        playbook[group].forEach(function(play) {
 
-            container.appendChild(title);
+            const item =
 
-            playbook[category]
+                document.createElement("div");
 
-                .forEach(function(play) {
+            item.style.padding = "7px 0";
 
-                    const item =
+            item.style.borderBottom = "1px solid #eee";
 
-                        document.createElement("div");
+            item.textContent = play;
 
-                    item.style.padding =
-
-                        "7px 0";
-
-                    item.style.borderBottom =
-
-                        "1px solid #eee";
-
-                    item.textContent =
-
-                        play;
-
-                    container.appendChild(item);
-
-                });
+            container.appendChild(item);
 
         });
+
+    });
 
 }
 
@@ -1936,7 +1782,7 @@ function exportData() {
 
         "FOOTBALL PLAY TRACKER\n\n";
 
-    plays.forEach(function(item,index) {
+    plays.forEach(function(item, index) {
 
         text +=
 
@@ -1992,33 +1838,33 @@ function exportData() {
 
         "football-play-tracker.txt";
 
+    document.body.appendChild(link);
+
     link.click();
+
+    document.body.removeChild(link);
 
     setTimeout(function() {
 
         URL.revokeObjectURL(url);
 
-    },1000);
+    }, 1000);
+
+    toast("Export created.");
 
 }
 
 /* =====================================================
 
-   FORMAT
+   HELPERS
 
    ===================================================== */
 
 function format(number) {
 
-    const value =
+    const value = Number(number);
 
-        Number(number);
-
-    if (
-
-        Number.isInteger(value)
-
-    ) {
+    if (Number.isInteger(value)) {
 
         return String(value);
 
@@ -2028,33 +1874,21 @@ function format(number) {
 
 }
 
-/* =====================================================
-
-   ESCAPE
-
-   ===================================================== */
-
 function escapeHTML(text) {
 
     return String(text)
 
-        .replace(/&/g,"&amp;")
+        .replace(/&/g, "&amp;")
 
-        .replace(/</g,"&lt;")
+        .replace(/</g, "&lt;")
 
-        .replace(/>/g,"&gt;")
+        .replace(/>/g, "&gt;")
 
-        .replace(/"/g,"&quot;")
+        .replace(/"/g, "&quot;")
 
-        .replace(/'/g,"&#039;");
+        .replace(/'/g, "&#039;");
 
 }
-
-/* =====================================================
-
-   TOAST
-
-   ===================================================== */
 
 let toastTimer;
 
@@ -2064,9 +1898,7 @@ function toast(message) {
 
         document.getElementById("toast");
 
-    element.textContent =
-
-        message;
+    element.textContent = message;
 
     element.classList.add("show");
 
@@ -2078,19 +1910,17 @@ function toast(message) {
 
             element.classList.remove("show");
 
-        },1800);
+        }, 1800);
 
 }
 
 /* =====================================================
 
-   START
+   START APP
 
    ===================================================== */
 
-document
-
-    .getElementById("formation")
+document.getElementById("formation")
 
     .addEventListener(
 
