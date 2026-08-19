@@ -18,7 +18,11 @@
 
 <style>
 
-*{box-sizing:border-box}
+*{
+
+box-sizing:border-box
+
+}
 
 body{
 
@@ -49,6 +53,12 @@ text-align:center;
 font-size:25px;
 
 margin:4px 0 18px
+
+}
+
+h2{
+
+margin-top:4px
 
 }
 
@@ -90,9 +100,17 @@ color:#111
 
 }
 
-.page{display:none}
+.page{
 
-.page.active{display:block}
+display:none
+
+}
+
+.page.active{
+
+display:block
+
+}
 
 .card{
 
@@ -152,7 +170,11 @@ font-size:18px
 
 }
 
-.full{grid-column:1/-1}
+.full{
+
+grid-column:1/-1
+
+}
 
 .type{
 
@@ -214,9 +236,67 @@ color:#fff
 
 }
 
+button.voice{
+
+width:100%;
+
+height:64px;
+
+border:2px solid #666;
+
+border-radius:15px;
+
+font-size:20px;
+
+font-weight:900;
+
+margin-top:14px;
+
+background:#252527;
+
+color:#fff
+
+}
+
+button.voice.listening{
+
+background:#d71920;
+
+border-color:#ff5555;
+
+color:#fff;
+
+animation:pulse 1s infinite
+
+}
+
+@keyframes pulse{
+
+0%{opacity:1}
+
+50%{opacity:.55}
+
+100%{opacity:1}
+
+}
+
 button.clear{
 
 background:#3b3b3d
+
+}
+
+.voice-status{
+
+text-align:center;
+
+color:#aaa;
+
+font-size:14px;
+
+margin-top:8px;
+
+min-height:20px
 
 }
 
@@ -288,7 +368,11 @@ font-size:13px
 
 }
 
-th{color:#aaa}
+th{
+
+color:#aaa
+
+}
 
 .badge{
 
@@ -356,19 +440,73 @@ color:#111
 
 }
 
+.performance-run{
+
+color:#111;
+
+background:#00c853;
+
+font-weight:800;
+
+padding:4px 7px;
+
+border-radius:6px
+
+}
+
+.performance-pass{
+
+color:#111;
+
+background:#fff000;
+
+font-weight:800;
+
+padding:4px 7px;
+
+border-radius:6px
+
+}
+
 @media(max-width:650px){
 
-.wrap{padding-top:10px}
+.wrap{
 
-.grid{gap:10px}
+padding-top:10px
 
-.tabs{gap:6px}
+}
 
-.tab{height:58px;font-size:18px}
+.grid{
 
-select{font-size:17px}
+gap:10px
 
-.card{padding:14px}
+}
+
+.tabs{
+
+gap:6px
+
+}
+
+.tab{
+
+height:58px;
+
+font-size:18px
+
+}
+
+select{
+
+font-size:17px
+
+}
+
+.card{
+
+padding:14px
+
+}
 
 }
 
@@ -384,15 +522,31 @@ select{font-size:17px}
 
 <div class="tabs">
 
-<button class="tab active" data-page="tracker">TRACKER</button>
+<button class="tab active" data-page="tracker">
 
-<button class="tab" data-page="stats">STATS</button>
+TRACKER
 
-<button class="tab" data-page="playbook">PLAYBOOK</button>
+</button>
+
+<button class="tab" data-page="stats">
+
+STATS
+
+</button>
+
+<button class="tab" data-page="playbook">
+
+PLAYBOOK
+
+</button>
 
 </div>
 
-<!-- TRACKER -->
+<!-- =====================================================
+
+TRACKER
+
+===================================================== -->
 
 <section id="tracker" class="page active">
 
@@ -406,7 +560,11 @@ select{font-size:17px}
 
 <select id="formation">
 
-<option value="">Add Formation</option>
+<option value="">
+
+Add Formation
+
+</option>
 
 </select>
 
@@ -418,7 +576,11 @@ select{font-size:17px}
 
 <select id="series">
 
-<option value="">Add Series</option>
+<option value="">
+
+Add Series
+
+</option>
 
 </select>
 
@@ -430,7 +592,11 @@ select{font-size:17px}
 
 <select id="play">
 
-<option value="">Add Play</option>
+<option value="">
+
+Add Play
+
+</option>
 
 </select>
 
@@ -442,7 +608,11 @@ select{font-size:17px}
 
 <select id="player">
 
-<option value="">Add Player</option>
+<option value="">
+
+Add Player
+
+</option>
 
 <option>#36 Althouse, Frank</option>
 
@@ -480,7 +650,11 @@ select{font-size:17px}
 
 <label>Play Type</label>
 
-<div id="type" class="type">—</div>
+<div id="type" class="type">
+
+—
+
+</div>
 
 </div>
 
@@ -490,7 +664,11 @@ select{font-size:17px}
 
 <select id="yards">
 
-<option value="">Add Yards</option>
+<option value="">
+
+Add Yards
+
+</option>
 
 </select>
 
@@ -498,9 +676,29 @@ select{font-size:17px}
 
 </div>
 
-<button class="action" id="add">ADD PLAY</button>
+<button class="action" id="add">
 
-<button class="action clear" id="clear">CLEAR ALL PLAYS</button>
+ADD PLAY
+
+</button>
+
+<button class="voice" id="voiceButton">
+
+🎤 VOICE ENTRY
+
+</button>
+
+<div class="voice-status" id="voiceStatus">
+
+Select Player, Formation, Series and Play, then use Voice Entry to say the yards.
+
+</div>
+
+<button class="action clear" id="clear">
+
+CLEAR ALL PLAYS
+
+</button>
 
 </div>
 
@@ -510,15 +708,29 @@ select{font-size:17px}
 
 <div class="stat">
 
-<div class="small">RUNNING PLAYS</div>
+<div class="small">
 
-<div class="big" id="runCount">0</div>
+RUNNING PLAYS
+
+</div>
+
+<div class="big" id="runCount">
+
+0
+
+</div>
 
 <div class="small">
 
-Avg: <span id="runAvg">0.00</span> |
+Avg:
 
-Total: <span id="runTotal">0</span>
+<span id="runAvg">0.00</span>
+
+|
+
+Total:
+
+<span id="runTotal">0</span>
 
 </div>
 
@@ -526,15 +738,29 @@ Total: <span id="runTotal">0</span>
 
 <div class="stat">
 
-<div class="small">PASSING PLAYS</div>
+<div class="small">
 
-<div class="big" id="passCount">0</div>
+PASSING PLAYS
+
+</div>
+
+<div class="big" id="passCount">
+
+0
+
+</div>
 
 <div class="small">
 
-Avg: <span id="passAvg">0.00</span> |
+Avg:
 
-Total: <span id="passTotal">0</span>
+<span id="passAvg">0.00</span>
+
+|
+
+Total:
+
+<span id="passTotal">0</span>
 
 </div>
 
@@ -546,7 +772,11 @@ Total: <span id="passTotal">0</span>
 
 <div class="card">
 
-<h2>Play Log</h2>
+<h2>
+
+Play Log
+
+</h2>
 
 <div class="table">
 
@@ -576,7 +806,9 @@ Total: <span id="passTotal">0</span>
 
 </thead>
 
-<tbody id="log"></tbody>
+<tbody id="log">
+
+</tbody>
 
 </table>
 
@@ -592,27 +824,49 @@ No plays recorded yet.
 
 </section>
 
-<!-- STATS -->
+<!-- =====================================================
+
+STATS
+
+===================================================== -->
 
 <section id="stats" class="page">
 
 <div class="card">
 
-<h2>Team Stats</h2>
+<h2>
+
+Team Stats
+
+</h2>
 
 <div class="stats">
 
 <div class="stat">
 
-<div class="small">RUNNING PLAYS</div>
+<div class="small">
 
-<div class="big" id="srn">0</div>
+RUNNING PLAYS
+
+</div>
+
+<div class="big" id="srn">
+
+0
+
+</div>
 
 <div class="small">
 
-Avg: <span id="sra">0.00</span> |
+Avg:
 
-Total: <span id="srt">0</span>
+<span id="sra">0.00</span>
+
+|
+
+Total:
+
+<span id="srt">0</span>
 
 </div>
 
@@ -620,15 +874,29 @@ Total: <span id="srt">0</span>
 
 <div class="stat">
 
-<div class="small">PASSING PLAYS</div>
+<div class="small">
 
-<div class="big" id="spn">0</div>
+PASSING PLAYS
+
+</div>
+
+<div class="big" id="spn">
+
+0
+
+</div>
 
 <div class="small">
 
-Avg: <span id="spa">0.00</span> |
+Avg:
 
-Total: <span id="spt">0</span>
+<span id="spa">0.00</span>
+
+|
+
+Total:
+
+<span id="spt">0</span>
 
 </div>
 
@@ -637,10 +905,16 @@ Total: <span id="spt">0</span>
 </div>
 
 </div>
+
+<!-- PLAYER STATS -->
 
 <div class="card">
 
-<h2>Player Stats</h2>
+<h2>
+
+Player Stats
+
+</h2>
 
 <div class="table">
 
@@ -672,7 +946,9 @@ Total: <span id="spt">0</span>
 
 </thead>
 
-<tbody id="playerStats"></tbody>
+<tbody id="playerStats">
+
+</tbody>
 
 </table>
 
@@ -680,17 +956,85 @@ Total: <span id="spt">0</span>
 
 </div>
 
+<!-- PLAY PERFORMANCE -->
+
+<div class="card">
+
+<h2>
+
+Play Performance
+
+</h2>
+
+<p class="small">
+
+Track which individual plays are producing the most yards.
+
+</p>
+
+<div class="table">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Formation</th>
+
+<th>Series</th>
+
+<th>Play</th>
+
+<th>Type</th>
+
+<th>Attempts</th>
+
+<th>Total Yards</th>
+
+<th>Average Yards</th>
+
+</tr>
+
+</thead>
+
+<tbody id="playStats">
+
+</tbody>
+
+</table>
+
+</div>
+
+<div id="playStatsEmpty" class="empty">
+
+No play performance data yet.
+
+</div>
+
+</div>
+
 </section>
 
-<!-- PLAYBOOK -->
+<!-- =====================================================
+
+PLAYBOOK
+
+===================================================== -->
 
 <section id="playbook" class="page">
 
 <div class="card">
 
-<h2>Playbook</h2>
+<h2>
 
-<div id="pb"></div>
+Playbook
+
+</h2>
+
+<div id="pb">
+
+</div>
 
 </div>
 
@@ -706,11 +1050,11 @@ PLAYBOOK DATA
 
 FORMATION
 
-  ↓
+↓
 
 SERIES
 
-  ↓
+↓
 
 PLAYS
 
@@ -1394,7 +1738,7 @@ save();
 
 /* =========================================================
 
-RENDER
+RENDER TRACKER
 
 ========================================================= */
 
@@ -1520,7 +1864,7 @@ ADD PLAY
 
 ========================================================= */
 
-$("add").onclick=()=>{
+function addPlay(){
 
 const arr=
 
@@ -1562,7 +1906,7 @@ alert(
 
 );
 
-return;
+return false;
 
 }
 
@@ -1600,11 +1944,19 @@ Number(yards.value)
 
 save();
 
-player.value="";
+return true;
+
+}
+
+$("add").onclick=()=>{
+
+if(addPlay()){
 
 yards.value="";
 
 setType("");
+
+}
 
 };
 
@@ -1636,7 +1988,7 @@ save();
 
 /* =========================================================
 
-STATS
+PLAYER STATS
 
 ========================================================= */
 
@@ -1681,6 +2033,8 @@ total(passes);
 $("spa").textContent=
 
 average(passes);
+
+/* PLAYER STATS */
 
 const names=
 
@@ -1754,11 +2108,143 @@ return `
 
 }).join("");
 
+/* PLAY PERFORMANCE */
+
+const groups={};
+
+plays.forEach(x=>{
+
+const key=
+
+x.formation+
+
+"||"+
+
+x.series+
+
+"||"+
+
+x.play+
+
+"||"+
+
+x.type;
+
+if(!groups[key]){
+
+groups[key]={
+
+formation:x.formation,
+
+series:x.series,
+
+play:x.play,
+
+type:x.type,
+
+attempts:0,
+
+yards:0
+
+};
+
+}
+
+groups[key].attempts++;
+
+groups[key].yards+=Number(x.yards);
+
+});
+
+const performance=
+
+Object.values(groups)
+
+.sort(
+
+(a,b)=>
+
+(b.yards/b.attempts)-
+
+(a.yards/a.attempts)
+
+);
+
+$("playStats").innerHTML=
+
+performance.map(x=>{
+
+const avg=
+
+(
+
+x.yards/
+
+x.attempts
+
+).toFixed(2);
+
+return `
+
+<tr>
+
+<td>${esc(x.formation)}</td>
+
+<td>${esc(x.series)}</td>
+
+<td>${esc(x.play)}</td>
+
+<td>
+
+<span class="${
+
+x.type==="RUN"
+
+?
+
+"performance-run"
+
+:
+
+"performance-pass"
+
+}">
+
+${x.type}
+
+</span>
+
+</td>
+
+<td>${x.attempts}</td>
+
+<td>${x.yards}</td>
+
+<td><strong>${avg}</strong></td>
+
+</tr>
+
+`;
+
+}).join("");
+
+$("playStatsEmpty").style.display=
+
+performance.length
+
+?
+
+"none"
+
+:
+
+"block";
+
 }
 
 /* =========================================================
 
-PLAYBOOK DISPLAY
+PLAYBOOK
 
 ========================================================= */
 
@@ -1836,6 +2322,376 @@ ${i+1}.) ${esc(p[0])}
 
 /* =========================================================
 
+VOICE ENTRY
+
+========================================================= */
+
+const voiceButton=
+
+$("voiceButton");
+
+const voiceStatus=
+
+$("voiceStatus");
+
+let recognition=null;
+
+/*
+
+Check whether the iPhone/browser supports
+
+the Web Speech API.
+
+*/
+
+const SpeechRecognition=
+
+window.SpeechRecognition ||
+
+window.webkitSpeechRecognition;
+
+if(SpeechRecognition){
+
+recognition=
+
+new SpeechRecognition();
+
+recognition.lang="en-US";
+
+recognition.continuous=false;
+
+recognition.interimResults=false;
+
+recognition.maxAlternatives=3;
+
+recognition.onstart=()=>{
+
+voiceButton.classList.add("listening");
+
+voiceButton.textContent=
+
+"🔴 LISTENING...";
+
+voiceStatus.textContent=
+
+'Say something like "add 6 yards"';
+
+};
+
+recognition.onend=()=>{
+
+voiceButton.classList.remove(
+
+"listening"
+
+);
+
+voiceButton.textContent=
+
+"🎤 VOICE ENTRY";
+
+};
+
+recognition.onerror=(event)=>{
+
+voiceButton.classList.remove(
+
+"listening"
+
+);
+
+voiceButton.textContent=
+
+"🎤 VOICE ENTRY";
+
+voiceStatus.textContent=
+
+"Voice error. You can still use the yards dropdown.";
+
+};
+
+recognition.onresult=(event)=>{
+
+const text=
+
+event.results[0][0].transcript
+
+.toLowerCase()
+
+.trim();
+
+voiceStatus.textContent=
+
+'Heard: "'+
+
+text+
+
+'"';
+
+const number=
+
+parseSpokenYards(text);
+
+if(number===null){
+
+voiceStatus.textContent=
+
+'Could not find yards in "'+
+
+text+
+
+'". Try saying "add 7 yards".';
+
+return;
+
+}
+
+if(
+
+!player.value ||
+
+!formation.value ||
+
+!series.value ||
+
+play.value===""
+
+){
+
+alert(
+
+"Select Player, Formation, Series and Play first."
+
+);
+
+return;
+
+}
+
+/*
+
+Put recognized yards into dropdown.
+
+*/
+
+yards.value=
+
+String(number);
+
+/*
+
+Add the play.
+
+*/
+
+if(addPlay()){
+
+yards.value="";
+
+setType("");
+
+voiceStatus.textContent=
+
+"Added "+number+" yards.";
+
+}
+
+};
+
+}else{
+
+voiceButton.disabled=true;
+
+voiceButton.textContent=
+
+"🎤 VOICE NOT AVAILABLE";
+
+voiceStatus.textContent=
+
+"Your browser does not support voice entry. The normal dropdown still works.";
+
+}
+
+/* =========================================================
+
+CONVERT SPOKEN NUMBER TO YARDS
+
+========================================================= */
+
+function parseSpokenYards(text){
+
+/*
+
+Direct numeric examples:
+
+"6"
+
+"minus 3"
+
+"-3"
+
+"12 yards"
+
+*/
+
+let match=
+
+text.match(
+
+/(-?\d+(?:\.\d+)?)\s*(?:yards?|yds?)?/
+
+);
+
+if(match){
+
+let n=
+
+Number(match[1]);
+
+if(
+
+Number.isFinite(n) &&
+
+n>=-30 &&
+
+n<=110
+
+){
+
+return Math.round(n);
+
+}
+
+}
+
+/*
+
+Common spoken numbers.
+
+*/
+
+const nums={
+
+"zero":0,
+
+"one":1,
+
+"two":2,
+
+"three":3,
+
+"four":4,
+
+"five":5,
+
+"six":6,
+
+"seven":7,
+
+"eight":8,
+
+"nine":9,
+
+"ten":10,
+
+"eleven":11,
+
+"twelve":12,
+
+"thirteen":13,
+
+"fourteen":14,
+
+"fifteen":15,
+
+"sixteen":16,
+
+"seventeen":17,
+
+"eighteen":18,
+
+"nineteen":19,
+
+"twenty":20,
+
+"twenty one":21,
+
+"twenty-two":22,
+
+"twenty two":22,
+
+"twenty-three":23,
+
+"twenty three":23,
+
+"twenty-four":24,
+
+"twenty four":24,
+
+"twenty-five":25,
+
+"twenty five":25,
+
+"twenty-six":26,
+
+"twenty six":26,
+
+"twenty-seven":27,
+
+"twenty seven":27,
+
+"twenty-eight":28,
+
+"twenty eight":28,
+
+"twenty-nine":29,
+
+"twenty nine":29,
+
+"thirty":30
+
+};
+
+let negative=
+
+text.includes("minus") ||
+
+text.includes("negative");
+
+for(
+
+const word in nums
+
+){
+
+if(
+
+text.includes(word)
+
+){
+
+let n=
+
+nums[word];
+
+if(negative){
+
+n=-n;
+
+}
+
+return n;
+
+}
+
+}
+
+return null;
+
+}
+
+/* =========================================================
+
 TABS
 
 ========================================================= */
@@ -1858,7 +2714,11 @@ document
 
 x=>
 
-x.classList.remove("active")
+x.classList.remove(
+
+"active"
+
+)
 
 );
 
@@ -1870,11 +2730,19 @@ document
 
 x=>
 
-x.classList.remove("active")
+x.classList.remove(
+
+"active"
+
+)
 
 );
 
-button.classList.add("active");
+button.classList.add(
+
+"active"
+
+);
 
 $(
 
@@ -1882,7 +2750,11 @@ button.dataset.page
 
 )
 
-.classList.add("active");
+.classList.add(
+
+"active"
+
+);
 
 if(
 
