@@ -410,21 +410,13 @@ th {
 
 </div>
 
-<!-- ================= TRACKER ================= -->
+<!-- TRACKER -->
 
 <div id="tracker" class="tabpage active">
 
 <div class="card">
 
 <div class="grid">
-
-<div style="grid-column:1/-1">
-
-<label>Player</label>
-
-<select id="player"></select>
-
-</div>
 
 <div>
 
@@ -447,6 +439,14 @@ th {
 <label>Play Selection</label>
 
 <select id="play"></select>
+
+</div>
+
+<div style="grid-column:1/-1">
+
+<label>Player</label>
+
+<select id="player"></select>
 
 </div>
 
@@ -566,7 +566,7 @@ No plays recorded yet.
 
 </div>
 
-<!-- ================= STATS ================= -->
+<!-- STATS -->
 
 <div id="stats" class="tabpage">
 
@@ -660,7 +660,7 @@ Total: <span id="sPassYards">0</span>
 
 </div>
 
-<!-- ================= PLAYBOOK ================= -->
+<!-- PLAYBOOK -->
 
 <div id="playbook" class="tabpage">
 
@@ -958,569 +958,887 @@ const DATA = {
 
 };
 
-const player = document.getElementById("player");
+const player =
 
-const formation = document.getElementById("formation");
+document.getElementById("player");
 
-const series = document.getElementById("series");
+const formation =
 
-const play = document.getElementById("play");
+document.getElementById("formation");
 
-const typeBox = document.getElementById("type");
+const series =
 
-const yards = document.getElementById("yards");
+document.getElementById("series");
 
-const log = document.getElementById("log");
+const play =
 
-const empty = document.getElementById("empty");
+document.getElementById("play");
+
+const typeBox =
+
+document.getElementById("type");
+
+const yards =
+
+document.getElementById("yards");
+
+const log =
+
+document.getElementById("log");
+
+const empty =
+
+document.getElementById("empty");
+
+/* PLAYER DROPDOWN */
+
+player.add(
+
+new Option("Add Player","")
+
+);
 
 PLAYERS.forEach(p =>
 
-  player.add(new Option(p,p))
+player.add(new Option(p,p))
+
+);
+
+/* FORMATION DROPDOWN */
+
+formation.add(
+
+new Option("Add Formation","")
 
 );
 
 for (const f of Object.keys(DATA))
 
-  formation.add(new Option(f,f));
+formation.add(new Option(f,f));
+
+/* YARDS DROPDOWN */
+
+yards.add(
+
+new Option("Add Yards","")
+
+);
 
 for (let y=-30; y<=110; y++)
 
-  yards.add(new Option(y,y));
+yards.add(new Option(y,y));
 
-formation.addEventListener("change",loadSeries);
+formation.addEventListener(
 
-series.addEventListener("change",loadPlays);
+"change",
 
-play.addEventListener("change",updateType);
+loadSeries
+
+);
+
+series.addEventListener(
+
+"change",
+
+loadPlays
+
+);
+
+play.addEventListener(
+
+"change",
+
+updateType
+
+);
+
+/* SERIES */
 
 function loadSeries() {
 
-  series.innerHTML="";
+series.innerHTML="";
 
-  Object.keys(DATA[formation.value]).forEach(s =>
+play.innerHTML="";
 
-    series.add(new Option(s,s))
+typeBox.textContent="—";
 
-  );
+typeBox.className="type";
 
-  loadPlays();
+if (!formation.value) {
+
+series.add(
+
+new Option("Add Series","")
+
+);
+
+return;
 
 }
+
+series.add(
+
+new Option("Add Series","")
+
+);
+
+Object.keys(
+
+DATA[formation.value]
+
+).forEach(s =>
+
+series.add(new Option(s,s))
+
+);
+
+loadPlays();
+
+}
+
+/* PLAY */
 
 function loadPlays() {
 
-  play.innerHTML="";
+play.innerHTML="";
 
-  const arr =
+play.add(
 
-    DATA[formation.value][series.value] || [];
+new Option("Add Play","")
 
-  arr.forEach((p,i) =>
+);
 
-    play.add(new Option(
+if (!formation.value ||
 
-      (i+1)+".) "+p[0],
+!series.value) {
 
-      i
+updateType();
 
-    ))
-
-  );
-
-  updateType();
+return;
 
 }
+
+const arr =
+
+DATA[formation.value]
+
+[series.value] || [];
+
+arr.forEach((p,i) =>
+
+play.add(
+
+new Option(
+
+(i+1)+".) "+p[0],
+
+i
+
+)
+
+)
+
+);
+
+updateType();
+
+}
+
+/* PLAY TYPE */
 
 function updateType() {
 
-  const arr =
+const arr =
 
-    DATA[formation.value][series.value] || [];
+DATA[formation.value]?.[series.value] || [];
 
-  const p =
+const p =
 
-    arr[Number(play.value)];
+arr[Number(play.value)];
 
-  const t =
+const t =
 
-    p ? p[1] : "";
+p ? p[1] : "";
 
-  typeBox.textContent =
+typeBox.textContent =
 
-    t || "—";
+t || "—";
 
-  typeBox.className =
+typeBox.className =
 
-    "type " +
+"type " +
 
-    (t==="RUN" ? "run" :
+(t==="RUN"
 
-     t==="PASS" ? "pass" : "");
+? "run"
+
+: t==="PASS"
+
+? "pass"
+
+: "");
 
 }
+
+/* SAVED PLAYS */
 
 let plays =
 
-  JSON.parse(
+JSON.parse(
 
-    localStorage.getItem("footballTrackerPlays") || "[]"
+localStorage.getItem(
 
-  );
+"footballTrackerPlays"
+
+) || "[]"
+
+);
+
+/* SAVE */
 
 function save() {
 
-  localStorage.setItem(
+localStorage.setItem(
 
-    "footballTrackerPlays",
+"footballTrackerPlays",
 
-    JSON.stringify(plays)
+JSON.stringify(plays)
 
-  );
+);
 
-  render();
+render();
 
-  renderStats();
+renderStats();
 
 }
 
-document.getElementById("add").onclick = () => {
+/* ADD PLAY */
 
-  const arr =
+document.getElementById(
 
-    DATA[formation.value][series.value] || [];
+"add"
 
-  const p =
+).onclick = () => {
 
-    arr[Number(play.value)];
+const arr =
 
-  if (!p)
+DATA[formation.value]?.[series.value] || [];
 
-    return;
+const p =
 
-  plays.push({
+arr[Number(play.value)];
 
-    id:Date.now()+Math.random(),
+if (
 
-    player:player.value,
+!p ||
 
-    formation:formation.value,
+!player.value ||
 
-    series:series.value,
+!formation.value ||
 
-    play:p[0],
+!series.value ||
 
-    type:p[1],
+play.value === "" ||
 
-    yards:Number(yards.value)
+yards.value === ""
 
-  });
+) {
 
-  save();
+alert(
 
-};
+"Please select Player, Formation, Series, Play and Yards."
 
-document.getElementById("reset").onclick = () => {
+);
 
-  if (
-
-    plays.length &&
-
-    confirm("Clear every recorded play?")
-
-  ) {
-
-    plays=[];
-
-    save();
-
-  }
-
-};
-
-function render() {
-
-  const runs =
-
-    plays.filter(x=>x.type==="RUN");
-
-  const passes =
-
-    plays.filter(x=>x.type==="PASS");
-
-  const sum =
-
-    a=>a.reduce(
-
-      (n,x)=>n+x.yards,
-
-      0
-
-    );
-
-  const avg =
-
-    a=>a.length
-
-      ? (sum(a)/a.length).toFixed(2)
-
-      : "0.00";
-
-  document.getElementById("runCount")
-
-    .textContent=runs.length;
-
-  document.getElementById("runYards")
-
-    .textContent=sum(runs);
-
-  document.getElementById("runAvg")
-
-    .textContent=avg(runs);
-
-  document.getElementById("passCount")
-
-    .textContent=passes.length;
-
-  document.getElementById("passYards")
-
-    .textContent=sum(passes);
-
-  document.getElementById("passAvg")
-
-    .textContent=avg(passes);
-
-  log.innerHTML="";
-
-  empty.style.display =
-
-    plays.length ? "none" : "block";
-
-  plays.forEach((x,i)=>{
-
-    const tr =
-
-      document.createElement("tr");
-
-    tr.innerHTML =
-
-      `<td>${i+1}</td>
-
-       <td>${esc(x.player || "")}</td>
-
-       <td>${esc(x.formation)}</td>
-
-       <td>${esc(x.series)}</td>
-
-       <td>${esc(x.play)}</td>
-
-       <td>
-
-       <span class="badge ${
-
-         x.type==="RUN" ? "run" : "pass"
-
-       }">
-
-       ${x.type}
-
-       </span>
-
-       </td>
-
-       <td>${x.yards}</td>
-
-       <td>
-
-       <button
-
-       style="min-height:34px;width:auto;padding:5px 9px;background:#444;color:#fff"
-
-       onclick="removePlay(${x.id})">
-
-       Delete
-
-       </button>
-
-       </td>`;
-
-    log.appendChild(tr);
-
-  });
+return;
 
 }
 
-function removePlay(id) {
+plays.push({
 
-  plays =
+id:
 
-    plays.filter(
+Date.now()+Math.random(),
 
-      x=>x.id!==id
+player:
 
-    );
+player.value,
 
-  save();
+formation:
 
-}
+formation.value,
 
-function esc(s) {
+series:
 
-  return String(s).replace(
+series.value,
 
-    /[&<>"']/g,
+play:
 
-    c=>({
+p[0],
 
-      "&":"&amp;",
+type:
 
-      "<":"&lt;",
+p[1],
 
-      ">":"&gt;",
+yards:
 
-      '"':"&quot;",
-
-      "'":"&#39;"
-
-    }[c])
-
-  );
-
-}
-
-/* ================= TABS ================= */
-
-document.querySelectorAll(".tab")
-
-.forEach(btn=>{
-
-  btn.addEventListener("click",()=>{
-
-    document
-
-      .querySelectorAll(".tab")
-
-      .forEach(b=>
-
-        b.classList.remove("active")
-
-      );
-
-    document
-
-      .querySelectorAll(".tabpage")
-
-      .forEach(p=>
-
-        p.classList.remove("active")
-
-      );
-
-    btn.classList.add("active");
-
-    document
-
-      .getElementById(btn.dataset.tab)
-
-      .classList.add("active");
-
-    if(btn.dataset.tab==="stats")
-
-      renderStats();
-
-    if(btn.dataset.tab==="playbook")
-
-      renderPlaybook();
-
-  });
+Number(yards.value)
 
 });
 
-/* ================= STATS ================= */
+save();
+
+};
+
+/* CLEAR */
+
+document.getElementById(
+
+"reset"
+
+).onclick = () => {
+
+if (
+
+plays.length &&
+
+confirm(
+
+"Clear every recorded play?"
+
+)
+
+) {
+
+plays=[];
+
+save();
+
+}
+
+};
+
+/* TRACKER DISPLAY */
+
+function render() {
+
+const runs =
+
+plays.filter(
+
+x=>x.type==="RUN"
+
+);
+
+const passes =
+
+plays.filter(
+
+x=>x.type==="PASS"
+
+);
+
+const sum =
+
+a =>
+
+a.reduce(
+
+(n,x)=>n+x.yards,
+
+0
+
+);
+
+const avg =
+
+a =>
+
+a.length
+
+?
+
+(sum(a)/a.length).toFixed(2)
+
+:
+
+"0.00";
+
+document.getElementById(
+
+"runCount"
+
+).textContent =
+
+runs.length;
+
+document.getElementById(
+
+"runYards"
+
+).textContent =
+
+sum(runs);
+
+document.getElementById(
+
+"runAvg"
+
+).textContent =
+
+avg(runs);
+
+document.getElementById(
+
+"passCount"
+
+).textContent =
+
+passes.length;
+
+document.getElementById(
+
+"passYards"
+
+).textContent =
+
+sum(passes);
+
+document.getElementById(
+
+"passAvg"
+
+).textContent =
+
+avg(passes);
+
+log.innerHTML="";
+
+empty.style.display =
+
+plays.length
+
+? "none"
+
+: "block";
+
+plays.forEach((x,i)=>{
+
+const tr =
+
+document.createElement("tr");
+
+tr.innerHTML =
+
+`<td>${i+1}</td>
+
+<td>${esc(x.player || "")}</td>
+
+<td>${esc(x.formation)}</td>
+
+<td>${esc(x.series)}</td>
+
+<td>${esc(x.play)}</td>
+
+<td>
+
+<span class="badge ${
+
+x.type==="RUN"
+
+? "run"
+
+: "pass"
+
+}">
+
+${x.type}
+
+</span>
+
+</td>
+
+<td>${x.yards}</td>
+
+<td>
+
+<button
+
+style="
+
+min-height:34px;
+
+width:auto;
+
+padding:5px 9px;
+
+background:#444;
+
+color:#fff"
+
+onclick="removePlay(${x.id})">
+
+Delete
+
+</button>
+
+</td>`;
+
+log.appendChild(tr);
+
+});
+
+}
+
+/* DELETE */
+
+function removePlay(id) {
+
+plays =
+
+plays.filter(
+
+x=>x.id!==id
+
+);
+
+save();
+
+}
+
+/* ESCAPE */
+
+function esc(s) {
+
+return String(s).replace(
+
+/[&<>"']/g,
+
+c => ({
+
+"&":"&amp;",
+
+"<":"&lt;",
+
+">":"&gt;",
+
+'"':"&quot;",
+
+"'":"&#39;"
+
+}[c])
+
+);
+
+}
+
+/* TABS */
+
+document
+
+.querySelectorAll(".tab")
+
+.forEach(btn => {
+
+btn.addEventListener(
+
+"click",
+
+() => {
+
+document
+
+.querySelectorAll(".tab")
+
+.forEach(b =>
+
+b.classList.remove("active")
+
+);
+
+document
+
+.querySelectorAll(".tabpage")
+
+.forEach(p =>
+
+p.classList.remove("active")
+
+);
+
+btn.classList.add("active");
+
+document
+
+.getElementById(
+
+btn.dataset.tab
+
+)
+
+.classList.add("active");
+
+if (
+
+btn.dataset.tab === "stats"
+
+)
+
+renderStats();
+
+if (
+
+btn.dataset.tab === "playbook"
+
+)
+
+renderPlaybook();
+
+});
+
+});
+
+/* STATS */
 
 function renderStats() {
 
-  const runs =
+const runs =
 
-    plays.filter(x=>x.type==="RUN");
+plays.filter(
 
-  const passes =
+x=>x.type==="RUN"
 
-    plays.filter(x=>x.type==="PASS");
+);
 
-  const sum =
+const passes =
 
-    a=>a.reduce(
+plays.filter(
 
-      (n,x)=>n+x.yards,
+x=>x.type==="PASS"
 
-      0
+);
 
-    );
+const sum =
 
-  const avg =
+a =>
 
-    a=>a.length
+a.reduce(
 
-      ? (sum(a)/a.length).toFixed(2)
+(n,x)=>n+x.yards,
 
-      : "0.00";
+0
 
-  document.getElementById("sRunCount")
+);
 
-    .textContent=runs.length;
+const avg =
 
-  document.getElementById("sRunYards")
+a =>
 
-    .textContent=sum(runs);
+a.length
 
-  document.getElementById("sRunAvg")
+?
 
-    .textContent=avg(runs);
+(sum(a)/a.length).toFixed(2)
 
-  document.getElementById("sPassCount")
+:
 
-    .textContent=passes.length;
+"0.00";
 
-  document.getElementById("sPassYards")
+document.getElementById(
 
-    .textContent=sum(passes);
+"sRunCount"
 
-  document.getElementById("sPassAvg")
+).textContent =
 
-    .textContent=avg(passes);
+runs.length;
 
-  const tbody =
+document.getElementById(
 
-    document.getElementById("playerStats");
+"sRunYards"
 
-  tbody.innerHTML="";
+).textContent =
 
-  PLAYERS.forEach(p=>{
+sum(runs);
 
-    const rp =
+document.getElementById(
 
-      runs.filter(x=>x.player===p);
+"sRunAvg"
 
-    const pp =
+).textContent =
 
-      passes.filter(x=>x.player===p);
+avg(runs);
 
-    const tr =
+document.getElementById(
 
-      document.createElement("tr");
+"sPassCount"
 
-    tr.innerHTML =
+).textContent =
 
-      `<td>${esc(p)}</td>
+passes.length;
 
-       <td>${rp.length}</td>
+document.getElementById(
 
-       <td>${sum(rp)}</td>
+"sPassYards"
 
-       <td>${avg(rp)}</td>
+).textContent =
 
-       <td>${pp.length}</td>
+sum(passes);
 
-       <td>${sum(pp)}</td>
+document.getElementById(
 
-       <td>${avg(pp)}</td>
+"sPassAvg"
 
-       <td>${rp.length+pp.length}</td>
+).textContent =
 
-       <td>${sum(rp)+sum(pp)}</td>`;
+avg(passes);
 
-    tbody.appendChild(tr);
+const tbody =
 
-  });
+document.getElementById(
+
+"playerStats"
+
+);
+
+tbody.innerHTML="";
+
+PLAYERS.forEach(p => {
+
+const rp =
+
+runs.filter(
+
+x=>x.player===p
+
+);
+
+const pp =
+
+passes.filter(
+
+x=>x.player===p
+
+);
+
+const tr =
+
+document.createElement("tr");
+
+tr.innerHTML =
+
+`<td>${esc(p)}</td>
+
+<td>${rp.length}</td>
+
+<td>${sum(rp)}</td>
+
+<td>${avg(rp)}</td>
+
+<td>${pp.length}</td>
+
+<td>${sum(pp)}</td>
+
+<td>${avg(pp)}</td>
+
+<td>${rp.length+pp.length}</td>
+
+<td>${sum(rp)+sum(pp)}</td>`;
+
+tbody.appendChild(tr);
+
+});
 
 }
 
-/* ================= PLAYBOOK ================= */
+/* PLAYBOOK */
 
 function renderPlaybook() {
 
-  const box =
+const box =
 
-    document.getElementById("playbookContent");
+document.getElementById(
 
-  box.innerHTML="";
+"playbookContent"
 
-  Object.entries(DATA)
+);
 
-  .forEach(([f,seriesObj])=>{
+box.innerHTML="";
 
-    const card =
+Object.entries(DATA)
 
-      document.createElement("div");
+.forEach(([f,seriesObj]) => {
 
-    card.className="card";
+const card =
 
-    let out =
+document.createElement("div");
 
-      `<h3 style="margin-top:0">
+card.className="card";
 
-      ${esc(f)}
+let out =
 
-      </h3>`;
+`<h3 style="margin-top:0">
 
-    Object.entries(seriesObj)
+${esc(f)}
 
-    .forEach(([s,arr])=>{
+</h3>`;
 
-      out +=
+Object.entries(seriesObj)
 
-        `<div style="
+.forEach(([s,arr]) => {
 
-        font-weight:900;
+out +=
 
-        margin:10px 0 5px">
+`<div style="
 
-        ${esc(s)}
+font-weight:900;
 
-        </div>`;
+margin:10px 0 5px">
 
-      arr.forEach((p,i)=>{
+${esc(s)}
 
-        out +=
+</div>`;
 
-          `<div style="
+arr.forEach((p,i) => {
 
-          padding:7px 9px;
+out +=
 
-          margin:3px 0;
+`<div style="
 
-          border-radius:7px;
+padding:7px 9px;
 
-          color:#111;
+margin:3px 0;
 
-          background:${
+border-radius:7px;
 
-            p[1]==="RUN"
+color:#111;
 
-              ? "#00b84f"
+background:${
 
-              : "#fff000"
+p[1]==="RUN"
 
-          }">
+? "#00b84f"
 
-          ${i+1}.) ${esc(p[0])}
+: "#fff000"
 
-          </div>`;
+}">
 
-      });
+${i+1}.) ${esc(p[0])}
 
-    });
+</div>`;
 
-    card.innerHTML=out;
+});
 
-    box.appendChild(card);
+});
 
-  });
+card.innerHTML=out;
+
+box.appendChild(card);
+
+});
 
 }
 
-/* ================= START ================= */
+/* START */
 
 loadSeries();
 
