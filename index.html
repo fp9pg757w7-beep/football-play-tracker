@@ -6,7 +6,9 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport"
+
+content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -82,7 +84,7 @@ background:#2b2b2e;
 
 color:#fff;
 
-font-size:16px;
+font-size:15px;
 
 font-weight:900
 
@@ -146,7 +148,9 @@ color:#ddd
 
 }
 
-input,select{
+input,
+
+select{
 
 width:100%;
 
@@ -272,24 +276,6 @@ background:#3b3b3d
 
 }
 
-button.smallBtn{
-
-height:42px;
-
-padding:0 12px;
-
-border:0;
-
-border-radius:10px;
-
-font-weight:800;
-
-background:#444;
-
-color:#fff
-
-}
-
 button.deleteBtn{
 
 background:#b71920;
@@ -386,7 +372,9 @@ min-width:850px
 
 }
 
-th,td{
+th,
+
+td{
 
 padding:9px;
 
@@ -441,30 +429,6 @@ margin-bottom:5px
 color:#aaa;
 
 font-size:14px
-
-}
-
-.sectionTitle{
-
-font-size:18px;
-
-font-weight:900;
-
-margin:5px 0 12px
-
-}
-
-.rank{
-
-font-size:19px;
-
-font-weight:900
-
-}
-
-.successGood{
-
-font-weight:900
 
 }
 
@@ -548,6 +512,14 @@ border-radius:6px
 
 }
 
+.rank{
+
+font-size:18px;
+
+font-weight:900
+
+}
+
 @media(max-width:650px){
 
 .wrap{
@@ -566,9 +538,9 @@ gap:5px
 
 height:54px;
 
-font-size:13px;
+font-size:12px;
 
-padding:0 3px
+padding:0 2px
 
 }
 
@@ -584,7 +556,9 @@ padding:13px
 
 }
 
-input,select{
+input,
+
+select{
 
 font-size:16px
 
@@ -634,7 +608,11 @@ GAME SELECTOR
 
 <label>Current Game / Opponent</label>
 
-<select id="gameSelect"></select>
+<select id="gameSelect">
+
+<option value="">No games yet</option>
+
+</select>
 
 </div>
 
@@ -650,7 +628,7 @@ list="opponentList"
 
 placeholder="Enter opponent"
 
-/>
+>
 
 <datalist id="opponentList"></datalist>
 
@@ -666,27 +644,39 @@ id="dateInput"
 
 type="date"
 
-/>
+>
 
 </div>
 
 </div>
 
-<button class="action" id="newGame">
+<button
+
+class="action"
+
+id="newGame">
 
 ➕ START NEW GAME
 
 </button>
 
-<div class="gameTitle" id="currentGameTitle">
+<div
+
+class="gameTitle"
+
+id="currentGameTitle">
 
 No game selected
 
 </div>
 
-<div class="gameSub" id="currentGameSub">
+<div
 
-Start a new game above.
+class="gameSub"
+
+id="currentGameSub">
+
+Enter an opponent to start a game.
 
 </div>
 
@@ -700,25 +690,41 @@ TABS
 
 <div class="tabs">
 
-<button class="tab active" data-page="tracker">
+<button
+
+class="tab active"
+
+data-page="tracker">
 
 TRACKER
 
 </button>
 
-<button class="tab" data-page="tracking">
+<button
+
+class="tab"
+
+data-page="tracking">
 
 PLAY TRACKING
 
 </button>
 
-<button class="tab" data-page="stats">
+<button
+
+class="tab"
+
+data-page="stats">
 
 STATS
 
 </button>
 
-<button class="tab" data-page="playbook">
+<button
+
+class="tab"
+
+data-page="playbook">
 
 PLAYBOOK
 
@@ -732,7 +738,11 @@ TRACKER
 
 ===================================================== -->
 
-<section id="tracker" class="page active">
+<section
+
+id="tracker"
+
+class="page active">
 
 <div class="card">
 
@@ -744,7 +754,11 @@ TRACKER
 
 <select id="formation">
 
-<option value="">Add Formation</option>
+<option value="">
+
+Add Formation
+
+</option>
 
 </select>
 
@@ -756,7 +770,11 @@ TRACKER
 
 <select id="series">
 
-<option value="">Add Series</option>
+<option value="">
+
+Add Series
+
+</option>
 
 </select>
 
@@ -768,7 +786,11 @@ TRACKER
 
 <select id="play">
 
-<option value="">Add Play</option>
+<option value="">
+
+Add Play
+
+</option>
 
 </select>
 
@@ -780,7 +802,11 @@ TRACKER
 
 <select id="player">
 
-<option value="">Add Player</option>
+<option value="">
+
+Add Player
+
+</option>
 
 <option>#36 Althouse, Frank</option>
 
@@ -818,7 +844,15 @@ TRACKER
 
 <label>Play Type</label>
 
-<div id="type" class="type">—</div>
+<div
+
+id="type"
+
+class="type">
+
+—
+
+</div>
 
 </div>
 
@@ -828,7 +862,11 @@ TRACKER
 
 <select id="yards">
 
-<option value="">Add Yards</option>
+<option value="">
+
+Add Yards
+
+</option>
 
 </select>
 
@@ -836,25 +874,41 @@ TRACKER
 
 </div>
 
-<button class="action" id="add">
+<button
+
+class="action"
+
+id="add">
 
 ADD PLAY
 
 </button>
 
-<button class="voice" id="voiceButton">
+<button
+
+class="voice"
+
+id="voiceButton">
 
 🎤 VOICE ENTRY
 
 </button>
 
-<div class="voice-status" id="voiceStatus">
+<div
+
+class="voice-status"
+
+id="voiceStatus">
 
 Select Player, Formation, Series and Play first.
 
 </div>
 
-<button class="action clear" id="clear">
+<button
+
+class="action clear"
+
+id="clear">
 
 CLEAR CURRENT GAME
 
@@ -862,9 +916,15 @@ CLEAR CURRENT GAME
 
 </div>
 
+<!-- CURRENT GAME SUMMARY -->
+
 <div class="card">
 
-<div class="gameTitle" id="trackerGameTitle">
+<div
+
+class="gameTitle"
+
+id="trackerGameTitle">
 
 Current Game
 
@@ -874,17 +934,33 @@ Current Game
 
 <div class="stat">
 
-<div class="small">RUNNING PLAYS</div>
+<div class="small">
 
-<div class="big" id="runCount">0</div>
+RUNNING PLAYS
+
+</div>
+
+<div
+
+class="big"
+
+id="runCount">
+
+0
+
+</div>
 
 <div class="small">
 
-Avg: <span id="runAvg">0.00</span>
+Avg:
+
+<span id="runAvg">0.00</span>
 
 |
 
-Total: <span id="runTotal">0</span>
+Total:
+
+<span id="runTotal">0</span>
 
 </div>
 
@@ -892,17 +968,33 @@ Total: <span id="runTotal">0</span>
 
 <div class="stat">
 
-<div class="small">PASSING PLAYS</div>
+<div class="small">
 
-<div class="big" id="passCount">0</div>
+PASSING PLAYS
+
+</div>
+
+<div
+
+class="big"
+
+id="passCount">
+
+0
+
+</div>
 
 <div class="small">
 
-Avg: <span id="passAvg">0.00</span>
+Avg:
+
+<span id="passAvg">0.00</span>
 
 |
 
-Total: <span id="passTotal">0</span>
+Total:
+
+<span id="passTotal">0</span>
 
 </div>
 
@@ -911,10 +1003,12 @@ Total: <span id="passTotal">0</span>
 </div>
 
 </div>
+
+<!-- CURRENT GAME LOG -->
 
 <div class="card">
 
-<h2>Current Game Play Log</h2>
+<h2>Play Log</h2>
 
 <div class="table">
 
@@ -950,7 +1044,11 @@ Total: <span id="passTotal">0</span>
 
 </div>
 
-<div id="empty" class="empty">
+<div
+
+id="empty"
+
+class="empty">
 
 No plays recorded for this game.
 
@@ -966,13 +1064,21 @@ PLAY TRACKING
 
 ===================================================== -->
 
-<section id="tracking" class="page">
+<section
+
+id="tracking"
+
+class="page">
 
 <div class="card">
 
 <h2>📋 Play Tracking</h2>
 
-<div class="gameTitle" id="trackingGameTitle">
+<div
+
+class="gameTitle"
+
+id="trackingGameTitle">
 
 Current Game
 
@@ -980,7 +1086,7 @@ Current Game
 
 <p class="small">
 
-Every play called during the selected game is shown here in order.
+Every play called during the selected game.
 
 </p>
 
@@ -988,15 +1094,27 @@ Every play called during the selected game is shown here in order.
 
 <div>
 
-<label>Filter Type</label>
+<label>Play Type</label>
 
 <select id="trackingType">
 
-<option value="ALL">All Plays</option>
+<option value="ALL">
 
-<option value="RUN">Runs</option>
+All Plays
 
-<option value="PASS">Passes</option>
+</option>
+
+<option value="RUN">
+
+Runs
+
+</option>
+
+<option value="PASS">
+
+Passes
+
+</option>
 
 </select>
 
@@ -1004,11 +1122,15 @@ Every play called during the selected game is shown here in order.
 
 <div>
 
-<label>Filter Player</label>
+<label>Player</label>
 
 <select id="trackingPlayer">
 
-<option value="ALL">All Players</option>
+<option value="ALL">
+
+All Players
+
+</option>
 
 </select>
 
@@ -1052,9 +1174,13 @@ Every play called during the selected game is shown here in order.
 
 </div>
 
-<div id="trackingEmpty" class="empty">
+<div
 
-No plays recorded for this game.
+id="trackingEmpty"
+
+class="empty">
+
+No plays recorded.
 
 </div>
 
@@ -1068,13 +1194,21 @@ STATS
 
 ===================================================== -->
 
-<section id="stats" class="page">
+<section
+
+id="stats"
+
+class="page">
 
 <div class="card">
 
 <h2>🏈 Game Stats</h2>
 
-<div class="gameTitle" id="statsGameTitle">
+<div
+
+class="gameTitle"
+
+id="statsGameTitle">
 
 Current Game
 
@@ -1084,39 +1218,89 @@ Current Game
 
 <div class="stat">
 
-<div class="small">TOTAL PLAYS</div>
+<div class="small">
 
-<div class="big" id="gameTotalPlays">0</div>
+TOTAL PLAYS
+
+</div>
+
+<div
+
+class="big"
+
+id="gameTotalPlays">
+
+0
+
+</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">TOTAL YARDS</div>
+<div class="small">
 
-<div class="big" id="gameTotalYards">0</div>
+TOTAL YARDS
+
+</div>
+
+<div
+
+class="big"
+
+id="gameTotalYards">
+
+0
+
+</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">RUN AVG</div>
+<div class="small">
 
-<div class="big" id="gameRunAvg">0.00</div>
+RUN AVG
+
+</div>
+
+<div
+
+class="big"
+
+id="gameRunAvg">
+
+0.00
+
+</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">PASS AVG</div>
+<div class="small">
 
-<div class="big" id="gamePassAvg">0.00</div>
+PASS AVG
+
+</div>
+
+<div
+
+class="big"
+
+id="gamePassAvg">
+
+0.00
 
 </div>
 
 </div>
 
 </div>
+
+</div>
+
+<!-- SEASON -->
 
 <div class="card">
 
@@ -1126,39 +1310,89 @@ Current Game
 
 <div class="stat">
 
-<div class="small">GAMES</div>
+<div class="small">
 
-<div class="big" id="seasonGames">0</div>
+GAMES
+
+</div>
+
+<div
+
+class="big"
+
+id="seasonGames">
+
+0
+
+</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">TOTAL PLAYS</div>
+<div class="small">
 
-<div class="big" id="seasonPlays">0</div>
+TOTAL PLAYS
+
+</div>
+
+<div
+
+class="big"
+
+id="seasonPlays">
+
+0
+
+</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">TOTAL YARDS</div>
+<div class="small">
 
-<div class="big" id="seasonYards">0</div>
+TOTAL YARDS
+
+</div>
+
+<div
+
+class="big"
+
+id="seasonYards">
+
+0
+
+</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">AVG / PLAY</div>
+<div class="small">
 
-<div class="big" id="seasonAvg">0.00</div>
+AVG / PLAY
+
+</div>
+
+<div
+
+class="big"
+
+id="seasonAvg">
+
+0.00
 
 </div>
 
 </div>
 
 </div>
+
+</div>
+
+<!-- GAME BY GAME -->
 
 <div class="card">
 
@@ -1172,7 +1406,7 @@ Current Game
 
 <tr>
 
-<th>Game</th>
+<th>Opponent</th>
 
 <th>Date</th>
 
@@ -1197,6 +1431,8 @@ Current Game
 </div>
 
 </div>
+
+<!-- PLAYER STATS -->
 
 <div class="card">
 
@@ -1240,13 +1476,15 @@ Current Game
 
 </div>
 
+<!-- PLAY SUCCESS -->
+
 <div class="card">
 
 <h2>⭐ Season Play Performance</h2>
 
 <p class="small">
 
-This combines every game. Plays are ranked by average yards gained.
+All games combined. Plays are ranked by average yards gained.
 
 </p>
 
@@ -1284,9 +1522,13 @@ This combines every game. Plays are ranked by average yards gained.
 
 </div>
 
-<div id="playStatsEmpty" class="empty">
+<div
 
-No season play data yet.
+id="playStatsEmpty"
+
+class="empty">
+
+No play performance data yet.
 
 </div>
 
@@ -1300,7 +1542,11 @@ PLAYBOOK
 
 ===================================================== -->
 
-<section id="playbook" class="page">
+<section
+
+id="playbook"
+
+class="page">
 
 <div class="card">
 
@@ -1318,7 +1564,9 @@ PLAYBOOK
 
 /* =====================================================
 
-PLAYBOOK
+PLAYBOOK DATA
+
+EXACT ORIGINAL ORDER
 
 ===================================================== */
 
@@ -1606,71 +1854,243 @@ YARDS
 
 for(let y=-30;y<=110;y++){
 
-yards.add(new Option(String(y),String(y)));
+yards.add(
+
+new Option(
+
+String(y),
+
+String(y)
+
+)
+
+);
 
 }
 
 /* =====================================================
 
-FORMATIONS
+EXACT FORMATION ORDER
 
 ===================================================== */
 
-Object.keys(DATA).forEach(f=>{
+const FORMATION_ORDER=[
 
-formation.add(new Option(f,f));
+"DOUBLES HEAVY (A)",
+
+"TRIO (D)",
+
+"DEUCE (B)",
+
+"DOUBLES (C)",
+
+"TRIPS (D)",
+
+"BASE RUN",
+
+"SPECIAL RUN AND PASS PLAYS"
+
+];
+
+function loadFormations(){
+
+formation.innerHTML="";
+
+formation.add(
+
+new Option(
+
+"Add Formation",
+
+""
+
+)
+
+);
+
+FORMATION_ORDER.forEach(f=>{
+
+if(DATA[f]){
+
+formation.add(
+
+new Option(f,f)
+
+);
+
+}
 
 });
 
+}
+
 /* =====================================================
 
-HELPERS
+RESET SELECT
 
 ===================================================== */
-
-function esc(s){
-
-return String(s).replace(/[&<>"']/g,c=>({
-
-"&":"&amp;",
-
-"<":"&lt;",
-
-">":"&gt;",
-
-'"':"&quot;",
-
-"'":"&#39;"
-
-}[c]));
-
-}
-
-function total(arr){
-
-return arr.reduce((sum,x)=>sum+Number(x.yards),0);
-
-}
-
-function average(arr){
-
-return arr.length?(total(arr)/arr.length).toFixed(2):"0.00";
-
-}
 
 function resetSelect(select,text){
 
 select.innerHTML="";
 
-select.add(new Option(text,""));
+select.add(
+
+new Option(text,"")
+
+);
 
 }
 
+/* =====================================================
+
+LOAD SERIES
+
+EXACT ORDER
+
+===================================================== */
+
+function loadSeries(){
+
+resetSelect(
+
+series,
+
+"Add Series"
+
+);
+
+resetSelect(
+
+play,
+
+"Add Play"
+
+);
+
+setType("");
+
+if(!formation.value){
+
+return;
+
+}
+
+Object.entries(
+
+DATA[formation.value]
+
+).forEach(
+
+([seriesName])=>{
+
+series.add(
+
+new Option(
+
+seriesName,
+
+seriesName
+
+)
+
+);
+
+});
+
+}
+
+/* =====================================================
+
+LOAD PLAYS
+
+EXACT ORDER
+
+===================================================== */
+
+function loadPlays(){
+
+resetSelect(
+
+play,
+
+"Add Play"
+
+);
+
+setType("");
+
+if(
+
+!formation.value||
+
+!series.value
+
+){
+
+return;
+
+}
+
+const arr=
+
+DATA[
+
+formation.value
+
+][
+
+series.value
+
+];
+
+/*
+
+IMPORTANT:
+
+No sorting here.
+
+The order stays exactly
+
+as written in DATA.
+
+*/
+
+arr.forEach(
+
+(p,index)=>{
+
+play.add(
+
+new Option(
+
+(index+1)+".) "+p[0],
+
+String(index)
+
+)
+
+);
+
+});
+
+}
+
+/* =====================================================
+
+TYPE
+
+===================================================== */
+
 function setType(t){
 
-type.textContent=t||"—";
+type.textContent=
 
-type.className="type"+
+t||"—";
+
+type.className=
+
+"type"+
 
 (
 
@@ -1678,15 +2098,103 @@ t==="RUN"
 
 ?" run"
 
-:t==="PASS"
+:
+
+t==="PASS"
 
 ?" pass"
 
-:""
+:
+
+""
 
 );
 
 }
+
+/* =====================================================
+
+FORMATION CHANGE
+
+===================================================== */
+
+formation.addEventListener(
+
+"change",
+
+loadSeries
+
+);
+
+/* =====================================================
+
+SERIES CHANGE
+
+===================================================== */
+
+series.addEventListener(
+
+"change",
+
+loadPlays
+
+);
+
+/* =====================================================
+
+PLAY CHANGE
+
+===================================================== */
+
+play.addEventListener(
+
+"change",
+
+()=>{
+
+if(
+
+!formation.value||
+
+!series.value||
+
+play.value===""
+
+){
+
+setType("");
+
+return;
+
+}
+
+const arr=
+
+DATA[
+
+formation.value
+
+][
+
+series.value
+
+];
+
+const selected=
+
+arr[
+
+Number(play.value)
+
+];
+
+setType(
+
+selected?.[1]||""
+
+);
+
+});
 
 /* =====================================================
 
@@ -1698,13 +2206,17 @@ let games=
 
 JSON.parse(
 
-localStorage.getItem("footballTrackerGames")||"null"
+localStorage.getItem(
+
+"footballTrackerGames"
+
+)||"null"
 
 );
 
 /*
 
-Migrate your old version's plays automatically.
+Migrate old app data.
 
 */
 
@@ -1714,7 +2226,11 @@ const oldPlays=
 
 JSON.parse(
 
-localStorage.getItem("footballTrackerPlays")||"[]"
+localStorage.getItem(
+
+"footballTrackerPlays"
+
+)||"[]"
 
 );
 
@@ -1738,17 +2254,27 @@ games=[];
 
 }
 
-saveGames();
+localStorage.setItem(
+
+"footballTrackerGames",
+
+JSON.stringify(games)
+
+);
 
 }
 
 let currentGameId=
 
-localStorage.getItem("footballTrackerCurrentGame")||"";
+localStorage.getItem(
+
+"footballTrackerCurrentGame"
+
+)||"";
 
 /* =====================================================
 
-GAME FUNCTIONS
+SAVE GAMES
 
 ===================================================== */
 
@@ -1764,11 +2290,19 @@ JSON.stringify(games)
 
 }
 
+/* =====================================================
+
+CURRENT GAME
+
+===================================================== */
+
 function currentGame(){
 
 return games.find(
 
-g=>String(g.id)===String(currentGameId)
+g=>String(g.id)===
+
+String(currentGameId)
 
 );
 
@@ -1776,15 +2310,27 @@ g=>String(g.id)===String(currentGameId)
 
 function currentPlays(){
 
-const g=currentGame();
+const game=currentGame();
 
-return g?g.plays:[];
+return game
+
+?game.plays
+
+:[];
 
 }
 
+/* =====================================================
+
+SET CURRENT GAME
+
+===================================================== */
+
 function setCurrentGame(id){
 
-currentGameId=String(id);
+currentGameId=
+
+String(id);
 
 localStorage.setItem(
 
@@ -1798,9 +2344,17 @@ renderAll();
 
 }
 
+/* =====================================================
+
+GAME SELECTOR
+
+===================================================== */
+
 function renderGameSelector(){
 
-const select=$("gameSelect");
+const select=
+
+$("gameSelect");
 
 select.innerHTML="";
 
@@ -1808,7 +2362,13 @@ if(!games.length){
 
 select.add(
 
-new Option("No games yet","")
+new Option(
+
+"No games yet",
+
+""
+
+)
 
 );
 
@@ -1824,9 +2384,13 @@ return;
 
 }
 
-games.forEach(g=>{
+games.forEach(
 
-let label=g.opponent||"Unnamed Opponent";
+g=>{
+
+let label=
+
+g.opponent;
 
 if(g.date){
 
@@ -1836,7 +2400,13 @@ label+=" — "+g.date;
 
 select.add(
 
-new Option(label,String(g.id))
+new Option(
+
+label,
+
+String(g.id)
+
+)
 
 );
 
@@ -1844,13 +2414,19 @@ new Option(label,String(g.id))
 
 if(
 
-!currentGame() ||
+!currentGame()||
 
 !currentGameId
 
 ){
 
-currentGameId=String(games[games.length-1].id);
+currentGameId=
+
+String(
+
+games[games.length-1].id
+
+);
 
 localStorage.setItem(
 
@@ -1862,33 +2438,51 @@ currentGameId
 
 }
 
-select.value=currentGameId;
+select.value=
 
-const g=currentGame();
+currentGameId;
+
+const game=
+
+currentGame();
 
 $("currentGameTitle").textContent=
 
-"🏈 vs "+g.opponent;
+"🏈 vs "+game.opponent;
 
 $("currentGameSub").textContent=
 
-g.date
+game.date
 
-?"Game date: "+g.date+" • "+g.plays.length+" plays"
+?
 
-:g.plays.length+" plays recorded";
+"Game date: "+
+
+game.date+
+
+" • "+
+
+game.plays.length+
+
+" plays"
+
+:
+
+game.plays.length+
+
+" plays recorded";
 
 $("trackerGameTitle").textContent=
 
-"vs "+g.opponent;
+"vs "+game.opponent;
 
 $("trackingGameTitle").textContent=
 
-"vs "+g.opponent;
+"vs "+game.opponent;
 
 $("statsGameTitle").textContent=
 
-"vs "+g.opponent;
+"vs "+game.opponent;
 
 }
 
@@ -1900,11 +2494,15 @@ OPPONENT HISTORY
 
 function renderOpponentList(){
 
-const list=$("opponentList");
+const list=
+
+$("opponentList");
 
 const names=
 
-[...new Set(
+[
+
+...new Set(
 
 games
 
@@ -1912,13 +2510,21 @@ games
 
 .filter(Boolean)
 
-)];
+)
+
+];
 
 list.innerHTML=
 
 names
 
-.map(n=>`<option value="${esc(n)}"></option>`)
+.map(
+
+n=>
+
+`<option value="${esc(n)}"></option>`
+
+)
 
 .join("");
 
@@ -1926,15 +2532,23 @@ names
 
 /* =====================================================
 
-START NEW GAME
+NEW GAME
 
 ===================================================== */
 
-$("newGame").addEventListener("click",()=>{
+$("newGame").addEventListener(
+
+"click",
+
+()=>{
 
 const opponent=
 
-$("opponentInput").value.trim();
+$("opponentInput")
+
+.value
+
+.trim();
 
 const date=
 
@@ -1942,7 +2556,11 @@ $("dateInput").value;
 
 if(!opponent){
 
-alert("Enter the opponent first.");
+alert(
+
+"Enter the opponent first."
+
+);
 
 return;
 
@@ -1964,21 +2582,17 @@ games.push(game);
 
 saveGames();
 
-setCurrentGame(game.id);
+setCurrentGame(
+
+game.id
+
+);
 
 $("opponentInput").value="";
 
 $("dateInput").value="";
 
-alert("New game started vs "+opponent+"!");
-
 });
-
-/* =====================================================
-
-GAME SELECT
-
-===================================================== */
 
 $("gameSelect").addEventListener(
 
@@ -2038,103 +2652,73 @@ voiceStatus.textContent=
 
 /* =====================================================
 
-FORMATION
+MATH
 
 ===================================================== */
 
-formation.addEventListener("change",()=>{
+function total(arr){
 
-resetSelect(series,"Add Series");
+return arr.reduce(
 
-resetSelect(play,"Add Play");
+(sum,x)=>
 
-setType("");
+sum+Number(x.yards),
 
-if(!formation.value)return;
-
-Object.keys(
-
-DATA[formation.value]
-
-).forEach(s=>{
-
-series.add(new Option(s,s));
-
-});
-
-});
-
-/* =====================================================
-
-SERIES
-
-===================================================== */
-
-series.addEventListener("change",()=>{
-
-resetSelect(play,"Add Play");
-
-setType("");
-
-if(!formation.value||!series.value)return;
-
-DATA[
-
-formation.value
-
-][
-
-series.value
-
-].forEach((p,i)=>{
-
-play.add(
-
-new Option(
-
-(i+1)+".) "+p[0],
-
-String(i)
-
-)
+0
 
 );
 
-});
+}
 
-});
+function average(arr){
+
+return arr.length
+
+?
+
+(
+
+total(arr)/
+
+arr.length
+
+).toFixed(2)
+
+:
+
+"0.00";
+
+}
 
 /* =====================================================
 
-PLAY
+ESCAPE
 
 ===================================================== */
 
-play.addEventListener("change",()=>{
+function esc(s){
 
-const arr=
+return String(s).replace(
 
-DATA[
+/[&<>"']/g,
 
-formation.value
+c=>({
 
-]?.[
+"&":"&amp;",
 
-series.value
+"<":"&lt;",
 
-]||[];
+">":"&gt;",
 
-const selected=
+'"':"&quot;",
 
-arr[Number(play.value)];
+"'":"&#39;"
 
-setType(
-
-selected?.[1]||""
+}[c])
 
 );
 
-});
+}
 
 /* =====================================================
 
@@ -2144,13 +2728,15 @@ ADD PLAY
 
 function addPlay(){
 
-const game=currentGame();
+const game=
+
+currentGame();
 
 if(!game){
 
 alert(
 
-"Start a game and enter the opponent first."
+"Start a game first."
 
 );
 
@@ -2196,9 +2782,17 @@ series.value
 
 const selected=
 
-arr[Number(play.value)];
+arr[
 
-if(!selected)return false;
+Number(play.value)
+
+];
+
+if(!selected){
+
+return false;
+
+}
 
 game.plays.push({
 
@@ -2238,13 +2832,15 @@ addPlay
 
 /* =====================================================
 
-DELETE PLAY
+DELETE
 
 ===================================================== */
 
 function del(id){
 
-const game=currentGame();
+const game=
+
+currentGame();
 
 if(!game)return;
 
@@ -2252,7 +2848,11 @@ game.plays=
 
 game.plays.filter(
 
-x=>String(x.id)!==String(id)
+x=>
+
+String(x.id)!==
+
+String(id)
 
 );
 
@@ -2266,75 +2866,73 @@ window.del=del;
 
 /* =====================================================
 
-CLEAR CURRENT GAME
-
-===================================================== */
-
-$("clear").addEventListener("click",()=>{
-
-const game=currentGame();
-
-if(!game)return;
-
-if(
-
-confirm(
-
-"Clear all plays from vs "+game.opponent+"?"
-
-)
-
-){
-
-game.plays=[];
-
-saveGames();
-
-resetTracker();
-
-renderAll();
-
-}
-
-});
-
-/* =====================================================
-
-RENDER TRACKER
+TRACKER RENDER
 
 ===================================================== */
 
 function renderTracker(){
 
-const plays=currentPlays();
+const plays=
+
+currentPlays();
 
 const runs=
 
-plays.filter(x=>x.type==="RUN");
+plays.filter(
+
+x=>x.type==="RUN"
+
+);
 
 const passes=
 
-plays.filter(x=>x.type==="PASS");
+plays.filter(
 
-$("runCount").textContent=runs.length;
+x=>x.type==="PASS"
 
-$("runTotal").textContent=total(runs);
+);
 
-$("runAvg").textContent=average(runs);
+$("runCount").textContent=
 
-$("passCount").textContent=passes.length;
+runs.length;
 
-$("passTotal").textContent=total(passes);
+$("runTotal").textContent=
 
-$("passAvg").textContent=average(passes);
+total(runs);
+
+$("runAvg").textContent=
+
+average(runs);
+
+$("passCount").textContent=
+
+passes.length;
+
+$("passTotal").textContent=
+
+total(passes);
+
+$("passAvg").textContent=
+
+average(passes);
 
 $("empty").style.display=
 
-plays.length?"none":"block";
+plays.length
+
+?
+
+"none"
+
+:
+
+"block";
 
 $("log").innerHTML=
 
-plays.map((x,i)=>`
+plays.map(
+
+(x,i)=>`
 
 <tr>
 
@@ -2350,7 +2948,15 @@ plays.map((x,i)=>`
 
 <td>
 
-<span class="badge ${x.type==="RUN"?"run":"pass"}">
+<span class="badge ${
+
+x.type==="RUN"
+
+?"run"
+
+:"pass"
+
+}">
 
 ${x.type}
 
@@ -2376,7 +2982,9 @@ Delete
 
 </tr>
 
-`).join("");
+`
+
+).join("");
 
 }
 
@@ -2388,19 +2996,29 @@ PLAY TRACKING
 
 function renderTrackingFilters(){
 
-const plays=currentPlays();
+const plays=
+
+currentPlays();
 
 const names=
 
-[...new Set(
+[
+
+...new Set(
 
 plays.map(x=>x.player)
 
-)];
+)
 
-const select=$("trackingPlayer");
+];
 
-const old=select.value;
+const select=
+
+$("trackingPlayer");
+
+const old=
+
+select.value;
 
 select.innerHTML=
 
@@ -2428,33 +3046,37 @@ function renderTracking(){
 
 renderTrackingFilters();
 
-const plays=currentPlays();
+const plays=
 
-const selectedType=
+currentPlays();
+
+const typeFilter=
 
 $("trackingType").value;
 
-const selectedPlayer=
+const playerFilter=
 
 $("trackingPlayer").value;
 
 const filtered=
 
-plays.filter(x=>
+plays.filter(
+
+x=>
 
 (
 
-selectedType==="ALL"||
+typeFilter==="ALL"||
 
-x.type===selectedType
+x.type===typeFilter
 
 )&&
 
 (
 
-selectedPlayer==="ALL"||
+playerFilter==="ALL"||
 
-x.player===selectedPlayer
+x.player===playerFilter
 
 )
 
@@ -2462,11 +3084,21 @@ x.player===selectedPlayer
 
 $("trackingEmpty").style.display=
 
-filtered.length?"none":"block";
+filtered.length
+
+?
+
+"none"
+
+:
+
+"block";
 
 $("trackingLog").innerHTML=
 
-filtered.map(x=>{
+filtered.map(
+
+x=>{
 
 const number=
 
@@ -2488,7 +3120,15 @@ return `
 
 <td>
 
-<span class="badge ${x.type==="RUN"?"run":"pass"}">
+<span class="badge ${
+
+x.type==="RUN"
+
+?"run"
+
+:"pass"
+
+}">
 
 ${x.type}
 
@@ -2502,7 +3142,9 @@ ${x.type}
 
 `;
 
-}).join("");
+}
+
+).join("");
 
 }
 
@@ -2524,7 +3166,7 @@ renderTracking
 
 /* =====================================================
 
-STATS
+ALL SEASON PLAYS
 
 ===================================================== */
 
@@ -2532,7 +3174,9 @@ function allSeasonPlays(){
 
 return games.flatMap(
 
-g=>g.plays.map(
+g=>
+
+g.plays.map(
 
 p=>({
 
@@ -2552,17 +3196,33 @@ date:g.date
 
 }
 
+/* =====================================================
+
+STATS
+
+===================================================== */
+
 function renderStats(){
 
-const plays=currentPlays();
+const plays=
+
+currentPlays();
 
 const runs=
 
-plays.filter(x=>x.type==="RUN");
+plays.filter(
+
+x=>x.type==="RUN"
+
+);
 
 const passes=
 
-plays.filter(x=>x.type==="PASS");
+plays.filter(
+
+x=>x.type==="PASS"
+
+);
 
 $("gameTotalPlays").textContent=
 
@@ -2606,21 +3266,39 @@ average(season);
 
 $("gameStats").innerHTML=
 
-games.map(g=>{
+games.map(
+
+g=>{
 
 const r=
 
-g.plays.filter(x=>x.type==="RUN");
+g.plays.filter(
+
+x=>x.type==="RUN"
+
+);
 
 const p=
 
-g.plays.filter(x=>x.type==="PASS");
+g.plays.filter(
+
+x=>x.type==="PASS"
+
+);
 
 return `
 
 <tr>
 
-<td><strong>vs ${esc(g.opponent)}</strong></td>
+<td>
+
+<strong>
+
+vs ${esc(g.opponent)}
+
+</strong>
+
+</td>
 
 <td>${esc(g.date||"—")}</td>
 
@@ -2638,9 +3316,11 @@ return `
 
 `;
 
-}).join("");
+}
 
-/* PLAYER SEASON STATS */
+).join("");
+
+/* PLAYER STATS */
 
 const names=
 
@@ -2654,7 +3334,11 @@ const names=
 
 ]
 
-.map(o=>o.value)
+.map(
+
+o=>o.value
+
+)
 
 .filter(Boolean)
 
@@ -2664,13 +3348,19 @@ const names=
 
 $("playerStats").innerHTML=
 
-names.map(n=>{
+names.map(
+
+n=>{
 
 const rr=
 
 season.filter(
 
-x=>x.player===n&&x.type==="RUN"
+x=>
+
+x.player===n&&
+
+x.type==="RUN"
 
 );
 
@@ -2678,7 +3368,11 @@ const pp=
 
 season.filter(
 
-x=>x.player===n&&x.type==="PASS"
+x=>
+
+x.player===n&&
+
+x.type==="PASS"
 
 );
 
@@ -2708,13 +3402,17 @@ return `
 
 `;
 
-}).join("");
+}
 
-/* SEASON PLAY PERFORMANCE */
+).join("");
+
+/* PLAY PERFORMANCE */
 
 const groups={};
 
-season.forEach(x=>{
+season.forEach(
+
+x=>{
 
 const key=
 
@@ -2754,35 +3452,61 @@ yards:0
 
 groups[key].attempts++;
 
-groups[key].yards+=Number(x.yards);
+groups[key].yards+=
 
-});
+Number(x.yards);
+
+}
+
+);
 
 const performance=
 
 Object.values(groups)
 
-.sort((a,b)=>
+.sort(
 
-(b.yards/b.attempts)-
+(a,b)=>
 
-(a.yards/a.attempts)
+(
+
+b.yards/b.attempts
+
+)-
+
+(
+
+a.yards/a.attempts
+
+)
 
 );
 
 $("playStatsEmpty").style.display=
 
-performance.length?"none":"block";
+performance.length
+
+?
+
+"none"
+
+:
+
+"block";
 
 $("playStats").innerHTML=
 
-performance.map((x,i)=>{
+performance.map(
+
+(x,i)=>{
 
 const avg=
 
 (
 
-x.yards/x.attempts
+x.yards/
+
+x.attempts
 
 ).toFixed(2);
 
@@ -2790,7 +3514,11 @@ return `
 
 <tr>
 
-<td class="rank">#${i+1}</td>
+<td class="rank">
+
+#${i+1}
+
+</td>
 
 <td>${esc(x.formation)}</td>
 
@@ -2804,9 +3532,13 @@ return `
 
 x.type==="RUN"
 
-?"performance-run"
+?
 
-:"performance-pass"
+"performance-run"
+
+:
+
+"performance-pass"
 
 }">
 
@@ -2820,15 +3552,65 @@ ${x.type}
 
 <td>${x.yards}</td>
 
-<td class="rank">${avg}</td>
+<td class="rank">
+
+${avg}
+
+</td>
 
 </tr>
 
 `;
 
-}).join("");
+}
+
+).join("");
 
 }
+
+/* =====================================================
+
+CLEAR CURRENT GAME
+
+===================================================== */
+
+$("clear").addEventListener(
+
+"click",
+
+()=>{
+
+const game=
+
+currentGame();
+
+if(!game)return;
+
+if(
+
+confirm(
+
+"Clear all plays from vs "+
+
+game.opponent+
+
+"?"
+
+)
+
+){
+
+game.plays=[];
+
+saveGames();
+
+resetTracker();
+
+renderAll();
+
+}
+
+});
 
 /* =====================================================
 
@@ -2846,7 +3628,9 @@ function parseSpokenYards(text){
 
 text=
 
-text.toLowerCase()
+text
+
+.toLowerCase()
 
 .trim();
 
@@ -2860,7 +3644,13 @@ text.match(
 
 if(numeric){
 
-let n=Number(numeric[1]);
+let n=
+
+Number(
+
+numeric[1]
+
+);
 
 if(
 
@@ -2870,7 +3660,9 @@ text.includes("negative")
 
 ){
 
-n=-Math.abs(n);
+n=
+
+-Math.abs(n);
 
 }
 
@@ -2972,11 +3764,21 @@ const numberWords={
 
 };
 
-for(const word in numberWords){
+for(
 
-if(text.includes(word)){
+const word in numberWords
 
-let n=numberWords[word];
+){
+
+if(
+
+text.includes(word)
+
+){
+
+let n=
+
+numberWords[word];
 
 if(
 
@@ -3018,7 +3820,11 @@ recognition.maxAlternatives=5;
 
 recognition.onstart=()=>{
 
-voiceButton.classList.add("listening");
+voiceButton.classList.add(
+
+"listening"
+
+);
 
 voiceButton.textContent=
 
@@ -3032,7 +3838,11 @@ voiceStatus.textContent=
 
 recognition.onend=()=>{
 
-voiceButton.classList.remove("listening");
+voiceButton.classList.remove(
+
+"listening"
+
+);
 
 voiceButton.textContent=
 
@@ -3040,15 +3850,25 @@ voiceButton.textContent=
 
 };
 
-recognition.onerror=event=>{
+recognition.onerror=
 
-voiceButton.classList.remove("listening");
+event=>{
+
+voiceButton.classList.remove(
+
+"listening"
+
+);
 
 voiceButton.textContent=
 
 "🎤 VOICE ENTRY";
 
-if(event.error==="not-allowed"){
+if(
+
+event.error==="not-allowed"
+
+){
 
 voiceStatus.textContent=
 
@@ -3064,7 +3884,9 @@ voiceStatus.textContent=
 
 };
 
-recognition.onresult=event=>{
+recognition.onresult=
+
+event=>{
 
 const transcript=
 
@@ -3084,7 +3906,11 @@ transcript+
 
 const number=
 
-parseSpokenYards(transcript);
+parseSpokenYards(
+
+transcript
+
+);
 
 if(number===null){
 
@@ -3146,7 +3972,11 @@ if(success){
 
 voiceStatus.textContent=
 
-"Recorded "+number+" yards.";
+"Recorded "+
+
+number+
+
+" yards.";
 
 }
 
@@ -3240,7 +4070,7 @@ voiceStatus.textContent=
 
 /* =====================================================
 
-PLAYBOOK
+PLAYBOOK DISPLAY
 
 ===================================================== */
 
@@ -3280,9 +4110,15 @@ arr.map(
 
 (p,i)=>`
 
-<div class="playbook-play ${
+<div
 
-p[1]==="RUN"?"run":"pass"
+class="playbook-play ${
+
+p[1]==="RUN"
+
+?"run"
+
+:"pass"
 
 }">
 
@@ -3310,26 +4146,6 @@ ${i+1}.) ${esc(p[0])}
 
 /* =====================================================
 
-RENDER EVERYTHING
-
-===================================================== */
-
-function renderAll(){
-
-renderGameSelector();
-
-renderOpponentList();
-
-renderTracker();
-
-renderTracking();
-
-renderStats();
-
-}
-
-/* =====================================================
-
 TABS
 
 ===================================================== */
@@ -3338,7 +4154,9 @@ document
 
 .querySelectorAll(".tab")
 
-.forEach(button=>{
+.forEach(
+
+button=>{
 
 button.addEventListener(
 
@@ -3352,7 +4170,13 @@ document
 
 .forEach(
 
-x=>x.classList.remove("active")
+x=>
+
+x.classList.remove(
+
+"active"
+
+)
 
 );
 
@@ -3362,17 +4186,31 @@ document
 
 .forEach(
 
-x=>x.classList.remove("active")
+x=>
+
+x.classList.remove(
+
+"active"
+
+)
 
 );
 
-button.classList.add("active");
+button.classList.add(
+
+"active"
+
+);
 
 $(
 
 button.dataset.page
 
-).classList.add("active");
+).classList.add(
+
+"active"
+
+);
 
 if(
 
@@ -3410,9 +4248,25 @@ renderPlaybook();
 
 /* =====================================================
 
-START APP
+RENDER EVERYTHING
 
 ===================================================== */
+
+function renderAll(){
+
+renderGameSelector();
+
+renderOpponentList();
+
+renderTracker();
+
+renderTracking();
+
+renderStats();
+
+}
+
+loadFormations();
 
 renderAll();
 
