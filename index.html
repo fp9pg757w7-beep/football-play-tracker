@@ -18,11 +18,7 @@
 
 <style>
 
-*{
-
-box-sizing:border-box
-
-}
+*{box-sizing:border-box}
 
 body{
 
@@ -270,6 +266,12 @@ animation:pulse 1s infinite
 
 }
 
+button.voice:disabled{
+
+opacity:.55
+
+}
+
 @keyframes pulse{
 
 0%{opacity:1}
@@ -395,8 +397,6 @@ color:#999;
 padding:20px
 
 }
-
-/* PLAYBOOK */
 
 .playbook-formation{
 
@@ -542,11 +542,11 @@ PLAYBOOK
 
 </div>
 
-<!-- =====================================================
+<!-- =========================
 
 TRACKER
 
-===================================================== -->
+========================= -->
 
 <section id="tracker" class="page active">
 
@@ -560,11 +560,7 @@ TRACKER
 
 <select id="formation">
 
-<option value="">
-
-Add Formation
-
-</option>
+<option value="">Add Formation</option>
 
 </select>
 
@@ -576,11 +572,7 @@ Add Formation
 
 <select id="series">
 
-<option value="">
-
-Add Series
-
-</option>
+<option value="">Add Series</option>
 
 </select>
 
@@ -592,11 +584,7 @@ Add Series
 
 <select id="play">
 
-<option value="">
-
-Add Play
-
-</option>
+<option value="">Add Play</option>
 
 </select>
 
@@ -608,11 +596,7 @@ Add Play
 
 <select id="player">
 
-<option value="">
-
-Add Player
-
-</option>
+<option value="">Add Player</option>
 
 <option>#36 Althouse, Frank</option>
 
@@ -664,11 +648,7 @@ Add Player
 
 <select id="yards">
 
-<option value="">
-
-Add Yards
-
-</option>
+<option value="">Add Yards</option>
 
 </select>
 
@@ -690,7 +670,7 @@ ADD PLAY
 
 <div class="voice-status" id="voiceStatus">
 
-Select Player, Formation, Series and Play, then use Voice Entry to say the yards.
+Select Player, Formation, Series and Play first.
 
 </div>
 
@@ -714,23 +694,15 @@ RUNNING PLAYS
 
 </div>
 
-<div class="big" id="runCount">
-
-0
-
-</div>
+<div class="big" id="runCount">0</div>
 
 <div class="small">
 
-Avg:
-
-<span id="runAvg">0.00</span>
+Avg: <span id="runAvg">0.00</span>
 
 |
 
-Total:
-
-<span id="runTotal">0</span>
+Total: <span id="runTotal">0</span>
 
 </div>
 
@@ -744,23 +716,15 @@ PASSING PLAYS
 
 </div>
 
-<div class="big" id="passCount">
-
-0
-
-</div>
+<div class="big" id="passCount">0</div>
 
 <div class="small">
 
-Avg:
-
-<span id="passAvg">0.00</span>
+Avg: <span id="passAvg">0.00</span>
 
 |
 
-Total:
-
-<span id="passTotal">0</span>
+Total: <span id="passTotal">0</span>
 
 </div>
 
@@ -772,11 +736,7 @@ Total:
 
 <div class="card">
 
-<h2>
-
-Play Log
-
-</h2>
+<h2>Play Log</h2>
 
 <div class="table">
 
@@ -806,9 +766,7 @@ Play Log
 
 </thead>
 
-<tbody id="log">
-
-</tbody>
+<tbody id="log"></tbody>
 
 </table>
 
@@ -824,21 +782,17 @@ No plays recorded yet.
 
 </section>
 
-<!-- =====================================================
+<!-- =========================
 
 STATS
 
-===================================================== -->
+========================= -->
 
 <section id="stats" class="page">
 
 <div class="card">
 
-<h2>
-
-Team Stats
-
-</h2>
+<h2>Team Stats</h2>
 
 <div class="stats">
 
@@ -850,23 +804,15 @@ RUNNING PLAYS
 
 </div>
 
-<div class="big" id="srn">
-
-0
-
-</div>
+<div class="big" id="srn">0</div>
 
 <div class="small">
 
-Avg:
-
-<span id="sra">0.00</span>
+Avg: <span id="sra">0.00</span>
 
 |
 
-Total:
-
-<span id="srt">0</span>
+Total: <span id="srt">0</span>
 
 </div>
 
@@ -880,23 +826,15 @@ PASSING PLAYS
 
 </div>
 
-<div class="big" id="spn">
-
-0
-
-</div>
+<div class="big" id="spn">0</div>
 
 <div class="small">
 
-Avg:
-
-<span id="spa">0.00</span>
+Avg: <span id="spa">0.00</span>
 
 |
 
-Total:
-
-<span id="spt">0</span>
+Total: <span id="spt">0</span>
 
 </div>
 
@@ -905,16 +843,10 @@ Total:
 </div>
 
 </div>
-
-<!-- PLAYER STATS -->
 
 <div class="card">
 
-<h2>
-
-Player Stats
-
-</h2>
+<h2>Player Stats</h2>
 
 <div class="table">
 
@@ -946,9 +878,7 @@ Player Stats
 
 </thead>
 
-<tbody id="playerStats">
-
-</tbody>
+<tbody id="playerStats"></tbody>
 
 </table>
 
@@ -956,19 +886,13 @@ Player Stats
 
 </div>
 
-<!-- PLAY PERFORMANCE -->
-
 <div class="card">
 
-<h2>
-
-Play Performance
-
-</h2>
+<h2>Play Performance</h2>
 
 <p class="small">
 
-Track which individual plays are producing the most yards.
+Compare every play by attempts, total yards and average yards gained.
 
 </p>
 
@@ -998,9 +922,7 @@ Track which individual plays are producing the most yards.
 
 </thead>
 
-<tbody id="playStats">
-
-</tbody>
+<tbody id="playStats"></tbody>
 
 </table>
 
@@ -1016,25 +938,19 @@ No play performance data yet.
 
 </section>
 
-<!-- =====================================================
+<!-- =========================
 
 PLAYBOOK
 
-===================================================== -->
+========================= -->
 
 <section id="playbook" class="page">
 
 <div class="card">
 
-<h2>
+<h2>Playbook</h2>
 
-Playbook
-
-</h2>
-
-<div id="pb">
-
-</div>
+<div id="pb"></div>
 
 </div>
 
@@ -1046,35 +962,11 @@ Playbook
 
 /* =========================================================
 
-PLAYBOOK DATA
-
-FORMATION
-
-↓
-
-SERIES
-
-↓
-
-PLAYS
-
-FORMATION = WHITE
-
-SERIES = RED
-
-RUN = GREEN
-
-PASS = YELLOW
+PLAYBOOK
 
 ========================================================= */
 
 const DATA={
-
-/* =========================
-
-DOUBLES HEAVY (A)
-
-========================= */
 
 "DOUBLES HEAVY (A)":{
 
@@ -1100,12 +992,6 @@ DOUBLES HEAVY (A)
 
 },
 
-/* =========================
-
-TRIO (D)
-
-========================= */
-
 "TRIO (D)":{
 
 "TRIO (D)":[
@@ -1121,12 +1007,6 @@ TRIO (D)
 ]
 
 },
-
-/* =========================
-
-DEUCE (B)
-
-========================= */
 
 "DEUCE (B)":{
 
@@ -1177,12 +1057,6 @@ DEUCE (B)
 ]
 
 },
-
-/* =========================
-
-DOUBLES (C)
-
-========================= */
 
 "DOUBLES (C)":{
 
@@ -1258,12 +1132,6 @@ DOUBLES (C)
 
 },
 
-/* =========================
-
-TRIPS (D)
-
-========================= */
-
 "TRIPS (D)":{
 
 "MOTION PASS":[
@@ -1320,12 +1188,6 @@ TRIPS (D)
 
 },
 
-/* =========================
-
-BASE RUN
-
-========================= */
-
 "BASE RUN":{
 
 "BASE RUN":[
@@ -1339,12 +1201,6 @@ BASE RUN
 ]
 
 },
-
-/* =========================
-
-SPECIAL RUN AND PASS PLAYS
-
-========================= */
 
 "SPECIAL RUN AND PASS PLAYS":{
 
@@ -1382,9 +1238,13 @@ const yards=$("yards");
 
 const type=$("type");
 
+const voiceButton=$("voiceButton");
+
+const voiceStatus=$("voiceStatus");
+
 /* =========================================================
 
-YARDS -30 THROUGH 110
+YARDS -30 TO 110
 
 ========================================================= */
 
@@ -1392,13 +1252,7 @@ for(let y=-30;y<=110;y++){
 
 yards.add(
 
-new Option(
-
-String(y),
-
-String(y)
-
-)
+new Option(String(y),String(y))
 
 );
 
@@ -1406,7 +1260,7 @@ String(y)
 
 /* =========================================================
 
-LOAD FORMATIONS
+FORMATIONS
 
 ========================================================= */
 
@@ -1426,11 +1280,11 @@ RESET SELECT
 
 ========================================================= */
 
-function resetSelect(sel,text){
+function resetSelect(select,text){
 
-sel.innerHTML="";
+select.innerHTML="";
 
-sel.add(
+select.add(
 
 new Option(text,"")
 
@@ -1440,11 +1294,39 @@ new Option(text,"")
 
 /* =========================================================
 
-FORMATION CHANGED
+RESET TRACKER
+
+IMPORTANT: EVERYTHING RESETS
 
 ========================================================= */
 
-function loadSeries(){
+function resetTracker(){
+
+player.value="";
+
+formation.value="";
+
+resetSelect(series,"Add Series");
+
+resetSelect(play,"Add Play");
+
+yards.value="";
+
+setType("");
+
+voiceStatus.textContent=
+
+"Select Player, Formation, Series and Play first.";
+
+}
+
+/* =========================================================
+
+FORMATION
+
+========================================================= */
+
+formation.addEventListener("change",()=>{
 
 resetSelect(series,"Add Series");
 
@@ -1472,15 +1354,15 @@ new Option(s,s)
 
 });
 
-}
+});
 
 /* =========================================================
 
-SERIES CHANGED
+SERIES
 
 ========================================================= */
 
-function loadPlays(){
+series.addEventListener("change",()=>{
 
 resetSelect(play,"Add Play");
 
@@ -1498,8 +1380,6 @@ return;
 
 }
 
-const selectedSeries=
-
 DATA[
 
 formation.value
@@ -1508,11 +1388,7 @@ formation.value
 
 series.value
 
-];
-
-selectedSeries.forEach(
-
-(p,i)=>{
+].forEach((p,i)=>{
 
 play.add(
 
@@ -1528,11 +1404,43 @@ String(i)
 
 });
 
-}
+});
 
 /* =========================================================
 
-PLAY CHANGED
+PLAY
+
+========================================================= */
+
+play.addEventListener("change",()=>{
+
+const arr=
+
+DATA[
+
+formation.value
+
+]?.[
+
+series.value
+
+] || [];
+
+const selected=
+
+arr[Number(play.value)];
+
+setType(
+
+selected?.[1] || ""
+
+);
+
+});
+
+/* =========================================================
+
+PLAY TYPE
 
 ========================================================= */
 
@@ -1568,43 +1476,9 @@ t==="PASS"
 
 }
 
-formation.onchange=loadSeries;
-
-series.onchange=loadPlays;
-
-play.onchange=()=>{
-
-const arr=
-
-DATA[
-
-formation.value
-
-]?.[
-
-series.value
-
-] || [];
-
-const selected=
-
-arr[
-
-Number(play.value)
-
-];
-
-setType(
-
-selected?.[1] || ""
-
-);
-
-};
-
 /* =========================================================
 
-LOCAL STORAGE
+STORAGE
 
 ========================================================= */
 
@@ -1622,7 +1496,7 @@ localStorage.getItem(
 
 /* =========================================================
 
-TOTAL
+MATH
 
 ========================================================= */
 
@@ -1630,9 +1504,9 @@ function total(arr){
 
 return arr.reduce(
 
-(n,x)=>
+(sum,x)=>
 
-n+Number(x.yards),
+sum+Number(x.yards),
 
 0
 
@@ -1640,25 +1514,13 @@ n+Number(x.yards),
 
 }
 
-/* =========================================================
-
-AVERAGE
-
-========================================================= */
-
 function average(arr){
 
 return arr.length
 
 ?
 
-(
-
-total(arr)/
-
-arr.length
-
-).toFixed(2)
+(total(arr)/arr.length).toFixed(2)
 
 :
 
@@ -1738,6 +1600,108 @@ save();
 
 /* =========================================================
 
+ADD PLAY
+
+========================================================= */
+
+function addPlay(){
+
+if(
+
+!player.value ||
+
+!formation.value ||
+
+!series.value ||
+
+play.value==="" ||
+
+yards.value===""
+
+){
+
+alert(
+
+"Please select Player, Formation, Series, Play and Yards."
+
+);
+
+return false;
+
+}
+
+const arr=
+
+DATA[
+
+formation.value
+
+][
+
+series.value
+
+];
+
+const selected=
+
+arr[Number(play.value)];
+
+if(!selected){
+
+return false;
+
+}
+
+plays.push({
+
+id:Date.now()+Math.random(),
+
+player:player.value,
+
+formation:formation.value,
+
+series:series.value,
+
+play:selected[0],
+
+type:selected[1],
+
+yards:Number(yards.value)
+
+});
+
+save();
+
+/*
+
+VERY IMPORTANT:
+
+Reset every selection after recording.
+
+*/
+
+resetTracker();
+
+return true;
+
+}
+
+/* =========================================================
+
+ADD BUTTON
+
+========================================================= */
+
+$("add").addEventListener(
+
+"click",
+
+addPlay
+
+);
+
+/* =========================================================
+
 RENDER TRACKER
 
 ========================================================= */
@@ -1798,9 +1762,7 @@ plays.length
 
 $("log").innerHTML=
 
-plays.map(
-
-(x,i)=>`
+plays.map((x,i)=>`
 
 <tr>
 
@@ -1850,9 +1812,7 @@ Delete
 
 </tr>
 
-`
-
-).join("");
+`).join("");
 
 renderStats();
 
@@ -1860,135 +1820,7 @@ renderStats();
 
 /* =========================================================
 
-ADD PLAY
-
-========================================================= */
-
-function addPlay(){
-
-const arr=
-
-DATA[
-
-formation.value
-
-]?.[
-
-series.value
-
-] || [];
-
-const selected=
-
-arr[
-
-Number(play.value)
-
-];
-
-if(
-
-!player.value ||
-
-!formation.value ||
-
-!series.value ||
-
-play.value==="" ||
-
-yards.value===""
-
-){
-
-alert(
-
-"Please select Player, Formation, Series, Play and Yards."
-
-);
-
-return false;
-
-}
-
-plays.push({
-
-id:
-
-Date.now()+Math.random(),
-
-player:
-
-player.value,
-
-formation:
-
-formation.value,
-
-series:
-
-series.value,
-
-play:
-
-selected[0],
-
-type:
-
-selected[1],
-
-yards:
-
-Number(yards.value)
-
-});
-
-save();
-
-return true;
-
-}
-
-$("add").onclick=()=>{
-
-if(addPlay()){
-
-yards.value="";
-
-setType("");
-
-}
-
-};
-
-/* =========================================================
-
-CLEAR
-
-========================================================= */
-
-$("clear").onclick=()=>{
-
-if(
-
-confirm(
-
-"Clear all recorded plays?"
-
-)
-
-){
-
-plays=[];
-
-save();
-
-}
-
-};
-
-/* =========================================================
-
-PLAYER STATS
+STATS
 
 ========================================================= */
 
@@ -2036,9 +1868,7 @@ average(passes);
 
 /* PLAYER STATS */
 
-const names=
-
-[
+const names=[
 
 ...new Set(
 
@@ -2048,11 +1878,7 @@ const names=
 
 ]
 
-.map(
-
-o=>o.value
-
-)
+.map(o=>o.value)
 
 .filter(Boolean)
 
@@ -2152,7 +1978,9 @@ yards:0
 
 groups[key].attempts++;
 
-groups[key].yards+=Number(x.yards);
+groups[key].yards+=
+
+Number(x.yards);
 
 });
 
@@ -2220,7 +2048,11 @@ ${x.type}
 
 <td>${x.yards}</td>
 
-<td><strong>${avg}</strong></td>
+<td>
+
+<strong>${avg}</strong>
+
+</td>
 
 </tr>
 
@@ -2239,6 +2071,520 @@ performance.length
 :
 
 "block";
+
+}
+
+/* =========================================================
+
+CLEAR ALL
+
+========================================================= */
+
+$("clear").addEventListener(
+
+"click",
+
+()=>{
+
+if(
+
+confirm(
+
+"Clear all recorded plays?"
+
+)
+
+){
+
+plays=[];
+
+save();
+
+resetTracker();
+
+}
+
+});
+
+/* =========================================================
+
+VOICE ENTRY
+
+========================================================= */
+
+const SpeechRecognition=
+
+window.SpeechRecognition ||
+
+window.webkitSpeechRecognition;
+
+/*
+
+Convert speech into a yard number.
+
+*/
+
+function parseSpokenYards(text){
+
+text=
+
+text
+
+.toLowerCase()
+
+.trim();
+
+/*
+
+Examples:
+
+7
+
+7 yards
+
+minus 3
+
+negative 4
+
+-5
+
+*/
+
+let numeric=
+
+text.match(
+
+/(-?\d+(?:\.\d+)?)/
+
+);
+
+if(numeric){
+
+let n=
+
+Number(numeric[1]);
+
+if(
+
+text.includes("minus") ||
+
+text.includes("negative")
+
+){
+
+n=-Math.abs(n);
+
+}
+
+if(
+
+Number.isFinite(n) &&
+
+n>=-30 &&
+
+n<=110
+
+){
+
+return Math.round(n);
+
+}
+
+}
+
+/*
+
+Spoken numbers.
+
+*/
+
+const numberWords={
+
+"zero":0,
+
+"one":1,
+
+"two":2,
+
+"three":3,
+
+"four":4,
+
+"five":5,
+
+"six":6,
+
+"seven":7,
+
+"eight":8,
+
+"nine":9,
+
+"ten":10,
+
+"eleven":11,
+
+"twelve":12,
+
+"thirteen":13,
+
+"fourteen":14,
+
+"fifteen":15,
+
+"sixteen":16,
+
+"seventeen":17,
+
+"eighteen":18,
+
+"nineteen":19,
+
+"twenty":20,
+
+"twenty one":21,
+
+"twenty-two":22,
+
+"twenty two":22,
+
+"twenty three":23,
+
+"twenty-three":23,
+
+"twenty four":24,
+
+"twenty-four":24,
+
+"twenty five":25,
+
+"twenty-five":25,
+
+"twenty six":26,
+
+"twenty-six":26,
+
+"twenty seven":27,
+
+"twenty-seven":27,
+
+"twenty eight":28,
+
+"twenty-eight":28,
+
+"twenty nine":29,
+
+"twenty-nine":29,
+
+"thirty":30
+
+};
+
+for(const word in numberWords){
+
+if(text.includes(word)){
+
+let n=
+
+numberWords[word];
+
+if(
+
+text.includes("minus") ||
+
+text.includes("negative")
+
+){
+
+n=-n;
+
+}
+
+return n;
+
+}
+
+}
+
+return null;
+
+}
+
+/*
+
+Create voice recognition.
+
+*/
+
+let recognition=null;
+
+if(SpeechRecognition){
+
+recognition=
+
+new SpeechRecognition();
+
+recognition.lang=
+
+"en-US";
+
+recognition.continuous=
+
+false;
+
+recognition.interimResults=
+
+false;
+
+recognition.maxAlternatives=
+
+5;
+
+/* START */
+
+recognition.onstart=()=>{
+
+voiceButton.classList.add(
+
+"listening"
+
+);
+
+voiceButton.textContent=
+
+"🔴 LISTENING...";
+
+voiceStatus.textContent=
+
+'Say "7 yards" or "minus 3 yards".';
+
+};
+
+/* END */
+
+recognition.onend=()=>{
+
+voiceButton.classList.remove(
+
+"listening"
+
+);
+
+voiceButton.textContent=
+
+"🎤 VOICE ENTRY";
+
+};
+
+/* ERROR */
+
+recognition.onerror=(event)=>{
+
+voiceButton.classList.remove(
+
+"listening"
+
+);
+
+voiceButton.textContent=
+
+"🎤 VOICE ENTRY";
+
+if(event.error==="not-allowed"){
+
+voiceStatus.textContent=
+
+"Microphone permission is blocked. Allow microphone access for this website.";
+
+}else{
+
+voiceStatus.textContent=
+
+"Voice could not hear you. Tap again and speak clearly.";
+
+}
+
+};
+
+/* RESULT */
+
+recognition.onresult=(event)=>{
+
+const transcript=
+
+event.results[0][0]
+
+.transcript
+
+.trim();
+
+voiceStatus.textContent=
+
+'Heard: "'+
+
+transcript+
+
+'"';
+
+const number=
+
+parseSpokenYards(
+
+transcript
+
+);
+
+if(number===null){
+
+voiceStatus.textContent=
+
+'Could not find a yard number. Try saying "7 yards".';
+
+return;
+
+}
+
+/*
+
+Make sure all selections exist.
+
+*/
+
+if(
+
+!player.value ||
+
+!formation.value ||
+
+!series.value ||
+
+play.value===""
+
+){
+
+alert(
+
+"Select Player, Formation, Series and Play before using Voice Entry."
+
+);
+
+return;
+
+}
+
+/*
+
+Put voice result into yards dropdown.
+
+*/
+
+yards.value=
+
+String(number);
+
+/*
+
+Automatically add the play.
+
+*/
+
+const success=
+
+addPlay();
+
+if(success){
+
+voiceStatus.textContent=
+
+"Recorded "+number+" yards.";
+
+}
+
+};
+
+/*
+
+VOICE BUTTON
+
+*/
+
+voiceButton.addEventListener(
+
+"click",
+
+()=>{
+
+if(!recognition){
+
+voiceStatus.textContent=
+
+"Voice recognition is not available in this browser. Use Safari with microphone access enabled.";
+
+return;
+
+}
+
+if(
+
+!player.value ||
+
+!formation.value ||
+
+!series.value ||
+
+play.value===""
+
+){
+
+alert(
+
+"First select Player, Formation, Series and Play."
+
+);
+
+return;
+
+}
+
+try{
+
+recognition.start();
+
+}catch(error){
+
+/*
+
+If recognition is already running,
+
+stop it so the next tap works.
+
+*/
+
+try{
+
+recognition.stop();
+
+}catch(e){}
+
+}
+
+});
+
+}else{
+
+voiceButton.addEventListener(
+
+"click",
+
+()=>{
+
+voiceStatus.textContent=
+
+"Voice recognition is not available in this browser. Try opening the app in Safari.";
+
+}
+
+);
 
 }
 
@@ -2322,376 +2668,6 @@ ${i+1}.) ${esc(p[0])}
 
 /* =========================================================
 
-VOICE ENTRY
-
-========================================================= */
-
-const voiceButton=
-
-$("voiceButton");
-
-const voiceStatus=
-
-$("voiceStatus");
-
-let recognition=null;
-
-/*
-
-Check whether the iPhone/browser supports
-
-the Web Speech API.
-
-*/
-
-const SpeechRecognition=
-
-window.SpeechRecognition ||
-
-window.webkitSpeechRecognition;
-
-if(SpeechRecognition){
-
-recognition=
-
-new SpeechRecognition();
-
-recognition.lang="en-US";
-
-recognition.continuous=false;
-
-recognition.interimResults=false;
-
-recognition.maxAlternatives=3;
-
-recognition.onstart=()=>{
-
-voiceButton.classList.add("listening");
-
-voiceButton.textContent=
-
-"🔴 LISTENING...";
-
-voiceStatus.textContent=
-
-'Say something like "add 6 yards"';
-
-};
-
-recognition.onend=()=>{
-
-voiceButton.classList.remove(
-
-"listening"
-
-);
-
-voiceButton.textContent=
-
-"🎤 VOICE ENTRY";
-
-};
-
-recognition.onerror=(event)=>{
-
-voiceButton.classList.remove(
-
-"listening"
-
-);
-
-voiceButton.textContent=
-
-"🎤 VOICE ENTRY";
-
-voiceStatus.textContent=
-
-"Voice error. You can still use the yards dropdown.";
-
-};
-
-recognition.onresult=(event)=>{
-
-const text=
-
-event.results[0][0].transcript
-
-.toLowerCase()
-
-.trim();
-
-voiceStatus.textContent=
-
-'Heard: "'+
-
-text+
-
-'"';
-
-const number=
-
-parseSpokenYards(text);
-
-if(number===null){
-
-voiceStatus.textContent=
-
-'Could not find yards in "'+
-
-text+
-
-'". Try saying "add 7 yards".';
-
-return;
-
-}
-
-if(
-
-!player.value ||
-
-!formation.value ||
-
-!series.value ||
-
-play.value===""
-
-){
-
-alert(
-
-"Select Player, Formation, Series and Play first."
-
-);
-
-return;
-
-}
-
-/*
-
-Put recognized yards into dropdown.
-
-*/
-
-yards.value=
-
-String(number);
-
-/*
-
-Add the play.
-
-*/
-
-if(addPlay()){
-
-yards.value="";
-
-setType("");
-
-voiceStatus.textContent=
-
-"Added "+number+" yards.";
-
-}
-
-};
-
-}else{
-
-voiceButton.disabled=true;
-
-voiceButton.textContent=
-
-"🎤 VOICE NOT AVAILABLE";
-
-voiceStatus.textContent=
-
-"Your browser does not support voice entry. The normal dropdown still works.";
-
-}
-
-/* =========================================================
-
-CONVERT SPOKEN NUMBER TO YARDS
-
-========================================================= */
-
-function parseSpokenYards(text){
-
-/*
-
-Direct numeric examples:
-
-"6"
-
-"minus 3"
-
-"-3"
-
-"12 yards"
-
-*/
-
-let match=
-
-text.match(
-
-/(-?\d+(?:\.\d+)?)\s*(?:yards?|yds?)?/
-
-);
-
-if(match){
-
-let n=
-
-Number(match[1]);
-
-if(
-
-Number.isFinite(n) &&
-
-n>=-30 &&
-
-n<=110
-
-){
-
-return Math.round(n);
-
-}
-
-}
-
-/*
-
-Common spoken numbers.
-
-*/
-
-const nums={
-
-"zero":0,
-
-"one":1,
-
-"two":2,
-
-"three":3,
-
-"four":4,
-
-"five":5,
-
-"six":6,
-
-"seven":7,
-
-"eight":8,
-
-"nine":9,
-
-"ten":10,
-
-"eleven":11,
-
-"twelve":12,
-
-"thirteen":13,
-
-"fourteen":14,
-
-"fifteen":15,
-
-"sixteen":16,
-
-"seventeen":17,
-
-"eighteen":18,
-
-"nineteen":19,
-
-"twenty":20,
-
-"twenty one":21,
-
-"twenty-two":22,
-
-"twenty two":22,
-
-"twenty-three":23,
-
-"twenty three":23,
-
-"twenty-four":24,
-
-"twenty four":24,
-
-"twenty-five":25,
-
-"twenty five":25,
-
-"twenty-six":26,
-
-"twenty six":26,
-
-"twenty-seven":27,
-
-"twenty seven":27,
-
-"twenty-eight":28,
-
-"twenty eight":28,
-
-"twenty-nine":29,
-
-"twenty nine":29,
-
-"thirty":30
-
-};
-
-let negative=
-
-text.includes("minus") ||
-
-text.includes("negative");
-
-for(
-
-const word in nums
-
-){
-
-if(
-
-text.includes(word)
-
-){
-
-let n=
-
-nums[word];
-
-if(negative){
-
-n=-n;
-
-}
-
-return n;
-
-}
-
-}
-
-return null;
-
-}
-
-/* =========================================================
-
 TABS
 
 ========================================================= */
@@ -2700,11 +2676,13 @@ document
 
 .querySelectorAll(".tab")
 
-.forEach(
+.forEach(button=>{
 
-button=>{
+button.addEventListener(
 
-button.onclick=()=>{
+"click",
+
+()=>{
 
 document
 
@@ -2776,17 +2754,15 @@ renderPlaybook();
 
 }
 
-};
+});
 
 });
 
 /* =========================================================
 
-START
+START APP
 
 ========================================================= */
-
-loadSeries();
 
 render();
 
