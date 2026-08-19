@@ -372,6 +372,26 @@ th {
 
 }
 
+.playbook-series {
+
+  font-weight:900;
+
+  margin:10px 0 5px;
+
+}
+
+.playbook-play {
+
+  padding:7px 9px;
+
+  margin:3px 0;
+
+  border-radius:7px;
+
+  color:#111;
+
+}
+
 @media (max-width:650px) {
 
   .grid,
@@ -410,7 +430,7 @@ th {
 
 </div>
 
-<!-- TRACKER -->
+<!-- ================= TRACKER ================= -->
 
 <div id="tracker" class="tabpage active">
 
@@ -422,7 +442,11 @@ th {
 
 <label>Formation</label>
 
-<select id="formation"></select>
+<select id="formation">
+
+  <option value="">Add Formation</option>
+
+</select>
 
 </div>
 
@@ -430,7 +454,11 @@ th {
 
 <label>Series</label>
 
-<select id="series"></select>
+<select id="series">
+
+  <option value="">Add Series</option>
+
+</select>
 
 </div>
 
@@ -438,7 +466,11 @@ th {
 
 <label>Play Selection</label>
 
-<select id="play"></select>
+<select id="play">
+
+  <option value="">Add Play</option>
+
+</select>
 
 </div>
 
@@ -446,7 +478,49 @@ th {
 
 <label>Player</label>
 
-<select id="player"></select>
+<select id="player">
+
+  <option value="">Add Player</option>
+
+  <option value="#36 Althouse, Frank">#36 Althouse, Frank</option>
+
+  <option value="#12 Artrip, Carson">#12 Artrip, Carson</option>
+
+  <option value="#6 Beas, Kai">#6 Beas, Kai</option>
+
+  <option value="#60 Boonstra, Brady">#60 Boonstra, Brady</option>
+
+  <option value="#88 Coan, Jaxson">#88 Coan, Jaxson</option>
+
+  <option value="#85 Cornwall, Jensen">#85 Cornwall, Jensen</option>
+
+  <option value="#54 Evans, Noah">#54 Evans, Noah</option>
+
+  <option value="#32 Gillam, James">#32 Gillam, James</option>
+
+  <option value="#11 Hannah, Knox">#11 Hannah, Knox</option>
+
+  <option value="#1 Hendrix, Cash">#1 Hendrix, Cash</option>
+
+  <option value="#28 Lawson, Briot">#28 Lawson, Briot</option>
+
+  <option value="#2 McClurg, Ezra">#2 McClurg, Ezra</option>
+
+  <option value="#7 Rayls, Warren">#7 Rayls, Warren</option>
+
+  <option value="#34 Scott, Noah">#34 Scott, Noah</option>
+
+  <option value="#3 Smith, Carson">#3 Smith, Carson</option>
+
+  <option value="#5 Whitacre, Gavin">#5 Whitacre, Gavin</option>
+
+  <option value="#4 Word, Gavin">#4 Word, Gavin</option>
+
+  <option value="#77 Harrison, Isaiah">#77 Harrison, Isaiah</option>
+
+  <option value="#23 Young, Ethan">#23 Young, Ethan</option>
+
+</select>
 
 </div>
 
@@ -462,7 +536,11 @@ th {
 
 <label>Yards Gained</label>
 
-<select id="yards"></select>
+<select id="yards">
+
+  <option value="">Add Yards</option>
+
+</select>
 
 </div>
 
@@ -566,7 +644,7 @@ No plays recorded yet.
 
 </div>
 
-<!-- STATS -->
+<!-- ================= STATS ================= -->
 
 <div id="stats" class="tabpage">
 
@@ -660,7 +738,7 @@ Total: <span id="sPassYards">0</span>
 
 </div>
 
-<!-- PLAYBOOK -->
+<!-- ================= PLAYBOOK ================= -->
 
 <div id="playbook" class="tabpage">
 
@@ -990,43 +1068,21 @@ const empty =
 
 document.getElementById("empty");
 
-/* PLAYER DROPDOWN */
+/* FORMATION */
 
-player.add(
+for (const f of Object.keys(DATA)) {
 
-new Option("Add Player","")
+  formation.add(new Option(f,f));
 
-);
+}
 
-PLAYERS.forEach(p =>
+/* YARDS */
 
-player.add(new Option(p,p))
+for (let y=-30; y<=110; y++) {
 
-);
+  yards.add(new Option(y,y));
 
-/* FORMATION DROPDOWN */
-
-formation.add(
-
-new Option("Add Formation","")
-
-);
-
-for (const f of Object.keys(DATA))
-
-formation.add(new Option(f,f));
-
-/* YARDS DROPDOWN */
-
-yards.add(
-
-new Option("Add Yards","")
-
-);
-
-for (let y=-30; y<=110; y++)
-
-yards.add(new Option(y,y));
+}
 
 formation.addEventListener(
 
@@ -1124,7 +1180,7 @@ DATA[formation.value]
 
 [series.value] || [];
 
-arr.forEach((p,i) =>
+arr.forEach((p,i) => {
 
 play.add(
 
@@ -1136,9 +1192,9 @@ i
 
 )
 
-)
-
 );
+
+});
 
 updateType();
 
@@ -1788,11 +1844,7 @@ Object.entries(seriesObj)
 
 out +=
 
-`<div style="
-
-font-weight:900;
-
-margin:10px 0 5px">
+`<div class="playbook-series">
 
 ${esc(s)}
 
@@ -1802,17 +1854,11 @@ arr.forEach((p,i) => {
 
 out +=
 
-`<div style="
+`<div
 
-padding:7px 9px;
+class="playbook-play"
 
-margin:3px 0;
-
-border-radius:7px;
-
-color:#111;
-
-background:${
+style="background:${
 
 p[1]==="RUN"
 
