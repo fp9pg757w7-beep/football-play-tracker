@@ -34,11 +34,11 @@ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif
 
 .wrap{
 
-max-width:1050px;
+max-width:1100px;
 
 margin:auto;
 
-padding:18px 12px 50px
+padding:14px 12px 50px
 
 }
 
@@ -48,7 +48,7 @@ text-align:center;
 
 font-size:25px;
 
-margin:4px 0 18px
+margin:4px 0 16px
 
 }
 
@@ -62,19 +62,19 @@ margin-top:4px
 
 display:grid;
 
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(4,1fr);
 
-gap:10px;
+gap:7px;
 
-margin-bottom:16px
+margin-bottom:14px
 
 }
 
 .tab{
 
-height:62px;
+height:58px;
 
-border-radius:16px;
+border-radius:15px;
 
 border:2px solid #555;
 
@@ -82,9 +82,9 @@ background:#2b2b2e;
 
 color:#fff;
 
-font-size:20px;
+font-size:16px;
 
-font-weight:800
+font-weight:900
 
 }
 
@@ -116,7 +116,7 @@ border:2px solid #38383a;
 
 border-radius:18px;
 
-padding:18px;
+padding:16px;
 
 margin-bottom:14px
 
@@ -128,7 +128,7 @@ display:grid;
 
 grid-template-columns:1fr 1fr;
 
-gap:14px
+gap:12px
 
 }
 
@@ -146,11 +146,11 @@ color:#ddd
 
 }
 
-select{
+input,select{
 
 width:100%;
 
-height:60px;
+height:58px;
 
 border-radius:14px;
 
@@ -162,7 +162,7 @@ color:#fff;
 
 padding:0 14px;
 
-font-size:18px
+font-size:17px
 
 }
 
@@ -174,7 +174,7 @@ grid-column:1/-1
 
 .type{
 
-height:60px;
+height:58px;
 
 display:flex;
 
@@ -214,17 +214,17 @@ button.action{
 
 width:100%;
 
-height:64px;
+height:62px;
 
 border:0;
 
 border-radius:15px;
 
-font-size:20px;
+font-size:19px;
 
 font-weight:900;
 
-margin-top:14px;
+margin-top:13px;
 
 background:#18bd58;
 
@@ -236,17 +236,17 @@ button.voice{
 
 width:100%;
 
-height:64px;
+height:62px;
 
 border:2px solid #666;
 
 border-radius:15px;
 
-font-size:20px;
+font-size:19px;
 
 font-weight:900;
 
-margin-top:14px;
+margin-top:13px;
 
 background:#252527;
 
@@ -266,9 +266,43 @@ animation:pulse 1s infinite
 
 }
 
-button.voice:disabled{
+button.clear{
 
-opacity:.55
+background:#3b3b3d
+
+}
+
+button.smallBtn{
+
+height:42px;
+
+padding:0 12px;
+
+border:0;
+
+border-radius:10px;
+
+font-weight:800;
+
+background:#444;
+
+color:#fff
+
+}
+
+button.deleteBtn{
+
+background:#b71920;
+
+color:#fff;
+
+border:0;
+
+border-radius:8px;
+
+padding:7px 10px;
+
+font-weight:800
 
 }
 
@@ -279,12 +313,6 @@ opacity:.55
 50%{opacity:.55}
 
 100%{opacity:1}
-
-}
-
-button.clear{
-
-background:#3b3b3d
 
 }
 
@@ -306,9 +334,9 @@ min-height:20px
 
 display:grid;
 
-grid-template-columns:1fr 1fr;
+grid-template-columns:repeat(2,1fr);
 
-gap:14px
+gap:12px
 
 }
 
@@ -318,7 +346,7 @@ background:#252527;
 
 border-radius:15px;
 
-padding:18px;
+padding:16px;
 
 text-align:center
 
@@ -334,7 +362,7 @@ font-size:14px
 
 .big{
 
-font-size:38px;
+font-size:34px;
 
 font-weight:900;
 
@@ -395,6 +423,58 @@ text-align:center;
 color:#999;
 
 padding:20px
+
+}
+
+.gameTitle{
+
+font-size:21px;
+
+font-weight:900;
+
+margin-bottom:5px
+
+}
+
+.gameSub{
+
+color:#aaa;
+
+font-size:14px
+
+}
+
+.sectionTitle{
+
+font-size:18px;
+
+font-weight:900;
+
+margin:5px 0 12px
+
+}
+
+.rank{
+
+font-size:19px;
+
+font-weight:900
+
+}
+
+.successGood{
+
+font-weight:900
+
+}
+
+.filterRow{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:10px
 
 }
 
@@ -472,39 +552,59 @@ border-radius:6px
 
 .wrap{
 
-padding-top:10px
-
-}
-
-.grid{
-
-gap:10px
+padding-top:8px
 
 }
 
 .tabs{
 
-gap:6px
+gap:5px
 
 }
 
 .tab{
 
-height:58px;
+height:54px;
 
-font-size:18px
+font-size:13px;
+
+padding:0 3px
 
 }
 
-select{
+.grid{
 
-font-size:17px
+gap:9px
 
 }
 
 .card{
 
-padding:14px
+padding:13px
+
+}
+
+input,select{
+
+font-size:16px
+
+}
+
+.stats{
+
+gap:8px
+
+}
+
+.stat{
+
+padding:12px 7px
+
+}
+
+.big{
+
+font-size:30px
 
 }
 
@@ -520,11 +620,95 @@ padding:14px
 
 <h1>🏈 Football Play Tracker</h1>
 
+<!-- =====================================================
+
+GAME SELECTOR
+
+===================================================== -->
+
+<div class="card">
+
+<div class="grid">
+
+<div class="full">
+
+<label>Current Game / Opponent</label>
+
+<select id="gameSelect"></select>
+
+</div>
+
+<div>
+
+<label>New Opponent</label>
+
+<input
+
+id="opponentInput"
+
+list="opponentList"
+
+placeholder="Enter opponent"
+
+/>
+
+<datalist id="opponentList"></datalist>
+
+</div>
+
+<div>
+
+<label>Game Date</label>
+
+<input
+
+id="dateInput"
+
+type="date"
+
+/>
+
+</div>
+
+</div>
+
+<button class="action" id="newGame">
+
+➕ START NEW GAME
+
+</button>
+
+<div class="gameTitle" id="currentGameTitle">
+
+No game selected
+
+</div>
+
+<div class="gameSub" id="currentGameSub">
+
+Start a new game above.
+
+</div>
+
+</div>
+
+<!-- =====================================================
+
+TABS
+
+===================================================== -->
+
 <div class="tabs">
 
 <button class="tab active" data-page="tracker">
 
 TRACKER
+
+</button>
+
+<button class="tab" data-page="tracking">
+
+PLAY TRACKING
 
 </button>
 
@@ -542,11 +726,11 @@ PLAYBOOK
 
 </div>
 
-<!-- =========================
+<!-- =====================================================
 
 TRACKER
 
-========================= -->
+===================================================== -->
 
 <section id="tracker" class="page active">
 
@@ -634,11 +818,7 @@ TRACKER
 
 <label>Play Type</label>
 
-<div id="type" class="type">
-
-—
-
-</div>
+<div id="type" class="type">—</div>
 
 </div>
 
@@ -676,7 +856,7 @@ Select Player, Formation, Series and Play first.
 
 <button class="action clear" id="clear">
 
-CLEAR ALL PLAYS
+CLEAR CURRENT GAME
 
 </button>
 
@@ -684,15 +864,17 @@ CLEAR ALL PLAYS
 
 <div class="card">
 
+<div class="gameTitle" id="trackerGameTitle">
+
+Current Game
+
+</div>
+
 <div class="stats">
 
 <div class="stat">
 
-<div class="small">
-
-RUNNING PLAYS
-
-</div>
+<div class="small">RUNNING PLAYS</div>
 
 <div class="big" id="runCount">0</div>
 
@@ -710,11 +892,7 @@ Total: <span id="runTotal">0</span>
 
 <div class="stat">
 
-<div class="small">
-
-PASSING PLAYS
-
-</div>
+<div class="small">PASSING PLAYS</div>
 
 <div class="big" id="passCount">0</div>
 
@@ -736,7 +914,7 @@ Total: <span id="passTotal">0</span>
 
 <div class="card">
 
-<h2>Play Log</h2>
+<h2>Current Game Play Log</h2>
 
 <div class="table">
 
@@ -774,7 +952,7 @@ Total: <span id="passTotal">0</span>
 
 <div id="empty" class="empty">
 
-No plays recorded yet.
+No plays recorded for this game.
 
 </div>
 
@@ -782,61 +960,157 @@ No plays recorded yet.
 
 </section>
 
-<!-- =========================
+<!-- =====================================================
+
+PLAY TRACKING
+
+===================================================== -->
+
+<section id="tracking" class="page">
+
+<div class="card">
+
+<h2>📋 Play Tracking</h2>
+
+<div class="gameTitle" id="trackingGameTitle">
+
+Current Game
+
+</div>
+
+<p class="small">
+
+Every play called during the selected game is shown here in order.
+
+</p>
+
+<div class="filterRow">
+
+<div>
+
+<label>Filter Type</label>
+
+<select id="trackingType">
+
+<option value="ALL">All Plays</option>
+
+<option value="RUN">Runs</option>
+
+<option value="PASS">Passes</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Filter Player</label>
+
+<select id="trackingPlayer">
+
+<option value="ALL">All Players</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="table">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>#</th>
+
+<th>Player</th>
+
+<th>Formation</th>
+
+<th>Series</th>
+
+<th>Play</th>
+
+<th>Type</th>
+
+<th>Yards</th>
+
+</tr>
+
+</thead>
+
+<tbody id="trackingLog"></tbody>
+
+</table>
+
+</div>
+
+<div id="trackingEmpty" class="empty">
+
+No plays recorded for this game.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
 
 STATS
 
-========================= -->
+===================================================== -->
 
 <section id="stats" class="page">
 
 <div class="card">
 
-<h2>Team Stats</h2>
+<h2>🏈 Game Stats</h2>
+
+<div class="gameTitle" id="statsGameTitle">
+
+Current Game
+
+</div>
 
 <div class="stats">
 
 <div class="stat">
 
-<div class="small">
+<div class="small">TOTAL PLAYS</div>
 
-RUNNING PLAYS
-
-</div>
-
-<div class="big" id="srn">0</div>
-
-<div class="small">
-
-Avg: <span id="sra">0.00</span>
-
-|
-
-Total: <span id="srt">0</span>
-
-</div>
+<div class="big" id="gameTotalPlays">0</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">
+<div class="small">TOTAL YARDS</div>
 
-PASSING PLAYS
+<div class="big" id="gameTotalYards">0</div>
+
+</div>
+
+<div class="stat">
+
+<div class="small">RUN AVG</div>
+
+<div class="big" id="gameRunAvg">0.00</div>
 
 </div>
 
-<div class="big" id="spn">0</div>
+<div class="stat">
 
-<div class="small">
+<div class="small">PASS AVG</div>
 
-Avg: <span id="spa">0.00</span>
-
-|
-
-Total: <span id="spt">0</span>
-
-</div>
+<div class="big" id="gamePassAvg">0.00</div>
 
 </div>
 
@@ -846,7 +1120,87 @@ Total: <span id="spt">0</span>
 
 <div class="card">
 
-<h2>Player Stats</h2>
+<h2>📈 Season Stats</h2>
+
+<div class="stats">
+
+<div class="stat">
+
+<div class="small">GAMES</div>
+
+<div class="big" id="seasonGames">0</div>
+
+</div>
+
+<div class="stat">
+
+<div class="small">TOTAL PLAYS</div>
+
+<div class="big" id="seasonPlays">0</div>
+
+</div>
+
+<div class="stat">
+
+<div class="small">TOTAL YARDS</div>
+
+<div class="big" id="seasonYards">0</div>
+
+</div>
+
+<div class="stat">
+
+<div class="small">AVG / PLAY</div>
+
+<div class="big" id="seasonAvg">0.00</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Game-by-Game</h2>
+
+<div class="table">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Game</th>
+
+<th>Date</th>
+
+<th>Plays</th>
+
+<th>Yards</th>
+
+<th>Avg</th>
+
+<th>Run Avg</th>
+
+<th>Pass Avg</th>
+
+</tr>
+
+</thead>
+
+<tbody id="gameStats"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>👤 Player Stats — Season</h2>
 
 <div class="table">
 
@@ -888,11 +1242,11 @@ Total: <span id="spt">0</span>
 
 <div class="card">
 
-<h2>Play Performance</h2>
+<h2>⭐ Season Play Performance</h2>
 
 <p class="small">
 
-Compare every play by attempts, total yards and average yards gained.
+This combines every game. Plays are ranked by average yards gained.
 
 </p>
 
@@ -904,6 +1258,8 @@ Compare every play by attempts, total yards and average yards gained.
 
 <tr>
 
+<th>Rank</th>
+
 <th>Formation</th>
 
 <th>Series</th>
@@ -912,7 +1268,7 @@ Compare every play by attempts, total yards and average yards gained.
 
 <th>Type</th>
 
-<th>Attempts</th>
+<th>Times Called</th>
 
 <th>Total Yards</th>
 
@@ -930,7 +1286,7 @@ Compare every play by attempts, total yards and average yards gained.
 
 <div id="playStatsEmpty" class="empty">
 
-No play performance data yet.
+No season play data yet.
 
 </div>
 
@@ -938,11 +1294,11 @@ No play performance data yet.
 
 </section>
 
-<!-- =========================
+<!-- =====================================================
 
 PLAYBOOK
 
-========================= -->
+===================================================== -->
 
 <section id="playbook" class="page">
 
@@ -960,11 +1316,11 @@ PLAYBOOK
 
 <script>
 
-/* =========================================================
+/* =====================================================
 
 PLAYBOOK
 
-========================================================= */
+===================================================== */
 
 const DATA={
 
@@ -1218,11 +1574,11 @@ const DATA={
 
 };
 
-/* =========================================================
+/* =====================================================
 
 ELEMENTS
 
-========================================================= */
+===================================================== */
 
 const $=id=>document.getElementById(id);
 
@@ -1242,63 +1598,411 @@ const voiceButton=$("voiceButton");
 
 const voiceStatus=$("voiceStatus");
 
-/* =========================================================
+/* =====================================================
 
-YARDS -30 TO 110
+YARDS
 
-========================================================= */
+===================================================== */
 
 for(let y=-30;y<=110;y++){
 
-yards.add(
-
-new Option(String(y),String(y))
-
-);
+yards.add(new Option(String(y),String(y)));
 
 }
 
-/* =========================================================
+/* =====================================================
 
 FORMATIONS
 
-========================================================= */
+===================================================== */
 
 Object.keys(DATA).forEach(f=>{
 
-formation.add(
-
-new Option(f,f)
-
-);
+formation.add(new Option(f,f));
 
 });
 
-/* =========================================================
+/* =====================================================
 
-RESET SELECT
+HELPERS
 
-========================================================= */
+===================================================== */
+
+function esc(s){
+
+return String(s).replace(/[&<>"']/g,c=>({
+
+"&":"&amp;",
+
+"<":"&lt;",
+
+">":"&gt;",
+
+'"':"&quot;",
+
+"'":"&#39;"
+
+}[c]));
+
+}
+
+function total(arr){
+
+return arr.reduce((sum,x)=>sum+Number(x.yards),0);
+
+}
+
+function average(arr){
+
+return arr.length?(total(arr)/arr.length).toFixed(2):"0.00";
+
+}
 
 function resetSelect(select,text){
 
 select.innerHTML="";
 
-select.add(
+select.add(new Option(text,""));
 
-new Option(text,"")
+}
+
+function setType(t){
+
+type.textContent=t||"—";
+
+type.className="type"+
+
+(
+
+t==="RUN"
+
+?" run"
+
+:t==="PASS"
+
+?" pass"
+
+:""
 
 );
 
 }
 
-/* =========================================================
+/* =====================================================
 
-RESET TRACKER
+GAME STORAGE
 
-IMPORTANT: EVERYTHING RESETS
+===================================================== */
 
-========================================================= */
+let games=
+
+JSON.parse(
+
+localStorage.getItem("footballTrackerGames")||"null"
+
+);
+
+/*
+
+Migrate your old version's plays automatically.
+
+*/
+
+if(!games){
+
+const oldPlays=
+
+JSON.parse(
+
+localStorage.getItem("footballTrackerPlays")||"[]"
+
+);
+
+if(oldPlays.length){
+
+games=[{
+
+id:Date.now(),
+
+opponent:"Previous Game",
+
+date:"",
+
+plays:oldPlays
+
+}];
+
+}else{
+
+games=[];
+
+}
+
+saveGames();
+
+}
+
+let currentGameId=
+
+localStorage.getItem("footballTrackerCurrentGame")||"";
+
+/* =====================================================
+
+GAME FUNCTIONS
+
+===================================================== */
+
+function saveGames(){
+
+localStorage.setItem(
+
+"footballTrackerGames",
+
+JSON.stringify(games)
+
+);
+
+}
+
+function currentGame(){
+
+return games.find(
+
+g=>String(g.id)===String(currentGameId)
+
+);
+
+}
+
+function currentPlays(){
+
+const g=currentGame();
+
+return g?g.plays:[];
+
+}
+
+function setCurrentGame(id){
+
+currentGameId=String(id);
+
+localStorage.setItem(
+
+"footballTrackerCurrentGame",
+
+currentGameId
+
+);
+
+renderAll();
+
+}
+
+function renderGameSelector(){
+
+const select=$("gameSelect");
+
+select.innerHTML="";
+
+if(!games.length){
+
+select.add(
+
+new Option("No games yet","")
+
+);
+
+$("currentGameTitle").textContent=
+
+"No game selected";
+
+$("currentGameSub").textContent=
+
+"Enter an opponent and start your first game.";
+
+return;
+
+}
+
+games.forEach(g=>{
+
+let label=g.opponent||"Unnamed Opponent";
+
+if(g.date){
+
+label+=" — "+g.date;
+
+}
+
+select.add(
+
+new Option(label,String(g.id))
+
+);
+
+});
+
+if(
+
+!currentGame() ||
+
+!currentGameId
+
+){
+
+currentGameId=String(games[games.length-1].id);
+
+localStorage.setItem(
+
+"footballTrackerCurrentGame",
+
+currentGameId
+
+);
+
+}
+
+select.value=currentGameId;
+
+const g=currentGame();
+
+$("currentGameTitle").textContent=
+
+"🏈 vs "+g.opponent;
+
+$("currentGameSub").textContent=
+
+g.date
+
+?"Game date: "+g.date+" • "+g.plays.length+" plays"
+
+:g.plays.length+" plays recorded";
+
+$("trackerGameTitle").textContent=
+
+"vs "+g.opponent;
+
+$("trackingGameTitle").textContent=
+
+"vs "+g.opponent;
+
+$("statsGameTitle").textContent=
+
+"vs "+g.opponent;
+
+}
+
+/* =====================================================
+
+OPPONENT HISTORY
+
+===================================================== */
+
+function renderOpponentList(){
+
+const list=$("opponentList");
+
+const names=
+
+[...new Set(
+
+games
+
+.map(g=>g.opponent)
+
+.filter(Boolean)
+
+)];
+
+list.innerHTML=
+
+names
+
+.map(n=>`<option value="${esc(n)}"></option>`)
+
+.join("");
+
+}
+
+/* =====================================================
+
+START NEW GAME
+
+===================================================== */
+
+$("newGame").addEventListener("click",()=>{
+
+const opponent=
+
+$("opponentInput").value.trim();
+
+const date=
+
+$("dateInput").value;
+
+if(!opponent){
+
+alert("Enter the opponent first.");
+
+return;
+
+}
+
+const game={
+
+id:Date.now()+Math.random(),
+
+opponent:opponent,
+
+date:date,
+
+plays:[]
+
+};
+
+games.push(game);
+
+saveGames();
+
+setCurrentGame(game.id);
+
+$("opponentInput").value="";
+
+$("dateInput").value="";
+
+alert("New game started vs "+opponent+"!");
+
+});
+
+/* =====================================================
+
+GAME SELECT
+
+===================================================== */
+
+$("gameSelect").addEventListener(
+
+"change",
+
+e=>{
+
+if(e.target.value){
+
+setCurrentGame(
+
+e.target.value
+
+);
+
+}
+
+});
+
+/* =====================================================
+
+TRACKER RESET
+
+===================================================== */
 
 function resetTracker(){
 
@@ -1306,9 +2010,21 @@ player.value="";
 
 formation.value="";
 
-resetSelect(series,"Add Series");
+resetSelect(
 
-resetSelect(play,"Add Play");
+series,
+
+"Add Series"
+
+);
+
+resetSelect(
+
+play,
+
+"Add Play"
+
+);
 
 yards.value="";
 
@@ -1320,11 +2036,11 @@ voiceStatus.textContent=
 
 }
 
-/* =========================================================
+/* =====================================================
 
 FORMATION
 
-========================================================= */
+===================================================== */
 
 formation.addEventListener("change",()=>{
 
@@ -1334,11 +2050,7 @@ resetSelect(play,"Add Play");
 
 setType("");
 
-if(!formation.value){
-
-return;
-
-}
+if(!formation.value)return;
 
 Object.keys(
 
@@ -1346,21 +2058,17 @@ DATA[formation.value]
 
 ).forEach(s=>{
 
-series.add(
-
-new Option(s,s)
-
-);
+series.add(new Option(s,s));
 
 });
 
 });
 
-/* =========================================================
+/* =====================================================
 
 SERIES
 
-========================================================= */
+===================================================== */
 
 series.addEventListener("change",()=>{
 
@@ -1368,17 +2076,7 @@ resetSelect(play,"Add Play");
 
 setType("");
 
-if(
-
-!formation.value ||
-
-!series.value
-
-){
-
-return;
-
-}
+if(!formation.value||!series.value)return;
 
 DATA[
 
@@ -1406,11 +2104,11 @@ String(i)
 
 });
 
-/* =========================================================
+/* =====================================================
 
 PLAY
 
-========================================================= */
+===================================================== */
 
 play.addEventListener("change",()=>{
 
@@ -1424,7 +2122,7 @@ formation.value
 
 series.value
 
-] || [];
+]||[];
 
 const selected=
 
@@ -1432,189 +2130,43 @@ arr[Number(play.value)];
 
 setType(
 
-selected?.[1] || ""
+selected?.[1]||""
 
 );
 
 });
 
-/* =========================================================
-
-PLAY TYPE
-
-========================================================= */
-
-function setType(t){
-
-type.textContent=t||"—";
-
-type.className=
-
-"type"+
-
-(
-
-t==="RUN"
-
-?
-
-" run"
-
-:
-
-t==="PASS"
-
-?
-
-" pass"
-
-:
-
-""
-
-);
-
-}
-
-/* =========================================================
-
-STORAGE
-
-========================================================= */
-
-let plays=
-
-JSON.parse(
-
-localStorage.getItem(
-
-"footballTrackerPlays"
-
-) || "[]"
-
-);
-
-/* =========================================================
-
-MATH
-
-========================================================= */
-
-function total(arr){
-
-return arr.reduce(
-
-(sum,x)=>
-
-sum+Number(x.yards),
-
-0
-
-);
-
-}
-
-function average(arr){
-
-return arr.length
-
-?
-
-(total(arr)/arr.length).toFixed(2)
-
-:
-
-"0.00";
-
-}
-
-/* =========================================================
-
-ESCAPE
-
-========================================================= */
-
-function esc(s){
-
-return String(s).replace(
-
-/[&<>"']/g,
-
-c=>({
-
-"&":"&amp;",
-
-"<":"&lt;",
-
-">":"&gt;",
-
-'"':"&quot;",
-
-"'":"&#39;"
-
-}[c])
-
-);
-
-}
-
-/* =========================================================
-
-SAVE
-
-========================================================= */
-
-function save(){
-
-localStorage.setItem(
-
-"footballTrackerPlays",
-
-JSON.stringify(plays)
-
-);
-
-render();
-
-}
-
-/* =========================================================
-
-DELETE
-
-========================================================= */
-
-function del(id){
-
-plays=
-
-plays.filter(
-
-x=>x.id!==id
-
-);
-
-save();
-
-}
-
-/* =========================================================
+/* =====================================================
 
 ADD PLAY
 
-========================================================= */
+===================================================== */
 
 function addPlay(){
 
+const game=currentGame();
+
+if(!game){
+
+alert(
+
+"Start a game and enter the opponent first."
+
+);
+
+return false;
+
+}
+
 if(
 
-!player.value ||
+!player.value||
 
-!formation.value ||
+!formation.value||
 
-!series.value ||
+!series.value||
 
-play.value==="" ||
+play.value===""||
 
 yards.value===""
 
@@ -1646,13 +2198,9 @@ const selected=
 
 arr[Number(play.value)];
 
-if(!selected){
+if(!selected)return false;
 
-return false;
-
-}
-
-plays.push({
+game.plays.push({
 
 id:Date.now()+Math.random(),
 
@@ -1670,27 +2218,15 @@ yards:Number(yards.value)
 
 });
 
-save();
-
-/*
-
-VERY IMPORTANT:
-
-Reset every selection after recording.
-
-*/
+saveGames();
 
 resetTracker();
+
+renderAll();
 
 return true;
 
 }
-
-/* =========================================================
-
-ADD BUTTON
-
-========================================================= */
 
 $("add").addEventListener(
 
@@ -1700,65 +2236,101 @@ addPlay
 
 );
 
-/* =========================================================
+/* =====================================================
+
+DELETE PLAY
+
+===================================================== */
+
+function del(id){
+
+const game=currentGame();
+
+if(!game)return;
+
+game.plays=
+
+game.plays.filter(
+
+x=>String(x.id)!==String(id)
+
+);
+
+saveGames();
+
+renderAll();
+
+}
+
+window.del=del;
+
+/* =====================================================
+
+CLEAR CURRENT GAME
+
+===================================================== */
+
+$("clear").addEventListener("click",()=>{
+
+const game=currentGame();
+
+if(!game)return;
+
+if(
+
+confirm(
+
+"Clear all plays from vs "+game.opponent+"?"
+
+)
+
+){
+
+game.plays=[];
+
+saveGames();
+
+resetTracker();
+
+renderAll();
+
+}
+
+});
+
+/* =====================================================
 
 RENDER TRACKER
 
-========================================================= */
+===================================================== */
 
-function render(){
+function renderTracker(){
+
+const plays=currentPlays();
 
 const runs=
 
-plays.filter(
-
-x=>x.type==="RUN"
-
-);
+plays.filter(x=>x.type==="RUN");
 
 const passes=
 
-plays.filter(
+plays.filter(x=>x.type==="PASS");
 
-x=>x.type==="PASS"
+$("runCount").textContent=runs.length;
 
-);
+$("runTotal").textContent=total(runs);
 
-$("runCount").textContent=
+$("runAvg").textContent=average(runs);
 
-runs.length;
+$("passCount").textContent=passes.length;
 
-$("runTotal").textContent=
+$("passTotal").textContent=total(passes);
 
-total(runs);
-
-$("runAvg").textContent=
-
-average(runs);
-
-$("passCount").textContent=
-
-passes.length;
-
-$("passTotal").textContent=
-
-total(passes);
-
-$("passAvg").textContent=
-
-average(passes);
+$("passAvg").textContent=average(passes);
 
 $("empty").style.display=
 
-plays.length
-
-?
-
-"none"
-
-:
-
-"block";
+plays.length?"none":"block";
 
 $("log").innerHTML=
 
@@ -1778,19 +2350,7 @@ plays.map((x,i)=>`
 
 <td>
 
-<span class="badge ${
-
-x.type==="RUN"
-
-?
-
-"run"
-
-:
-
-"pass"
-
-}">
+<span class="badge ${x.type==="RUN"?"run":"pass"}">
 
 ${x.type}
 
@@ -1802,7 +2362,11 @@ ${x.type}
 
 <td>
 
-<button onclick="del(${x.id})">
+<button
+
+class="deleteBtn"
+
+onclick="del('${x.id}')">
 
 Delete
 
@@ -1814,61 +2378,273 @@ Delete
 
 `).join("");
 
-renderStats();
+}
+
+/* =====================================================
+
+PLAY TRACKING
+
+===================================================== */
+
+function renderTrackingFilters(){
+
+const plays=currentPlays();
+
+const names=
+
+[...new Set(
+
+plays.map(x=>x.player)
+
+)];
+
+const select=$("trackingPlayer");
+
+const old=select.value;
+
+select.innerHTML=
+
+'<option value="ALL">All Players</option>';
+
+names.forEach(n=>{
+
+select.add(
+
+new Option(n,n)
+
+);
+
+});
+
+if(names.includes(old)){
+
+select.value=old;
 
 }
 
-/* =========================================================
+}
+
+function renderTracking(){
+
+renderTrackingFilters();
+
+const plays=currentPlays();
+
+const selectedType=
+
+$("trackingType").value;
+
+const selectedPlayer=
+
+$("trackingPlayer").value;
+
+const filtered=
+
+plays.filter(x=>
+
+(
+
+selectedType==="ALL"||
+
+x.type===selectedType
+
+)&&
+
+(
+
+selectedPlayer==="ALL"||
+
+x.player===selectedPlayer
+
+)
+
+);
+
+$("trackingEmpty").style.display=
+
+filtered.length?"none":"block";
+
+$("trackingLog").innerHTML=
+
+filtered.map(x=>{
+
+const number=
+
+plays.indexOf(x)+1;
+
+return `
+
+<tr>
+
+<td>${number}</td>
+
+<td>${esc(x.player)}</td>
+
+<td>${esc(x.formation)}</td>
+
+<td>${esc(x.series)}</td>
+
+<td>${esc(x.play)}</td>
+
+<td>
+
+<span class="badge ${x.type==="RUN"?"run":"pass"}">
+
+${x.type}
+
+</span>
+
+</td>
+
+<td>${x.yards}</td>
+
+</tr>
+
+`;
+
+}).join("");
+
+}
+
+$("trackingType").addEventListener(
+
+"change",
+
+renderTracking
+
+);
+
+$("trackingPlayer").addEventListener(
+
+"change",
+
+renderTracking
+
+);
+
+/* =====================================================
 
 STATS
 
-========================================================= */
+===================================================== */
+
+function allSeasonPlays(){
+
+return games.flatMap(
+
+g=>g.plays.map(
+
+p=>({
+
+...p,
+
+gameId:g.id,
+
+opponent:g.opponent,
+
+date:g.date
+
+})
+
+)
+
+);
+
+}
 
 function renderStats(){
 
+const plays=currentPlays();
+
 const runs=
 
-plays.filter(
-
-x=>x.type==="RUN"
-
-);
+plays.filter(x=>x.type==="RUN");
 
 const passes=
 
-plays.filter(
+plays.filter(x=>x.type==="PASS");
 
-x=>x.type==="PASS"
+$("gameTotalPlays").textContent=
 
-);
+plays.length;
 
-$("srn").textContent=
+$("gameTotalYards").textContent=
 
-runs.length;
+total(plays);
 
-$("srt").textContent=
-
-total(runs);
-
-$("sra").textContent=
+$("gameRunAvg").textContent=
 
 average(runs);
 
-$("spn").textContent=
-
-passes.length;
-
-$("spt").textContent=
-
-total(passes);
-
-$("spa").textContent=
+$("gamePassAvg").textContent=
 
 average(passes);
 
-/* PLAYER STATS */
+/* SEASON */
 
-const names=[
+const season=
+
+allSeasonPlays();
+
+$("seasonGames").textContent=
+
+games.length;
+
+$("seasonPlays").textContent=
+
+season.length;
+
+$("seasonYards").textContent=
+
+total(season);
+
+$("seasonAvg").textContent=
+
+average(season);
+
+/* GAME BY GAME */
+
+$("gameStats").innerHTML=
+
+games.map(g=>{
+
+const r=
+
+g.plays.filter(x=>x.type==="RUN");
+
+const p=
+
+g.plays.filter(x=>x.type==="PASS");
+
+return `
+
+<tr>
+
+<td><strong>vs ${esc(g.opponent)}</strong></td>
+
+<td>${esc(g.date||"—")}</td>
+
+<td>${g.plays.length}</td>
+
+<td>${total(g.plays)}</td>
+
+<td>${average(g.plays)}</td>
+
+<td>${average(r)}</td>
+
+<td>${average(p)}</td>
+
+</tr>
+
+`;
+
+}).join("");
+
+/* PLAYER SEASON STATS */
+
+const names=
+
+[
 
 ...new Set(
 
@@ -1892,17 +2668,17 @@ names.map(n=>{
 
 const rr=
 
-runs.filter(
+season.filter(
 
-x=>x.player===n
+x=>x.player===n&&x.type==="RUN"
 
 );
 
 const pp=
 
-passes.filter(
+season.filter(
 
-x=>x.player===n
+x=>x.player===n&&x.type==="PASS"
 
 );
 
@@ -1934,11 +2710,11 @@ return `
 
 }).join("");
 
-/* PLAY PERFORMANCE */
+/* SEASON PLAY PERFORMANCE */
 
 const groups={};
 
-plays.forEach(x=>{
+season.forEach(x=>{
 
 const key=
 
@@ -1978,9 +2754,7 @@ yards:0
 
 groups[key].attempts++;
 
-groups[key].yards+=
-
-Number(x.yards);
+groups[key].yards+=Number(x.yards);
 
 });
 
@@ -1988,9 +2762,7 @@ const performance=
 
 Object.values(groups)
 
-.sort(
-
-(a,b)=>
+.sort((a,b)=>
 
 (b.yards/b.attempts)-
 
@@ -1998,23 +2770,27 @@ Object.values(groups)
 
 );
 
+$("playStatsEmpty").style.display=
+
+performance.length?"none":"block";
+
 $("playStats").innerHTML=
 
-performance.map(x=>{
+performance.map((x,i)=>{
 
 const avg=
 
 (
 
-x.yards/
-
-x.attempts
+x.yards/x.attempts
 
 ).toFixed(2);
 
 return `
 
 <tr>
+
+<td class="rank">#${i+1}</td>
 
 <td>${esc(x.formation)}</td>
 
@@ -2028,13 +2804,9 @@ return `
 
 x.type==="RUN"
 
-?
+?"performance-run"
 
-"performance-run"
-
-:
-
-"performance-pass"
+:"performance-pass"
 
 }">
 
@@ -2048,11 +2820,7 @@ ${x.type}
 
 <td>${x.yards}</td>
 
-<td>
-
-<strong>${avg}</strong>
-
-</td>
+<td class="rank">${avg}</td>
 
 </tr>
 
@@ -2060,95 +2828,27 @@ ${x.type}
 
 }).join("");
 
-$("playStatsEmpty").style.display=
-
-performance.length
-
-?
-
-"none"
-
-:
-
-"block";
-
 }
 
-/* =========================================================
-
-CLEAR ALL
-
-========================================================= */
-
-$("clear").addEventListener(
-
-"click",
-
-()=>{
-
-if(
-
-confirm(
-
-"Clear all recorded plays?"
-
-)
-
-){
-
-plays=[];
-
-save();
-
-resetTracker();
-
-}
-
-});
-
-/* =========================================================
+/* =====================================================
 
 VOICE ENTRY
 
-========================================================= */
+===================================================== */
 
 const SpeechRecognition=
 
-window.SpeechRecognition ||
+window.SpeechRecognition||
 
 window.webkitSpeechRecognition;
-
-/*
-
-Convert speech into a yard number.
-
-*/
 
 function parseSpokenYards(text){
 
 text=
 
-text
-
-.toLowerCase()
+text.toLowerCase()
 
 .trim();
-
-/*
-
-Examples:
-
-7
-
-7 yards
-
-minus 3
-
-negative 4
-
--5
-
-*/
 
 let numeric=
 
@@ -2160,13 +2860,11 @@ text.match(
 
 if(numeric){
 
-let n=
-
-Number(numeric[1]);
+let n=Number(numeric[1]);
 
 if(
 
-text.includes("minus") ||
+text.includes("minus")||
 
 text.includes("negative")
 
@@ -2178,9 +2876,9 @@ n=-Math.abs(n);
 
 if(
 
-Number.isFinite(n) &&
+Number.isFinite(n)&&
 
-n>=-30 &&
+n>=-30&&
 
 n<=110
 
@@ -2191,12 +2889,6 @@ return Math.round(n);
 }
 
 }
-
-/*
-
-Spoken numbers.
-
-*/
 
 const numberWords={
 
@@ -2284,13 +2976,11 @@ for(const word in numberWords){
 
 if(text.includes(word)){
 
-let n=
-
-numberWords[word];
+let n=numberWords[word];
 
 if(
 
-text.includes("minus") ||
+text.includes("minus")||
 
 text.includes("negative")
 
@@ -2310,12 +3000,6 @@ return null;
 
 }
 
-/*
-
-Create voice recognition.
-
-*/
-
 let recognition=null;
 
 if(SpeechRecognition){
@@ -2324,31 +3008,17 @@ recognition=
 
 new SpeechRecognition();
 
-recognition.lang=
+recognition.lang="en-US";
 
-"en-US";
+recognition.continuous=false;
 
-recognition.continuous=
+recognition.interimResults=false;
 
-false;
-
-recognition.interimResults=
-
-false;
-
-recognition.maxAlternatives=
-
-5;
-
-/* START */
+recognition.maxAlternatives=5;
 
 recognition.onstart=()=>{
 
-voiceButton.classList.add(
-
-"listening"
-
-);
+voiceButton.classList.add("listening");
 
 voiceButton.textContent=
 
@@ -2360,15 +3030,9 @@ voiceStatus.textContent=
 
 };
 
-/* END */
-
 recognition.onend=()=>{
 
-voiceButton.classList.remove(
-
-"listening"
-
-);
+voiceButton.classList.remove("listening");
 
 voiceButton.textContent=
 
@@ -2376,15 +3040,9 @@ voiceButton.textContent=
 
 };
 
-/* ERROR */
+recognition.onerror=event=>{
 
-recognition.onerror=(event)=>{
-
-voiceButton.classList.remove(
-
-"listening"
-
-);
+voiceButton.classList.remove("listening");
 
 voiceButton.textContent=
 
@@ -2394,21 +3052,19 @@ if(event.error==="not-allowed"){
 
 voiceStatus.textContent=
 
-"Microphone permission is blocked. Allow microphone access for this website.";
+"Microphone permission is blocked. Allow microphone access.";
 
 }else{
 
 voiceStatus.textContent=
 
-"Voice could not hear you. Tap again and speak clearly.";
+"Voice could not hear you. Tap again.";
 
 }
 
 };
 
-/* RESULT */
-
-recognition.onresult=(event)=>{
+recognition.onresult=event=>{
 
 const transcript=
 
@@ -2428,35 +3084,41 @@ transcript+
 
 const number=
 
-parseSpokenYards(
-
-transcript
-
-);
+parseSpokenYards(transcript);
 
 if(number===null){
 
 voiceStatus.textContent=
 
-'Could not find a yard number. Try saying "7 yards".';
+'Could not find a yard number. Try "7 yards".';
 
 return;
 
 }
 
-/*
+if(
 
-Make sure all selections exist.
+!currentGame()
 
-*/
+){
+
+alert(
+
+"Start a game first."
+
+);
+
+return;
+
+}
 
 if(
 
-!player.value ||
+!player.value||
 
-!formation.value ||
+!formation.value||
 
-!series.value ||
+!series.value||
 
 play.value===""
 
@@ -2464,7 +3126,7 @@ play.value===""
 
 alert(
 
-"Select Player, Formation, Series and Play before using Voice Entry."
+"Select Player, Formation, Series and Play first."
 
 );
 
@@ -2472,21 +3134,9 @@ return;
 
 }
 
-/*
-
-Put voice result into yards dropdown.
-
-*/
-
 yards.value=
 
 String(number);
-
-/*
-
-Automatically add the play.
-
-*/
 
 const success=
 
@@ -2502,12 +3152,6 @@ voiceStatus.textContent=
 
 };
 
-/*
-
-VOICE BUTTON
-
-*/
-
 voiceButton.addEventListener(
 
 "click",
@@ -2518,7 +3162,7 @@ if(!recognition){
 
 voiceStatus.textContent=
 
-"Voice recognition is not available in this browser. Use Safari with microphone access enabled.";
+"Voice recognition is not available. Try Safari.";
 
 return;
 
@@ -2526,11 +3170,27 @@ return;
 
 if(
 
-!player.value ||
+!currentGame()
 
-!formation.value ||
+){
 
-!series.value ||
+alert(
+
+"Start a game first."
+
+);
+
+return;
+
+}
+
+if(
+
+!player.value||
+
+!formation.value||
+
+!series.value||
 
 play.value===""
 
@@ -2552,14 +3212,6 @@ recognition.start();
 
 }catch(error){
 
-/*
-
-If recognition is already running,
-
-stop it so the next tap works.
-
-*/
-
 try{
 
 recognition.stop();
@@ -2580,19 +3232,17 @@ voiceButton.addEventListener(
 
 voiceStatus.textContent=
 
-"Voice recognition is not available in this browser. Try opening the app in Safari.";
+"Voice recognition is not available in this browser.";
+
+});
 
 }
 
-);
-
-}
-
-/* =========================================================
+/* =====================================================
 
 PLAYBOOK
 
-========================================================= */
+===================================================== */
 
 function renderPlaybook(){
 
@@ -2632,15 +3282,7 @@ arr.map(
 
 <div class="playbook-play ${
 
-p[1]==="RUN"
-
-?
-
-"run"
-
-:
-
-"pass"
+p[1]==="RUN"?"run":"pass"
 
 }">
 
@@ -2666,11 +3308,31 @@ ${i+1}.) ${esc(p[0])}
 
 }
 
-/* =========================================================
+/* =====================================================
+
+RENDER EVERYTHING
+
+===================================================== */
+
+function renderAll(){
+
+renderGameSelector();
+
+renderOpponentList();
+
+renderTracker();
+
+renderTracking();
+
+renderStats();
+
+}
+
+/* =====================================================
 
 TABS
 
-========================================================= */
+===================================================== */
 
 document
 
@@ -2690,13 +3352,7 @@ document
 
 .forEach(
 
-x=>
-
-x.classList.remove(
-
-"active"
-
-)
+x=>x.classList.remove("active")
 
 );
 
@@ -2706,33 +3362,17 @@ document
 
 .forEach(
 
-x=>
-
-x.classList.remove(
-
-"active"
-
-)
+x=>x.classList.remove("active")
 
 );
 
-button.classList.add(
-
-"active"
-
-);
+button.classList.add("active");
 
 $(
 
 button.dataset.page
 
-)
-
-.classList.add(
-
-"active"
-
-);
+).classList.add("active");
 
 if(
 
@@ -2741,6 +3381,16 @@ button.dataset.page==="stats"
 ){
 
 renderStats();
+
+}
+
+if(
+
+button.dataset.page==="tracking"
+
+){
+
+renderTracking();
 
 }
 
@@ -2758,13 +3408,13 @@ renderPlaybook();
 
 });
 
-/* =========================================================
+/* =====================================================
 
 START APP
 
-========================================================= */
+===================================================== */
 
-render();
+renderAll();
 
 renderPlaybook();
 
