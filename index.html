@@ -18,11 +18,7 @@
 
 <style>
 
-*{
-
-box-sizing:border-box
-
-}
+*{box-sizing:border-box}
 
 body{
 
@@ -94,17 +90,9 @@ color:#111
 
 }
 
-.page{
+.page{display:none}
 
-display:none
-
-}
-
-.page.active{
-
-display:block
-
-}
+.page.active{display:block}
 
 .card{
 
@@ -164,11 +152,7 @@ font-size:18px
 
 }
 
-.full{
-
-grid-column:1/-1
-
-}
+.full{grid-column:1/-1}
 
 .type{
 
@@ -304,11 +288,7 @@ font-size:13px
 
 }
 
-th{
-
-color:#aaa
-
-}
+th{color:#aaa}
 
 .badge{
 
@@ -346,8 +326,6 @@ text-transform:uppercase;
 
 margin:18px 0 4px;
 
-border-bottom:1px solid #555;
-
 padding-bottom:4px
 
 }
@@ -360,7 +338,7 @@ font-size:17px;
 
 font-weight:900;
 
-margin:10px 0 3px
+margin:8px 0 3px
 
 }
 
@@ -380,43 +358,17 @@ color:#111
 
 @media(max-width:650px){
 
-.wrap{
+.wrap{padding-top:10px}
 
-padding-top:10px
+.grid{gap:10px}
 
-}
+.tabs{gap:6px}
 
-.grid{
+.tab{height:58px;font-size:18px}
 
-gap:10px
+select{font-size:17px}
 
-}
-
-.tabs{
-
-gap:6px
-
-}
-
-.tab{
-
-height:58px;
-
-font-size:18px
-
-}
-
-select{
-
-font-size:17px
-
-}
-
-.card{
-
-padding:14px
-
-}
+.card{padding:14px}
 
 }
 
@@ -432,27 +384,15 @@ padding:14px
 
 <div class="tabs">
 
-<button class="tab active" data-page="tracker">
+<button class="tab active" data-page="tracker">TRACKER</button>
 
-TRACKER
+<button class="tab" data-page="stats">STATS</button>
 
-</button>
-
-<button class="tab" data-page="stats">
-
-STATS
-
-</button>
-
-<button class="tab" data-page="playbook">
-
-PLAYBOOK
-
-</button>
+<button class="tab" data-page="playbook">PLAYBOOK</button>
 
 </div>
 
-<!-- ================= TRACKER ================= -->
+<!-- TRACKER -->
 
 <section id="tracker" class="page active">
 
@@ -466,11 +406,7 @@ PLAYBOOK
 
 <select id="formation">
 
-<option value="">
-
-Add Formation
-
-</option>
+<option value="">Add Formation</option>
 
 </select>
 
@@ -482,11 +418,7 @@ Add Formation
 
 <select id="series">
 
-<option value="">
-
-Add Series
-
-</option>
+<option value="">Add Series</option>
 
 </select>
 
@@ -498,11 +430,7 @@ Add Series
 
 <select id="play">
 
-<option value="">
-
-Add Play
-
-</option>
+<option value="">Add Play</option>
 
 </select>
 
@@ -514,11 +442,7 @@ Add Play
 
 <select id="player">
 
-<option value="">
-
-Add Player
-
-</option>
+<option value="">Add Player</option>
 
 <option>#36 Althouse, Frank</option>
 
@@ -556,11 +480,7 @@ Add Player
 
 <label>Play Type</label>
 
-<div id="type" class="type">
-
-—
-
-</div>
+<div id="type" class="type">—</div>
 
 </div>
 
@@ -570,11 +490,7 @@ Add Player
 
 <select id="yards">
 
-<option value="">
-
-Add Yards
-
-</option>
+<option value="">Add Yards</option>
 
 </select>
 
@@ -582,17 +498,9 @@ Add Yards
 
 </div>
 
-<button class="action" id="add">
+<button class="action" id="add">ADD PLAY</button>
 
-ADD PLAY
-
-</button>
-
-<button class="action clear" id="clear">
-
-CLEAR ALL PLAYS
-
-</button>
+<button class="action clear" id="clear">CLEAR ALL PLAYS</button>
 
 </div>
 
@@ -602,29 +510,15 @@ CLEAR ALL PLAYS
 
 <div class="stat">
 
-<div class="small">
+<div class="small">RUNNING PLAYS</div>
 
-RUNNING PLAYS
-
-</div>
-
-<div class="big" id="runCount">
-
-0
-
-</div>
+<div class="big" id="runCount">0</div>
 
 <div class="small">
 
-Avg:
+Avg: <span id="runAvg">0.00</span> |
 
-<span id="runAvg">0.00</span>
-
-|
-
-Total:
-
-<span id="runTotal">0</span>
+Total: <span id="runTotal">0</span>
 
 </div>
 
@@ -632,29 +526,15 @@ Total:
 
 <div class="stat">
 
-<div class="small">
+<div class="small">PASSING PLAYS</div>
 
-PASSING PLAYS
-
-</div>
-
-<div class="big" id="passCount">
-
-0
-
-</div>
+<div class="big" id="passCount">0</div>
 
 <div class="small">
 
-Avg:
+Avg: <span id="passAvg">0.00</span> |
 
-<span id="passAvg">0.00</span>
-
-|
-
-Total:
-
-<span id="passTotal">0</span>
+Total: <span id="passTotal">0</span>
 
 </div>
 
@@ -666,11 +546,7 @@ Total:
 
 <div class="card">
 
-<h2>
-
-Play Log
-
-</h2>
+<h2>Play Log</h2>
 
 <div class="table">
 
@@ -700,9 +576,7 @@ Play Log
 
 </thead>
 
-<tbody id="log">
-
-</tbody>
+<tbody id="log"></tbody>
 
 </table>
 
@@ -718,45 +592,27 @@ No plays recorded yet.
 
 </section>
 
-<!-- ================= STATS ================= -->
+<!-- STATS -->
 
 <section id="stats" class="page">
 
 <div class="card">
 
-<h2>
-
-Team Stats
-
-</h2>
+<h2>Team Stats</h2>
 
 <div class="stats">
 
 <div class="stat">
 
-<div class="small">
+<div class="small">RUNNING PLAYS</div>
 
-RUNNING PLAYS
-
-</div>
-
-<div class="big" id="srn">
-
-0
-
-</div>
+<div class="big" id="srn">0</div>
 
 <div class="small">
 
-Avg:
+Avg: <span id="sra">0.00</span> |
 
-<span id="sra">0.00</span>
-
-|
-
-Total:
-
-<span id="srt">0</span>
+Total: <span id="srt">0</span>
 
 </div>
 
@@ -764,29 +620,15 @@ Total:
 
 <div class="stat">
 
-<div class="small">
+<div class="small">PASSING PLAYS</div>
 
-PASSING PLAYS
-
-</div>
-
-<div class="big" id="spn">
-
-0
-
-</div>
+<div class="big" id="spn">0</div>
 
 <div class="small">
 
-Avg:
+Avg: <span id="spa">0.00</span> |
 
-<span id="spa">0.00</span>
-
-|
-
-Total:
-
-<span id="spt">0</span>
+Total: <span id="spt">0</span>
 
 </div>
 
@@ -798,11 +640,7 @@ Total:
 
 <div class="card">
 
-<h2>
-
-Player Stats
-
-</h2>
+<h2>Player Stats</h2>
 
 <div class="table">
 
@@ -834,9 +672,7 @@ Player Stats
 
 </thead>
 
-<tbody id="playerStats">
-
-</tbody>
+<tbody id="playerStats"></tbody>
 
 </table>
 
@@ -846,21 +682,15 @@ Player Stats
 
 </section>
 
-<!-- ================= PLAYBOOK ================= -->
+<!-- PLAYBOOK -->
 
 <section id="playbook" class="page">
 
 <div class="card">
 
-<h2>
+<h2>Playbook</h2>
 
-Playbook
-
-</h2>
-
-<div id="pb">
-
-</div>
+<div id="pb"></div>
 
 </div>
 
@@ -872,23 +702,39 @@ Playbook
 
 /* =========================================================
 
-   PLAYBOOK DATA
+PLAYBOOK DATA
 
-   FORMATION = WHITE / ALL CAPS
+FORMATION
 
-   SERIES = RED
+  ↓
 
-   RUN = GREEN
+SERIES
 
-   PASS = YELLOW
+  ↓
+
+PLAYS
+
+FORMATION = WHITE
+
+SERIES = RED
+
+RUN = GREEN
+
+PASS = YELLOW
 
 ========================================================= */
 
 const DATA={
 
+/* =========================
+
+DOUBLES HEAVY (A)
+
+========================= */
+
 "DOUBLES HEAVY (A)":{
 
-"Doubles Heavy (A)":[
+"DOUBLES HEAVY (A)":[
 
 ["(RT) 24 Dive Lead / (LT) 23 Dive Lead","RUN"],
 
@@ -906,9 +752,19 @@ const DATA={
 
 ["(RT) 50 Slip Pass / (LT) 50 Slip Pass","PASS"]
 
-],
+]
 
-"Trio (D)":[
+},
+
+/* =========================
+
+TRIO (D)
+
+========================= */
+
+"TRIO (D)":{
+
+"TRIO (D)":[
 
 ["(RT) Heavy 22 Blast / (LT) Heavy 21 Blast","RUN"],
 
@@ -922,9 +778,15 @@ const DATA={
 
 },
 
+/* =========================
+
+DEUCE (B)
+
+========================= */
+
 "DEUCE (B)":{
 
-"Deuce (B)":[
+"DEUCE (B)":[
 
 ["(RT) 21 IZ / (LT) 22 IZ","RUN"],
 
@@ -934,7 +796,7 @@ const DATA={
 
 ],
 
-"30 Series":[
+"30 SERIES":[
 
 ["(RT) 30 Hitch / (LT) 30 Hitch","PASS"],
 
@@ -946,7 +808,7 @@ const DATA={
 
 ],
 
-"50 Series":[
+"50 SERIES":[
 
 ["(RT) 50 Hitch / (LT) 50 Hitch","PASS"],
 
@@ -958,7 +820,7 @@ const DATA={
 
 ],
 
-"80/81 Series":[
+"80/81 SERIES":[
 
 ["(RT) 80 Hitch / (LT) 81 Hitch","PASS"],
 
@@ -972,9 +834,15 @@ const DATA={
 
 },
 
+/* =========================
+
+DOUBLES (C)
+
+========================= */
+
 "DOUBLES (C)":{
 
-"Doubles (C)":[
+"DOUBLES (C)":[
 
 ["22 IZ Right / 21 IZ Left","RUN"],
 
@@ -988,7 +856,7 @@ const DATA={
 
 ],
 
-"Motion Run":[
+"MOTION RUN":[
 
 ["38 Jet Sweep RT / 47 Jet Sweep LT","RUN"],
 
@@ -998,7 +866,7 @@ const DATA={
 
 ],
 
-"Motion Pass":[
+"MOTION PASS":[
 
 ["Rexy 80 Flood / Louey 81 Flood","PASS"],
 
@@ -1010,7 +878,7 @@ const DATA={
 
 ],
 
-"30 Series":[
+"30 SERIES":[
 
 ["30 Hitch","PASS"],
 
@@ -1026,7 +894,7 @@ const DATA={
 
 ],
 
-"50 Series":[
+"50 SERIES":[
 
 ["50 Hitch","PASS"],
 
@@ -1046,9 +914,15 @@ const DATA={
 
 },
 
+/* =========================
+
+TRIPS (D)
+
+========================= */
+
 "TRIPS (D)":{
 
-"Motion Pass":[
+"MOTION PASS":[
 
 ["(RT) Louey 30 Slap / (LT) Rexy 30 Slap","PASS"],
 
@@ -1064,7 +938,7 @@ const DATA={
 
 ],
 
-"30 Series":[
+"30 SERIES":[
 
 ["(RT) 30 Hitch / (LT) 30 Hitch","PASS"],
 
@@ -1076,7 +950,7 @@ const DATA={
 
 ],
 
-"50 Series":[
+"50 SERIES":[
 
 ["(RT) 50 Hitch / (LT) 50 Hitch","PASS"],
 
@@ -1084,7 +958,7 @@ const DATA={
 
 ["(RT) 50 Fade / (LT) 50 Fade","PASS"],
 
-["(RT) 50 Vegas / (LT) Vegas","PASS"],
+["(RT) 50 Vegas / (LT) 50 Vegas","PASS"],
 
 ["(RT) 50 F Screen / (LT) 50 F Screen","PASS"],
 
@@ -1092,13 +966,23 @@ const DATA={
 
 ],
 
-"80 Series":[
+"80 SERIES":[
 
 ["(RT) 80 Flood / (LT) 81 Flood","PASS"],
 
 ["(RT) 80 Out / (LT) 81 Out","PASS"]
 
-],
+]
+
+},
+
+/* =========================
+
+BASE RUN
+
+========================= */
+
+"BASE RUN":{
 
 "BASE RUN":[
 
@@ -1108,7 +992,17 @@ const DATA={
 
 ["(RT) Zoom R / (LT) Zoom L","RUN"]
 
-],
+]
+
+},
+
+/* =========================
+
+SPECIAL RUN AND PASS PLAYS
+
+========================= */
+
+"SPECIAL RUN AND PASS PLAYS":{
 
 "SPECIAL RUN AND PASS PLAYS":[
 
@@ -1126,7 +1020,7 @@ const DATA={
 
 /* =========================================================
 
-   ELEMENTS
+ELEMENTS
 
 ========================================================= */
 
@@ -1146,7 +1040,7 @@ const type=$("type");
 
 /* =========================================================
 
-   YARDS -30 TO 110
+YARDS -30 THROUGH 110
 
 ========================================================= */
 
@@ -1168,7 +1062,7 @@ String(y)
 
 /* =========================================================
 
-   FORMATIONS
+LOAD FORMATIONS
 
 ========================================================= */
 
@@ -1176,13 +1070,7 @@ Object.keys(DATA).forEach(f=>{
 
 formation.add(
 
-new Option(
-
-f,
-
-f
-
-)
+new Option(f,f)
 
 );
 
@@ -1190,7 +1078,7 @@ f
 
 /* =========================================================
 
-   RESET DROPDOWN
+RESET SELECT
 
 ========================================================= */
 
@@ -1200,13 +1088,7 @@ sel.innerHTML="";
 
 sel.add(
 
-new Option(
-
-text,
-
-""
-
-)
+new Option(text,"")
 
 );
 
@@ -1214,27 +1096,15 @@ text,
 
 /* =========================================================
 
-   FORMATION SELECTED
+FORMATION CHANGED
 
 ========================================================= */
 
 function loadSeries(){
 
-resetSelect(
+resetSelect(series,"Add Series");
 
-series,
-
-"Add Series"
-
-);
-
-resetSelect(
-
-play,
-
-"Add Play"
-
-);
+resetSelect(play,"Add Play");
 
 setType("");
 
@@ -1252,13 +1122,7 @@ DATA[formation.value]
 
 series.add(
 
-new Option(
-
-s,
-
-s
-
-)
+new Option(s,s)
 
 );
 
@@ -1268,19 +1132,13 @@ s
 
 /* =========================================================
 
-   SERIES SELECTED
+SERIES CHANGED
 
 ========================================================= */
 
 function loadPlays(){
 
-resetSelect(
-
-play,
-
-"Add Play"
-
-);
+resetSelect(play,"Add Play");
 
 setType("");
 
@@ -1296,7 +1154,7 @@ return;
 
 }
 
-const selectedSeries =
+const selectedSeries=
 
 DATA[
 
@@ -1330,15 +1188,13 @@ String(i)
 
 /* =========================================================
 
-   PLAY TYPE
+PLAY CHANGED
 
 ========================================================= */
 
 function setType(t){
 
-type.textContent=
-
-t || "—";
+type.textContent=t||"—";
 
 type.className=
 
@@ -1368,13 +1224,9 @@ t==="PASS"
 
 }
 
-formation.onchange=
+formation.onchange=loadSeries;
 
-loadSeries;
-
-series.onchange=
-
-loadPlays;
+series.onchange=loadPlays;
 
 play.onchange=()=>{
 
@@ -1408,7 +1260,7 @@ selected?.[1] || ""
 
 /* =========================================================
 
-   LOCAL STORAGE
+LOCAL STORAGE
 
 ========================================================= */
 
@@ -1426,7 +1278,7 @@ localStorage.getItem(
 
 /* =========================================================
 
-   TOTAL
+TOTAL
 
 ========================================================= */
 
@@ -1446,7 +1298,7 @@ n+Number(x.yards),
 
 /* =========================================================
 
-   AVERAGE
+AVERAGE
 
 ========================================================= */
 
@@ -1472,7 +1324,7 @@ arr.length
 
 /* =========================================================
 
-   ESCAPE
+ESCAPE
 
 ========================================================= */
 
@@ -1502,7 +1354,7 @@ c=>({
 
 /* =========================================================
 
-   SAVE
+SAVE
 
 ========================================================= */
 
@@ -1522,7 +1374,7 @@ render();
 
 /* =========================================================
 
-   DELETE
+DELETE
 
 ========================================================= */
 
@@ -1542,7 +1394,7 @@ save();
 
 /* =========================================================
 
-   RENDER TRACKER
+RENDER
 
 ========================================================= */
 
@@ -1608,35 +1460,15 @@ plays.map(
 
 <tr>
 
-<td>
+<td>${i+1}</td>
 
-${i+1}
+<td>${esc(x.player)}</td>
 
-</td>
+<td>${esc(x.formation)}</td>
 
-<td>
+<td>${esc(x.series)}</td>
 
-${esc(x.player)}
-
-</td>
-
-<td>
-
-${esc(x.formation)}
-
-</td>
-
-<td>
-
-${esc(x.series)}
-
-</td>
-
-<td>
-
-${esc(x.play)}
-
-</td>
+<td>${esc(x.play)}</td>
 
 <td>
 
@@ -1660,11 +1492,7 @@ ${x.type}
 
 </td>
 
-<td>
-
-${x.yards}
-
-</td>
+<td>${x.yards}</td>
 
 <td>
 
@@ -1688,7 +1516,7 @@ renderStats();
 
 /* =========================================================
 
-   ADD PLAY
+ADD PLAY
 
 ========================================================= */
 
@@ -1782,7 +1610,7 @@ setType("");
 
 /* =========================================================
 
-   CLEAR
+CLEAR
 
 ========================================================= */
 
@@ -1808,7 +1636,7 @@ save();
 
 /* =========================================================
 
-   STATS
+STATS
 
 ========================================================= */
 
@@ -1902,59 +1730,23 @@ return `
 
 <tr>
 
-<td>
+<td>${esc(n)}</td>
 
-${esc(n)}
+<td>${rr.length}</td>
 
-</td>
+<td>${total(rr)}</td>
 
-<td>
+<td>${average(rr)}</td>
 
-${rr.length}
+<td>${pp.length}</td>
 
-</td>
+<td>${total(pp)}</td>
 
-<td>
+<td>${average(pp)}</td>
 
-${total(rr)}
+<td>${rr.length+pp.length}</td>
 
-</td>
-
-<td>
-
-${average(rr)}
-
-</td>
-
-<td>
-
-${pp.length}
-
-</td>
-
-<td>
-
-${total(pp)}
-
-</td>
-
-<td>
-
-${average(pp)}
-
-</td>
-
-<td>
-
-${rr.length+pp.length}
-
-</td>
-
-<td>
-
-${total(rr)+total(pp)}
-
-</td>
+<td>${total(rr)+total(pp)}</td>
 
 </tr>
 
@@ -1966,7 +1758,7 @@ ${total(rr)+total(pp)}
 
 /* =========================================================
 
-   PLAYBOOK DISPLAY
+PLAYBOOK DISPLAY
 
 ========================================================= */
 
@@ -2006,9 +1798,7 @@ arr.map(
 
 (p,i)=>`
 
-<div
-
-class="playbook-play ${
+<div class="playbook-play ${
 
 p[1]==="RUN"
 
@@ -2046,7 +1836,7 @@ ${i+1}.) ${esc(p[0])}
 
 /* =========================================================
 
-   TABS
+TABS
 
 ========================================================= */
 
@@ -2068,11 +1858,7 @@ document
 
 x=>
 
-x.classList.remove(
-
-"active"
-
-)
+x.classList.remove("active")
 
 );
 
@@ -2084,19 +1870,11 @@ document
 
 x=>
 
-x.classList.remove(
-
-"active"
-
-)
+x.classList.remove("active")
 
 );
 
-button.classList.add(
-
-"active"
-
-);
+button.classList.add("active");
 
 $(
 
@@ -2104,11 +1882,7 @@ button.dataset.page
 
 )
 
-.classList.add(
-
-"active"
-
-);
+.classList.add("active");
 
 if(
 
@@ -2136,7 +1910,7 @@ renderPlaybook();
 
 /* =========================================================
 
-   START
+START
 
 ========================================================= */
 
