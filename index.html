@@ -316,6 +316,178 @@ min-height:20px
 
 }
 
+/* SCORE */
+
+.scoreCard{
+
+background:#151515;
+
+border:2px solid #444;
+
+border-radius:18px;
+
+padding:14px;
+
+margin-bottom:14px
+
+}
+
+.scoreHeader{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:10px;
+
+margin-bottom:12px
+
+}
+
+.scoreTitle{
+
+font-size:18px;
+
+font-weight:900
+
+}
+
+.scoreBoard{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:10px;
+
+margin-bottom:12px
+
+}
+
+.scoreTeam{
+
+background:#252527;
+
+border-radius:15px;
+
+padding:12px;
+
+text-align:center
+
+}
+
+.scoreTeamName{
+
+font-size:14px;
+
+font-weight:800;
+
+color:#aaa
+
+}
+
+.scoreNumber{
+
+font-size:42px;
+
+font-weight:900;
+
+line-height:1.1;
+
+margin-top:3px
+
+}
+
+.scoreButtons{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:7px
+
+}
+
+.scoreBtn{
+
+height:52px;
+
+border:2px solid #555;
+
+border-radius:12px;
+
+background:#2b2b2e;
+
+color:#fff;
+
+font-weight:900;
+
+font-size:14px
+
+}
+
+.scoreBtn:active{
+
+transform:scale(.97)
+
+}
+
+.scoreBtn.td{
+
+background:#18bd58;
+
+border-color:#18bd58
+
+}
+
+.scoreBtn.xp{
+
+background:#3b82f6;
+
+border-color:#3b82f6
+
+}
+
+.scoreBtn.two{
+
+background:#8b5cf6;
+
+border-color:#8b5cf6
+
+}
+
+.scoreBtn.fg{
+
+background:#f59e0b;
+
+border-color:#f59e0b;
+
+color:#111
+
+}
+
+.scoreBtn.undo{
+
+background:#3b3b3d
+
+}
+
+.scoreStatus{
+
+text-align:center;
+
+font-size:13px;
+
+color:#aaa;
+
+margin-top:9px;
+
+min-height:18px
+
+}
+
 .stats{
 
 display:grid;
@@ -520,6 +692,58 @@ font-weight:900
 
 }
 
+.scoreHistory{
+
+margin-top:12px
+
+}
+
+.scoreHistoryItem{
+
+background:#252527;
+
+border-radius:12px;
+
+padding:10px;
+
+margin-bottom:7px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center
+
+}
+
+.scoreHistoryText{
+
+font-size:14px;
+
+color:#ddd
+
+}
+
+.scoreHistoryPoints{
+
+font-size:18px;
+
+font-weight:900
+
+}
+
+.helpText{
+
+font-size:13px;
+
+color:#aaa;
+
+line-height:1.5;
+
+margin-top:10px
+
+}
+
 @media(max-width:650px){
 
 .wrap{
@@ -582,6 +806,18 @@ font-size:30px
 
 }
 
+.scoreButtons{
+
+grid-template-columns:repeat(2,1fr)
+
+}
+
+.scoreBtn{
+
+height:50px
+
+}
+
 }
 
 </style>
@@ -626,9 +862,7 @@ id="opponentInput"
 
 list="opponentList"
 
-placeholder="Enter opponent"
-
->
+placeholder="Enter opponent">
 
 <datalist id="opponentList"></datalist>
 
@@ -642,9 +876,7 @@ placeholder="Enter opponent"
 
 id="dateInput"
 
-type="date"
-
->
+type="date">
 
 </div>
 
@@ -690,41 +922,25 @@ TABS
 
 <div class="tabs">
 
-<button
-
-class="tab active"
-
-data-page="tracker">
+<button class="tab active" data-page="tracker">
 
 TRACKER
 
 </button>
 
-<button
-
-class="tab"
-
-data-page="tracking">
+<button class="tab" data-page="tracking">
 
 PLAY TRACKING
 
 </button>
 
-<button
-
-class="tab"
-
-data-page="stats">
+<button class="tab" data-page="stats">
 
 STATS
 
 </button>
 
-<button
-
-class="tab"
-
-data-page="playbook">
+<button class="tab" data-page="playbook">
 
 PLAYBOOK
 
@@ -738,11 +954,203 @@ TRACKER
 
 ===================================================== -->
 
-<section
+<section id="tracker" class="page active">
 
-id="tracker"
+<!-- SCORE CARD -->
 
-class="page active">
+<div class="scoreCard">
+
+<div class="scoreHeader">
+
+<div class="scoreTitle">
+
+🏆 GAME SCORE
+
+</div>
+
+<div
+
+class="small"
+
+id="scoreGameName">
+
+No game
+
+</div>
+
+</div>
+
+<div class="scoreBoard">
+
+<div class="scoreTeam">
+
+<div class="scoreTeamName">
+
+OUR TEAM
+
+</div>
+
+<div
+
+class="scoreNumber"
+
+id="ourScore">
+
+0
+
+</div>
+
+</div>
+
+<div class="scoreTeam">
+
+<div class="scoreTeamName"
+
+id="opponentScoreName">
+
+OPPONENT
+
+</div>
+
+<div
+
+class="scoreNumber"
+
+id="opponentScore">
+
+0
+
+</div>
+
+</div>
+
+</div>
+
+<div class="scoreButtons">
+
+<button
+
+class="scoreBtn td"
+
+onclick="addScore('our',6,'Touchdown')">
+
+🏈 TD +6
+
+</button>
+
+<button
+
+class="scoreBtn xp"
+
+onclick="addScore('our',1,'Extra Point')">
+
+➕ XP +1
+
+</button>
+
+<button
+
+class="scoreBtn two"
+
+onclick="addScore('our',2,'2 Point')">
+
+2PT +2
+
+</button>
+
+<button
+
+class="scoreBtn fg"
+
+onclick="addScore('our',3,'Field Goal')">
+
+FG +3
+
+</button>
+
+</div>
+
+<div class="scoreButtons">
+
+<button
+
+class="scoreBtn td"
+
+onclick="addScore('opponent',6,'Touchdown')">
+
+OPP TD +6
+
+</button>
+
+<button
+
+class="scoreBtn xp"
+
+onclick="addScore('opponent',1,'Extra Point')">
+
+OPP XP +1
+
+</button>
+
+<button
+
+class="scoreBtn two"
+
+onclick="addScore('opponent',2,'2 Point')">
+
+OPP 2PT +2
+
+</button>
+
+<button
+
+class="scoreBtn fg"
+
+onclick="addScore('opponent',3,'Field Goal')">
+
+OPP FG +3
+
+</button>
+
+</div>
+
+<div class="scoreButtons">
+
+<button
+
+class="scoreBtn undo"
+
+onclick="undoScore()">
+
+↩ UNDO LAST SCORE
+
+</button>
+
+<button
+
+class="scoreBtn undo"
+
+onclick="resetScore()">
+
+RESET SCORE
+
+</button>
+
+</div>
+
+<div
+
+class="scoreStatus"
+
+id="scoreStatus">
+
+Manual scoring or use Voice Entry below.
+
+</div>
+
+</div>
+
+<!-- PLAY ENTRY -->
 
 <div class="card">
 
@@ -766,23 +1174,23 @@ Add Formation
 
 <div>
 
-<label>Series</label>
+<label>Play Type</label>
 
-<select id="series">
+<div
 
-<option value="">
+id="type"
 
-Add Series
+class="type">
 
-</option>
+—
 
-</select>
+</div>
 
 </div>
 
 <div class="full">
 
-<label>Play Selection</label>
+<label>Play — Series & Play</label>
 
 <select id="play">
 
@@ -842,22 +1250,6 @@ Add Player
 
 <div>
 
-<label>Play Type</label>
-
-<div
-
-id="type"
-
-class="type">
-
-—
-
-</div>
-
-</div>
-
-<div>
-
 <label>Yards Gained</label>
 
 <select id="yards">
@@ -869,6 +1261,22 @@ Add Yards
 </option>
 
 </select>
+
+</div>
+
+<div>
+
+<label>Play Type</label>
+
+<div
+
+id="type2"
+
+class="type">
+
+—
+
+</div>
 
 </div>
 
@@ -890,7 +1298,7 @@ class="voice"
 
 id="voiceButton">
 
-🎤 VOICE ENTRY
+🎤 VOICE COMMAND
 
 </button>
 
@@ -900,7 +1308,19 @@ class="voice-status"
 
 id="voiceStatus">
 
-Select Player, Formation, Series and Play first.
+Voice can enter plays, yards, players, formations and scoring.
+
+</div>
+
+<div class="helpText">
+
+<strong>Voice examples:</strong><br>
+
+“Touchdown” • “Field goal” • “Extra point” • “Two point conversion”<br>
+
+“Carson Artrip 7 yards”<br>
+
+“Doubles C 22 IZ Right 5 yards”
 
 </div>
 
@@ -1004,6 +1424,28 @@ Total:
 
 </div>
 
+<!-- SCORE HISTORY -->
+
+<div class="card">
+
+<h2>🏆 Scoring Log</h2>
+
+<div
+
+id="scoreHistory"
+
+class="scoreHistory">
+
+<div class="empty">
+
+No scoring plays yet.
+
+</div>
+
+</div>
+
+</div>
+
 <!-- CURRENT GAME LOG -->
 
 <div class="card">
@@ -1064,11 +1506,7 @@ PLAY TRACKING
 
 ===================================================== -->
 
-<section
-
-id="tracking"
-
-class="page">
+<section id="tracking" class="page">
 
 <div class="card">
 
@@ -1194,11 +1632,7 @@ STATS
 
 ===================================================== -->
 
-<section
-
-id="stats"
-
-class="page">
+<section id="stats" class="page">
 
 <div class="card">
 
@@ -1211,6 +1645,50 @@ class="gameTitle"
 id="statsGameTitle">
 
 Current Game
+
+</div>
+
+<div class="scoreBoard">
+
+<div class="scoreTeam">
+
+<div class="scoreTeamName">
+
+OUR SCORE
+
+</div>
+
+<div
+
+class="scoreNumber"
+
+id="statsOurScore">
+
+0
+
+</div>
+
+</div>
+
+<div class="scoreTeam">
+
+<div class="scoreTeamName">
+
+OPPONENT
+
+</div>
+
+<div
+
+class="scoreNumber"
+
+id="statsOpponentScore">
+
+0
+
+</div>
+
+</div>
 
 </div>
 
@@ -1410,6 +1888,8 @@ id="seasonAvg">
 
 <th>Date</th>
 
+<th>Score</th>
+
 <th>Plays</th>
 
 <th>Yards</th>
@@ -1542,11 +2022,7 @@ PLAYBOOK
 
 ===================================================== -->
 
-<section
-
-id="playbook"
-
-class="page">
+<section id="playbook" class="page">
 
 <div class="card">
 
@@ -1566,7 +2042,7 @@ class="page">
 
 PLAYBOOK DATA
 
-EXACT ORIGINAL ORDER
+EXACT ORDER FROM YOUR FILE
 
 ===================================================== */
 
@@ -1832,8 +2308,6 @@ const $=id=>document.getElementById(id);
 
 const formation=$("formation");
 
-const series=$("series");
-
 const play=$("play");
 
 const player=$("player");
@@ -1841,6 +2315,8 @@ const player=$("player");
 const yards=$("yards");
 
 const type=$("type");
+
+const type2=$("type2");
 
 const voiceButton=$("voiceButton");
 
@@ -1870,7 +2346,7 @@ String(y)
 
 /* =====================================================
 
-EXACT FORMATION ORDER
+FORMATION ORDER
 
 ===================================================== */
 
@@ -1926,6 +2402,26 @@ new Option(f,f)
 
 /* =====================================================
 
+NORMALIZE TEXT FOR VOICE
+
+===================================================== */
+
+function normalizeVoiceText(text){
+
+return String(text)
+
+.toLowerCase()
+
+.replace(/[()\/,.'"]/g," ")
+
+.replace(/\s+/g," ")
+
+.trim();
+
+}
+
+/* =====================================================
+
 RESET SELECT
 
 ===================================================== */
@@ -1944,21 +2440,13 @@ new Option(text,"")
 
 /* =====================================================
 
-LOAD SERIES
+LOAD PLAYS FOR FORMATION
 
-EXACT ORDER
+NO SERIES DROPDOWN
 
 ===================================================== */
 
-function loadSeries(){
-
-resetSelect(
-
-series,
-
-"Add Series"
-
-);
+function loadPlays(){
 
 resetSelect(
 
@@ -1982,15 +2470,35 @@ DATA[formation.value]
 
 ).forEach(
 
-([seriesName])=>{
+([seriesName,arr])=>{
 
-series.add(
+arr.forEach(
+
+(p,index)=>{
+
+const value=
+
+seriesName+
+
+"||"+
+
+index;
+
+const label=
+
+seriesName+
+
+" — "+
+
+p[0];
+
+play.add(
 
 new Option(
 
-seriesName,
+label,
 
-seriesName
+value
 
 )
 
@@ -1998,39 +2506,41 @@ seriesName
 
 });
 
+});
+
 }
 
 /* =====================================================
 
-LOAD PLAYS
-
-EXACT ORDER
+GET SELECTED PLAY
 
 ===================================================== */
 
-function loadPlays(){
-
-resetSelect(
-
-play,
-
-"Add Play"
-
-);
-
-setType("");
+function getSelectedPlay(){
 
 if(
 
 !formation.value||
 
-!series.value
+play.value===""
 
 ){
 
-return;
+return null;
 
 }
+
+const parts=
+
+play.value.split("||");
+
+const seriesName=
+
+parts[0];
+
+const index=
+
+Number(parts[1]);
 
 const arr=
 
@@ -2040,39 +2550,29 @@ formation.value
 
 ][
 
-series.value
+seriesName
 
 ];
 
-/*
+if(!arr||!arr[index]){
 
-IMPORTANT:
+return null;
 
-No sorting here.
+}
 
-The order stays exactly
+return {
 
-as written in DATA.
+formation:formation.value,
 
-*/
+series:seriesName,
 
-arr.forEach(
+play:arr[index][0],
 
-(p,index)=>{
+type:arr[index][1],
 
-play.add(
+index:index
 
-new Option(
-
-(index+1)+".) "+p[0],
-
-String(index)
-
-)
-
-);
-
-});
+};
 
 }
 
@@ -2084,11 +2584,33 @@ TYPE
 
 function setType(t){
 
-type.textContent=
-
-t||"—";
+type.textContent=t||"—";
 
 type.className=
+
+"type"+
+
+(
+
+t==="RUN"
+
+?" run"
+
+:
+
+t==="PASS"
+
+?" pass"
+
+:
+
+""
+
+);
+
+type2.textContent=t||"—";
+
+type2.className=
 
 "type"+
 
@@ -2122,20 +2644,6 @@ formation.addEventListener(
 
 "change",
 
-loadSeries
-
-);
-
-/* =====================================================
-
-SERIES CHANGE
-
-===================================================== */
-
-series.addEventListener(
-
-"change",
-
 loadPlays
 
 );
@@ -2152,45 +2660,13 @@ play.addEventListener(
 
 ()=>{
 
-if(
-
-!formation.value||
-
-!series.value||
-
-play.value===""
-
-){
-
-setType("");
-
-return;
-
-}
-
-const arr=
-
-DATA[
-
-formation.value
-
-][
-
-series.value
-
-];
-
 const selected=
 
-arr[
-
-Number(play.value)
-
-];
+getSelectedPlay();
 
 setType(
 
-selected?.[1]||""
+selected?.type||""
 
 );
 
@@ -2214,11 +2690,11 @@ localStorage.getItem(
 
 );
 
-/*
+/* =====================================================
 
-Migrate old app data.
+MIGRATE OLD DATA
 
-*/
+===================================================== */
 
 if(!games){
 
@@ -2244,7 +2720,17 @@ opponent:"Previous Game",
 
 date:"",
 
-plays:oldPlays
+plays:oldPlays,
+
+score:{
+
+our:0,
+
+opponent:0,
+
+history:[]
+
+}
 
 }];
 
@@ -2263,6 +2749,42 @@ JSON.stringify(games)
 );
 
 }
+
+/* =====================================================
+
+MAKE SURE EVERY GAME HAS SCORE
+
+===================================================== */
+
+games.forEach(g=>{
+
+if(!g.score){
+
+g.score={
+
+our:0,
+
+opponent:0,
+
+history:[]
+
+};
+
+}
+
+if(!Array.isArray(g.score.history)){
+
+g.score.history=[];
+
+}
+
+});
+
+/* =====================================================
+
+CURRENT GAME
+
+===================================================== */
 
 let currentGameId=
 
@@ -2384,9 +2906,7 @@ return;
 
 }
 
-games.forEach(
-
-g=>{
+games.forEach(g=>{
 
 let label=
 
@@ -2395,6 +2915,22 @@ g.opponent;
 if(g.date){
 
 label+=" — "+g.date;
+
+}
+
+if(g.score){
+
+label+=
+
+" ("+
+
+g.score.our+
+
+"-"+
+
+g.score.opponent+
+
+")";
 
 }
 
@@ -2498,9 +3034,7 @@ const list=
 
 $("opponentList");
 
-const names=
-
-[
+const names=[
 
 ...new Set(
 
@@ -2574,7 +3108,17 @@ opponent:opponent,
 
 date:date,
 
-plays:[]
+plays:[],
+
+score:{
+
+our:0,
+
+opponent:0,
+
+history:[]
+
+}
 
 };
 
@@ -2582,11 +3126,7 @@ games.push(game);
 
 saveGames();
 
-setCurrentGame(
-
-game.id
-
-);
+setCurrentGame(game.id);
 
 $("opponentInput").value="";
 
@@ -2616,29 +3156,15 @@ e.target.value
 
 TRACKER RESET
 
+KEEP FORMATION
+
 ===================================================== */
 
 function resetTracker(){
 
 player.value="";
 
-formation.value="";
-
-resetSelect(
-
-series,
-
-"Add Series"
-
-);
-
-resetSelect(
-
-play,
-
-"Add Play"
-
-);
+play.value="";
 
 yards.value="";
 
@@ -2646,7 +3172,7 @@ setType("");
 
 voiceStatus.textContent=
 
-"Select Player, Formation, Series and Play first.";
+'Ready for next play. Formation stays selected.';
 
 }
 
@@ -2750,8 +3276,6 @@ if(
 
 !formation.value||
 
-!series.value||
-
 play.value===""||
 
 yards.value===""
@@ -2760,7 +3284,7 @@ yards.value===""
 
 alert(
 
-"Please select Player, Formation, Series, Play and Yards."
+"Please select Player, Formation, Play and Yards."
 
 );
 
@@ -2768,25 +3292,9 @@ return false;
 
 }
 
-const arr=
-
-DATA[
-
-formation.value
-
-][
-
-series.value
-
-];
-
 const selected=
 
-arr[
-
-Number(play.value)
-
-];
+getSelectedPlay();
 
 if(!selected){
 
@@ -2800,13 +3308,13 @@ id:Date.now()+Math.random(),
 
 player:player.value,
 
-formation:formation.value,
+formation:selected.formation,
 
-series:series.value,
+series:selected.series,
 
-play:selected[0],
+play:selected.play,
 
-type:selected[1],
+type:selected.type,
 
 yards:Number(yards.value)
 
@@ -2832,7 +3340,7 @@ addPlay
 
 /* =====================================================
 
-DELETE
+DELETE PLAY
 
 ===================================================== */
 
@@ -2863,6 +3371,308 @@ renderAll();
 }
 
 window.del=del;
+
+/* =====================================================
+
+SCORE FUNCTIONS
+
+===================================================== */
+
+function addScore(team,points,label){
+
+const game=
+
+currentGame();
+
+if(!game){
+
+alert(
+
+"Start a game first."
+
+);
+
+return;
+
+}
+
+if(!game.score){
+
+game.score={
+
+our:0,
+
+opponent:0,
+
+history:[]
+
+};
+
+}
+
+game.score[team]+=points;
+
+game.score.history.push({
+
+id:Date.now()+Math.random(),
+
+team:team,
+
+points:points,
+
+label:label,
+
+time:new Date().toLocaleTimeString([],{
+
+hour:"numeric",
+
+minute:"2-digit"
+
+})
+
+});
+
+saveGames();
+
+$("scoreStatus").textContent=
+
+(team==="our"?"Our team":"Opponent")+
+
+" "+label+
+
+" +"+points;
+
+renderAll();
+
+}
+
+window.addScore=addScore;
+
+/* =====================================================
+
+UNDO SCORE
+
+===================================================== */
+
+function undoScore(){
+
+const game=
+
+currentGame();
+
+if(
+
+!game||
+
+!game.score||
+
+!game.score.history.length
+
+){
+
+return;
+
+}
+
+const last=
+
+game.score.history.pop();
+
+game.score[last.team]-=
+
+last.points;
+
+saveGames();
+
+$("scoreStatus").textContent=
+
+"Last scoring play removed.";
+
+renderAll();
+
+}
+
+window.undoScore=undoScore;
+
+/* =====================================================
+
+RESET SCORE
+
+===================================================== */
+
+function resetScore(){
+
+const game=
+
+currentGame();
+
+if(!game)return;
+
+if(
+
+!confirm(
+
+"Reset the score for vs "+
+
+game.opponent+
+
+" to 0-0?"
+
+)
+
+){
+
+return;
+
+}
+
+game.score={
+
+our:0,
+
+opponent:0,
+
+history:[]
+
+};
+
+saveGames();
+
+renderAll();
+
+}
+
+window.resetScore=resetScore;
+
+/* =====================================================
+
+SCORE RENDER
+
+===================================================== */
+
+function renderScore(){
+
+const game=
+
+currentGame();
+
+if(!game){
+
+$("ourScore").textContent="0";
+
+$("opponentScore").textContent="0";
+
+$("scoreGameName").textContent="No game";
+
+$("opponentScoreName").textContent="OPPONENT";
+
+$("scoreHistory").innerHTML=
+
+'<div class="empty">No scoring plays yet.</div>';
+
+return;
+
+}
+
+if(!game.score){
+
+game.score={
+
+our:0,
+
+opponent:0,
+
+history:[]
+
+};
+
+}
+
+$("ourScore").textContent=
+
+game.score.our;
+
+$("opponentScore").textContent=
+
+game.score.opponent;
+
+$("statsOurScore").textContent=
+
+game.score.our;
+
+$("statsOpponentScore").textContent=
+
+game.score.opponent;
+
+$("scoreGameName").textContent=
+
+"vs "+game.opponent;
+
+$("opponentScoreName").textContent=
+
+(game.opponent||"OPPONENT")
+
+.toUpperCase();
+
+if(!game.score.history.length){
+
+$("scoreHistory").innerHTML=
+
+'<div class="empty">No scoring plays yet.</div>';
+
+return;
+
+}
+
+$("scoreHistory").innerHTML=
+
+game.score.history
+
+.map(
+
+(x,i)=>`
+
+<div class="scoreHistoryItem">
+
+<div class="scoreHistoryText">
+
+${i+1}.
+
+${x.team==="our"
+
+?"🏈 OUR TEAM"
+
+:"🏴 OPPONENT"}
+
+ — ${esc(x.label)}
+
+<br>
+
+<span class="small">
+
+${esc(x.time||"")}
+
+</span>
+
+</div>
+
+<div class="scoreHistoryPoints">
+
++${x.points}
+
+</div>
+
+</div>
+
+`
+
+)
+
+.reverse()
+
+.join("");
+
+}
 
 /* =====================================================
 
@@ -2984,7 +3794,11 @@ Delete
 
 `
 
-).join("");
+)
+
+.join("");
+
+renderScore();
 
 }
 
@@ -3000,9 +3814,7 @@ const plays=
 
 currentPlays();
 
-const names=
-
-[
+const names=[
 
 ...new Set(
 
@@ -3144,7 +3956,9 @@ ${x.type}
 
 }
 
-).join("");
+)
+
+.join("");
 
 }
 
@@ -3286,6 +4100,14 @@ x=>x.type==="PASS"
 
 );
 
+const ourScore=
+
+g.score?.our||0;
+
+const oppScore=
+
+g.score?.opponent||0;
+
 return `
 
 <tr>
@@ -3301,6 +4123,16 @@ vs ${esc(g.opponent)}
 </td>
 
 <td>${esc(g.date||"—")}</td>
+
+<td>
+
+<strong>
+
+${ourScore}-${oppScore}
+
+</strong>
+
+</td>
 
 <td>${g.plays.length}</td>
 
@@ -3318,13 +4150,13 @@ vs ${esc(g.opponent)}
 
 }
 
-).join("");
+)
+
+.join("");
 
 /* PLAYER STATS */
 
-const names=
-
-[
+const names=[
 
 ...new Set(
 
@@ -3404,7 +4236,9 @@ return `
 
 }
 
-).join("");
+)
+
+.join("");
 
 /* PLAY PERFORMANCE */
 
@@ -3564,7 +4398,9 @@ ${avg}
 
 }
 
-).join("");
+)
+
+.join("");
 
 }
 
@@ -3590,17 +4426,27 @@ if(
 
 confirm(
 
-"Clear all plays from vs "+
+"Clear all plays AND scoring from vs "+
 
 game.opponent+
 
-"?"
+"? The game itself will remain."
 
 )
 
 ){
 
 game.plays=[];
+
+game.score={
+
+our:0,
+
+opponent:0,
+
+history:[]
+
+};
 
 saveGames();
 
@@ -3614,7 +4460,7 @@ renderAll();
 
 /* =====================================================
 
-VOICE ENTRY
+VOICE RECOGNITION
 
 ===================================================== */
 
@@ -3624,21 +4470,339 @@ window.SpeechRecognition||
 
 window.webkitSpeechRecognition;
 
+let recognition=null;
+
+function selectOptionBySpokenText(select,text){
+
+const normalized=
+
+normalizeVoiceText(text);
+
+const options=
+
+Array.from(select.options);
+
+let best=null;
+
+let bestScore=0;
+
+options.forEach(option=>{
+
+if(!option.value)return;
+
+const optionText=
+
+normalizeVoiceText(
+
+option.textContent
+
+);
+
+if(!optionText)return;
+
+if(
+
+normalized.includes(optionText)
+
+){
+
+const score=
+
+optionText.length;
+
+if(score>bestScore){
+
+best=option;
+
+bestScore=score;
+
+}
+
+}
+
+});
+
+if(best){
+
+select.value=
+
+best.value;
+
+select.dispatchEvent(
+
+new Event("change")
+
+);
+
+return true;
+
+}
+
+return false;
+
+}
+
+/* =====================================================
+
+FIND FORMATION BY VOICE
+
+===================================================== */
+
+function findFormationVoice(text){
+
+const normalized=
+
+normalizeVoiceText(text);
+
+let best=null;
+
+let bestScore=0;
+
+FORMATION_ORDER.forEach(f=>{
+
+const fText=
+
+normalizeVoiceText(f);
+
+if(
+
+normalized.includes(fText)
+
+){
+
+if(fText.length>bestScore){
+
+best=f;
+
+bestScore=fText.length;
+
+}
+
+}
+
+/* Helpful shorter voice forms */
+
+const aliases={
+
+"DOUBLES HEAVY (A)":[
+
+"doubles heavy",
+
+"doubles heavy a"
+
+],
+
+"TRIO (D)":[
+
+"trio",
+
+"trio d"
+
+],
+
+"DEUCE (B)":[
+
+"deuce",
+
+"deuce b"
+
+],
+
+"DOUBLES (C)":[
+
+"doubles",
+
+"doubles c"
+
+],
+
+"TRIPS (D)":[
+
+"trips",
+
+"trips d"
+
+],
+
+"BASE RUN":[
+
+"base run"
+
+],
+
+"SPECIAL RUN AND PASS PLAYS":[
+
+"special run and pass",
+
+"special run pass",
+
+"special plays"
+
+]
+
+};
+
+(aliases[f]||[]).forEach(alias=>{
+
+if(normalized.includes(alias)){
+
+if(alias.length>bestScore){
+
+best=f;
+
+bestScore=alias.length;
+
+}
+
+}
+
+});
+
+});
+
+return best;
+
+}
+
+/* =====================================================
+
+FIND PLAY BY VOICE
+
+===================================================== */
+
+function findPlayVoice(text){
+
+const normalized=
+
+normalizeVoiceText(text);
+
+if(!formation.value){
+
+return null;
+
+}
+
+let best=null;
+
+let bestScore=0;
+
+Object.entries(
+
+DATA[formation.value]
+
+).forEach(
+
+([seriesName,arr])=>{
+
+arr.forEach(
+
+(p,index)=>{
+
+const fullText=
+
+normalizeVoiceText(
+
+seriesName+
+
+" "+
+
+p[0]
+
+);
+
+const playText=
+
+normalizeVoiceText(
+
+p[0]
+
+);
+
+const seriesText=
+
+normalizeVoiceText(
+
+seriesName
+
+);
+
+let score=0;
+
+if(normalized.includes(fullText)){
+
+score=fullText.length;
+
+}else if(
+
+normalized.includes(playText)
+
+){
+
+score=playText.length;
+
+}else if(
+
+normalized.includes(seriesText)&&
+
+playText.length<normalized.length
+
+){
+
+score=seriesText.length;
+
+}
+
+if(score>bestScore){
+
+best={
+
+series:seriesName,
+
+index:index,
+
+value:
+
+seriesName+
+
+"||"+
+
+index
+
+};
+
+bestScore=score;
+
+}
+
+}
+
+);
+
+}
+
+);
+
+return best;
+
+}
+
+/* =====================================================
+
+VOICE YARDS
+
+===================================================== */
+
 function parseSpokenYards(text){
 
-text=
+const lower=
 
-text
-
-.toLowerCase()
-
-.trim();
+text.toLowerCase();
 
 let numeric=
 
-text.match(
+lower.match(
 
-/(-?\d+(?:\.\d+)?)/
+/(?:minus|negative)?\s*(-?\d+(?:\.\d+)?)/i
 
 );
 
@@ -3646,17 +4810,13 @@ if(numeric){
 
 let n=
 
-Number(
-
-numeric[1]
-
-);
+Number(numeric[1]);
 
 if(
 
-text.includes("minus")||
+lower.includes("minus")||
 
-text.includes("negative")
+lower.includes("negative")
 
 ){
 
@@ -3772,7 +4932,7 @@ const word in numberWords
 
 if(
 
-text.includes(word)
+lower.includes(word)
 
 ){
 
@@ -3782,9 +4942,9 @@ numberWords[word];
 
 if(
 
-text.includes("minus")||
+lower.includes("minus")||
 
-text.includes("negative")
+lower.includes("negative")
 
 ){
 
@@ -3802,7 +4962,313 @@ return null;
 
 }
 
-let recognition=null;
+/* =====================================================
+
+VOICE SCORING
+
+===================================================== */
+
+function processVoiceScore(text){
+
+const t=
+
+normalizeVoiceText(text);
+
+let points=null;
+
+let label=null;
+
+if(
+
+t.includes("touchdown")
+
+){
+
+points=6;
+
+label="Touchdown";
+
+}else if(
+
+t.includes("two point")||
+
+t.includes("2 point")||
+
+t.includes("two-point")||
+
+t.includes("conversion")
+
+&&
+
+t.includes("two")
+
+){
+
+points=2;
+
+label="2 Point";
+
+}else if(
+
+t.includes("extra point")||
+
+t.includes("extra-point")||
+
+t==="xp"
+
+){
+
+points=1;
+
+label="Extra Point";
+
+}else if(
+
+t.includes("field goal")||
+
+t.includes("field-goal")
+
+){
+
+points=3;
+
+label="Field Goal";
+
+}
+
+if(points===null){
+
+return false;
+
+}
+
+let team="our";
+
+if(
+
+t.includes("opponent")||
+
+t.includes("other team")||
+
+t.includes("their")
+
+){
+
+team="opponent";
+
+}
+
+addScore(
+
+team,
+
+points,
+
+label
+
+);
+
+return true;
+
+}
+
+/* =====================================================
+
+VOICE PLAY PROCESSING
+
+===================================================== */
+
+function processVoicePlay(text){
+
+const game=
+
+currentGame();
+
+if(!game){
+
+alert(
+
+"Start a game first."
+
+);
+
+return;
+
+}
+
+/* PLAYER */
+
+const normalized=
+
+normalizeVoiceText(text);
+
+let playerFound=null;
+
+Array.from(player.options)
+
+.forEach(option=>{
+
+if(!option.value)return;
+
+const p=
+
+normalizeVoiceText(
+
+option.textContent
+
+);
+
+if(
+
+normalized.includes(p)
+
+){
+
+if(
+
+!playerFound||
+
+p.length>
+
+playerFound.length
+
+){
+
+playerFound=
+
+option.value;
+
+}
+
+}
+
+});
+
+if(playerFound){
+
+player.value=
+
+playerFound;
+
+}
+
+/* FORMATION */
+
+const spokenFormation=
+
+findFormationVoice(text);
+
+if(spokenFormation){
+
+formation.value=
+
+spokenFormation;
+
+loadPlays();
+
+}
+
+/* PLAY */
+
+const spokenPlay=
+
+findPlayVoice(text);
+
+if(spokenPlay){
+
+play.value=
+
+spokenPlay.value;
+
+play.dispatchEvent(
+
+new Event("change")
+
+);
+
+}
+
+/* YARDS */
+
+const spokenYards=
+
+parseSpokenYards(text);
+
+if(spokenYards!==null){
+
+yards.value=
+
+String(spokenYards);
+
+}
+
+/* If formation/play were found, try to record */
+
+if(
+
+player.value&&
+
+formation.value&&
+
+play.value!==""&&
+
+yards.value!==""
+
+){
+
+const success=
+
+addPlay();
+
+if(success){
+
+voiceStatus.textContent=
+
+"Recorded: "+
+
+text;
+
+return;
+
+}
+
+}
+
+let missing=[];
+
+if(!player.value)
+
+missing.push("player");
+
+if(!formation.value)
+
+missing.push("formation");
+
+if(play.value==="")
+
+missing.push("play");
+
+if(yards.value==="")
+
+missing.push("yards");
+
+voiceStatus.textContent=
+
+'Heard: "'+
+
+text+
+
+'" — still need: '+
+
+missing.join(", ");
+
+}
+
+/* =====================================================
+
+VOICE SETUP
+
+===================================================== */
 
 if(SpeechRecognition){
 
@@ -3832,7 +5298,7 @@ voiceButton.textContent=
 
 voiceStatus.textContent=
 
-'Say "7 yards" or "minus 3 yards".';
+"Listening — say a play, yards, or scoring command.";
 
 };
 
@@ -3846,7 +5312,7 @@ voiceButton.classList.remove(
 
 voiceButton.textContent=
 
-"🎤 VOICE ENTRY";
+"🎤 VOICE COMMAND";
 
 };
 
@@ -3862,7 +5328,7 @@ voiceButton.classList.remove(
 
 voiceButton.textContent=
 
-"🎤 VOICE ENTRY";
+"🎤 VOICE COMMAND";
 
 if(
 
@@ -3904,24 +5370,6 @@ transcript+
 
 '"';
 
-const number=
-
-parseSpokenYards(
-
-transcript
-
-);
-
-if(number===null){
-
-voiceStatus.textContent=
-
-'Could not find a yard number. Try "7 yards".';
-
-return;
-
-}
-
 if(
 
 !currentGame()
@@ -3938,47 +5386,27 @@ return;
 
 }
 
+/* SCORE COMMAND FIRST */
+
 if(
 
-!player.value||
-
-!formation.value||
-
-!series.value||
-
-play.value===""
+processVoiceScore(transcript)
 
 ){
 
-alert(
+voiceStatus.textContent=
 
-"Select Player, Formation, Series and Play first."
+"Scoring recorded: "+
 
-);
+transcript;
 
 return;
 
 }
 
-yards.value=
+/* OTHERWISE PLAY COMMAND */
 
-String(number);
-
-const success=
-
-addPlay();
-
-if(success){
-
-voiceStatus.textContent=
-
-"Recorded "+
-
-number+
-
-" yards.";
-
-}
+processVoicePlay(transcript);
 
 };
 
@@ -4007,28 +5435,6 @@ if(
 alert(
 
 "Start a game first."
-
-);
-
-return;
-
-}
-
-if(
-
-!player.value||
-
-!formation.value||
-
-!series.value||
-
-play.value===""
-
-){
-
-alert(
-
-"First select Player, Formation, Series and Play."
 
 );
 
@@ -4206,7 +5612,9 @@ $(
 
 button.dataset.page
 
-).classList.add(
+)
+
+.classList.add(
 
 "active"
 
