@@ -6,17 +6,15 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-
-content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<meta name="apple-mobile-web-app-title" content="Football Tracker">
+<meta name="apple-mobile-web-app-title" content="Comets Play Tracking">
 
-<title>Football Play Tracker</title>
+<title>Comets Play Tracking</title>
 
 <style>
 
@@ -54,11 +52,7 @@ margin:4px 0 16px
 
 }
 
-h2{
-
-margin-top:4px
-
-}
+h2{margin-top:4px}
 
 .tabs{
 
@@ -98,17 +92,9 @@ color:#111
 
 }
 
-.page{
+.page{display:none}
 
-display:none
-
-}
-
-.page.active{
-
-display:block
-
-}
+.page.active{display:block}
 
 .card{
 
@@ -148,9 +134,7 @@ color:#ddd
 
 }
 
-input,
-
-select{
+input,select{
 
 width:100%;
 
@@ -170,11 +154,7 @@ font-size:17px
 
 }
 
-.full{
-
-grid-column:1/-1
-
-}
+.full{grid-column:1/-1}
 
 .type{
 
@@ -270,11 +250,7 @@ animation:pulse 1s infinite
 
 }
 
-button.clear{
-
-background:#3b3b3d
-
-}
+button.clear{background:#3b3b3d}
 
 button.deleteBtn{
 
@@ -406,7 +382,9 @@ display:grid;
 
 grid-template-columns:repeat(4,1fr);
 
-gap:7px
+gap:7px;
+
+margin-top:7px
 
 }
 
@@ -428,11 +406,7 @@ font-size:14px
 
 }
 
-.scoreBtn:active{
-
-transform:scale(.97)
-
-}
+.scoreBtn:active{transform:scale(.97)}
 
 .scoreBtn.td{
 
@@ -528,11 +502,7 @@ margin:4px
 
 }
 
-.table{
-
-overflow:auto
-
-}
+.table{overflow:auto}
 
 table{
 
@@ -544,9 +514,7 @@ min-width:850px
 
 }
 
-th,
-
-td{
+th,td{
 
 padding:9px;
 
@@ -558,11 +526,7 @@ font-size:13px
 
 }
 
-th{
-
-color:#aaa
-
-}
+th{color:#aaa}
 
 .badge{
 
@@ -692,11 +656,7 @@ font-weight:900
 
 }
 
-.scoreHistory{
-
-margin-top:12px
-
-}
+.scoreHistory{margin-top:12px}
 
 .scoreHistoryItem{
 
@@ -744,19 +704,39 @@ margin-top:10px
 
 }
 
+.logo{
+
+display:block;
+
+width:95px;
+
+height:95px;
+
+object-fit:contain;
+
+margin:0 auto 5px;
+
+border-radius:18px
+
+}
+
+.appTitle{
+
+text-align:center;
+
+font-size:25px;
+
+font-weight:900;
+
+margin:0 0 16px
+
+}
+
 @media(max-width:650px){
 
-.wrap{
+.wrap{padding-top:8px}
 
-padding-top:8px
-
-}
-
-.tabs{
-
-gap:5px
-
-}
+.tabs{gap:5px}
 
 .tab{
 
@@ -768,43 +748,17 @@ padding:0 2px
 
 }
 
-.grid{
+.grid{gap:9px}
 
-gap:9px
+.card{padding:13px}
 
-}
+input,select{font-size:16px}
 
-.card{
+.stats{gap:8px}
 
-padding:13px
+.stat{padding:12px 7px}
 
-}
-
-input,
-
-select{
-
-font-size:16px
-
-}
-
-.stats{
-
-gap:8px
-
-}
-
-.stat{
-
-padding:12px 7px
-
-}
-
-.big{
-
-font-size:30px
-
-}
+.big{font-size:30px}
 
 .scoreButtons{
 
@@ -812,11 +766,7 @@ grid-template-columns:repeat(2,1fr)
 
 }
 
-.scoreBtn{
-
-height:50px
-
-}
+.scoreBtn{height:50px}
 
 }
 
@@ -828,13 +778,15 @@ height:50px
 
 <div class="wrap">
 
-<h1>🏈 Football Play Tracker</h1>
+<!-- APP HEADER -->
 
-<!-- =====================================================
+<div>
 
-GAME SELECTOR
+<h1 class="appTitle">🏈 COMETS PLAY TRACKING</h1>
 
-===================================================== -->
+</div>
+
+<!-- GAME SELECTOR -->
 
 <div class="card">
 
@@ -914,11 +866,7 @@ Enter an opponent to start a game.
 
 </div>
 
-<!-- =====================================================
-
-TABS
-
-===================================================== -->
+<!-- TABS -->
 
 <div class="tabs">
 
@@ -948,15 +896,11 @@ PLAYBOOK
 
 </div>
 
-<!-- =====================================================
-
-TRACKER
-
-===================================================== -->
+<!-- TRACKER -->
 
 <section id="tracker" class="page active">
 
-<!-- SCORE CARD -->
+<!-- SCORE -->
 
 <div class="scoreCard">
 
@@ -1004,7 +948,9 @@ id="ourScore">
 
 <div class="scoreTeam">
 
-<div class="scoreTeamName"
+<div
+
+class="scoreTeamName"
 
 id="opponentScoreName">
 
@@ -1028,9 +974,7 @@ id="opponentScore">
 
 <div class="scoreButtons">
 
-<button
-
-class="scoreBtn td"
+<button class="scoreBtn td"
 
 onclick="addScore('our',6,'Touchdown')">
 
@@ -1038,9 +982,7 @@ onclick="addScore('our',6,'Touchdown')">
 
 </button>
 
-<button
-
-class="scoreBtn xp"
+<button class="scoreBtn xp"
 
 onclick="addScore('our',1,'Extra Point')">
 
@@ -1048,9 +990,7 @@ onclick="addScore('our',1,'Extra Point')">
 
 </button>
 
-<button
-
-class="scoreBtn two"
+<button class="scoreBtn two"
 
 onclick="addScore('our',2,'2 Point')">
 
@@ -1058,9 +998,7 @@ onclick="addScore('our',2,'2 Point')">
 
 </button>
 
-<button
-
-class="scoreBtn fg"
+<button class="scoreBtn fg"
 
 onclick="addScore('our',3,'Field Goal')">
 
@@ -1072,9 +1010,7 @@ FG +3
 
 <div class="scoreButtons">
 
-<button
-
-class="scoreBtn td"
+<button class="scoreBtn td"
 
 onclick="addScore('opponent',6,'Touchdown')">
 
@@ -1082,9 +1018,7 @@ OPP TD +6
 
 </button>
 
-<button
-
-class="scoreBtn xp"
+<button class="scoreBtn xp"
 
 onclick="addScore('opponent',1,'Extra Point')">
 
@@ -1092,9 +1026,7 @@ OPP XP +1
 
 </button>
 
-<button
-
-class="scoreBtn two"
+<button class="scoreBtn two"
 
 onclick="addScore('opponent',2,'2 Point')">
 
@@ -1102,9 +1034,7 @@ OPP 2PT +2
 
 </button>
 
-<button
-
-class="scoreBtn fg"
+<button class="scoreBtn fg"
 
 onclick="addScore('opponent',3,'Field Goal')">
 
@@ -1116,9 +1046,7 @@ OPP FG +3
 
 <div class="scoreButtons">
 
-<button
-
-class="scoreBtn undo"
+<button class="scoreBtn undo"
 
 onclick="undoScore()">
 
@@ -1126,9 +1054,7 @@ onclick="undoScore()">
 
 </button>
 
-<button
-
-class="scoreBtn undo"
+<button class="scoreBtn undo"
 
 onclick="resetScore()">
 
@@ -1162,11 +1088,7 @@ Manual scoring or use Voice Entry below.
 
 <select id="formation">
 
-<option value="">
-
-Add Formation
-
-</option>
+<option value="">Add Formation</option>
 
 </select>
 
@@ -1176,11 +1098,7 @@ Add Formation
 
 <label>Play Type</label>
 
-<div
-
-id="type"
-
-class="type">
+<div id="type" class="type">
 
 —
 
@@ -1194,11 +1112,7 @@ class="type">
 
 <select id="play">
 
-<option value="">
-
-Add Play
-
-</option>
+<option value="">Add Play</option>
 
 </select>
 
@@ -1210,11 +1124,7 @@ Add Play
 
 <select id="player">
 
-<option value="">
-
-Add Player
-
-</option>
+<option value="">Add Player</option>
 
 <option>#36 Althouse, Frank</option>
 
@@ -1254,11 +1164,7 @@ Add Player
 
 <select id="yards">
 
-<option value="">
-
-Add Yards
-
-</option>
+<option value="">Add Yards</option>
 
 </select>
 
@@ -1268,11 +1174,7 @@ Add Yards
 
 <label>Play Type</label>
 
-<div
-
-id="type2"
-
-class="type">
+<div id="type2" class="type">
 
 —
 
@@ -1336,7 +1238,7 @@ CLEAR CURRENT GAME
 
 </div>
 
-<!-- CURRENT GAME SUMMARY -->
+<!-- SUMMARY -->
 
 <div class="card">
 
@@ -1446,7 +1348,7 @@ No scoring plays yet.
 
 </div>
 
-<!-- CURRENT GAME LOG -->
+<!-- PLAY LOG -->
 
 <div class="card">
 
@@ -1500,11 +1402,7 @@ No plays recorded for this game.
 
 </section>
 
-<!-- =====================================================
-
-PLAY TRACKING
-
-===================================================== -->
+<!-- PLAY TRACKING -->
 
 <section id="tracking" class="page">
 
@@ -1536,23 +1434,11 @@ Every play called during the selected game.
 
 <select id="trackingType">
 
-<option value="ALL">
+<option value="ALL">All Plays</option>
 
-All Plays
+<option value="RUN">Runs</option>
 
-</option>
-
-<option value="RUN">
-
-Runs
-
-</option>
-
-<option value="PASS">
-
-Passes
-
-</option>
+<option value="PASS">Passes</option>
 
 </select>
 
@@ -1564,11 +1450,7 @@ Passes
 
 <select id="trackingPlayer">
 
-<option value="ALL">
-
-All Players
-
-</option>
+<option value="ALL">All Players</option>
 
 </select>
 
@@ -1626,11 +1508,7 @@ No plays recorded.
 
 </section>
 
-<!-- =====================================================
-
-STATS
-
-===================================================== -->
+<!-- STATS -->
 
 <section id="stats" class="page">
 
@@ -1788,11 +1666,7 @@ id="gamePassAvg">
 
 <div class="stat">
 
-<div class="small">
-
-GAMES
-
-</div>
+<div class="small">GAMES</div>
 
 <div
 
@@ -1808,11 +1682,7 @@ id="seasonGames">
 
 <div class="stat">
 
-<div class="small">
-
-TOTAL PLAYS
-
-</div>
+<div class="small">TOTAL PLAYS</div>
 
 <div
 
@@ -1828,11 +1698,7 @@ id="seasonPlays">
 
 <div class="stat">
 
-<div class="small">
-
-TOTAL YARDS
-
-</div>
+<div class="small">TOTAL YARDS</div>
 
 <div
 
@@ -1848,11 +1714,7 @@ id="seasonYards">
 
 <div class="stat">
 
-<div class="small">
-
-AVG / PLAY
-
-</div>
+<div class="small">AVG / PLAY</div>
 
 <div
 
@@ -1956,7 +1818,7 @@ id="seasonAvg">
 
 </div>
 
-<!-- PLAY SUCCESS -->
+<!-- PLAY PERFORMANCE -->
 
 <div class="card">
 
@@ -2016,11 +1878,7 @@ No play performance data yet.
 
 </section>
 
-<!-- =====================================================
-
-PLAYBOOK
-
-===================================================== -->
+<!-- PLAYBOOK -->
 
 <section id="playbook" class="page">
 
@@ -2041,8 +1899,6 @@ PLAYBOOK
 /* =====================================================
 
 PLAYBOOK DATA
-
-EXACT ORDER FROM YOUR FILE
 
 ===================================================== */
 
@@ -2298,11 +2154,7 @@ const DATA={
 
 };
 
-/* =====================================================
-
-ELEMENTS
-
-===================================================== */
+/* ELEMENTS */
 
 const $=id=>document.getElementById(id);
 
@@ -2322,33 +2174,15 @@ const voiceButton=$("voiceButton");
 
 const voiceStatus=$("voiceStatus");
 
-/* =====================================================
-
-YARDS
-
-===================================================== */
+/* YARDS */
 
 for(let y=-30;y<=110;y++){
 
-yards.add(
-
-new Option(
-
-String(y),
-
-String(y)
-
-)
-
-);
+yards.add(new Option(String(y),String(y)));
 
 }
 
-/* =====================================================
-
-FORMATION ORDER
-
-===================================================== */
+/* FORMATION ORDER */
 
 const FORMATION_ORDER=[
 
@@ -2372,27 +2206,13 @@ function loadFormations(){
 
 formation.innerHTML="";
 
-formation.add(
-
-new Option(
-
-"Add Formation",
-
-""
-
-)
-
-);
+formation.add(new Option("Add Formation",""));
 
 FORMATION_ORDER.forEach(f=>{
 
 if(DATA[f]){
 
-formation.add(
-
-new Option(f,f)
-
-);
+formation.add(new Option(f,f));
 
 }
 
@@ -2400,11 +2220,7 @@ new Option(f,f)
 
 }
 
-/* =====================================================
-
-NORMALIZE TEXT FOR VOICE
-
-===================================================== */
+/* NORMALIZE */
 
 function normalizeVoiceText(text){
 
@@ -2420,89 +2236,37 @@ return String(text)
 
 }
 
-/* =====================================================
-
-RESET SELECT
-
-===================================================== */
+/* RESET SELECT */
 
 function resetSelect(select,text){
 
 select.innerHTML="";
 
-select.add(
-
-new Option(text,"")
-
-);
+select.add(new Option(text,""));
 
 }
 
-/* =====================================================
-
-LOAD PLAYS FOR FORMATION
-
-NO SERIES DROPDOWN
-
-===================================================== */
+/* LOAD PLAYS */
 
 function loadPlays(){
 
-resetSelect(
-
-play,
-
-"Add Play"
-
-);
+resetSelect(play,"Add Play");
 
 setType("");
 
-if(!formation.value){
+if(!formation.value)return;
 
-return;
-
-}
-
-Object.entries(
-
-DATA[formation.value]
-
-).forEach(
+Object.entries(DATA[formation.value]).forEach(
 
 ([seriesName,arr])=>{
 
-arr.forEach(
+arr.forEach((p,index)=>{
 
-(p,index)=>{
+const value=seriesName+"||"+index;
 
-const value=
+const label=seriesName+" — "+p[0];
 
-seriesName+
-
-"||"+
-
-index;
-
-const label=
-
-seriesName+
-
-" — "+
-
-p[0];
-
-play.add(
-
-new Option(
-
-label,
-
-value
-
-)
-
-);
+play.add(new Option(label,value));
 
 });
 
@@ -2510,49 +2274,23 @@ value
 
 }
 
-/* =====================================================
-
-GET SELECTED PLAY
-
-===================================================== */
+/* SELECTED PLAY */
 
 function getSelectedPlay(){
 
-if(
-
-!formation.value||
-
-play.value===""
-
-){
+if(!formation.value||play.value===""){
 
 return null;
 
 }
 
-const parts=
+const parts=play.value.split("||");
 
-play.value.split("||");
+const seriesName=parts[0];
 
-const seriesName=
+const index=Number(parts[1]);
 
-parts[0];
-
-const index=
-
-Number(parts[1]);
-
-const arr=
-
-DATA[
-
-formation.value
-
-][
-
-seriesName
-
-];
+const arr=DATA[formation.value][seriesName];
 
 if(!arr||!arr[index]){
 
@@ -2560,7 +2298,7 @@ return null;
 
 }
 
-return {
+return{
 
 formation:formation.value,
 
@@ -2576,11 +2314,7 @@ index:index
 
 }
 
-/* =====================================================
-
-TYPE
-
-===================================================== */
+/* TYPE */
 
 function setType(t){
 
@@ -2634,41 +2368,15 @@ t==="PASS"
 
 }
 
-/* =====================================================
+/* EVENTS */
 
-FORMATION CHANGE
+formation.addEventListener("change",loadPlays);
 
-===================================================== */
+play.addEventListener("change",()=>{
 
-formation.addEventListener(
+const selected=getSelectedPlay();
 
-"change",
-
-loadPlays
-
-);
-
-/* =====================================================
-
-PLAY CHANGE
-
-===================================================== */
-
-play.addEventListener(
-
-"change",
-
-()=>{
-
-const selected=
-
-getSelectedPlay();
-
-setType(
-
-selected?.type||""
-
-);
+setType(selected?.type||"");
 
 });
 
@@ -2682,19 +2390,9 @@ let games=
 
 JSON.parse(
 
-localStorage.getItem(
-
-"footballTrackerGames"
-
-)||"null"
+localStorage.getItem("footballTrackerGames")||"null"
 
 );
-
-/* =====================================================
-
-MIGRATE OLD DATA
-
-===================================================== */
 
 if(!games){
 
@@ -2702,11 +2400,7 @@ const oldPlays=
 
 JSON.parse(
 
-localStorage.getItem(
-
-"footballTrackerPlays"
-
-)||"[]"
+localStorage.getItem("footballTrackerPlays")||"[]"
 
 );
 
@@ -2750,12 +2444,6 @@ JSON.stringify(games)
 
 }
 
-/* =====================================================
-
-MAKE SURE EVERY GAME HAS SCORE
-
-===================================================== */
-
 games.forEach(g=>{
 
 if(!g.score){
@@ -2780,12 +2468,6 @@ g.score.history=[];
 
 });
 
-/* =====================================================
-
-CURRENT GAME
-
-===================================================== */
-
 let currentGameId=
 
 localStorage.getItem(
@@ -2793,12 +2475,6 @@ localStorage.getItem(
 "footballTrackerCurrentGame"
 
 )||"";
-
-/* =====================================================
-
-SAVE GAMES
-
-===================================================== */
 
 function saveGames(){
 
@@ -2812,19 +2488,11 @@ JSON.stringify(games)
 
 }
 
-/* =====================================================
-
-CURRENT GAME
-
-===================================================== */
-
 function currentGame(){
 
 return games.find(
 
-g=>String(g.id)===
-
-String(currentGameId)
+g=>String(g.id)===String(currentGameId)
 
 );
 
@@ -2834,25 +2502,13 @@ function currentPlays(){
 
 const game=currentGame();
 
-return game
-
-?game.plays
-
-:[];
+return game?game.plays:[];
 
 }
 
-/* =====================================================
-
-SET CURRENT GAME
-
-===================================================== */
-
 function setCurrentGame(id){
 
-currentGameId=
-
-String(id);
+currentGameId=String(id);
 
 localStorage.setItem(
 
@@ -2866,41 +2522,23 @@ renderAll();
 
 }
 
-/* =====================================================
-
-GAME SELECTOR
-
-===================================================== */
+/* GAME SELECTOR */
 
 function renderGameSelector(){
 
-const select=
-
-$("gameSelect");
+const select=$("gameSelect");
 
 select.innerHTML="";
 
 if(!games.length){
 
-select.add(
+select.add(new Option("No games yet",""));
 
-new Option(
-
-"No games yet",
-
-""
-
-)
-
-);
-
-$("currentGameTitle").textContent=
-
-"No game selected";
+$("currentGameTitle").textContent="No game selected";
 
 $("currentGameSub").textContent=
 
-"Enter an opponent and start your first game.";
+"Enter an opponent to start your first game.";
 
 return;
 
@@ -2908,9 +2546,7 @@ return;
 
 games.forEach(g=>{
 
-let label=
-
-g.opponent;
+let label=g.opponent;
 
 if(g.date){
 
@@ -2920,49 +2556,23 @@ label+=" — "+g.date;
 
 if(g.score){
 
-label+=
-
-" ("+
-
-g.score.our+
-
-"-"+
-
-g.score.opponent+
-
-")";
+label+=" ("+g.score.our+"-"+g.score.opponent+")";
 
 }
 
 select.add(
 
-new Option(
-
-label,
-
-String(g.id)
-
-)
+new Option(label,String(g.id))
 
 );
 
 });
 
-if(
-
-!currentGame()||
-
-!currentGameId
-
-){
+if(!currentGame()||!currentGameId){
 
 currentGameId=
 
-String(
-
-games[games.length-1].id
-
-);
+String(games[games.length-1].id);
 
 localStorage.setItem(
 
@@ -2974,13 +2584,9 @@ currentGameId
 
 }
 
-select.value=
+select.value=currentGameId;
 
-currentGameId;
-
-const game=
-
-currentGame();
+const game=currentGame();
 
 $("currentGameTitle").textContent=
 
@@ -2992,21 +2598,13 @@ game.date
 
 ?
 
-"Game date: "+
+"Game date: "+game.date+
 
-game.date+
-
-" • "+
-
-game.plays.length+
-
-" plays"
+" • "+game.plays.length+" plays"
 
 :
 
-game.plays.length+
-
-" plays recorded";
+game.plays.length+" plays recorded";
 
 $("trackerGameTitle").textContent=
 
@@ -3022,27 +2620,17 @@ $("statsGameTitle").textContent=
 
 }
 
-/* =====================================================
-
-OPPONENT HISTORY
-
-===================================================== */
+/* OPPONENT HISTORY */
 
 function renderOpponentList(){
 
-const list=
-
-$("opponentList");
+const list=$("opponentList");
 
 const names=[
 
 ...new Set(
 
-games
-
-.map(g=>g.opponent)
-
-.filter(Boolean)
+games.map(g=>g.opponent).filter(Boolean)
 
 )
 
@@ -3050,25 +2638,15 @@ games
 
 list.innerHTML=
 
-names
+names.map(
 
-.map(
+n=>`<option value="${esc(n)}"></option>`
 
-n=>
-
-`<option value="${esc(n)}"></option>`
-
-)
-
-.join("");
+).join("");
 
 }
 
-/* =====================================================
-
-NEW GAME
-
-===================================================== */
+/* NEW GAME */
 
 $("newGame").addEventListener(
 
@@ -3078,23 +2656,13 @@ $("newGame").addEventListener(
 
 const opponent=
 
-$("opponentInput")
+$("opponentInput").value.trim();
 
-.value
-
-.trim();
-
-const date=
-
-$("dateInput").value;
+const date=$("dateInput").value;
 
 if(!opponent){
 
-alert(
-
-"Enter the opponent first."
-
-);
+alert("Enter the opponent first.");
 
 return;
 
@@ -3142,23 +2710,13 @@ e=>{
 
 if(e.target.value){
 
-setCurrentGame(
-
-e.target.value
-
-);
+setCurrentGame(e.target.value);
 
 }
 
 });
 
-/* =====================================================
-
-TRACKER RESET
-
-KEEP FORMATION
-
-===================================================== */
+/* RESET TRACKER */
 
 function resetTracker(){
 
@@ -3172,23 +2730,17 @@ setType("");
 
 voiceStatus.textContent=
 
-'Ready for next play. Formation stays selected.';
+"Ready for next play. Formation stays selected.";
 
 }
 
-/* =====================================================
-
-MATH
-
-===================================================== */
+/* MATH */
 
 function total(arr){
 
 return arr.reduce(
 
-(sum,x)=>
-
-sum+Number(x.yards),
+(sum,x)=>sum+Number(x.yards),
 
 0
 
@@ -3202,13 +2754,7 @@ return arr.length
 
 ?
 
-(
-
-total(arr)/
-
-arr.length
-
-).toFixed(2)
+(total(arr)/arr.length).toFixed(2)
 
 :
 
@@ -3216,11 +2762,7 @@ arr.length
 
 }
 
-/* =====================================================
-
-ESCAPE
-
-===================================================== */
+/* ESCAPE */
 
 function esc(s){
 
@@ -3246,25 +2788,15 @@ c=>({
 
 }
 
-/* =====================================================
-
-ADD PLAY
-
-===================================================== */
+/* ADD PLAY */
 
 function addPlay(){
 
-const game=
-
-currentGame();
+const game=currentGame();
 
 if(!game){
 
-alert(
-
-"Start a game first."
-
-);
+alert("Start a game first.");
 
 return false;
 
@@ -3292,15 +2824,9 @@ return false;
 
 }
 
-const selected=
+const selected=getSelectedPlay();
 
-getSelectedPlay();
-
-if(!selected){
-
-return false;
-
-}
+if(!selected)return false;
 
 game.plays.push({
 
@@ -3338,17 +2864,11 @@ addPlay
 
 );
 
-/* =====================================================
-
-DELETE PLAY
-
-===================================================== */
+/* DELETE */
 
 function del(id){
 
-const game=
-
-currentGame();
+const game=currentGame();
 
 if(!game)return;
 
@@ -3356,11 +2876,7 @@ game.plays=
 
 game.plays.filter(
 
-x=>
-
-String(x.id)!==
-
-String(id)
+x=>String(x.id)!==String(id)
 
 );
 
@@ -3372,25 +2888,15 @@ renderAll();
 
 window.del=del;
 
-/* =====================================================
-
-SCORE FUNCTIONS
-
-===================================================== */
+/* SCORE */
 
 function addScore(team,points,label){
 
-const game=
-
-currentGame();
+const game=currentGame();
 
 if(!game){
 
-alert(
-
-"Start a game first."
-
-);
+alert("Start a game first.");
 
 return;
 
@@ -3438,9 +2944,7 @@ $("scoreStatus").textContent=
 
 (team==="our"?"Our team":"Opponent")+
 
-" "+label+
-
-" +"+points;
+" "+label+" +"+points;
 
 renderAll();
 
@@ -3448,17 +2952,11 @@ renderAll();
 
 window.addScore=addScore;
 
-/* =====================================================
-
-UNDO SCORE
-
-===================================================== */
+/* UNDO */
 
 function undoScore(){
 
-const game=
-
-currentGame();
+const game=currentGame();
 
 if(
 
@@ -3474,13 +2972,9 @@ return;
 
 }
 
-const last=
+const last=game.score.history.pop();
 
-game.score.history.pop();
-
-game.score[last.team]-=
-
-last.points;
+game.score[last.team]-=last.points;
 
 saveGames();
 
@@ -3494,23 +2988,15 @@ renderAll();
 
 window.undoScore=undoScore;
 
-/* =====================================================
-
-RESET SCORE
-
-===================================================== */
+/* RESET SCORE */
 
 function resetScore(){
 
-const game=
-
-currentGame();
+const game=currentGame();
 
 if(!game)return;
 
-if(
-
-!confirm(
+if(!confirm(
 
 "Reset the score for vs "+
 
@@ -3518,9 +3004,7 @@ game.opponent+
 
 " to 0-0?"
 
-)
-
-){
+)){
 
 return;
 
@@ -3544,17 +3028,11 @@ renderAll();
 
 window.resetScore=resetScore;
 
-/* =====================================================
-
-SCORE RENDER
-
-===================================================== */
+/* SCORE RENDER */
 
 function renderScore(){
 
-const game=
-
-currentGame();
+const game=currentGame();
 
 if(!game){
 
@@ -3588,21 +3066,13 @@ history:[]
 
 }
 
-$("ourScore").textContent=
+$("ourScore").textContent=game.score.our;
 
-game.score.our;
+$("opponentScore").textContent=game.score.opponent;
 
-$("opponentScore").textContent=
+$("statsOurScore").textContent=game.score.our;
 
-game.score.opponent;
-
-$("statsOurScore").textContent=
-
-game.score.our;
-
-$("statsOpponentScore").textContent=
-
-game.score.opponent;
+$("statsOpponentScore").textContent=game.score.opponent;
 
 $("scoreGameName").textContent=
 
@@ -3610,9 +3080,7 @@ $("scoreGameName").textContent=
 
 $("opponentScoreName").textContent=
 
-(game.opponent||"OPPONENT")
-
-.toUpperCase();
+(game.opponent||"OPPONENT").toUpperCase();
 
 if(!game.score.history.length){
 
@@ -3626,9 +3094,7 @@ return;
 
 $("scoreHistory").innerHTML=
 
-game.score.history
-
-.map(
+game.score.history.map(
 
 (x,i)=>`
 
@@ -3638,11 +3104,7 @@ game.score.history
 
 ${i+1}.
 
-${x.team==="our"
-
-?"🏈 OUR TEAM"
-
-:"🏴 OPPONENT"}
+${x.team==="our"?"🏈 OUR TEAM":"🏴 OPPONENT"}
 
  — ${esc(x.label)}
 
@@ -3666,77 +3128,39 @@ ${esc(x.time||"")}
 
 `
 
-)
-
-.reverse()
-
-.join("");
+).reverse().join("");
 
 }
 
-/* =====================================================
-
-TRACKER RENDER
-
-===================================================== */
+/* TRACKER RENDER */
 
 function renderTracker(){
 
-const plays=
-
-currentPlays();
+const plays=currentPlays();
 
 const runs=
 
-plays.filter(
-
-x=>x.type==="RUN"
-
-);
+plays.filter(x=>x.type==="RUN");
 
 const passes=
 
-plays.filter(
+plays.filter(x=>x.type==="PASS");
 
-x=>x.type==="PASS"
+$("runCount").textContent=runs.length;
 
-);
+$("runTotal").textContent=total(runs);
 
-$("runCount").textContent=
+$("runAvg").textContent=average(runs);
 
-runs.length;
+$("passCount").textContent=passes.length;
 
-$("runTotal").textContent=
+$("passTotal").textContent=total(passes);
 
-total(runs);
-
-$("runAvg").textContent=
-
-average(runs);
-
-$("passCount").textContent=
-
-passes.length;
-
-$("passTotal").textContent=
-
-total(passes);
-
-$("passAvg").textContent=
-
-average(passes);
+$("passAvg").textContent=average(passes);
 
 $("empty").style.display=
 
-plays.length
-
-?
-
-"none"
-
-:
-
-"block";
+plays.length?"none":"block";
 
 $("log").innerHTML=
 
@@ -3758,15 +3182,7 @@ plays.map(
 
 <td>
 
-<span class="badge ${
-
-x.type==="RUN"
-
-?"run"
-
-:"pass"
-
-}">
+<span class="badge ${x.type==="RUN"?"run":"pass"}">
 
 ${x.type}
 
@@ -3794,43 +3210,27 @@ Delete
 
 `
 
-)
-
-.join("");
+).join("");
 
 renderScore();
 
 }
 
-/* =====================================================
-
-PLAY TRACKING
-
-===================================================== */
+/* PLAY TRACKING */
 
 function renderTrackingFilters(){
 
-const plays=
-
-currentPlays();
+const plays=currentPlays();
 
 const names=[
 
-...new Set(
-
-plays.map(x=>x.player)
-
-)
+...new Set(plays.map(x=>x.player))
 
 ];
 
-const select=
+const select=$("trackingPlayer");
 
-$("trackingPlayer");
-
-const old=
-
-select.value;
+const old=select.value;
 
 select.innerHTML=
 
@@ -3838,11 +3238,7 @@ select.innerHTML=
 
 names.forEach(n=>{
 
-select.add(
-
-new Option(n,n)
-
-);
+select.add(new Option(n,n));
 
 });
 
@@ -3858,63 +3254,31 @@ function renderTracking(){
 
 renderTrackingFilters();
 
-const plays=
+const plays=currentPlays();
 
-currentPlays();
+const typeFilter=$("trackingType").value;
 
-const typeFilter=
+const playerFilter=$("trackingPlayer").value;
 
-$("trackingType").value;
-
-const playerFilter=
-
-$("trackingPlayer").value;
-
-const filtered=
-
-plays.filter(
+const filtered=plays.filter(
 
 x=>
 
-(
+(typeFilter==="ALL"||x.type===typeFilter)&&
 
-typeFilter==="ALL"||
-
-x.type===typeFilter
-
-)&&
-
-(
-
-playerFilter==="ALL"||
-
-x.player===playerFilter
-
-)
+(playerFilter==="ALL"||x.player===playerFilter)
 
 );
 
 $("trackingEmpty").style.display=
 
-filtered.length
-
-?
-
-"none"
-
-:
-
-"block";
+filtered.length?"none":"block";
 
 $("trackingLog").innerHTML=
 
-filtered.map(
+filtered.map(x=>{
 
-x=>{
-
-const number=
-
-plays.indexOf(x)+1;
+const number=plays.indexOf(x)+1;
 
 return `
 
@@ -3932,15 +3296,7 @@ return `
 
 <td>
 
-<span class="badge ${
-
-x.type==="RUN"
-
-?"run"
-
-:"pass"
-
-}">
+<span class="badge ${x.type==="RUN"?"run":"pass"}">
 
 ${x.type}
 
@@ -3954,11 +3310,7 @@ ${x.type}
 
 `;
 
-}
-
-)
-
-.join("");
+}).join("");
 
 }
 
@@ -3978,11 +3330,7 @@ renderTracking
 
 );
 
-/* =====================================================
-
-ALL SEASON PLAYS
-
-===================================================== */
+/* ALL SEASON */
 
 function allSeasonPlays(){
 
@@ -4010,103 +3358,47 @@ date:g.date
 
 }
 
-/* =====================================================
-
-STATS
-
-===================================================== */
+/* STATS */
 
 function renderStats(){
 
-const plays=
+const plays=currentPlays();
 
-currentPlays();
+const runs=plays.filter(x=>x.type==="RUN");
 
-const runs=
+const passes=plays.filter(x=>x.type==="PASS");
 
-plays.filter(
+$("gameTotalPlays").textContent=plays.length;
 
-x=>x.type==="RUN"
+$("gameTotalYards").textContent=total(plays);
 
-);
+$("gameRunAvg").textContent=average(runs);
 
-const passes=
+$("gamePassAvg").textContent=average(passes);
 
-plays.filter(
+const season=allSeasonPlays();
 
-x=>x.type==="PASS"
+$("seasonGames").textContent=games.length;
 
-);
+$("seasonPlays").textContent=season.length;
 
-$("gameTotalPlays").textContent=
+$("seasonYards").textContent=total(season);
 
-plays.length;
-
-$("gameTotalYards").textContent=
-
-total(plays);
-
-$("gameRunAvg").textContent=
-
-average(runs);
-
-$("gamePassAvg").textContent=
-
-average(passes);
-
-/* SEASON */
-
-const season=
-
-allSeasonPlays();
-
-$("seasonGames").textContent=
-
-games.length;
-
-$("seasonPlays").textContent=
-
-season.length;
-
-$("seasonYards").textContent=
-
-total(season);
-
-$("seasonAvg").textContent=
-
-average(season);
+$("seasonAvg").textContent=average(season);
 
 /* GAME BY GAME */
 
 $("gameStats").innerHTML=
 
-games.map(
+games.map(g=>{
 
-g=>{
+const r=g.plays.filter(x=>x.type==="RUN");
 
-const r=
+const p=g.plays.filter(x=>x.type==="PASS");
 
-g.plays.filter(
+const ourScore=g.score?.our||0;
 
-x=>x.type==="RUN"
-
-);
-
-const p=
-
-g.plays.filter(
-
-x=>x.type==="PASS"
-
-);
-
-const ourScore=
-
-g.score?.our||0;
-
-const oppScore=
-
-g.score?.opponent||0;
+const oppScore=g.score?.opponent||0;
 
 return `
 
@@ -4114,11 +3406,7 @@ return `
 
 <td>
 
-<strong>
-
-vs ${esc(g.opponent)}
-
-</strong>
+<strong>vs ${esc(g.opponent)}</strong>
 
 </td>
 
@@ -4126,11 +3414,7 @@ vs ${esc(g.opponent)}
 
 <td>
 
-<strong>
-
-${ourScore}-${oppScore}
-
-</strong>
+<strong>${ourScore}-${oppScore}</strong>
 
 </td>
 
@@ -4148,11 +3432,7 @@ ${ourScore}-${oppScore}
 
 `;
 
-}
-
-)
-
-.join("");
+}).join("");
 
 /* PLAYER STATS */
 
@@ -4160,17 +3440,9 @@ const names=[
 
 ...new Set(
 
-[
+[...player.options]
 
-...player.options
-
-]
-
-.map(
-
-o=>o.value
-
-)
+.map(o=>o.value)
 
 .filter(Boolean)
 
@@ -4180,31 +3452,17 @@ o=>o.value
 
 $("playerStats").innerHTML=
 
-names.map(
+names.map(n=>{
 
-n=>{
+const rr=season.filter(
 
-const rr=
-
-season.filter(
-
-x=>
-
-x.player===n&&
-
-x.type==="RUN"
+x=>x.player===n&&x.type==="RUN"
 
 );
 
-const pp=
+const pp=season.filter(
 
-season.filter(
-
-x=>
-
-x.player===n&&
-
-x.type==="PASS"
+x=>x.player===n&&x.type==="PASS"
 
 );
 
@@ -4234,19 +3492,13 @@ return `
 
 `;
 
-}
-
-)
-
-.join("");
+}).join("");
 
 /* PLAY PERFORMANCE */
 
 const groups={};
 
-season.forEach(
-
-x=>{
+season.forEach(x=>{
 
 const key=
 
@@ -4286,73 +3538,39 @@ yards:0
 
 groups[key].attempts++;
 
-groups[key].yards+=
+groups[key].yards+=Number(x.yards);
 
-Number(x.yards);
-
-}
-
-);
+});
 
 const performance=
 
-Object.values(groups)
-
-.sort(
+Object.values(groups).sort(
 
 (a,b)=>
 
-(
+(b.yards/b.attempts)-
 
-b.yards/b.attempts
-
-)-
-
-(
-
-a.yards/a.attempts
-
-)
+(a.yards/a.attempts)
 
 );
 
 $("playStatsEmpty").style.display=
 
-performance.length
-
-?
-
-"none"
-
-:
-
-"block";
+performance.length?"none":"block";
 
 $("playStats").innerHTML=
 
-performance.map(
-
-(x,i)=>{
+performance.map((x,i)=>{
 
 const avg=
 
-(
-
-x.yards/
-
-x.attempts
-
-).toFixed(2);
+(x.yards/x.attempts).toFixed(2);
 
 return `
 
 <tr>
 
-<td class="rank">
-
-#${i+1}
-
-</td>
+<td class="rank">#${i+1}</td>
 
 <td>${esc(x.formation)}</td>
 
@@ -4366,13 +3584,9 @@ return `
 
 x.type==="RUN"
 
-?
+?"performance-run"
 
-"performance-run"
-
-:
-
-"performance-pass"
+:"performance-pass"
 
 }">
 
@@ -4396,19 +3610,11 @@ ${avg}
 
 `;
 
-}
-
-)
-
-.join("");
+}).join("");
 
 }
 
-/* =====================================================
-
-CLEAR CURRENT GAME
-
-===================================================== */
+/* CLEAR GAME */
 
 $("clear").addEventListener(
 
@@ -4416,15 +3622,11 @@ $("clear").addEventListener(
 
 ()=>{
 
-const game=
-
-currentGame();
+const game=currentGame();
 
 if(!game)return;
 
-if(
-
-confirm(
+if(confirm(
 
 "Clear all plays AND scoring from vs "+
 
@@ -4432,9 +3634,7 @@ game.opponent+
 
 "? The game itself will remain."
 
-)
-
-){
+)){
 
 game.plays=[];
 
@@ -4474,13 +3674,9 @@ let recognition=null;
 
 function selectOptionBySpokenText(select,text){
 
-const normalized=
+const normalized=normalizeVoiceText(text);
 
-normalizeVoiceText(text);
-
-const options=
-
-Array.from(select.options);
+const options=Array.from(select.options);
 
 let best=null;
 
@@ -4492,23 +3688,13 @@ if(!option.value)return;
 
 const optionText=
 
-normalizeVoiceText(
-
-option.textContent
-
-);
+normalizeVoiceText(option.textContent);
 
 if(!optionText)return;
 
-if(
+if(normalized.includes(optionText)){
 
-normalized.includes(optionText)
-
-){
-
-const score=
-
-optionText.length;
+const score=optionText.length;
 
 if(score>bestScore){
 
@@ -4524,9 +3710,7 @@ bestScore=score;
 
 if(best){
 
-select.value=
-
-best.value;
+select.value=best.value;
 
 select.dispatchEvent(
 
@@ -4542,45 +3726,15 @@ return false;
 
 }
 
-/* =====================================================
-
-FIND FORMATION BY VOICE
-
-===================================================== */
+/* FIND FORMATION */
 
 function findFormationVoice(text){
 
-const normalized=
-
-normalizeVoiceText(text);
+const normalized=normalizeVoiceText(text);
 
 let best=null;
 
 let bestScore=0;
-
-FORMATION_ORDER.forEach(f=>{
-
-const fText=
-
-normalizeVoiceText(f);
-
-if(
-
-normalized.includes(fText)
-
-){
-
-if(fText.length>bestScore){
-
-best=f;
-
-bestScore=fText.length;
-
-}
-
-}
-
-/* Helpful shorter voice forms */
 
 const aliases={
 
@@ -4642,17 +3796,31 @@ const aliases={
 
 };
 
+FORMATION_ORDER.forEach(f=>{
+
+const fText=normalizeVoiceText(f);
+
+if(normalized.includes(fText)&&fText.length>bestScore){
+
+best=f;
+
+bestScore=fText.length;
+
+}
+
 (aliases[f]||[]).forEach(alias=>{
 
-if(normalized.includes(alias)){
+if(
 
-if(alias.length>bestScore){
+normalized.includes(alias)&&
+
+alias.length>bestScore
+
+){
 
 best=f;
 
 bestScore=alias.length;
-
-}
 
 }
 
@@ -4664,23 +3832,13 @@ return best;
 
 }
 
-/* =====================================================
-
-FIND PLAY BY VOICE
-
-===================================================== */
+/* FIND PLAY */
 
 function findPlayVoice(text){
 
-const normalized=
+const normalized=normalizeVoiceText(text);
 
-normalizeVoiceText(text);
-
-if(!formation.value){
-
-return null;
-
-}
+if(!formation.value)return null;
 
 let best=null;
 
@@ -4694,37 +3852,23 @@ DATA[formation.value]
 
 ([seriesName,arr])=>{
 
-arr.forEach(
-
-(p,index)=>{
+arr.forEach((p,index)=>{
 
 const fullText=
 
 normalizeVoiceText(
 
-seriesName+
-
-" "+
-
-p[0]
+seriesName+" "+p[0]
 
 );
 
 const playText=
 
-normalizeVoiceText(
-
-p[0]
-
-);
+normalizeVoiceText(p[0]);
 
 const seriesText=
 
-normalizeVoiceText(
-
-seriesName
-
-);
+normalizeVoiceText(seriesName);
 
 let score=0;
 
@@ -4732,15 +3876,15 @@ if(normalized.includes(fullText)){
 
 score=fullText.length;
 
-}else if(
+}
 
-normalized.includes(playText)
-
-){
+else if(normalized.includes(playText)){
 
 score=playText.length;
 
-}else if(
+}
+
+else if(
 
 normalized.includes(seriesText)&&
 
@@ -4760,13 +3904,7 @@ series:seriesName,
 
 index:index,
 
-value:
-
-seriesName+
-
-"||"+
-
-index
+value:seriesName+"||"+index
 
 };
 
@@ -4774,29 +3912,19 @@ bestScore=score;
 
 }
 
-}
+});
 
-);
-
-}
-
-);
+});
 
 return best;
 
 }
 
-/* =====================================================
-
-VOICE YARDS
-
-===================================================== */
+/* VOICE YARDS */
 
 function parseSpokenYards(text){
 
-const lower=
-
-text.toLowerCase();
+const lower=text.toLowerCase();
 
 let numeric=
 
@@ -4808,9 +3936,7 @@ lower.match(
 
 if(numeric){
 
-let n=
-
-Number(numeric[1]);
+let n=Number(numeric[1]);
 
 if(
 
@@ -4820,9 +3946,7 @@ lower.includes("negative")
 
 ){
 
-n=
-
--Math.abs(n);
+n=-Math.abs(n);
 
 }
 
@@ -4924,21 +4048,11 @@ const numberWords={
 
 };
 
-for(
+for(const word in numberWords){
 
-const word in numberWords
+if(lower.includes(word)){
 
-){
-
-if(
-
-lower.includes(word)
-
-){
-
-let n=
-
-numberWords[word];
+let n=numberWords[word];
 
 if(
 
@@ -4962,45 +4076,31 @@ return null;
 
 }
 
-/* =====================================================
-
-VOICE SCORING
-
-===================================================== */
+/* VOICE SCORE */
 
 function processVoiceScore(text){
 
-const t=
-
-normalizeVoiceText(text);
+const t=normalizeVoiceText(text);
 
 let points=null;
 
 let label=null;
 
-if(
-
-t.includes("touchdown")
-
-){
+if(t.includes("touchdown")){
 
 points=6;
 
 label="Touchdown";
 
-}else if(
+}
+
+else if(
 
 t.includes("two point")||
 
 t.includes("2 point")||
 
-t.includes("two-point")||
-
-t.includes("conversion")
-
-&&
-
-t.includes("two")
+(t.includes("conversion")&&t.includes("two"))
 
 ){
 
@@ -5008,11 +4108,11 @@ points=2;
 
 label="2 Point";
 
-}else if(
+}
+
+else if(
 
 t.includes("extra point")||
-
-t.includes("extra-point")||
 
 t==="xp"
 
@@ -5022,11 +4122,11 @@ points=1;
 
 label="Extra Point";
 
-}else if(
+}
 
-t.includes("field goal")||
+else if(
 
-t.includes("field-goal")
+t.includes("field goal")
 
 ){
 
@@ -5036,11 +4136,7 @@ label="Field Goal";
 
 }
 
-if(points===null){
-
-return false;
-
-}
+if(points===null)return false;
 
 let team="our";
 
@@ -5058,61 +4154,39 @@ team="opponent";
 
 }
 
-addScore(
-
-team,
-
-points,
-
-label
-
-);
+addScore(team,points,label);
 
 return true;
 
 }
 
-/* =====================================================
-
-VOICE PLAY PROCESSING
-
-===================================================== */
+/* VOICE PLAY */
 
 function processVoicePlay(text){
 
-const game=
-
-currentGame();
+const game=currentGame();
 
 if(!game){
 
-alert(
-
-"Start a game first."
-
-);
+alert("Start a game first.");
 
 return;
 
 }
 
+const normalized=normalizeVoiceText(text);
+
 /* PLAYER */
-
-const normalized=
-
-normalizeVoiceText(text);
 
 let playerFound=null;
 
-Array.from(player.options)
+let playerLength=0;
 
-.forEach(option=>{
+Array.from(player.options).forEach(option=>{
 
 if(!option.value)return;
 
-const p=
-
-normalizeVoiceText(
+const p=normalizeVoiceText(
 
 option.textContent
 
@@ -5120,25 +4194,15 @@ option.textContent
 
 if(
 
-normalized.includes(p)
+normalized.includes(p)&&
+
+p.length>playerLength
 
 ){
 
-if(
+playerFound=option.value;
 
-!playerFound||
-
-p.length>
-
-playerFound.length
-
-){
-
-playerFound=
-
-option.value;
-
-}
+playerLength=p.length;
 
 }
 
@@ -5146,23 +4210,17 @@ option.value;
 
 if(playerFound){
 
-player.value=
-
-playerFound;
+player.value=playerFound;
 
 }
 
 /* FORMATION */
 
-const spokenFormation=
-
-findFormationVoice(text);
+const spokenFormation=findFormationVoice(text);
 
 if(spokenFormation){
 
-formation.value=
-
-spokenFormation;
+formation.value=spokenFormation;
 
 loadPlays();
 
@@ -5170,15 +4228,11 @@ loadPlays();
 
 /* PLAY */
 
-const spokenPlay=
-
-findPlayVoice(text);
+const spokenPlay=findPlayVoice(text);
 
 if(spokenPlay){
 
-play.value=
-
-spokenPlay.value;
+play.value=spokenPlay.value;
 
 play.dispatchEvent(
 
@@ -5190,19 +4244,15 @@ new Event("change")
 
 /* YARDS */
 
-const spokenYards=
-
-parseSpokenYards(text);
+const spokenYards=parseSpokenYards(text);
 
 if(spokenYards!==null){
 
-yards.value=
-
-String(spokenYards);
+yards.value=String(spokenYards);
 
 }
 
-/* If formation/play were found, try to record */
+/* RECORD */
 
 if(
 
@@ -5216,17 +4266,13 @@ yards.value!==""
 
 ){
 
-const success=
-
-addPlay();
+const success=addPlay();
 
 if(success){
 
 voiceStatus.textContent=
 
-"Recorded: "+
-
-text;
+"Recorded: "+text;
 
 return;
 
@@ -5236,21 +4282,13 @@ return;
 
 let missing=[];
 
-if(!player.value)
+if(!player.value)missing.push("player");
 
-missing.push("player");
+if(!formation.value)missing.push("formation");
 
-if(!formation.value)
+if(play.value==="")missing.push("play");
 
-missing.push("formation");
-
-if(play.value==="")
-
-missing.push("play");
-
-if(yards.value==="")
-
-missing.push("yards");
+if(yards.value==="")missing.push("yards");
 
 voiceStatus.textContent=
 
@@ -5264,17 +4302,11 @@ missing.join(", ");
 
 }
 
-/* =====================================================
-
-VOICE SETUP
-
-===================================================== */
+/* VOICE SETUP */
 
 if(SpeechRecognition){
 
-recognition=
-
-new SpeechRecognition();
+recognition=new SpeechRecognition();
 
 recognition.lang="en-US";
 
@@ -5286,11 +4318,7 @@ recognition.maxAlternatives=5;
 
 recognition.onstart=()=>{
 
-voiceButton.classList.add(
-
-"listening"
-
-);
+voiceButton.classList.add("listening");
 
 voiceButton.textContent=
 
@@ -5304,11 +4332,7 @@ voiceStatus.textContent=
 
 recognition.onend=()=>{
 
-voiceButton.classList.remove(
-
-"listening"
-
-);
+voiceButton.classList.remove("listening");
 
 voiceButton.textContent=
 
@@ -5316,25 +4340,15 @@ voiceButton.textContent=
 
 };
 
-recognition.onerror=
+recognition.onerror=event=>{
 
-event=>{
-
-voiceButton.classList.remove(
-
-"listening"
-
-);
+voiceButton.classList.remove("listening");
 
 voiceButton.textContent=
 
 "🎤 VOICE COMMAND";
 
-if(
-
-event.error==="not-allowed"
-
-){
+if(event.error==="not-allowed"){
 
 voiceStatus.textContent=
 
@@ -5350,9 +4364,7 @@ voiceStatus.textContent=
 
 };
 
-recognition.onresult=
-
-event=>{
+recognition.onresult=event=>{
 
 const transcript=
 
@@ -5370,41 +4382,23 @@ transcript+
 
 '"';
 
-if(
+if(!currentGame()){
 
-!currentGame()
-
-){
-
-alert(
-
-"Start a game first."
-
-);
+alert("Start a game first.");
 
 return;
 
 }
 
-/* SCORE COMMAND FIRST */
-
-if(
-
-processVoiceScore(transcript)
-
-){
+if(processVoiceScore(transcript)){
 
 voiceStatus.textContent=
 
-"Scoring recorded: "+
-
-transcript;
+"Scoring recorded: "+transcript;
 
 return;
 
 }
-
-/* OTHERWISE PLAY COMMAND */
 
 processVoicePlay(transcript);
 
@@ -5426,17 +4420,9 @@ return;
 
 }
 
-if(
+if(!currentGame()){
 
-!currentGame()
-
-){
-
-alert(
-
-"Start a game first."
-
-);
+alert("Start a game first.");
 
 return;
 
@@ -5458,7 +4444,9 @@ recognition.stop();
 
 });
 
-}else{
+}
+
+else{
 
 voiceButton.addEventListener(
 
@@ -5474,11 +4462,7 @@ voiceStatus.textContent=
 
 }
 
-/* =====================================================
-
-PLAYBOOK DISPLAY
-
-===================================================== */
+/* PLAYBOOK */
 
 function renderPlaybook(){
 
@@ -5520,11 +4504,7 @@ arr.map(
 
 class="playbook-play ${
 
-p[1]==="RUN"
-
-?"run"
-
-:"pass"
+p[1]==="RUN"?"run":"pass"
 
 }">
 
@@ -5550,19 +4530,9 @@ ${i+1}.) ${esc(p[0])}
 
 }
 
-/* =====================================================
+/* TABS */
 
-TABS
-
-===================================================== */
-
-document
-
-.querySelectorAll(".tab")
-
-.forEach(
-
-button=>{
+document.querySelectorAll(".tab").forEach(button=>{
 
 button.addEventListener(
 
@@ -5570,81 +4540,33 @@ button.addEventListener(
 
 ()=>{
 
-document
+document.querySelectorAll(".tab")
 
-.querySelectorAll(".tab")
+.forEach(x=>x.classList.remove("active"));
 
-.forEach(
+document.querySelectorAll(".page")
 
-x=>
+.forEach(x=>x.classList.remove("active"));
 
-x.classList.remove(
+button.classList.add("active");
 
-"active"
+$(button.dataset.page)
 
-)
+.classList.add("active");
 
-);
-
-document
-
-.querySelectorAll(".page")
-
-.forEach(
-
-x=>
-
-x.classList.remove(
-
-"active"
-
-)
-
-);
-
-button.classList.add(
-
-"active"
-
-);
-
-$(
-
-button.dataset.page
-
-)
-
-.classList.add(
-
-"active"
-
-);
-
-if(
-
-button.dataset.page==="stats"
-
-){
+if(button.dataset.page==="stats"){
 
 renderStats();
 
 }
 
-if(
-
-button.dataset.page==="tracking"
-
-){
+if(button.dataset.page==="tracking"){
 
 renderTracking();
 
 }
 
-if(
-
-button.dataset.page==="playbook"
-
-){
+if(button.dataset.page==="playbook"){
 
 renderPlaybook();
 
@@ -5654,11 +4576,7 @@ renderPlaybook();
 
 });
 
-/* =====================================================
-
-RENDER EVERYTHING
-
-===================================================== */
+/* RENDER */
 
 function renderAll(){
 
