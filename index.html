@@ -6,7 +6,9 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport"
+
+content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -704,22 +706,6 @@ margin-top:10px
 
 }
 
-.logo{
-
-display:block;
-
-width:95px;
-
-height:95px;
-
-object-fit:contain;
-
-margin:0 auto 5px;
-
-border-radius:18px
-
-}
-
 .appTitle{
 
 text-align:center;
@@ -778,13 +764,7 @@ grid-template-columns:repeat(2,1fr)
 
 <div class="wrap">
 
-<!-- APP HEADER -->
-
-<div>
-
 <h1 class="appTitle">🏈 COMETS PLAY TRACKING</h1>
-
-</div>
 
 <!-- GAME SELECTOR -->
 
@@ -808,9 +788,7 @@ grid-template-columns:repeat(2,1fr)
 
 <label>New Opponent</label>
 
-<input
-
-id="opponentInput"
+<input id="opponentInput"
 
 list="opponentList"
 
@@ -824,41 +802,25 @@ placeholder="Enter opponent">
 
 <label>Game Date</label>
 
-<input
-
-id="dateInput"
-
-type="date">
+<input id="dateInput" type="date">
 
 </div>
 
 </div>
 
-<button
-
-class="action"
-
-id="newGame">
+<button class="action" id="newGame">
 
 ➕ START NEW GAME
 
 </button>
 
-<div
-
-class="gameTitle"
-
-id="currentGameTitle">
+<div class="gameTitle" id="currentGameTitle">
 
 No game selected
 
 </div>
 
-<div
-
-class="gameSub"
-
-id="currentGameSub">
+<div class="gameSub" id="currentGameSub">
 
 Enter an opponent to start a game.
 
@@ -912,11 +874,7 @@ PLAYBOOK
 
 </div>
 
-<div
-
-class="small"
-
-id="scoreGameName">
+<div class="small" id="scoreGameName">
 
 No game
 
@@ -934,11 +892,7 @@ OUR TEAM
 
 </div>
 
-<div
-
-class="scoreNumber"
-
-id="ourScore">
+<div class="scoreNumber" id="ourScore">
 
 0
 
@@ -948,21 +902,13 @@ id="ourScore">
 
 <div class="scoreTeam">
 
-<div
-
-class="scoreTeamName"
-
-id="opponentScoreName">
+<div class="scoreTeamName" id="opponentScoreName">
 
 OPPONENT
 
 </div>
 
-<div
-
-class="scoreNumber"
-
-id="opponentScore">
+<div class="scoreNumber" id="opponentScore">
 
 0
 
@@ -1064,11 +1010,7 @@ RESET SCORE
 
 </div>
 
-<div
-
-class="scoreStatus"
-
-id="scoreStatus">
+<div class="scoreStatus" id="scoreStatus">
 
 Manual scoring or use Voice Entry below.
 
@@ -1184,31 +1126,19 @@ Manual scoring or use Voice Entry below.
 
 </div>
 
-<button
-
-class="action"
-
-id="add">
+<button class="action" id="add">
 
 ADD PLAY
 
 </button>
 
-<button
-
-class="voice"
-
-id="voiceButton">
+<button class="voice" id="voiceButton">
 
 🎤 VOICE COMMAND
 
 </button>
 
-<div
-
-class="voice-status"
-
-id="voiceStatus">
+<div class="voice-status" id="voiceStatus">
 
 Voice can enter plays, yards, players, formations and scoring.
 
@@ -1226,11 +1156,7 @@ Voice can enter plays, yards, players, formations and scoring.
 
 </div>
 
-<button
-
-class="action clear"
-
-id="clear">
+<button class="action clear" id="clear">
 
 CLEAR CURRENT GAME
 
@@ -1242,11 +1168,7 @@ CLEAR CURRENT GAME
 
 <div class="card">
 
-<div
-
-class="gameTitle"
-
-id="trackerGameTitle">
+<div class="gameTitle" id="trackerGameTitle">
 
 Current Game
 
@@ -1262,11 +1184,7 @@ RUNNING PLAYS
 
 </div>
 
-<div
-
-class="big"
-
-id="runCount">
+<div class="big" id="runCount">
 
 0
 
@@ -1274,15 +1192,11 @@ id="runCount">
 
 <div class="small">
 
-Avg:
-
-<span id="runAvg">0.00</span>
+Avg: <span id="runAvg">0.00</span>
 
 |
 
-Total:
-
-<span id="runTotal">0</span>
+Total: <span id="runTotal">0</span>
 
 </div>
 
@@ -1296,11 +1210,7 @@ PASSING PLAYS
 
 </div>
 
-<div
-
-class="big"
-
-id="passCount">
+<div class="big" id="passCount">
 
 0
 
@@ -1308,15 +1218,11 @@ id="passCount">
 
 <div class="small">
 
-Avg:
-
-<span id="passAvg">0.00</span>
+Avg: <span id="passAvg">0.00</span>
 
 |
 
-Total:
-
-<span id="passTotal">0</span>
+Total: <span id="passTotal">0</span>
 
 </div>
 
@@ -1332,11 +1238,7 @@ Total:
 
 <h2>🏆 Scoring Log</h2>
 
-<div
-
-id="scoreHistory"
-
-class="scoreHistory">
+<div id="scoreHistory" class="scoreHistory">
 
 <div class="empty">
 
@@ -1388,11 +1290,7 @@ No scoring plays yet.
 
 </div>
 
-<div
-
-id="empty"
-
-class="empty">
+<div id="empty" class="empty">
 
 No plays recorded for this game.
 
@@ -1410,11 +1308,7 @@ No plays recorded for this game.
 
 <h2>📋 Play Tracking</h2>
 
-<div
-
-class="gameTitle"
-
-id="trackingGameTitle">
+<div class="gameTitle" id="trackingGameTitle">
 
 Current Game
 
@@ -1494,11 +1388,7 @@ Every play called during the selected game.
 
 </div>
 
-<div
-
-id="trackingEmpty"
-
-class="empty">
+<div id="trackingEmpty" class="empty">
 
 No plays recorded.
 
@@ -1516,11 +1406,7 @@ No plays recorded.
 
 <h2>🏈 Game Stats</h2>
 
-<div
-
-class="gameTitle"
-
-id="statsGameTitle">
+<div class="gameTitle" id="statsGameTitle">
 
 Current Game
 
@@ -1536,11 +1422,7 @@ OUR SCORE
 
 </div>
 
-<div
-
-class="scoreNumber"
-
-id="statsOurScore">
+<div class="scoreNumber" id="statsOurScore">
 
 0
 
@@ -1556,11 +1438,7 @@ OPPONENT
 
 </div>
 
-<div
-
-class="scoreNumber"
-
-id="statsOpponentScore">
+<div class="scoreNumber" id="statsOpponentScore">
 
 0
 
@@ -1580,11 +1458,7 @@ TOTAL PLAYS
 
 </div>
 
-<div
-
-class="big"
-
-id="gameTotalPlays">
+<div class="big" id="gameTotalPlays">
 
 0
 
@@ -1600,11 +1474,7 @@ TOTAL YARDS
 
 </div>
 
-<div
-
-class="big"
-
-id="gameTotalYards">
+<div class="big" id="gameTotalYards">
 
 0
 
@@ -1620,11 +1490,7 @@ RUN AVG
 
 </div>
 
-<div
-
-class="big"
-
-id="gameRunAvg">
+<div class="big" id="gameRunAvg">
 
 0.00
 
@@ -1640,11 +1506,7 @@ PASS AVG
 
 </div>
 
-<div
-
-class="big"
-
-id="gamePassAvg">
+<div class="big" id="gamePassAvg">
 
 0.00
 
@@ -1655,8 +1517,6 @@ id="gamePassAvg">
 </div>
 
 </div>
-
-<!-- SEASON -->
 
 <div class="card">
 
@@ -1668,15 +1528,7 @@ id="gamePassAvg">
 
 <div class="small">GAMES</div>
 
-<div
-
-class="big"
-
-id="seasonGames">
-
-0
-
-</div>
+<div class="big" id="seasonGames">0</div>
 
 </div>
 
@@ -1684,15 +1536,7 @@ id="seasonGames">
 
 <div class="small">TOTAL PLAYS</div>
 
-<div
-
-class="big"
-
-id="seasonPlays">
-
-0
-
-</div>
+<div class="big" id="seasonPlays">0</div>
 
 </div>
 
@@ -1700,15 +1544,7 @@ id="seasonPlays">
 
 <div class="small">TOTAL YARDS</div>
 
-<div
-
-class="big"
-
-id="seasonYards">
-
-0
-
-</div>
+<div class="big" id="seasonYards">0</div>
 
 </div>
 
@@ -1716,23 +1552,13 @@ id="seasonYards">
 
 <div class="small">AVG / PLAY</div>
 
-<div
-
-class="big"
-
-id="seasonAvg">
-
-0.00
+<div class="big" id="seasonAvg">0.00</div>
 
 </div>
 
 </div>
 
 </div>
-
-</div>
-
-<!-- GAME BY GAME -->
 
 <div class="card">
 
@@ -1773,8 +1599,6 @@ id="seasonAvg">
 </div>
 
 </div>
-
-<!-- PLAYER STATS -->
 
 <div class="card">
 
@@ -1817,8 +1641,6 @@ id="seasonAvg">
 </div>
 
 </div>
-
-<!-- PLAY PERFORMANCE -->
 
 <div class="card">
 
@@ -1864,11 +1686,7 @@ All games combined. Plays are ranked by average yards gained.
 
 </div>
 
-<div
-
-id="playStatsEmpty"
-
-class="empty">
+<div id="playStatsEmpty" class="empty">
 
 No play performance data yet.
 
@@ -2140,7 +1958,7 @@ const DATA={
 
 "SPECIAL RUN AND PASS PLAYS":{
 
-"SPECIAL RUN AND PASS PLAYS":[
+"SPECIAL PLAYS":[
 
 ["Doubles F Toss Vegas","RUN"],
 
@@ -2149,6 +1967,78 @@ const DATA={
 ["Doubles Pass Double Pass","PASS"]
 
 ]
+
+}
+
+};
+
+/* =====================================================
+
+EXACT PLAY SHEET NUMBERS
+
+===================================================== */
+
+const PLAY_NUMBERS={
+
+"DOUBLES HEAVY (A)":{
+
+"DOUBLES HEAVY (A)":[1,2,3,4,5,6,7,8]
+
+},
+
+"TRIO (D)":{
+
+"TRIO (D)":[1,2,3,4]
+
+},
+
+"DEUCE (B)":{
+
+"DEUCE (B)":[1,2,3],
+
+"30 SERIES":[4,5,6,7],
+
+"50 SERIES":[8,9,10,11],
+
+"80/81 SERIES":[12,13,14,15]
+
+},
+
+"DOUBLES (C)":{
+
+"DOUBLES (C)":[1,2,3,4,5],
+
+"MOTION RUN":[6,7,8],
+
+"MOTION PASS":[9,10,11,12],
+
+"30 SERIES":[13,14,15,16,17],
+
+"50 SERIES":[18,19,20,21,22,23,24]
+
+},
+
+"TRIPS (D)":{
+
+"MOTION PASS":[1,2,3,4,5,6],
+
+"30 SERIES":[7,8,9,10],
+
+"50 SERIES":[11,12,13,14,15,16],
+
+"80 SERIES":[16,17]
+
+},
+
+"BASE RUN":{
+
+"BASE RUN":[18,19,20]
+
+},
+
+"SPECIAL RUN AND PASS PLAYS":{
+
+"SPECIAL PLAYS":[21,22,23]
 
 }
 
@@ -2246,6 +2136,28 @@ select.add(new Option(text,""));
 
 }
 
+/* GET EXACT SHEET NUMBER */
+
+function getPlayNumber(formationName,seriesName,index){
+
+if(
+
+PLAY_NUMBERS[formationName] &&
+
+PLAY_NUMBERS[formationName][seriesName] &&
+
+PLAY_NUMBERS[formationName][seriesName][index]!==undefined
+
+){
+
+return PLAY_NUMBERS[formationName][seriesName][index];
+
+}
+
+return index+1;
+
+}
+
 /* LOAD PLAYS */
 
 function loadPlays(){
@@ -2262,13 +2174,21 @@ Object.entries(DATA[formation.value]).forEach(
 
 arr.forEach((p,index)=>{
 
-const value=seriesName+"||"+index;
+const number=getPlayNumber(
 
-/* NUMBERING ADDED HERE */
+formation.value,
+
+seriesName,
+
+index
+
+);
+
+const value=seriesName+"||"+index;
 
 const label=
 
-seriesName+" — "+(index+1)+".) "+p[0];
+number+".) "+p[0];
 
 play.add(new Option(label,value));
 
@@ -2311,6 +2231,16 @@ series:seriesName,
 play:arr[index][0],
 
 type:arr[index][1],
+
+number:getPlayNumber(
+
+formation.value,
+
+seriesName,
+
+index
+
+),
 
 index:index
 
@@ -2538,7 +2468,9 @@ if(!games.length){
 
 select.add(new Option("No games yet",""));
 
-$("currentGameTitle").textContent="No game selected";
+$("currentGameTitle").textContent=
+
+"No game selected";
 
 $("currentGameSub").textContent=
 
@@ -2560,7 +2492,15 @@ label+=" — "+g.date;
 
 if(g.score){
 
-label+=" ("+g.score.our+"-"+g.score.opponent+")";
+label+=" ("+
+
+g.score.our+
+
+"-"+
+
+g.score.opponent+
+
+")";
 
 }
 
@@ -2792,7 +2732,11 @@ c=>({
 
 }
 
-/* ADD PLAY */
+/* =====================================================
+
+ADD PLAY
+
+===================================================== */
 
 function addPlay(){
 
@@ -2843,6 +2787,8 @@ formation:selected.formation,
 series:selected.series,
 
 play:selected.play,
+
+playNumber:selected.number,
 
 type:selected.type,
 
@@ -2956,7 +2902,7 @@ renderAll();
 
 window.addScore=addScore;
 
-/* UNDO */
+/* UNDO SCORE */
 
 function undoScore(){
 
@@ -3142,7 +3088,11 @@ ${esc(x.time||"")}
 
 }
 
-/* TRACKER RENDER */
+/* =====================================================
+
+TRACKER RENDER
+
+===================================================== */
 
 function renderTracker(){
 
@@ -3188,11 +3138,29 @@ plays.map(
 
 <td>${esc(x.series)}</td>
 
-<td>${esc(x.play)}</td>
+<td>
+
+<strong>
+
+${x.playNumber!==undefined
+
+?x.playNumber+".) "
+
+:""}
+
+</strong>
+
+${esc(x.play)}
+
+</td>
 
 <td>
 
-<span class="badge ${x.type==="RUN"?"run":"pass"}">
+<span class="badge ${
+
+x.type==="RUN"?"run":"pass"
+
+}">
 
 ${x.type}
 
@@ -3226,7 +3194,11 @@ renderScore();
 
 }
 
-/* PLAY TRACKING */
+/* =====================================================
+
+PLAY TRACKING
+
+===================================================== */
 
 function renderTrackingFilters(){
 
@@ -3306,11 +3278,29 @@ return `
 
 <td>${esc(x.series)}</td>
 
-<td>${esc(x.play)}</td>
+<td>
+
+<strong>
+
+${x.playNumber!==undefined
+
+?x.playNumber+".) "
+
+:""}
+
+</strong>
+
+${esc(x.play)}
+
+</td>
 
 <td>
 
-<span class="badge ${x.type==="RUN"?"run":"pass"}">
+<span class="badge ${
+
+x.type==="RUN"?"run":"pass"
+
+}">
 
 ${x.type}
 
@@ -3372,15 +3362,27 @@ date:g.date
 
 }
 
-/* STATS */
+/* =====================================================
+
+STATS
+
+===================================================== */
 
 function renderStats(){
 
 const plays=currentPlays();
 
-const runs=plays.filter(x=>x.type==="RUN");
+const runs=plays.filter(
 
-const passes=plays.filter(x=>x.type==="PASS");
+x=>x.type==="RUN"
+
+);
+
+const passes=plays.filter(
+
+x=>x.type==="PASS"
+
+);
 
 $("gameTotalPlays").textContent=
 
@@ -3422,13 +3424,17 @@ $("gameStats").innerHTML=
 
 games.map(g=>{
 
-const r=
+const r=g.plays.filter(
 
-g.plays.filter(x=>x.type==="RUN");
+x=>x.type==="RUN"
 
-const p=
+);
 
-g.plays.filter(x=>x.type==="PASS");
+const p=g.plays.filter(
+
+x=>x.type==="PASS"
+
+);
 
 const ourScore=
 
@@ -3444,7 +3450,11 @@ return `
 
 <td>
 
-<strong>vs ${esc(g.opponent)}</strong>
+<strong>
+
+vs ${esc(g.opponent)}
+
+</strong>
 
 </td>
 
@@ -3452,7 +3462,11 @@ return `
 
 <td>
 
-<strong>${ourScore}-${oppScore}</strong>
+<strong>
+
+${ourScore}-${oppScore}
+
+</strong>
 
 </td>
 
@@ -3564,6 +3578,8 @@ series:x.series,
 
 play:x.play,
 
+playNumber:x.playNumber,
+
 type:x.type,
 
 attempts:0,
@@ -3608,13 +3624,31 @@ return `
 
 <tr>
 
-<td class="rank">#${i+1}</td>
+<td class="rank">
+
+#${i+1}
+
+</td>
 
 <td>${esc(x.formation)}</td>
 
 <td>${esc(x.series)}</td>
 
-<td>${esc(x.play)}</td>
+<td>
+
+<strong>
+
+${x.playNumber!==undefined
+
+?x.playNumber+".) "
+
+:""}
+
+</strong>
+
+${esc(x.play)}
+
+</td>
 
 <td>
 
@@ -3652,7 +3686,11 @@ ${avg}
 
 }
 
-/* CLEAR GAME */
+/* =====================================================
+
+CLEAR GAME
+
+===================================================== */
 
 $("clear").addEventListener(
 
@@ -3710,7 +3748,13 @@ window.webkitSpeechRecognition;
 
 let recognition=null;
 
-function selectOptionBySpokenText(select,text){
+function selectOptionBySpokenText(
+
+select,
+
+text
+
+){
 
 const normalized=
 
@@ -3730,7 +3774,11 @@ if(!option.value)return;
 
 const optionText=
 
-normalizeVoiceText(option.textContent);
+normalizeVoiceText(
+
+option.textContent
+
+);
 
 if(!optionText)return;
 
@@ -3958,7 +4006,9 @@ series:seriesName,
 
 index:index,
 
-value:seriesName+"||"+index
+value:
+
+seriesName+"||"+index
 
 };
 
@@ -4134,7 +4184,9 @@ return null;
 
 function processVoiceScore(text){
 
-const t=normalizeVoiceText(text);
+const t=
+
+normalizeVoiceText(text);
 
 let points=null;
 
@@ -4154,7 +4206,9 @@ t.includes("two point")||
 
 t.includes("2 point")||
 
-(t.includes("conversion")&&t.includes("two"))
+(t.includes("conversion")&&
+
+t.includes("two"))
 
 ){
 
@@ -4238,7 +4292,9 @@ let playerFound=null;
 
 let playerLength=0;
 
-Array.from(player.options).forEach(option=>{
+Array.from(player.options).forEach(
+
+option=>{
 
 if(!option.value)return;
 
@@ -4280,7 +4336,9 @@ findFormationVoice(text);
 
 if(spokenFormation){
 
-formation.value=spokenFormation;
+formation.value=
+
+spokenFormation;
 
 loadPlays();
 
@@ -4294,7 +4352,9 @@ findPlayVoice(text);
 
 if(spokenPlay){
 
-play.value=spokenPlay.value;
+play.value=
+
+spokenPlay.value;
 
 play.dispatchEvent(
 
@@ -4312,7 +4372,9 @@ parseSpokenYards(text);
 
 if(spokenYards!==null){
 
-yards.value=String(spokenYards);
+yards.value=
+
+String(spokenYards);
 
 }
 
@@ -4346,13 +4408,21 @@ return;
 
 let missing=[];
 
-if(!player.value)missing.push("player");
+if(!player.value)
 
-if(!formation.value)missing.push("formation");
+missing.push("player");
 
-if(play.value==="")missing.push("play");
+if(!formation.value)
 
-if(yards.value==="")missing.push("yards");
+missing.push("formation");
+
+if(play.value==="")
+
+missing.push("play");
+
+if(yards.value==="")
+
+missing.push("yards");
 
 voiceStatus.textContent=
 
@@ -4370,7 +4440,9 @@ missing.join(", ");
 
 if(SpeechRecognition){
 
-recognition=new SpeechRecognition();
+recognition=
+
+new SpeechRecognition();
 
 recognition.lang="en-US";
 
@@ -4382,7 +4454,11 @@ recognition.maxAlternatives=5;
 
 recognition.onstart=()=>{
 
-voiceButton.classList.add("listening");
+voiceButton.classList.add(
+
+"listening"
+
+);
 
 voiceButton.textContent=
 
@@ -4396,7 +4472,11 @@ voiceStatus.textContent=
 
 recognition.onend=()=>{
 
-voiceButton.classList.remove("listening");
+voiceButton.classList.remove(
+
+"listening"
+
+);
 
 voiceButton.textContent=
 
@@ -4406,7 +4486,11 @@ voiceButton.textContent=
 
 recognition.onerror=event=>{
 
-voiceButton.classList.remove("listening");
+voiceButton.classList.remove(
+
+"listening"
+
+);
 
 voiceButton.textContent=
 
@@ -4508,9 +4592,7 @@ recognition.stop();
 
 });
 
-}
-
-else{
+}else{
 
 voiceButton.addEventListener(
 
@@ -4526,7 +4608,11 @@ voiceStatus.textContent=
 
 }
 
-/* PLAYBOOK */
+/* =====================================================
+
+PLAYBOOK
+
+===================================================== */
 
 function renderPlaybook(){
 
@@ -4562,21 +4648,41 @@ ${
 
 arr.map(
 
-(p,i)=>`
+(p,i)=>{
 
-<div
+const number=
 
-class="playbook-play ${
+getPlayNumber(
+
+formationName,
+
+seriesName,
+
+i
+
+);
+
+return `
+
+<div class="playbook-play ${
 
 p[1]==="RUN"?"run":"pass"
 
 }">
 
-${i+1}.) ${esc(p[0])}
+<strong>
+
+${number}.)
+
+</strong>
+
+${esc(p[0])}
 
 </div>
 
-`
+`;
+
+}
 
 ).join("")
 
@@ -4594,9 +4700,15 @@ ${i+1}.) ${esc(p[0])}
 
 }
 
-/* TABS */
+/* =====================================================
 
-document.querySelectorAll(".tab").forEach(button=>{
+TABS
+
+===================================================== */
+
+document.querySelectorAll(".tab")
+
+.forEach(button=>{
 
 button.addEventListener(
 
@@ -4606,11 +4718,19 @@ button.addEventListener(
 
 document.querySelectorAll(".tab")
 
-.forEach(x=>x.classList.remove("active"));
+.forEach(x=>
+
+x.classList.remove("active")
+
+);
 
 document.querySelectorAll(".page")
 
-.forEach(x=>x.classList.remove("active"));
+.forEach(x=>
+
+x.classList.remove("active")
+
+);
 
 button.classList.add("active");
 
@@ -4640,7 +4760,11 @@ renderPlaybook();
 
 });
 
-/* RENDER */
+/* =====================================================
+
+RENDER
+
+===================================================== */
 
 function renderAll(){
 
