@@ -2264,7 +2264,11 @@ arr.forEach((p,index)=>{
 
 const value=seriesName+"||"+index;
 
-const label=seriesName+" — "+p[0];
+/* NUMBERING ADDED HERE */
+
+const label=
+
+seriesName+" — "+(index+1)+".) "+p[0];
 
 play.add(new Option(label,value));
 
@@ -3068,11 +3072,17 @@ history:[]
 
 $("ourScore").textContent=game.score.our;
 
-$("opponentScore").textContent=game.score.opponent;
+$("opponentScore").textContent=
 
-$("statsOurScore").textContent=game.score.our;
+game.score.opponent;
 
-$("statsOpponentScore").textContent=game.score.opponent;
+$("statsOurScore").textContent=
+
+game.score.our;
+
+$("statsOpponentScore").textContent=
+
+game.score.opponent;
 
 $("scoreGameName").textContent=
 
@@ -3256,9 +3266,13 @@ renderTrackingFilters();
 
 const plays=currentPlays();
 
-const typeFilter=$("trackingType").value;
+const typeFilter=
 
-const playerFilter=$("trackingPlayer").value;
+$("trackingType").value;
+
+const playerFilter=
+
+$("trackingPlayer").value;
 
 const filtered=plays.filter(
 
@@ -3368,23 +3382,39 @@ const runs=plays.filter(x=>x.type==="RUN");
 
 const passes=plays.filter(x=>x.type==="PASS");
 
-$("gameTotalPlays").textContent=plays.length;
+$("gameTotalPlays").textContent=
 
-$("gameTotalYards").textContent=total(plays);
+plays.length;
 
-$("gameRunAvg").textContent=average(runs);
+$("gameTotalYards").textContent=
 
-$("gamePassAvg").textContent=average(passes);
+total(plays);
+
+$("gameRunAvg").textContent=
+
+average(runs);
+
+$("gamePassAvg").textContent=
+
+average(passes);
 
 const season=allSeasonPlays();
 
-$("seasonGames").textContent=games.length;
+$("seasonGames").textContent=
 
-$("seasonPlays").textContent=season.length;
+games.length;
 
-$("seasonYards").textContent=total(season);
+$("seasonPlays").textContent=
 
-$("seasonAvg").textContent=average(season);
+season.length;
+
+$("seasonYards").textContent=
+
+total(season);
+
+$("seasonAvg").textContent=
+
+average(season);
 
 /* GAME BY GAME */
 
@@ -3392,13 +3422,21 @@ $("gameStats").innerHTML=
 
 games.map(g=>{
 
-const r=g.plays.filter(x=>x.type==="RUN");
+const r=
 
-const p=g.plays.filter(x=>x.type==="PASS");
+g.plays.filter(x=>x.type==="RUN");
 
-const ourScore=g.score?.our||0;
+const p=
 
-const oppScore=g.score?.opponent||0;
+g.plays.filter(x=>x.type==="PASS");
+
+const ourScore=
+
+g.score?.our||0;
+
+const oppScore=
+
+g.score?.opponent||0;
 
 return `
 
@@ -3674,9 +3712,13 @@ let recognition=null;
 
 function selectOptionBySpokenText(select,text){
 
-const normalized=normalizeVoiceText(text);
+const normalized=
 
-const options=Array.from(select.options);
+normalizeVoiceText(text);
+
+const options=
+
+Array.from(select.options);
 
 let best=null;
 
@@ -3730,7 +3772,9 @@ return false;
 
 function findFormationVoice(text){
 
-const normalized=normalizeVoiceText(text);
+const normalized=
+
+normalizeVoiceText(text);
 
 let best=null;
 
@@ -3798,9 +3842,17 @@ const aliases={
 
 FORMATION_ORDER.forEach(f=>{
 
-const fText=normalizeVoiceText(f);
+const fText=
 
-if(normalized.includes(fText)&&fText.length>bestScore){
+normalizeVoiceText(f);
+
+if(
+
+normalized.includes(fText)&&
+
+fText.length>bestScore
+
+){
 
 best=f;
 
@@ -3836,7 +3888,9 @@ return best;
 
 function findPlayVoice(text){
 
-const normalized=normalizeVoiceText(text);
+const normalized=
+
+normalizeVoiceText(text);
 
 if(!formation.value)return null;
 
@@ -4174,7 +4228,9 @@ return;
 
 }
 
-const normalized=normalizeVoiceText(text);
+const normalized=
+
+normalizeVoiceText(text);
 
 /* PLAYER */
 
@@ -4186,7 +4242,9 @@ Array.from(player.options).forEach(option=>{
 
 if(!option.value)return;
 
-const p=normalizeVoiceText(
+const p=
+
+normalizeVoiceText(
 
 option.textContent
 
@@ -4216,7 +4274,9 @@ player.value=playerFound;
 
 /* FORMATION */
 
-const spokenFormation=findFormationVoice(text);
+const spokenFormation=
+
+findFormationVoice(text);
 
 if(spokenFormation){
 
@@ -4228,7 +4288,9 @@ loadPlays();
 
 /* PLAY */
 
-const spokenPlay=findPlayVoice(text);
+const spokenPlay=
+
+findPlayVoice(text);
 
 if(spokenPlay){
 
@@ -4244,7 +4306,9 @@ new Event("change")
 
 /* YARDS */
 
-const spokenYards=parseSpokenYards(text);
+const spokenYards=
+
+parseSpokenYards(text);
 
 if(spokenYards!==null){
 
