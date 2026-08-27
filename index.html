@@ -24,11 +24,7 @@ content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <style>
 
-*{
-
-box-sizing:border-box
-
-}
+*{box-sizing:border-box}
 
 body{
 
@@ -62,11 +58,7 @@ margin:4px 0 16px
 
 }
 
-h2{
-
-margin-top:4px
-
-}
+h2{margin-top:4px}
 
 .tabs{
 
@@ -106,17 +98,9 @@ color:#111
 
 }
 
-.page{
+.page{display:none}
 
-display:none
-
-}
-
-.page.active{
-
-display:block
-
-}
+.page.active{display:block}
 
 .card{
 
@@ -176,11 +160,7 @@ font-size:17px
 
 }
 
-.full{
-
-grid-column:1/-1
-
-}
+.full{grid-column:1/-1}
 
 .type{
 
@@ -276,11 +256,7 @@ animation:pulse 1s infinite
 
 }
 
-button.clear{
-
-background:#3b3b3d
-
-}
+button.clear{background:#3b3b3d}
 
 button.deleteBtn{
 
@@ -464,11 +440,7 @@ font-size:14px
 
 }
 
-.scoreBtn:active{
-
-transform:scale(.97)
-
-}
+.scoreBtn:active{transform:scale(.97)}
 
 .scoreBtn.td{
 
@@ -564,11 +536,7 @@ margin:4px
 
 }
 
-.table{
-
-overflow:auto
-
-}
+.table{overflow:auto}
 
 table{
 
@@ -592,11 +560,7 @@ font-size:13px
 
 }
 
-th{
-
-color:#aaa
-
-}
+th{color:#aaa}
 
 .badge{
 
@@ -726,11 +690,7 @@ font-weight:900
 
 }
 
-.scoreHistory{
-
-margin-top:12px
-
-}
+.scoreHistory{margin-top:12px}
 
 .scoreHistoryItem{
 
@@ -790,7 +750,7 @@ margin:0 0 16px
 
 }
 
-/* FIRST 10 PLAYS */
+/* FIRST 10 */
 
 .firstTenTitle{
 
@@ -814,101 +774,83 @@ margin-bottom:12px
 
 }
 
-.firstTenActualItem{
-
-display:grid;
-
-grid-template-columns:42px 1fr 92px;
-
-gap:10px;
-
-align-items:center;
-
-background:#252527;
-
-border:1px solid #444;
-
-border-radius:14px;
-
-padding:10px;
-
-margin-bottom:8px
-
-}
-
-.firstTenActualNumber{
-
-width:36px;
-
-height:36px;
-
-border-radius:10px;
-
-background:#3b3b3d;
+.firstTenList{
 
 display:flex;
 
-align-items:center;
+flex-direction:column;
 
-justify-content:center;
-
-font-size:18px;
-
-font-weight:900
+gap:9px
 
 }
 
-.firstTenActualInfo{
+.firstTenRow{
+
+background:#252527;
+
+border:2px solid #444;
+
+border-radius:14px;
+
+padding:11px;
+
+display:grid;
+
+grid-template-columns:48px 1fr 82px;
+
+gap:9px;
+
+align-items:center
+
+}
+
+.firstTenNumber{
+
+font-size:21px;
+
+font-weight:900;
+
+text-align:center
+
+}
+
+.firstTenInfo{
 
 min-width:0
 
 }
 
-.firstTenActualPlay{
+.firstTenPlay{
 
 font-size:15px;
 
-line-height:1.3;
+font-weight:900;
 
-margin-bottom:4px
+line-height:1.3
 
 }
 
-.firstTenActualDetails{
+.firstTenMeta{
 
-font-size:11px;
+font-size:12px;
 
 color:#aaa;
 
-line-height:1.35;
+margin-top:3px;
 
-white-space:nowrap;
-
-overflow:hidden;
-
-text-overflow:ellipsis
-
-}
-
-.firstTenActualYards{
-
-font-size:13px;
-
-font-weight:800;
-
-margin-top:5px
+line-height:1.35
 
 }
 
 .firstTenSelect{
 
-height:44px;
+height:46px;
 
 border:0;
 
 border-radius:11px;
 
-background:#18bd58;
+background:#3b82f6;
 
 color:#fff;
 
@@ -920,25 +862,59 @@ font-weight:900
 
 .firstTenSelect:active{
 
-transform:scale(.96)
+transform:scale(.97)
 
 }
 
-.firstTenComplete{
+.firstTenRun{
 
-text-align:center;
+border-color:#00c853
 
-background:#18bd58;
+}
 
-color:#111;
+.firstTenPass{
 
-font-weight:900;
+border-color:#fff000
+
+}
+
+.firstTenEmpty{
+
+background:#202022;
+
+border:1px dashed #555;
 
 border-radius:12px;
 
-padding:10px;
+padding:12px;
 
-margin-top:10px
+color:#777;
+
+font-size:14px
+
+}
+
+.firstTenAddStatus{
+
+text-align:center;
+
+font-size:13px;
+
+color:#aaa;
+
+margin-top:9px;
+
+min-height:18px
+
+}
+
+.dateEditor{
+
+margin-top:12px;
+
+padding-top:12px;
+
+border-top:1px solid #3a3a3c
 
 }
 
@@ -1014,41 +990,35 @@ height:50px
 
 }
 
-.firstTenActualItem{
+.firstTenRow{
 
-grid-template-columns:38px 1fr 78px;
-
-gap:8px;
+grid-template-columns:42px 1fr 74px;
 
 padding:9px
 
 }
 
-.firstTenActualNumber{
+.firstTenNumber{
 
-width:34px;
-
-height:34px;
-
-font-size:16px
+font-size:19px
 
 }
 
-.firstTenActualPlay{
+.firstTenPlay{
 
 font-size:14px
 
 }
 
-.firstTenActualDetails{
+.firstTenMeta{
 
-font-size:10px
+font-size:11px
 
 }
 
 .firstTenSelect{
 
-height:42px;
+height:44px;
 
 font-size:13px
 
@@ -1344,11 +1314,25 @@ Manual scoring or use Voice Entry below.
 
 <div class="firstTenSub">
 
-Your first 10 actual plays entered during the game appear here automatically. Tap SELECT on any play to load it back into the play caller.
+Build your first 10 plays from the play caller above. Choose a Formation and Play, then tap <strong>ADD TO FIRST 10</strong>. When you are ready to run a play, tap <strong>SELECT</strong>. The play will load into the caller so you can choose the player and yards.
 
 </div>
 
-<div id="firstTenGrid"></div>
+<div id="firstTenList" class="firstTenList">
+
+<div class="firstTenEmpty">
+
+Start a game and add plays to your First 10.
+
+</div>
+
+</div>
+
+<div class="firstTenAddStatus" id="firstTenAddStatus">
+
+No First 10 plays added yet.
+
+</div>
 
 </div>
 
@@ -1461,6 +1445,14 @@ Your first 10 actual plays entered during the game appear here automatically. Ta
 </div>
 
 </div>
+
+<!-- NEW FIRST 10 BUTTON -->
+
+<button class="smallAction" id="addFirstTen">
+
+⭐ ADD TO FIRST 10
+
+</button>
 
 <button class="action" id="add">
 
@@ -1788,33 +1780,65 @@ OPPONENT
 
 <div class="stat">
 
-<div class="small">TOTAL PLAYS</div>
+<div class="small">
 
-<div class="big" id="gameTotalPlays">0</div>
+TOTAL PLAYS
+
+</div>
+
+<div class="big" id="gameTotalPlays">
+
+0
+
+</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">TOTAL YARDS</div>
+<div class="small">
 
-<div class="big" id="gameTotalYards">0</div>
+TOTAL YARDS
+
+</div>
+
+<div class="big" id="gameTotalYards">
+
+0
+
+</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">RUN AVG</div>
+<div class="small">
 
-<div class="big" id="gameRunAvg">0.00</div>
+RUN AVG
+
+</div>
+
+<div class="big" id="gameRunAvg">
+
+0.00
+
+</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">PASS AVG</div>
+<div class="small">
 
-<div class="big" id="gamePassAvg">0.00</div>
+PASS AVG
+
+</div>
+
+<div class="big" id="gamePassAvg">
+
+0.00
+
+</div>
 
 </div>
 
@@ -2396,41 +2420,35 @@ const FORMATION_ORDER=[
 
 ];
 
-function loadFormations(){
+/* =====================================================
 
-formation.innerHTML="";
+HELPERS
 
-formation.add(new Option("Add Formation",""));
+===================================================== */
 
-FORMATION_ORDER.forEach(f=>{
+function esc(s){
 
-if(DATA[f]){
+return String(s).replace(
 
-formation.add(new Option(f,f));
+/[&<>"']/g,
 
-}
+c=>({
 
-});
+"&":"&amp;",
 
-}
+"<":"&lt;",
 
-/* NORMALIZE */
+">":"&gt;",
 
-function normalizeVoiceText(text){
+'"':"&quot;",
 
-return String(text)
+"'":"&#39;"
 
-.toLowerCase()
+}[c])
 
-.replace(/[()\/,.'"]/g," ")
-
-.replace(/\s+/g," ")
-
-.trim();
+);
 
 }
-
-/* RESET SELECT */
 
 function resetSelect(select,text){
 
@@ -2439,8 +2457,6 @@ select.innerHTML="";
 select.add(new Option(text,""));
 
 }
-
-/* GET EXACT SHEET NUMBER */
 
 function getPlayNumber(formationName,seriesName,index){
 
@@ -2462,7 +2478,43 @@ return index+1;
 
 }
 
-/* LOAD PLAYS */
+/* =====================================================
+
+LOAD FORMATIONS
+
+===================================================== */
+
+function loadFormations(){
+
+formation.innerHTML="";
+
+formation.add(
+
+new Option("Add Formation","")
+
+);
+
+FORMATION_ORDER.forEach(f=>{
+
+if(DATA[f]){
+
+formation.add(
+
+new Option(f,f)
+
+);
+
+}
+
+});
+
+}
+
+/* =====================================================
+
+LOAD PLAYS
+
+===================================================== */
 
 function loadPlays(){
 
@@ -2478,7 +2530,9 @@ Object.entries(DATA[formation.value]).forEach(
 
 arr.forEach((p,index)=>{
 
-const number=getPlayNumber(
+const number=
+
+getPlayNumber(
 
 formation.value,
 
@@ -2488,13 +2542,19 @@ index
 
 );
 
-const value=seriesName+"||"+index;
+const value=
+
+seriesName+"||"+index;
 
 const label=
 
 number+".) "+p[0];
 
-play.add(new Option(label,value));
+play.add(
+
+new Option(label,value)
+
+);
 
 });
 
@@ -2502,7 +2562,11 @@ play.add(new Option(label,value));
 
 }
 
-/* SELECTED PLAY */
+/* =====================================================
+
+GET SELECTED PLAY
+
+===================================================== */
 
 function getSelectedPlay(){
 
@@ -2512,13 +2576,17 @@ return null;
 
 }
 
-const parts=play.value.split("||");
+const parts=
+
+play.value.split("||");
 
 const seriesName=parts[0];
 
 const index=Number(parts[1]);
 
-const arr=DATA[formation.value][seriesName];
+const arr=
+
+DATA[formation.value][seriesName];
 
 if(!arr||!arr[index]){
 
@@ -2552,7 +2620,11 @@ index:index
 
 }
 
-/* TYPE */
+/* =====================================================
+
+TYPE
+
+===================================================== */
 
 function setType(t){
 
@@ -2608,15 +2680,33 @@ t==="PASS"
 
 /* EVENTS */
 
-formation.addEventListener("change",loadPlays);
+formation.addEventListener(
 
-play.addEventListener("change",()=>{
+"change",
 
-const selected=getSelectedPlay();
+loadPlays
 
-setType(selected?.type||"");
+);
 
-});
+play.addEventListener(
+
+"change",
+
+()=>{
+
+const selected=
+
+getSelectedPlay();
+
+setType(
+
+selected?.type||""
+
+);
+
+}
+
+);
 
 /* =====================================================
 
@@ -2628,7 +2718,11 @@ let games=
 
 JSON.parse(
 
-localStorage.getItem("footballTrackerGames")||"null"
+localStorage.getItem(
+
+"footballTrackerGames"
+
+)||"null"
 
 );
 
@@ -2638,7 +2732,11 @@ const oldPlays=
 
 JSON.parse(
 
-localStorage.getItem("footballTrackerPlays")||"[]"
+localStorage.getItem(
+
+"footballTrackerPlays"
+
+)||"[]"
 
 );
 
@@ -2654,7 +2752,7 @@ date:"",
 
 plays:oldPlays,
 
-firstTen:Array(10).fill(null),
+firstTen:[],
 
 score:{
 
@@ -2708,9 +2806,53 @@ g.score.history=[];
 
 }
 
-});
+/*
 
-/* CURRENT GAME */
+OLD VERSION USED firstTen AS
+
+10 PLAYBOOK SLOTS.
+
+NEW VERSION USES firstTen AS
+
+AN ARRAY OF ACTUAL FIRST 10
+
+PLAY DEFINITIONS.
+
+*/
+
+if(!Array.isArray(g.firstTen)){
+
+g.firstTen=[];
+
+}
+
+/*
+
+Convert old firstTen values if they exist.
+
+They will simply be ignored if they
+
+are not in the new object format.
+
+*/
+
+g.firstTen=
+
+g.firstTen.filter(
+
+x=>x&&typeof x==="object"
+
+);
+
+if(g.firstTen.length>10){
+
+g.firstTen=
+
+g.firstTen.slice(0,10);
+
+}
+
+});
 
 let currentGameId=
 
@@ -2768,65 +2910,151 @@ renderAll();
 
 /* =====================================================
 
-FIRST 10 ACTUAL PLAYS
+FIRST 10 — ADD PLAY
 
 ===================================================== */
 
-function loadFirstTenPlay(playId){
+function addFirstTen(){
+
+const game=currentGame();
+
+if(!game){
+
+alert("Start a game first.");
+
+return false;
+
+}
+
+if(!formation.value||play.value===""){
+
+alert(
+
+"Select a Formation and Play first."
+
+);
+
+return false;
+
+}
+
+if(!Array.isArray(game.firstTen)){
+
+game.firstTen=[];
+
+}
+
+if(game.firstTen.length>=10){
+
+alert(
+
+"You already have 10 First 10 Plays."
+
+);
+
+return false;
+
+}
+
+const selected=
+
+getSelectedPlay();
+
+if(!selected){
+
+alert(
+
+"Please select a valid play."
+
+);
+
+return false;
+
+}
+
+game.firstTen.push({
+
+id:Date.now()+Math.random(),
+
+formation:selected.formation,
+
+series:selected.series,
+
+play:selected.play,
+
+type:selected.type,
+
+playNumber:selected.number,
+
+index:selected.index
+
+});
+
+saveGames();
+
+$("firstTenAddStatus").textContent=
+
+"Added as First 10 Play "+
+
+game.firstTen.length+".";
+
+renderFirstTen();
+
+return true;
+
+}
+
+$("addFirstTen").addEventListener(
+
+"click",
+
+addFirstTen
+
+);
+
+/* =====================================================
+
+FIRST 10 — SELECT
+
+===================================================== */
+
+function selectFirstTen(id){
 
 const game=currentGame();
 
 if(!game)return;
 
-const selected=game.plays.find(
+const item=
 
-x=>String(x.id)===String(playId)
+game.firstTen.find(
+
+x=>String(x.id)===String(id)
 
 );
 
-if(!selected)return;
+if(!item)return;
 
-/* LOAD FORMATION */
+/*
 
-formation.value=selected.formation;
+Load the exact formation.
+
+*/
+
+formation.value=
+
+item.formation;
 
 loadPlays();
 
-/* FIND EXACT PLAY */
+/*
 
-let found=false;
+Find the exact series/index.
 
-Object.entries(
+*/
 
-DATA[selected.formation]||{}
+play.value=
 
-).forEach(
-
-([seriesName,arr])=>{
-
-arr.forEach((p,index)=>{
-
-if(
-
-!found &&
-
-seriesName===selected.series &&
-
-p[0]===selected.play
-
-){
-
-play.value=seriesName+"||"+index;
-
-found=true;
-
-}
-
-});
-
-});
-
-/* UPDATE PLAY TYPE */
+item.series+"||"+item.index;
 
 play.dispatchEvent(
 
@@ -2834,27 +3062,35 @@ new Event("change")
 
 );
 
-/* LOAD PLAYER */
+/*
 
-player.value=selected.player||"";
+IMPORTANT:
 
-/* LOAD ORIGINAL YARDS */
+Player and yards are cleared.
 
-yards.value=String(selected.yards);
+Coach chooses these after
 
-/* UPDATE TYPE */
+selecting the First 10 play.
 
-setType(selected.type||"");
+*/
 
-/* STATUS */
+player.value="";
+
+yards.value="";
 
 voiceStatus.textContent=
 
-"Loaded First 10 Play #"+
+"First 10 Play "+item.playNumber+
 
-(game.plays.indexOf(selected)+1)+
+" selected. Now choose Player and Yards.";
 
-". You can change the yards or player before adding it again.";
+$("firstTenAddStatus").textContent=
+
+"Selected First 10 Play "+
+
+item.playNumber+
+
+" — choose the player and yards.";
 
 window.scrollTo({
 
@@ -2866,15 +3102,63 @@ behavior:"smooth"
 
 }
 
-window.loadFirstTenPlay=loadFirstTenPlay;
+window.selectFirstTen=
 
-/* RENDER FIRST 10 */
+selectFirstTen;
+
+/* =====================================================
+
+FIRST 10 — DELETE
+
+===================================================== */
+
+function deleteFirstTen(id){
+
+const game=currentGame();
+
+if(!game)return;
+
+game.firstTen=
+
+game.firstTen.filter(
+
+x=>String(x.id)!==String(id)
+
+);
+
+saveGames();
+
+renderFirstTen();
+
+$("firstTenAddStatus").textContent=
+
+"First 10 play removed.";
+
+}
+
+window.deleteFirstTen=
+
+deleteFirstTen;
+
+/* =====================================================
+
+FIRST 10 RENDER
+
+===================================================== */
 
 function renderFirstTen(){
 
-const container=$("firstTenGrid");
+const container=
 
-const game=currentGame();
+$("firstTenList");
+
+const status=
+
+$("firstTenAddStatus");
+
+const game=
+
+currentGame();
 
 if(!container)return;
 
@@ -2882,85 +3166,109 @@ if(!game){
 
 container.innerHTML=
 
-'<div class="empty">Start a game to record your First 10 Plays.</div>';
+`
+
+<div class="firstTenEmpty">
+
+Start a game and add plays to your First 10.
+
+</div>
+
+`;
+
+status.textContent=
+
+"No First 10 plays added yet.";
 
 return;
 
 }
 
-const firstTen=game.plays.slice(0,10);
+if(!Array.isArray(game.firstTen)){
 
-if(!firstTen.length){
+game.firstTen=[];
+
+saveGames();
+
+}
+
+if(!game.firstTen.length){
 
 container.innerHTML=
 
-'<div class="empty">Your first 10 plays will appear here as you enter them.</div>';
+`
+
+<div class="firstTenEmpty">
+
+No First 10 plays yet. Select a Formation and Play below, then tap ⭐ ADD TO FIRST 10.
+
+</div>
+
+`;
+
+status.textContent=
+
+"0 of 10 plays added.";
 
 return;
 
 }
 
-let html="";
+container.innerHTML=
 
-firstTen.forEach((x,index)=>{
+game.firstTen.map((item,index)=>{
 
-html+=`
+const typeClass=
 
-<div class="firstTenActualItem">
+item.type==="RUN"
 
-<div class="firstTenActualNumber">
+?"firstTenRun"
+
+:
+
+"firstTenPass";
+
+return`
+
+<div class="firstTenRow ${typeClass}">
+
+<div class="firstTenNumber">
 
 ${index+1}
 
 </div>
 
-<div class="firstTenActualInfo">
+<div class="firstTenInfo">
 
-<div class="firstTenActualPlay">
+<div class="firstTenPlay">
 
-<strong>
+${item.playNumber!==undefined
 
-${x.playNumber!==undefined
-
-?x.playNumber+".) "
+?item.playNumber+".) "
 
 :""}
 
-${esc(x.play)}
-
-</strong>
+${esc(item.play)}
 
 </div>
 
-<div class="firstTenActualDetails">
+<div class="firstTenMeta">
 
-${esc(x.player)}
+${esc(item.formation)}
 
-&nbsp; • &nbsp;
+<br>
 
-${esc(x.formation)}
+${esc(item.series)}
 
-&nbsp; • &nbsp;
+<span style="margin-left:5px;font-weight:900;color:${
 
-${esc(x.series)}
-
-</div>
-
-<div class="firstTenActualYards">
-
-<span class="badge ${
-
-x.type==="RUN"?"run":"pass"
+item.type==="RUN"?"#00c853":"#fff000"
 
 }">
 
-${x.type}
+${item.type}
 
 </span>
-
-&nbsp;
-
-${x.yards} yards
 
 </div>
 
@@ -2970,9 +3278,7 @@ ${x.yards} yards
 
 class="firstTenSelect"
 
-onclick="loadFirstTenPlay('${x.id}')"
-
->
+onclick="selectFirstTen('${item.id}')">
 
 SELECT
 
@@ -2982,27 +3288,21 @@ SELECT
 
 `;
 
-});
+}).join("");
 
-if(firstTen.length===10){
+status.textContent=
 
-html+=`
+game.firstTen.length+
 
-<div class="firstTenComplete">
-
-✅ FIRST 10 PLAYS COMPLETE
-
-</div>
-
-`;
+" of 10 First 10 plays added.";
 
 }
 
-container.innerHTML=html;
+/* =====================================================
 
-}
+GAME SELECTOR
 
-/* GAME SELECTOR */
+===================================================== */
 
 function renderGameSelector(){
 
@@ -3012,7 +3312,11 @@ select.innerHTML="";
 
 if(!games.length){
 
-select.add(new Option("No games yet",""));
+select.add(
+
+new Option("No games yet","")
+
+);
 
 $("currentGameTitle").textContent=
 
@@ -3023,8 +3327,6 @@ $("currentGameSub").textContent=
 "Enter an opponent to start your first game.";
 
 $("editDateInput").value="";
-
-renderFirstTen();
 
 return;
 
@@ -3056,7 +3358,13 @@ g.score.opponent+
 
 select.add(
 
-new Option(label,String(g.id))
+new Option(
+
+label,
+
+String(g.id)
+
+)
 
 );
 
@@ -3078,9 +3386,13 @@ currentGameId
 
 }
 
-select.value=currentGameId;
+select.value=
 
-const game=currentGame();
+currentGameId;
+
+const game=
+
+currentGame();
 
 $("currentGameTitle").textContent=
 
@@ -3098,7 +3410,9 @@ game.date
 
 :
 
-game.plays.length+" plays recorded";
+game.plays.length+
+
+" plays recorded";
 
 $("trackerGameTitle").textContent=
 
@@ -3118,17 +3432,27 @@ game.date||"";
 
 }
 
-/* OPPONENT HISTORY */
+/* =====================================================
+
+OPPONENT HISTORY
+
+===================================================== */
 
 function renderOpponentList(){
 
-const list=$("opponentList");
+const list=
+
+$("opponentList");
 
 const names=[
 
 ...new Set(
 
-games.map(g=>g.opponent).filter(Boolean)
+games
+
+.map(g=>g.opponent)
+
+.filter(Boolean)
 
 )
 
@@ -3144,7 +3468,11 @@ n=>`<option value="${esc(n)}"></option>`
 
 }
 
-/* NEW GAME */
+/* =====================================================
+
+NEW GAME
+
+===================================================== */
 
 $("newGame").addEventListener(
 
@@ -3156,11 +3484,17 @@ const opponent=
 
 $("opponentInput").value.trim();
 
-const date=$("dateInput").value;
+const date=
+
+$("dateInput").value;
 
 if(!opponent){
 
-alert("Enter the opponent first.");
+alert(
+
+"Enter the opponent first."
+
+);
 
 return;
 
@@ -3175,6 +3509,8 @@ opponent:opponent,
 date:date,
 
 plays:[],
+
+firstTen:[],
 
 score:{
 
@@ -3208,13 +3544,21 @@ e=>{
 
 if(e.target.value){
 
-setCurrentGame(e.target.value);
+setCurrentGame(
+
+e.target.value
+
+);
 
 }
 
 });
 
-/* SAVE DATE */
+/* =====================================================
+
+SAVE DATE
+
+===================================================== */
 
 $("saveGameDate").addEventListener(
 
@@ -3226,13 +3570,19 @@ const game=currentGame();
 
 if(!game){
 
-alert("Select a game first.");
+alert(
+
+"Select a game first."
+
+);
 
 return;
 
 }
 
-game.date=$("editDateInput").value;
+game.date=
+
+$("editDateInput").value;
 
 saveGames();
 
@@ -3244,17 +3594,17 @@ renderAll();
 
 });
 
-/* RESET TRACKER */
+/* =====================================================
+
+RESET TRACKER
+
+===================================================== */
 
 function resetTracker(){
 
 player.value="";
 
-play.value="";
-
 yards.value="";
-
-setType("");
 
 voiceStatus.textContent=
 
@@ -3262,7 +3612,11 @@ voiceStatus.textContent=
 
 }
 
-/* MATH */
+/* =====================================================
+
+MATH
+
+===================================================== */
 
 function total(arr){
 
@@ -3290,32 +3644,6 @@ return arr.length
 
 }
 
-/* ESCAPE */
-
-function esc(s){
-
-return String(s).replace(
-
-/[&<>"']/g,
-
-c=>({
-
-"&":"&amp;",
-
-"<":"&lt;",
-
-">":"&gt;",
-
-'"':"&quot;",
-
-"'":"&#39;"
-
-}[c])
-
-);
-
-}
-
 /* =====================================================
 
 ADD PLAY
@@ -3328,7 +3656,11 @@ const game=currentGame();
 
 if(!game){
 
-alert("Start a game first.");
+alert(
+
+"Start a game first."
+
+);
 
 return false;
 
@@ -3356,7 +3688,9 @@ return false;
 
 }
 
-const selected=getSelectedPlay();
+const selected=
+
+getSelectedPlay();
 
 if(!selected)return false;
 
@@ -3398,7 +3732,11 @@ addPlay
 
 );
 
-/* DELETE */
+/* =====================================================
+
+DELETE PLAY
+
+===================================================== */
 
 function del(id){
 
@@ -3422,15 +3760,31 @@ renderAll();
 
 window.del=del;
 
-/* SCORE */
+/* =====================================================
 
-function addScore(team,points,label){
+SCORE
+
+===================================================== */
+
+function addScore(
+
+team,
+
+points,
+
+label
+
+){
 
 const game=currentGame();
 
 if(!game){
 
-alert("Start a game first.");
+alert(
+
+"Start a game first."
+
+);
 
 return;
 
@@ -3462,13 +3816,19 @@ points:points,
 
 label:label,
 
-time:new Date().toLocaleTimeString([],{
+time:new Date().toLocaleTimeString(
+
+[],
+
+{
 
 hour:"numeric",
 
 minute:"2-digit"
 
-})
+}
+
+)
 
 });
 
@@ -3476,7 +3836,11 @@ saveGames();
 
 $("scoreStatus").textContent=
 
-(team==="our"?"Our team":"Opponent")+
+(team==="our"
+
+?"Our team"
+
+:"Opponent")+
 
 " "+label+" +"+points;
 
@@ -3484,9 +3848,15 @@ renderAll();
 
 }
 
-window.addScore=addScore;
+window.addScore=
 
-/* UNDO SCORE */
+addScore;
+
+/* =====================================================
+
+UNDO SCORE
+
+===================================================== */
 
 function undoScore(){
 
@@ -3506,9 +3876,13 @@ return;
 
 }
 
-const last=game.score.history.pop();
+const last=
 
-game.score[last.team]-=last.points;
+game.score.history.pop();
+
+game.score[last.team]-=
+
+last.points;
 
 saveGames();
 
@@ -3520,9 +3894,15 @@ renderAll();
 
 }
 
-window.undoScore=undoScore;
+window.undoScore=
 
-/* RESET SCORE */
+undoScore;
+
+/* =====================================================
+
+RESET SCORE
+
+===================================================== */
 
 function resetScore(){
 
@@ -3560,9 +3940,15 @@ renderAll();
 
 }
 
-window.resetScore=resetScore;
+window.resetScore=
 
-/* SCORE RENDER */
+resetScore;
+
+/* =====================================================
+
+SCORE RENDER
+
+===================================================== */
 
 function renderScore(){
 
@@ -3576,15 +3962,13 @@ $("opponentScore").textContent="0";
 
 $("scoreGameName").textContent="No game";
 
-$("opponentScoreName").textContent="OPPONENT";
+$("opponentScoreName").textContent=
+
+"OPPONENT";
 
 $("scoreHistory").innerHTML=
 
 '<div class="empty">No scoring plays yet.</div>';
-
-$("statsOurScore").textContent="0";
-
-$("statsOpponentScore").textContent="0";
 
 return;
 
@@ -3626,7 +4010,9 @@ $("scoreGameName").textContent=
 
 $("opponentScoreName").textContent=
 
-(game.opponent||"OPPONENT").toUpperCase();
+(game.opponent||"OPPONENT")
+
+.toUpperCase();
 
 if(!game.score.history.length){
 
@@ -3650,7 +4036,11 @@ game.score.history.map(
 
 ${i+1}.
 
-${x.team==="our"?"🏈 OUR TEAM":"🏴 OPPONENT"}
+${x.team==="our"
+
+?"🏈 OUR TEAM"
+
+:"🏴 OPPONENT"}
 
  — ${esc(x.label)}
 
@@ -3722,7 +4112,11 @@ average(passes);
 
 $("empty").style.display=
 
-plays.length?"none":"block";
+plays.length
+
+?"none"
+
+:"block";
 
 $("log").innerHTML=
 
@@ -3760,7 +4154,11 @@ ${esc(x.play)}
 
 <span class="badge ${
 
-x.type==="RUN"?"run":"pass"
+x.type==="RUN"
+
+?"run"
+
+:"pass"
 
 }">
 
@@ -3808,13 +4206,21 @@ const plays=currentPlays();
 
 const names=[
 
-...new Set(plays.map(x=>x.player))
+...new Set(
+
+plays.map(x=>x.player)
+
+)
 
 ];
 
-const select=$("trackingPlayer");
+const select=
 
-const old=select.value;
+$("trackingPlayer");
+
+const old=
+
+select.value;
 
 select.innerHTML=
 
@@ -3822,7 +4228,11 @@ select.innerHTML=
 
 names.forEach(n=>{
 
-select.add(new Option(n,n));
+select.add(
+
+new Option(n,n)
+
+);
 
 });
 
@@ -3848,27 +4258,39 @@ const playerFilter=
 
 $("trackingPlayer").value;
 
-const filtered=plays.filter(
+const filtered=
+
+plays.filter(
 
 x=>
 
-(typeFilter==="ALL"||x.type===typeFilter)&&
+(typeFilter==="ALL"||
 
-(playerFilter==="ALL"||x.player===playerFilter)
+x.type===typeFilter)&&
+
+(playerFilter==="ALL"||
+
+x.player===playerFilter)
 
 );
 
 $("trackingEmpty").style.display=
 
-filtered.length?"none":"block";
+filtered.length
+
+?"none"
+
+:"block";
 
 $("trackingLog").innerHTML=
 
 filtered.map(x=>{
 
-const number=plays.indexOf(x)+1;
+const number=
 
-return `
+plays.indexOf(x)+1;
+
+return`
 
 <tr>
 
@@ -3900,7 +4322,11 @@ ${esc(x.play)}
 
 <span class="badge ${
 
-x.type==="RUN"?"run":"pass"
+x.type==="RUN"
+
+?"run"
+
+:"pass"
 
 }">
 
@@ -3936,7 +4362,11 @@ renderTracking
 
 );
 
-/* ALL SEASON */
+/* =====================================================
+
+ALL SEASON
+
+===================================================== */
 
 function allSeasonPlays(){
 
@@ -3974,13 +4404,17 @@ function renderStats(){
 
 const plays=currentPlays();
 
-const runs=plays.filter(
+const runs=
+
+plays.filter(
 
 x=>x.type==="RUN"
 
 );
 
-const passes=plays.filter(
+const passes=
+
+plays.filter(
 
 x=>x.type==="PASS"
 
@@ -4002,7 +4436,9 @@ $("gamePassAvg").textContent=
 
 average(passes);
 
-const season=allSeasonPlays();
+const season=
+
+allSeasonPlays();
 
 $("seasonGames").textContent=
 
@@ -4026,13 +4462,17 @@ $("gameStats").innerHTML=
 
 games.map(g=>{
 
-const r=g.plays.filter(
+const r=
+
+g.plays.filter(
 
 x=>x.type==="RUN"
 
 );
 
-const p=g.plays.filter(
+const p=
+
+g.plays.filter(
 
 x=>x.type==="PASS"
 
@@ -4046,7 +4486,7 @@ const oppScore=
 
 g.score?.opponent||0;
 
-return `
+return`
 
 <tr>
 
@@ -4108,19 +4548,31 @@ $("playerStats").innerHTML=
 
 names.map(n=>{
 
-const rr=season.filter(
+const rr=
 
-x=>x.player===n&&x.type==="RUN"
+season.filter(
+
+x=>
+
+x.player===n&&
+
+x.type==="RUN"
 
 );
 
-const receptions=season.filter(
+const receptions=
 
-x=>x.player===n&&x.type==="PASS"
+season.filter(
+
+x=>
+
+x.player===n&&
+
+x.type==="PASS"
 
 );
 
-return `
+return`
 
 <tr>
 
@@ -4138,9 +4590,17 @@ return `
 
 <td>${average(receptions)}</td>
 
-<td>${rr.length+receptions.length}</td>
+<td>
 
-<td>${total(rr)+total(receptions)}</td>
+${rr.length+receptions.length}
+
+</td>
+
+<td>
+
+${total(rr)+total(receptions)}
+
+</td>
 
 </tr>
 
@@ -4194,7 +4654,9 @@ yards:0
 
 groups[key].attempts++;
 
-groups[key].yards+=Number(x.yards);
+groups[key].yards+=
+
+Number(x.yards);
 
 });
 
@@ -4212,17 +4674,25 @@ Object.values(groups).sort(
 
 $("playStatsEmpty").style.display=
 
-performance.length?"none":"block";
+performance.length
+
+?"none"
+
+:"block";
 
 $("playStats").innerHTML=
 
-performance.map((x,i)=>{
+performance.map(
+
+(x,i)=>{
 
 const avg=
 
-(x.yards/x.attempts).toFixed(2);
+(x.yards/x.attempts)
 
-return `
+.toFixed(2);
+
+return`
 
 <tr>
 
@@ -4310,7 +4780,7 @@ if(confirm(
 
 game.opponent+
 
-"? The game itself will remain."
+"? The First 10 Plays will remain."
 
 )){
 
@@ -4342,6 +4812,20 @@ VOICE RECOGNITION
 
 ===================================================== */
 
+function normalizeVoiceText(text){
+
+return String(text)
+
+.toLowerCase()
+
+.replace(/[()\/,.'"]/g," ")
+
+.replace(/\s+/g," ")
+
+.trim();
+
+}
+
 const SpeechRecognition=
 
 window.SpeechRecognition||
@@ -4349,74 +4833,6 @@ window.SpeechRecognition||
 window.webkitSpeechRecognition;
 
 let recognition=null;
-
-function selectOptionBySpokenText(
-
-select,
-
-text
-
-){
-
-const normalized=
-
-normalizeVoiceText(text);
-
-const options=
-
-Array.from(select.options);
-
-let best=null;
-
-let bestScore=0;
-
-options.forEach(option=>{
-
-if(!option.value)return;
-
-const optionText=
-
-normalizeVoiceText(
-
-option.textContent
-
-);
-
-if(!optionText)return;
-
-if(normalized.includes(optionText)){
-
-const score=optionText.length;
-
-if(score>bestScore){
-
-best=option;
-
-bestScore=score;
-
-}
-
-}
-
-});
-
-if(best){
-
-select.value=best.value;
-
-select.dispatchEvent(
-
-new Event("change")
-
-);
-
-return true;
-
-}
-
-return false;
-
-}
 
 /* FIND FORMATION */
 
@@ -4608,7 +5024,9 @@ series:seriesName,
 
 index:index,
 
-value:seriesName+"||"+index
+value:
+
+seriesName+"||"+index
 
 };
 
@@ -4628,7 +5046,9 @@ return best;
 
 function parseSpokenYards(text){
 
-const lower=text.toLowerCase();
+const lower=
+
+text.toLowerCase();
 
 let numeric=
 
@@ -4640,7 +5060,9 @@ lower.match(
 
 if(numeric){
 
-let n=Number(numeric[1]);
+let n=
+
+Number(numeric[1]);
 
 if(
 
@@ -4756,7 +5178,9 @@ for(const word in numberWords){
 
 if(lower.includes(word)){
 
-let n=numberWords[word];
+let n=
+
+numberWords[word];
 
 if(
 
@@ -4862,7 +5286,15 @@ team="opponent";
 
 }
 
-addScore(team,points,label);
+addScore(
+
+team,
+
+points,
+
+label
+
+);
 
 return true;
 
@@ -4872,11 +5304,17 @@ return true;
 
 function processVoicePlay(text){
 
-const game=currentGame();
+const game=
+
+currentGame();
 
 if(!game){
 
-alert("Start a game first.");
+alert(
+
+"Start a game first."
+
+);
 
 return;
 
@@ -4892,7 +5330,11 @@ let playerFound=null;
 
 let playerLength=0;
 
-Array.from(player.options).forEach(
+Array.from(
+
+player.options
+
+).forEach(
 
 option=>{
 
@@ -4914,9 +5356,13 @@ p.length>playerLength
 
 ){
 
-playerFound=option.value;
+playerFound=
 
-playerLength=p.length;
+option.value;
+
+playerLength=
+
+p.length;
 
 }
 
@@ -4924,7 +5370,9 @@ playerLength=p.length;
 
 if(playerFound){
 
-player.value=playerFound;
+player.value=
+
+playerFound;
 
 }
 
@@ -4992,7 +5440,9 @@ yards.value!==""
 
 ){
 
-const success=addPlay();
+const success=
+
+addPlay();
 
 if(success){
 
@@ -5044,13 +5494,21 @@ recognition=
 
 new SpeechRecognition();
 
-recognition.lang="en-US";
+recognition.lang=
 
-recognition.continuous=false;
+"en-US";
 
-recognition.interimResults=false;
+recognition.continuous=
 
-recognition.maxAlternatives=5;
+false;
+
+recognition.interimResults=
+
+false;
+
+recognition.maxAlternatives=
+
+5;
 
 recognition.onstart=()=>{
 
@@ -5084,7 +5542,9 @@ voiceButton.textContent=
 
 };
 
-recognition.onerror=event=>{
+recognition.onerror=
+
+event=>{
 
 voiceButton.classList.remove(
 
@@ -5112,7 +5572,9 @@ voiceStatus.textContent=
 
 };
 
-recognition.onresult=event=>{
+recognition.onresult=
+
+event=>{
 
 const transcript=
 
@@ -5132,23 +5594,37 @@ transcript+
 
 if(!currentGame()){
 
-alert("Start a game first.");
+alert(
+
+"Start a game first."
+
+);
 
 return;
 
 }
 
-if(processVoiceScore(transcript)){
+if(
+
+processVoiceScore(transcript)
+
+){
 
 voiceStatus.textContent=
 
-"Scoring recorded: "+transcript;
+"Scoring recorded: "+
+
+transcript;
 
 return;
 
 }
 
-processVoicePlay(transcript);
+processVoicePlay(
+
+transcript
+
+);
 
 };
 
@@ -5170,7 +5646,11 @@ return;
 
 if(!currentGame()){
 
-alert("Start a game first.");
+alert(
+
+"Start a game first."
+
+);
 
 return;
 
@@ -5262,11 +5742,15 @@ i
 
 );
 
-return `
+return`
 
 <div class="playbook-play ${
 
-p[1]==="RUN"?"run":"pass"
+p[1]==="RUN"
+
+?"run"
+
+:"pass"
 
 }">
 
@@ -5338,19 +5822,31 @@ $(button.dataset.page)
 
 .classList.add("active");
 
-if(button.dataset.page==="stats"){
+if(
+
+button.dataset.page==="stats"
+
+){
 
 renderStats();
 
 }
 
-if(button.dataset.page==="tracking"){
+if(
+
+button.dataset.page==="tracking"
+
+){
 
 renderTracking();
 
 }
 
-if(button.dataset.page==="playbook"){
+if(
+
+button.dataset.page==="playbook"
+
+){
 
 renderPlaybook();
 
@@ -5362,7 +5858,7 @@ renderPlaybook();
 
 /* =====================================================
 
-RENDER
+RENDER ALL
 
 ===================================================== */
 
