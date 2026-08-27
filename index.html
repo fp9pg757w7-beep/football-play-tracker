@@ -24,7 +24,11 @@ content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <style>
 
-*{box-sizing:border-box}
+*{
+
+box-sizing:border-box
+
+}
 
 body{
 
@@ -58,7 +62,11 @@ margin:4px 0 16px
 
 }
 
-h2{margin-top:4px}
+h2{
+
+margin-top:4px
+
+}
 
 .tabs{
 
@@ -98,9 +106,17 @@ color:#111
 
 }
 
-.page{display:none}
+.page{
 
-.page.active{display:block}
+display:none
+
+}
+
+.page.active{
+
+display:block
+
+}
 
 .card{
 
@@ -160,7 +176,11 @@ font-size:17px
 
 }
 
-.full{grid-column:1/-1}
+.full{
+
+grid-column:1/-1
+
+}
 
 .type{
 
@@ -256,7 +276,11 @@ animation:pulse 1s infinite
 
 }
 
-button.clear{background:#3b3b3d}
+button.clear{
+
+background:#3b3b3d
+
+}
 
 button.deleteBtn{
 
@@ -440,7 +464,11 @@ font-size:14px
 
 }
 
-.scoreBtn:active{transform:scale(.97)}
+.scoreBtn:active{
+
+transform:scale(.97)
+
+}
 
 .scoreBtn.td{
 
@@ -536,7 +564,11 @@ margin:4px
 
 }
 
-.table{overflow:auto}
+.table{
+
+overflow:auto
+
+}
 
 table{
 
@@ -560,7 +592,11 @@ font-size:13px
 
 }
 
-th{color:#aaa}
+th{
+
+color:#aaa
+
+}
 
 .badge{
 
@@ -690,7 +726,11 @@ font-weight:900
 
 }
 
-.scoreHistory{margin-top:12px}
+.scoreHistory{
+
+margin-top:12px
+
+}
 
 .scoreHistoryItem{
 
@@ -774,55 +814,147 @@ margin-bottom:12px
 
 }
 
-.firstTenGrid{
+.firstTenActualItem{
 
 display:grid;
 
-grid-template-columns:1fr 1fr;
+grid-template-columns:42px 1fr 92px;
 
-gap:10px
+gap:10px;
+
+align-items:center;
+
+background:#252527;
+
+border:1px solid #444;
+
+border-radius:14px;
+
+padding:10px;
+
+margin-bottom:8px
 
 }
 
-.firstTenItem label{
+.firstTenActualNumber{
+
+width:36px;
+
+height:36px;
+
+border-radius:10px;
+
+background:#3b3b3d;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:18px;
+
+font-weight:900
+
+}
+
+.firstTenActualInfo{
+
+min-width:0
+
+}
+
+.firstTenActualPlay{
+
+font-size:15px;
+
+line-height:1.3;
+
+margin-bottom:4px
+
+}
+
+.firstTenActualDetails{
+
+font-size:11px;
+
+color:#aaa;
+
+line-height:1.35;
+
+white-space:nowrap;
+
+overflow:hidden;
+
+text-overflow:ellipsis
+
+}
+
+.firstTenActualYards{
+
+font-size:13px;
+
+font-weight:800;
+
+margin-top:5px
+
+}
+
+.firstTenSelect{
+
+height:44px;
+
+border:0;
+
+border-radius:11px;
+
+background:#18bd58;
+
+color:#fff;
 
 font-size:14px;
 
-margin-bottom:5px
+font-weight:900
 
 }
 
-.firstTenItem select{
+.firstTenSelect:active{
 
-height:54px;
-
-font-size:14px
+transform:scale(.96)
 
 }
 
-.firstTenItem select.selectedFirstTen{
+.firstTenComplete{
 
-border-color:#18bd58;
+text-align:center;
 
-box-shadow:0 0 0 1px #18bd58
+background:#18bd58;
 
-}
+color:#111;
 
-.dateEditor{
+font-weight:900;
 
-margin-top:12px;
+border-radius:12px;
 
-padding-top:12px;
+padding:10px;
 
-border-top:1px solid #3a3a3c
+margin-top:10px
 
 }
 
 @media(max-width:650px){
 
-.wrap{padding-top:8px}
+.wrap{
 
-.tabs{gap:5px}
+padding-top:8px
+
+}
+
+.tabs{
+
+gap:5px
+
+}
 
 .tab{
 
@@ -834,17 +966,41 @@ padding:0 2px
 
 }
 
-.grid{gap:9px}
+.grid{
 
-.card{padding:13px}
+gap:9px
 
-input,select{font-size:16px}
+}
 
-.stats{gap:8px}
+.card{
 
-.stat{padding:12px 7px}
+padding:13px
 
-.big{font-size:30px}
+}
+
+input,select{
+
+font-size:16px
+
+}
+
+.stats{
+
+gap:8px
+
+}
+
+.stat{
+
+padding:12px 7px
+
+}
+
+.big{
+
+font-size:30px
+
+}
 
 .scoreButtons{
 
@@ -852,17 +1008,49 @@ grid-template-columns:repeat(2,1fr)
 
 }
 
-.scoreBtn{height:50px}
+.scoreBtn{
 
-.firstTenGrid{
-
-grid-template-columns:1fr
+height:50px
 
 }
 
-.firstTenItem select{
+.firstTenActualItem{
 
-font-size:15px
+grid-template-columns:38px 1fr 78px;
+
+gap:8px;
+
+padding:9px
+
+}
+
+.firstTenActualNumber{
+
+width:34px;
+
+height:34px;
+
+font-size:16px
+
+}
+
+.firstTenActualPlay{
+
+font-size:14px
+
+}
+
+.firstTenActualDetails{
+
+font-size:10px
+
+}
+
+.firstTenSelect{
+
+height:42px;
+
+font-size:13px
 
 }
 
@@ -925,8 +1113,6 @@ placeholder="Enter opponent">
 ➕ START NEW GAME
 
 </button>
-
-<!-- EDIT CURRENT GAME DATE -->
 
 <div class="dateEditor">
 
@@ -1158,11 +1344,11 @@ Manual scoring or use Voice Entry below.
 
 <div class="firstTenSub">
 
-Set your first 10 plays before the game. Select any play from the playbook. When you select one, it automatically loads into the play caller below.
+Your first 10 actual plays entered during the game appear here automatically. Tap SELECT on any play to load it back into the play caller.
 
 </div>
 
-<div class="firstTenGrid" id="firstTenGrid"></div>
+<div id="firstTenGrid"></div>
 
 </div>
 
@@ -1602,65 +1788,33 @@ OPPONENT
 
 <div class="stat">
 
-<div class="small">
+<div class="small">TOTAL PLAYS</div>
 
-TOTAL PLAYS
-
-</div>
-
-<div class="big" id="gameTotalPlays">
-
-0
-
-</div>
+<div class="big" id="gameTotalPlays">0</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">
+<div class="small">TOTAL YARDS</div>
 
-TOTAL YARDS
-
-</div>
-
-<div class="big" id="gameTotalYards">
-
-0
-
-</div>
+<div class="big" id="gameTotalYards">0</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">
+<div class="small">RUN AVG</div>
 
-RUN AVG
-
-</div>
-
-<div class="big" id="gameRunAvg">
-
-0.00
-
-</div>
+<div class="big" id="gameRunAvg">0.00</div>
 
 </div>
 
 <div class="stat">
 
-<div class="small">
+<div class="small">PASS AVG</div>
 
-PASS AVG
-
-</div>
-
-<div class="big" id="gamePassAvg">
-
-0.00
-
-</div>
+<div class="big" id="gamePassAvg">0.00</div>
 
 </div>
 
@@ -1749,8 +1903,6 @@ PASS AVG
 </div>
 
 </div>
-
-<!-- UPDATED PLAYER STATS -->
 
 <div class="card">
 
@@ -2556,25 +2708,9 @@ g.score.history=[];
 
 }
 
-if(!Array.isArray(g.firstTen)){
-
-g.firstTen=Array(10).fill(null);
-
-}
-
-while(g.firstTen.length<10){
-
-g.firstTen.push(null);
-
-}
-
-if(g.firstTen.length>10){
-
-g.firstTen=g.firstTen.slice(0,10);
-
-}
-
 });
+
+/* CURRENT GAME */
 
 let currentGameId=
 
@@ -2632,159 +2768,107 @@ renderAll();
 
 /* =====================================================
 
-FIRST 10 PLAY OPTIONS
+FIRST 10 ACTUAL PLAYS
 
 ===================================================== */
 
-function getAllPlayOptions(){
-
-const options=[];
-
-FORMATION_ORDER.forEach(formationName=>{
-
-if(!DATA[formationName])return;
-
-Object.entries(DATA[formationName]).forEach(
-
-([seriesName,arr])=>{
-
-arr.forEach((p,index)=>{
-
-const number=getPlayNumber(
-
-formationName,
-
-seriesName,
-
-index
-
-);
-
-options.push({
-
-formation:formationName,
-
-series:seriesName,
-
-index:index,
-
-value:
-
-formationName+
-
-"###"+
-
-seriesName+
-
-"###"+
-
-index,
-
-label:
-
-number+".) "+
-
-p[0]+
-
-" — "+
-
-formationName+
-
-" / "+
-
-seriesName
-
-});
-
-});
-
-});
-
-});
-
-return options;
-
-}
-
-function firstTenValueToPlay(value){
-
-if(!value)return null;
-
-const parts=value.split("###");
-
-if(parts.length!==3)return null;
-
-const formationName=parts[0];
-
-const seriesName=parts[1];
-
-const index=Number(parts[2]);
-
-if(
-
-!DATA[formationName]||
-
-!DATA[formationName][seriesName]||
-
-!DATA[formationName][seriesName][index]
-
-){
-
-return null;
-
-}
-
-return{
-
-formation:formationName,
-
-series:seriesName,
-
-index:index,
-
-value:
-
-seriesName+"||"+index
-
-};
-
-}
-
-function loadFirstTenPlay(index){
+function loadFirstTenPlay(playId){
 
 const game=currentGame();
 
 if(!game)return;
 
-const saved=game.firstTen[index];
+const selected=game.plays.find(
 
-if(!saved)return;
+x=>String(x.id)===String(playId)
 
-const selected=firstTenValueToPlay(saved);
+);
 
 if(!selected)return;
+
+/* LOAD FORMATION */
 
 formation.value=selected.formation;
 
 loadPlays();
 
-play.value=selected.value;
+/* FIND EXACT PLAY */
 
-play.dispatchEvent(new Event("change"));
+let found=false;
 
-/*
+Object.entries(
 
-Do not automatically choose player or yards.
+DATA[selected.formation]||{}
 
-The coach selects those for the actual play.
+).forEach(
 
-*/
+([seriesName,arr])=>{
+
+arr.forEach((p,index)=>{
+
+if(
+
+!found &&
+
+seriesName===selected.series &&
+
+p[0]===selected.play
+
+){
+
+play.value=seriesName+"||"+index;
+
+found=true;
+
+}
+
+});
+
+});
+
+/* UPDATE PLAY TYPE */
+
+play.dispatchEvent(
+
+new Event("change")
+
+);
+
+/* LOAD PLAYER */
+
+player.value=selected.player||"";
+
+/* LOAD ORIGINAL YARDS */
+
+yards.value=String(selected.yards);
+
+/* UPDATE TYPE */
+
+setType(selected.type||"");
+
+/* STATUS */
 
 voiceStatus.textContent=
 
-"Loaded First 10 Play "+(index+1)+" into the play caller.";
+"Loaded First 10 Play #"+
+
+(game.plays.indexOf(selected)+1)+
+
+". You can change the yards or player before adding it again.";
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
 
 }
+
+window.loadFirstTenPlay=loadFirstTenPlay;
+
+/* RENDER FIRST 10 */
 
 function renderFirstTen(){
 
@@ -2798,63 +2882,115 @@ if(!game){
 
 container.innerHTML=
 
-'<div class="empty full">Start a game to set the First 10 Plays.</div>';
+'<div class="empty">Start a game to record your First 10 Plays.</div>';
 
 return;
 
 }
 
-if(!Array.isArray(game.firstTen)){
+const firstTen=game.plays.slice(0,10);
 
-game.firstTen=Array(10).fill(null);
+if(!firstTen.length){
 
-saveGames();
+container.innerHTML=
+
+'<div class="empty">Your first 10 plays will appear here as you enter them.</div>';
+
+return;
 
 }
 
-const options=getAllPlayOptions();
-
 let html="";
 
-for(let i=0;i<10;i++){
-
-const selectedValue=
-
-game.firstTen[i]||"";
+firstTen.forEach((x,index)=>{
 
 html+=`
 
-<div class="firstTenItem">
+<div class="firstTenActualItem">
 
-<label>Play ${i+1}</label>
+<div class="firstTenActualNumber">
 
-<select
+${index+1}
 
-data-first-ten="${i}"
+</div>
 
-class="${selectedValue?'selectedFirstTen':''}"
+<div class="firstTenActualInfo">
+
+<div class="firstTenActualPlay">
+
+<strong>
+
+${x.playNumber!==undefined
+
+?x.playNumber+".) "
+
+:""}
+
+${esc(x.play)}
+
+</strong>
+
+</div>
+
+<div class="firstTenActualDetails">
+
+${esc(x.player)}
+
+&nbsp; • &nbsp;
+
+${esc(x.formation)}
+
+&nbsp; • &nbsp;
+
+${esc(x.series)}
+
+</div>
+
+<div class="firstTenActualYards">
+
+<span class="badge ${
+
+x.type==="RUN"?"run":"pass"
+
+}">
+
+${x.type}
+
+</span>
+
+&nbsp;
+
+${x.yards} yards
+
+</div>
+
+</div>
+
+<button
+
+class="firstTenSelect"
+
+onclick="loadFirstTenPlay('${x.id}')"
 
 >
 
-<option value="">Select Play ${i+1}</option>
+SELECT
 
-${options.map(o=>`
+</button>
 
-<option
+</div>
 
-value="${esc(o.value)}"
+`;
 
-${o.value===selectedValue?"selected":""}
+});
 
->
+if(firstTen.length===10){
 
-${esc(o.label)}
+html+=`
 
-</option>
+<div class="firstTenComplete">
 
-`).join("")}
-
-</select>
+✅ FIRST 10 PLAYS COMPLETE
 
 </div>
 
@@ -2863,44 +2999,6 @@ ${esc(o.label)}
 }
 
 container.innerHTML=html;
-
-container
-
-.querySelectorAll("select[data-first-ten]")
-
-.forEach(select=>{
-
-select.addEventListener("change",()=>{
-
-const index=Number(
-
-select.dataset.firstTen
-
-);
-
-game.firstTen[index]=
-
-select.value||null;
-
-saveGames();
-
-select.classList.toggle(
-
-"selectedFirstTen",
-
-!!select.value
-
-);
-
-if(select.value){
-
-loadFirstTenPlay(index);
-
-}
-
-});
-
-});
 
 }
 
@@ -3014,8 +3112,6 @@ $("statsGameTitle").textContent=
 
 "vs "+game.opponent;
 
-/* LOAD EDITABLE CURRENT DATE */
-
 $("editDateInput").value=
 
 game.date||"";
@@ -3080,8 +3176,6 @@ date:date,
 
 plays:[],
 
-firstTen:Array(10).fill(null),
-
 score:{
 
 our:0,
@@ -3120,7 +3214,7 @@ setCurrentGame(e.target.value);
 
 });
 
-/* SAVE EDITED GAME DATE */
+/* SAVE DATE */
 
 $("saveGameDate").addEventListener(
 
@@ -3141,20 +3235,6 @@ return;
 game.date=$("editDateInput").value;
 
 saveGames();
-
-$("currentGameSub").textContent=
-
-game.date
-
-?
-
-"Game date: "+game.date+
-
-" • "+game.plays.length+" plays"
-
-:
-
-game.plays.length+" plays recorded";
 
 $("scoreStatus").textContent=
 
@@ -3502,6 +3582,10 @@ $("scoreHistory").innerHTML=
 
 '<div class="empty">No scoring plays yet.</div>';
 
+$("statsOurScore").textContent="0";
+
+$("statsOpponentScore").textContent="0";
+
 return;
 
 }
@@ -3520,7 +3604,9 @@ history:[]
 
 }
 
-$("ourScore").textContent=game.score.our;
+$("ourScore").textContent=
+
+game.score.our;
 
 $("opponentScore").textContent=
 
@@ -3610,17 +3696,29 @@ const passes=
 
 plays.filter(x=>x.type==="PASS");
 
-$("runCount").textContent=runs.length;
+$("runCount").textContent=
 
-$("runTotal").textContent=total(runs);
+runs.length;
 
-$("runAvg").textContent=average(runs);
+$("runTotal").textContent=
 
-$("passCount").textContent=passes.length;
+total(runs);
 
-$("passTotal").textContent=total(passes);
+$("runAvg").textContent=
 
-$("passAvg").textContent=average(passes);
+average(runs);
+
+$("passCount").textContent=
+
+passes.length;
+
+$("passTotal").textContent=
+
+total(passes);
+
+$("passAvg").textContent=
+
+average(passes);
 
 $("empty").style.display=
 
@@ -4021,16 +4119,6 @@ const receptions=season.filter(
 x=>x.player===n&&x.type==="PASS"
 
 );
-
-/*
-
-For the current tracking system, every recorded
-
-PASS play assigned to a player counts as one
-
-reception and its yards count as receiving yards.
-
-*/
 
 return `
 
@@ -4520,9 +4608,7 @@ series:seriesName,
 
 index:index,
 
-value:
-
-seriesName+"||"+index
+value:seriesName+"||"+index
 
 };
 
