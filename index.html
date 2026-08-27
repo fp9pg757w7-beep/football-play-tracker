@@ -302,6 +302,50 @@ background:#18bd58
 
 }
 
+/* FIRST 10 BUTTONS */
+
+.firstTenButtons{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:7px
+
+}
+
+.firstTenEdit{
+
+background:#f59e0b!important;
+
+color:#111!important
+
+}
+
+.firstTenCancel{
+
+background:#b71920!important;
+
+color:#fff!important
+
+}
+
+.firstTenSave{
+
+background:#18bd58!important;
+
+color:#fff!important
+
+}
+
+.firstTenEditing{
+
+border-color:#f59e0b!important;
+
+box-shadow:0 0 0 2px rgba(245,158,11,.25)
+
+}
+
 @keyframes pulse{
 
 0%{opacity:1}
@@ -796,7 +840,7 @@ padding:11px;
 
 display:grid;
 
-grid-template-columns:48px 1fr 82px;
+grid-template-columns:48px 1fr 155px;
 
 gap:9px;
 
@@ -854,7 +898,7 @@ background:#3b82f6;
 
 color:#fff;
 
-font-size:14px;
+font-size:13px;
 
 font-weight:900
 
@@ -992,7 +1036,7 @@ height:50px
 
 .firstTenRow{
 
-grid-template-columns:42px 1fr 74px;
+grid-template-columns:38px 1fr 148px;
 
 padding:9px
 
@@ -1018,9 +1062,17 @@ font-size:11px
 
 .firstTenSelect{
 
-height:44px;
+height:42px;
 
-font-size:13px
+font-size:12px
+
+}
+
+.firstTenButtons{
+
+grid-template-columns:1fr 1fr;
+
+gap:5px
 
 }
 
@@ -1314,7 +1366,15 @@ Manual scoring or use Voice Entry below.
 
 <div class="firstTenSub">
 
-Build your first 10 plays from the play caller above. Choose a Formation and Play, then tap <strong>ADD TO FIRST 10</strong>. When you are ready to run a play, tap <strong>SELECT</strong>. The play will load into the caller so you can choose the player and yards.
+Build your first 10 plays from the play caller above.
+
+Choose a Formation and Play, then tap <strong>ADD TO FIRST 10</strong>.
+
+When you are ready to run a play, tap <strong>SELECT</strong>.
+
+The play will load into the caller so you can choose the player and yards.
+
+If you selected the wrong play, tap <strong>EDIT</strong> next to that First 10 play.
 
 </div>
 
@@ -1338,7 +1398,7 @@ No First 10 plays added yet.
 
 <!-- PLAY ENTRY -->
 
-<div class="card">
+<div class="card" id="playEntryCard">
 
 <div class="grid">
 
@@ -1446,13 +1506,17 @@ No First 10 plays added yet.
 
 </div>
 
-<!-- NEW FIRST 10 BUTTON -->
+<!-- FIRST 10 CONTROL BUTTONS -->
+
+<div id="firstTenEditControls">
 
 <button class="smallAction" id="addFirstTen">
 
 ⭐ ADD TO FIRST 10
 
 </button>
+
+</div>
 
 <button class="action" id="add">
 
@@ -2392,6 +2456,14 @@ const voiceButton=$("voiceButton");
 
 const voiceStatus=$("voiceStatus");
 
+/* =====================================================
+
+FIRST 10 EDIT STATE
+
+===================================================== */
+
+let editingFirstTenId=null;
+
 /* YARDS */
 
 for(let y=-30;y<=110;y++){
@@ -2806,35 +2878,11 @@ g.score.history=[];
 
 }
 
-/*
-
-OLD VERSION USED firstTen AS
-
-10 PLAYBOOK SLOTS.
-
-NEW VERSION USES firstTen AS
-
-AN ARRAY OF ACTUAL FIRST 10
-
-PLAY DEFINITIONS.
-
-*/
-
 if(!Array.isArray(g.firstTen)){
 
 g.firstTen=[];
 
 }
-
-/*
-
-Convert old firstTen values if they exist.
-
-They will simply be ignored if they
-
-are not in the new object format.
-
-*/
 
 g.firstTen=
 
@@ -2904,13 +2952,15 @@ currentGameId
 
 );
 
+cancelFirstTenEdit(false);
+
 renderAll();
 
 }
 
 /* =====================================================
 
-FIRST 10 — ADD PLAY
+FIRST 10 — ADD OR SAVE EDIT
 
 ===================================================== */
 
@@ -2938,24 +2988,6 @@ return false;
 
 }
 
-if(!Array.isArray(game.firstTen)){
-
-game.firstTen=[];
-
-}
-
-if(game.firstTen.length>=10){
-
-alert(
-
-"You already have 10 First 10 Plays."
-
-);
-
-return false;
-
-}
-
 const selected=
 
 getSelectedPlay();
@@ -2965,6 +2997,118 @@ if(!selected){
 alert(
 
 "Please select a valid play."
+
+);
+
+return false;
+
+}
+
+/* SAVE EXISTING FIRST 10 EDIT */
+
+if(editingFirstTenId!==null){
+
+const item=
+
+game.firstTen.find(
+
+x=>String(x.id)===String(editingFirstTenId)
+
+);
+
+if(!item){
+
+cancelFirstTenEdit(false);
+
+return false;
+
+}
+
+/*
+
+Only replace the play information.
+
+The First 10 position and ID stay the same.
+
+*/
+
+item.formation=
+
+selected.formation;
+
+item.series=
+
+selected.series;
+
+item.play=
+
+selected.play;
+
+item.type=
+
+selected.type;
+
+item.playNumber=
+
+selected.number;
+
+item.index=
+
+selected.index;
+
+saveGames();
+
+const position=
+
+game.firstTen.indexOf(item)+1;
+
+editingFirstTenId=null;
+
+$("addFirstTen").textContent=
+
+"⭐ ADD TO FIRST 10";
+
+$("addFirstTen").className=
+
+"smallAction";
+
+$("firstTenEditControls").innerHTML=
+
+`
+
+<button class="smallAction" id="addFirstTen">
+
+⭐ ADD TO FIRST 10
+
+</button>
+
+`;
+
+$("addFirstTen").addEventListener(
+
+"click",
+
+addFirstTen
+
+);
+
+$("firstTenAddStatus").textContent=
+
+"✅ First 10 Play "+position+" updated.";
+
+renderFirstTen();
+
+return true;
+
+}
+
+/* ADD NEW FIRST 10 */
+
+if(game.firstTen.length>=10){
+
+alert(
+
+"You already have 10 First 10 Plays."
 
 );
 
@@ -3014,6 +3158,238 @@ addFirstTen
 
 /* =====================================================
 
+FIRST 10 — EDIT
+
+===================================================== */
+
+function editFirstTen(id){
+
+const game=currentGame();
+
+if(!game)return;
+
+const item=
+
+game.firstTen.find(
+
+x=>String(x.id)===String(id)
+
+);
+
+if(!item)return;
+
+/*
+
+Remember which First 10 position
+
+we are editing.
+
+*/
+
+editingFirstTenId=item.id;
+
+/*
+
+Load formation.
+
+*/
+
+formation.value=item.formation;
+
+loadPlays();
+
+/*
+
+Load exact series and play.
+
+*/
+
+play.value=
+
+item.series+"||"+item.index;
+
+play.dispatchEvent(
+
+new Event("change")
+
+);
+
+/*
+
+Player and yards are intentionally
+
+left alone because this is only
+
+editing the First 10 play selection.
+
+*/
+
+const position=
+
+game.firstTen.indexOf(item)+1;
+
+/*
+
+Change the button into SAVE EDIT.
+
+*/
+
+const controls=
+
+$("firstTenEditControls");
+
+controls.innerHTML=`
+
+<div style="
+
+background:#3a2d12;
+
+border:2px solid #f59e0b;
+
+border-radius:12px;
+
+padding:10px;
+
+margin-top:9px;
+
+text-align:center;
+
+font-size:14px;
+
+font-weight:800;
+
+">
+
+✏️ EDITING FIRST 10 PLAY ${position}
+
+</div>
+
+<button
+
+class="smallAction firstTenSave"
+
+id="saveFirstTenEdit">
+
+💾 SAVE FIRST 10 EDIT
+
+</button>
+
+<button
+
+class="smallAction firstTenCancel"
+
+id="cancelFirstTenEdit">
+
+✖ CANCEL EDIT
+
+</button>
+
+`;
+
+$("saveFirstTenEdit").addEventListener(
+
+"click",
+
+addFirstTen
+
+);
+
+$("cancelFirstTenEdit").addEventListener(
+
+"click",
+
+()=>cancelFirstTenEdit(true)
+
+);
+
+$("firstTenAddStatus").textContent=
+
+"Editing First 10 Play "+position+
+
+". Change the Formation or Play, then tap SAVE FIRST 10 EDIT.";
+
+$("playEntryCard").classList.add(
+
+"firstTenEditing"
+
+);
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+window.editFirstTen=
+
+editFirstTen;
+
+/* =====================================================
+
+FIRST 10 — CANCEL EDIT
+
+===================================================== */
+
+function cancelFirstTenEdit(showMessage=true){
+
+editingFirstTenId=null;
+
+const controls=
+
+$("firstTenEditControls");
+
+if(controls){
+
+controls.innerHTML=`
+
+<button
+
+class="smallAction"
+
+id="addFirstTen">
+
+⭐ ADD TO FIRST 10
+
+</button>
+
+`;
+
+$("addFirstTen").addEventListener(
+
+"click",
+
+addFirstTen
+
+);
+
+}
+
+$("playEntryCard").classList.remove(
+
+"firstTenEditing"
+
+);
+
+if(showMessage){
+
+$("firstTenAddStatus").textContent=
+
+"First 10 edit cancelled.";
+
+}
+
+}
+
+window.cancelFirstTenEdit=
+
+cancelFirstTenEdit;
+
+/* =====================================================
+
 FIRST 10 — SELECT
 
 ===================================================== */
@@ -3036,7 +3412,21 @@ if(!item)return;
 
 /*
 
-Load the exact formation.
+If we were editing another First 10,
+
+cancel the edit first.
+
+*/
+
+if(editingFirstTenId!==null){
+
+cancelFirstTenEdit(false);
+
+}
+
+/*
+
+Load exact formation.
 
 */
 
@@ -3048,7 +3438,7 @@ loadPlays();
 
 /*
 
-Find the exact series/index.
+Find exact series/index.
 
 */
 
@@ -3063,8 +3453,6 @@ new Event("change")
 );
 
 /*
-
-IMPORTANT:
 
 Player and yards are cleared.
 
@@ -3118,6 +3506,18 @@ const game=currentGame();
 
 if(!game)return;
 
+if(
+
+editingFirstTenId!==null &&
+
+String(editingFirstTenId)===String(id)
+
+){
+
+cancelFirstTenEdit(false);
+
+}
+
 game.firstTen=
 
 game.firstTen.filter(
@@ -3164,9 +3564,7 @@ if(!container)return;
 
 if(!game){
 
-container.innerHTML=
-
-`
+container.innerHTML=`
 
 <div class="firstTenEmpty">
 
@@ -3194,9 +3592,7 @@ saveGames();
 
 if(!game.firstTen.length){
 
-container.innerHTML=
-
-`
+container.innerHTML=`
 
 <div class="firstTenEmpty">
 
@@ -3222,7 +3618,9 @@ const typeClass=
 
 item.type==="RUN"
 
-?"firstTenRun"
+?
+
+"firstTenRun"
 
 :
 
@@ -3260,9 +3658,19 @@ ${esc(item.formation)}
 
 ${esc(item.series)}
 
-<span style="margin-left:5px;font-weight:900;color:${
+<span style="
 
-item.type==="RUN"?"#00c853":"#fff000"
+margin-left:5px;
+
+font-weight:900;
+
+color:${
+
+item.type==="RUN"
+
+?"#00c853"
+
+:"#fff000"
 
 }">
 
@@ -3274,6 +3682,8 @@ ${item.type}
 
 </div>
 
+<div class="firstTenButtons">
+
 <button
 
 class="firstTenSelect"
@@ -3284,17 +3694,45 @@ SELECT
 
 </button>
 
+<button
+
+class="firstTenSelect firstTenEdit"
+
+onclick="editFirstTen('${item.id}')">
+
+EDIT
+
+</button>
+
+<button
+
+class="firstTenSelect"
+
+style="background:#b71920"
+
+onclick="deleteFirstTen('${item.id}')">
+
+DELETE
+
+</button>
+
+</div>
+
 </div>
 
 `;
 
 }).join("");
 
+if(editingFirstTenId===null){
+
 status.textContent=
 
 game.firstTen.length+
 
 " of 10 First 10 plays added.";
+
+}
 
 }
 
@@ -4114,9 +4552,13 @@ $("empty").style.display=
 
 plays.length
 
-?"none"
+?
 
-:"block";
+"none"
+
+:
+
+"block";
 
 $("log").innerHTML=
 
@@ -4278,9 +4720,13 @@ $("trackingEmpty").style.display=
 
 filtered.length
 
-?"none"
+?
 
-:"block";
+"none"
+
+:
+
+"block";
 
 $("trackingLog").innerHTML=
 
@@ -4676,9 +5122,13 @@ $("playStatsEmpty").style.display=
 
 performance.length
 
-?"none"
+?
 
-:"block";
+"none"
+
+:
+
+"block";
 
 $("playStats").innerHTML=
 
