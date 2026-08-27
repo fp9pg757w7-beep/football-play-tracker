@@ -16,6 +16,10 @@ content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <meta name="apple-mobile-web-app-title" content="Comets Play Tracking">
 
+<link rel="icon" type="image/png" href="comets-app-icon.png">
+
+<link rel="apple-touch-icon" href="comets-app-icon.png">
+
 <title>Comets Play Tracking</title>
 
 <style>
@@ -267,6 +271,34 @@ border-radius:8px;
 padding:7px 10px;
 
 font-weight:800
+
+}
+
+button.smallAction{
+
+width:100%;
+
+height:52px;
+
+border:0;
+
+border-radius:13px;
+
+font-size:16px;
+
+font-weight:900;
+
+margin-top:9px;
+
+background:#3b82f6;
+
+color:#fff
+
+}
+
+button.dateSave{
+
+background:#18bd58
 
 }
 
@@ -718,6 +750,74 @@ margin:0 0 16px
 
 }
 
+/* FIRST 10 PLAYS */
+
+.firstTenTitle{
+
+font-size:21px;
+
+font-weight:900;
+
+margin-bottom:5px
+
+}
+
+.firstTenSub{
+
+font-size:13px;
+
+color:#aaa;
+
+line-height:1.45;
+
+margin-bottom:12px
+
+}
+
+.firstTenGrid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:10px
+
+}
+
+.firstTenItem label{
+
+font-size:14px;
+
+margin-bottom:5px
+
+}
+
+.firstTenItem select{
+
+height:54px;
+
+font-size:14px
+
+}
+
+.firstTenItem select.selectedFirstTen{
+
+border-color:#18bd58;
+
+box-shadow:0 0 0 1px #18bd58
+
+}
+
+.dateEditor{
+
+margin-top:12px;
+
+padding-top:12px;
+
+border-top:1px solid #3a3a3c
+
+}
+
 @media(max-width:650px){
 
 .wrap{padding-top:8px}
@@ -753,6 +853,18 @@ grid-template-columns:repeat(2,1fr)
 }
 
 .scoreBtn{height:50px}
+
+.firstTenGrid{
+
+grid-template-columns:1fr
+
+}
+
+.firstTenItem select{
+
+font-size:15px
+
+}
 
 }
 
@@ -813,6 +925,22 @@ placeholder="Enter opponent">
 ➕ START NEW GAME
 
 </button>
+
+<!-- EDIT CURRENT GAME DATE -->
+
+<div class="dateEditor">
+
+<label>Change Current Game Date</label>
+
+<input id="editDateInput" type="date">
+
+<button class="smallAction dateSave" id="saveGameDate">
+
+💾 SAVE GAME DATE
+
+</button>
+
+</div>
 
 <div class="gameTitle" id="currentGameTitle">
 
@@ -1018,6 +1146,26 @@ Manual scoring or use Voice Entry below.
 
 </div>
 
+<!-- FIRST 10 PLAYS -->
+
+<div class="card">
+
+<div class="firstTenTitle">
+
+⭐ FIRST 10 PLAYS
+
+</div>
+
+<div class="firstTenSub">
+
+Set your first 10 plays before the game. Select any play from the playbook. When you select one, it automatically loads into the play caller below.
+
+</div>
+
+<div class="firstTenGrid" id="firstTenGrid"></div>
+
+</div>
+
 <!-- PLAY ENTRY -->
 
 <div class="card">
@@ -1091,6 +1239,8 @@ Manual scoring or use Voice Entry below.
 <option>#28 Lawson, Briot</option>
 
 <option>#2 McClurg, Ezra</option>
+
+<option>#25 McCormick, Brian</option>
 
 <option>#7 Rayls, Warren</option>
 
@@ -1600,6 +1750,8 @@ PASS AVG
 
 </div>
 
+<!-- UPDATED PLAYER STATS -->
+
 <div class="card">
 
 <h2>👤 Player Stats — Season</h2>
@@ -1620,11 +1772,11 @@ PASS AVG
 
 <th>Rush Avg</th>
 
-<th>Pass</th>
+<th>Receptions</th>
 
-<th>Pass Yds</th>
+<th>Receiving Yds</th>
 
-<th>Pass Avg</th>
+<th>Receiving Avg</th>
 
 <th>Total</th>
 
@@ -2350,6 +2502,8 @@ date:"",
 
 plays:oldPlays,
 
+firstTen:Array(10).fill(null),
+
 score:{
 
 our:0,
@@ -2378,6 +2532,8 @@ JSON.stringify(games)
 
 }
 
+/* UPGRADE OLD GAMES */
+
 games.forEach(g=>{
 
 if(!g.score){
@@ -2397,6 +2553,24 @@ history:[]
 if(!Array.isArray(g.score.history)){
 
 g.score.history=[];
+
+}
+
+if(!Array.isArray(g.firstTen)){
+
+g.firstTen=Array(10).fill(null);
+
+}
+
+while(g.firstTen.length<10){
+
+g.firstTen.push(null);
+
+}
+
+if(g.firstTen.length>10){
+
+g.firstTen=g.firstTen.slice(0,10);
 
 }
 
@@ -2456,6 +2630,280 @@ renderAll();
 
 }
 
+/* =====================================================
+
+FIRST 10 PLAY OPTIONS
+
+===================================================== */
+
+function getAllPlayOptions(){
+
+const options=[];
+
+FORMATION_ORDER.forEach(formationName=>{
+
+if(!DATA[formationName])return;
+
+Object.entries(DATA[formationName]).forEach(
+
+([seriesName,arr])=>{
+
+arr.forEach((p,index)=>{
+
+const number=getPlayNumber(
+
+formationName,
+
+seriesName,
+
+index
+
+);
+
+options.push({
+
+formation:formationName,
+
+series:seriesName,
+
+index:index,
+
+value:
+
+formationName+
+
+"###"+
+
+seriesName+
+
+"###"+
+
+index,
+
+label:
+
+number+".) "+
+
+p[0]+
+
+" — "+
+
+formationName+
+
+" / "+
+
+seriesName
+
+});
+
+});
+
+});
+
+});
+
+return options;
+
+}
+
+function firstTenValueToPlay(value){
+
+if(!value)return null;
+
+const parts=value.split("###");
+
+if(parts.length!==3)return null;
+
+const formationName=parts[0];
+
+const seriesName=parts[1];
+
+const index=Number(parts[2]);
+
+if(
+
+!DATA[formationName]||
+
+!DATA[formationName][seriesName]||
+
+!DATA[formationName][seriesName][index]
+
+){
+
+return null;
+
+}
+
+return{
+
+formation:formationName,
+
+series:seriesName,
+
+index:index,
+
+value:
+
+seriesName+"||"+index
+
+};
+
+}
+
+function loadFirstTenPlay(index){
+
+const game=currentGame();
+
+if(!game)return;
+
+const saved=game.firstTen[index];
+
+if(!saved)return;
+
+const selected=firstTenValueToPlay(saved);
+
+if(!selected)return;
+
+formation.value=selected.formation;
+
+loadPlays();
+
+play.value=selected.value;
+
+play.dispatchEvent(new Event("change"));
+
+/*
+
+Do not automatically choose player or yards.
+
+The coach selects those for the actual play.
+
+*/
+
+voiceStatus.textContent=
+
+"Loaded First 10 Play "+(index+1)+" into the play caller.";
+
+}
+
+function renderFirstTen(){
+
+const container=$("firstTenGrid");
+
+const game=currentGame();
+
+if(!container)return;
+
+if(!game){
+
+container.innerHTML=
+
+'<div class="empty full">Start a game to set the First 10 Plays.</div>';
+
+return;
+
+}
+
+if(!Array.isArray(game.firstTen)){
+
+game.firstTen=Array(10).fill(null);
+
+saveGames();
+
+}
+
+const options=getAllPlayOptions();
+
+let html="";
+
+for(let i=0;i<10;i++){
+
+const selectedValue=
+
+game.firstTen[i]||"";
+
+html+=`
+
+<div class="firstTenItem">
+
+<label>Play ${i+1}</label>
+
+<select
+
+data-first-ten="${i}"
+
+class="${selectedValue?'selectedFirstTen':''}"
+
+>
+
+<option value="">Select Play ${i+1}</option>
+
+${options.map(o=>`
+
+<option
+
+value="${esc(o.value)}"
+
+${o.value===selectedValue?"selected":""}
+
+>
+
+${esc(o.label)}
+
+</option>
+
+`).join("")}
+
+</select>
+
+</div>
+
+`;
+
+}
+
+container.innerHTML=html;
+
+container
+
+.querySelectorAll("select[data-first-ten]")
+
+.forEach(select=>{
+
+select.addEventListener("change",()=>{
+
+const index=Number(
+
+select.dataset.firstTen
+
+);
+
+game.firstTen[index]=
+
+select.value||null;
+
+saveGames();
+
+select.classList.toggle(
+
+"selectedFirstTen",
+
+!!select.value
+
+);
+
+if(select.value){
+
+loadFirstTenPlay(index);
+
+}
+
+});
+
+});
+
+}
+
 /* GAME SELECTOR */
 
 function renderGameSelector(){
@@ -2475,6 +2923,10 @@ $("currentGameTitle").textContent=
 $("currentGameSub").textContent=
 
 "Enter an opponent to start your first game.";
+
+$("editDateInput").value="";
+
+renderFirstTen();
 
 return;
 
@@ -2562,6 +3014,12 @@ $("statsGameTitle").textContent=
 
 "vs "+game.opponent;
 
+/* LOAD EDITABLE CURRENT DATE */
+
+$("editDateInput").value=
+
+game.date||"";
+
 }
 
 /* OPPONENT HISTORY */
@@ -2622,6 +3080,8 @@ date:date,
 
 plays:[],
 
+firstTen:Array(10).fill(null),
+
 score:{
 
 our:0,
@@ -2657,6 +3117,50 @@ if(e.target.value){
 setCurrentGame(e.target.value);
 
 }
+
+});
+
+/* SAVE EDITED GAME DATE */
+
+$("saveGameDate").addEventListener(
+
+"click",
+
+()=>{
+
+const game=currentGame();
+
+if(!game){
+
+alert("Select a game first.");
+
+return;
+
+}
+
+game.date=$("editDateInput").value;
+
+saveGames();
+
+$("currentGameSub").textContent=
+
+game.date
+
+?
+
+"Game date: "+game.date+
+
+" • "+game.plays.length+" plays"
+
+:
+
+game.plays.length+" plays recorded";
+
+$("scoreStatus").textContent=
+
+"Game date saved.";
+
+renderAll();
 
 });
 
@@ -3512,11 +4016,21 @@ x=>x.player===n&&x.type==="RUN"
 
 );
 
-const pp=season.filter(
+const receptions=season.filter(
 
 x=>x.player===n&&x.type==="PASS"
 
 );
+
+/*
+
+For the current tracking system, every recorded
+
+PASS play assigned to a player counts as one
+
+reception and its yards count as receiving yards.
+
+*/
 
 return `
 
@@ -3530,15 +4044,15 @@ return `
 
 <td>${average(rr)}</td>
 
-<td>${pp.length}</td>
+<td>${receptions.length}</td>
 
-<td>${total(pp)}</td>
+<td>${total(receptions)}</td>
 
-<td>${average(pp)}</td>
+<td>${average(receptions)}</td>
 
-<td>${rr.length+pp.length}</td>
+<td>${rr.length+receptions.length}</td>
 
-<td>${total(rr)+total(pp)}</td>
+<td>${total(rr)+total(receptions)}</td>
 
 </tr>
 
@@ -4771,6 +5285,8 @@ function renderAll(){
 renderGameSelector();
 
 renderOpponentList();
+
+renderFirstTen();
 
 renderTracker();
 
