@@ -6,7 +6,9 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport"
+
+content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -1572,8 +1574,6 @@ OPPONENT
 
 </div>
 
-<!-- OUR TEAM GREEN -->
-
 <div class="scoreSide ourSide">
 
 <div class="scoreSideTitle">
@@ -1619,8 +1619,6 @@ FG +3
 </div>
 
 </div>
-
-<!-- OPPONENT RED -->
 
 <div class="scoreSide oppSide">
 
@@ -1859,8 +1857,6 @@ Add Yards
 </div>
 
 </div>
-
-<!-- FIRST 10 CONTROL -->
 
 <div id="firstTenEditControls">
 
@@ -2822,7 +2818,11 @@ const DATA={
 
 ["(RT) 50 PoP Pass / (LT) 50 PoP Pass","PASS"],
 
-["(RT) 50 Slip Pass / (LT) 50 Slip Pass","PASS"]
+["(RT) 50 Slip Pass / (LT) 50 Slip Pass","PASS"],
+
+["Doubles Heavy 22 Dive PA Pop","PASS"],
+
+["Doubles Heavy 28 Toss PA Boot","PASS"]
 
 ]
 
@@ -2864,7 +2864,11 @@ const DATA={
 
 ["(RT) 30 Out / (LT) 30 Out","PASS"],
 
-["(RT) 30 Slap / (LT) 30 Slap","PASS"]
+["(RT) 30 Slap / (LT) 30 Slap","PASS"],
+
+["Deuce 30 Hitch PA Seam","PASS"],
+
+["Deuce 30 Fade PA Post","PASS"]
 
 ],
 
@@ -2876,7 +2880,9 @@ const DATA={
 
 ["(RT) 50 Out / (LT) Out","PASS"],
 
-["(RT) 50 Y Corner / (LT) 50 Y Corner","PASS"]
+["(RT) 50 Y Corner / (LT) 50 Y Corner","PASS"],
+
+["Deuce 50 Out PA Wheel","PASS"]
 
 ],
 
@@ -2906,7 +2912,11 @@ const DATA={
 
 ["28 Toss RT / 27 Toss LT","RUN"],
 
-["F Middle Screen","PASS"]
+["F Middle Screen","PASS"],
+
+["Doubles 22 IZ PA Middle Screen","PASS"],
+
+["Doubles 24 Trap PA Over","PASS"]
 
 ],
 
@@ -3010,7 +3020,9 @@ const DATA={
 
 ["(RT) 50 F Screen / (LT) 50 F Screen","PASS"],
 
-["(RT) Z Jailbreak / (LT) X Jailbreak","PASS"]
+["(RT) Z Jailbreak / (LT) X Jailbreak","PASS"],
+
+["Trips 50 Hitch and Go PA","PASS"]
 
 ],
 
@@ -3019,6 +3031,18 @@ const DATA={
 ["(RT) 80 Flood / (LT) 81 Flood","PASS"],
 
 ["(RT) 80 Out / (LT) 81 Out","PASS"]
+
+],
+
+"JET SWEEP SERIES":[
+
+["Trips Jet Sweep PA Flood","PASS"]
+
+],
+
+"30 WHEEL SERIES":[
+
+["Trips 30 Wheel PA Cross","PASS"]
 
 ]
 
@@ -3032,7 +3056,11 @@ const DATA={
 
 ["(RT) 28 Toss L / (LT) 27 Toss","RUN"],
 
-["(RT) Zoom R / (LT) Zoom L","RUN"]
+["(RT) Zoom R / (LT) Zoom L","RUN"],
+
+["Base 22 Dive PA Boot","PASS"],
+
+["Base 28 Toss PA Reverse Pass Look","PASS"]
 
 ]
 
@@ -3046,7 +3074,11 @@ const DATA={
 
 ["Doubles 27 Toss Reverse RT","RUN"],
 
-["Doubles Pass Double Pass","PASS"]
+["Doubles Pass Double Pass","PASS"],
+
+["Special: Doubles F Toss PA Vegas","PASS"],
+
+["Special: Doubles 27 Toss Reverse RT PA","PASS"]
 
 ]
 
@@ -3056,7 +3088,7 @@ const DATA={
 
 /* =====================================================
 
-EXACT PLAY SHEET NUMBERS
+PLAY NUMBERS
 
 ===================================================== */
 
@@ -3064,7 +3096,7 @@ const PLAY_NUMBERS={
 
 "DOUBLES HEAVY (A)":{
 
-"DOUBLES HEAVY (A)":[1,2,3,4,5,6,7,8]
+"DOUBLES HEAVY (A)":[1,2,3,4,5,6,7,8,9,10]
 
 },
 
@@ -3078,25 +3110,25 @@ const PLAY_NUMBERS={
 
 "DEUCE (B)":[1,2,3],
 
-"30 SERIES":[4,5,6,7],
+"30 SERIES":[4,5,6,7,8,9],
 
-"50 SERIES":[8,9,10,11],
+"50 SERIES":[10,11,12,13,14],
 
-"80/81 SERIES":[12,13,14,15]
+"80/81 SERIES":[15,16,17,18]
 
 },
 
 "DOUBLES (C)":{
 
-"DOUBLES (C)":[1,2,3,4,5],
+"DOUBLES (C)":[1,2,3,4,5,6,7],
 
-"MOTION RUN":[6,7,8],
+"MOTION RUN":[8,9,10],
 
-"MOTION PASS":[9,10,11,12],
+"MOTION PASS":[11,12,13,14],
 
-"30 SERIES":[13,14,15,16,17,18],
+"30 SERIES":[15,16,17,18,19,20],
 
-"50 SERIES":[19,20,21,22,23,24,25]
+"50 SERIES":[21,22,23,24,25,26,27]
 
 },
 
@@ -3106,21 +3138,25 @@ const PLAY_NUMBERS={
 
 "30 SERIES":[7,8,9,10],
 
-"50 SERIES":[11,12,13,14,15,16],
+"50 SERIES":[11,12,13,14,15,16,19],
 
-"80 SERIES":[17,18]
+"80 SERIES":[17,18],
+
+"JET SWEEP SERIES":[20],
+
+"30 WHEEL SERIES":[21]
 
 },
 
 "BASE RUN":{
 
-"BASE RUN":[19,20,21]
+"BASE RUN":[19,20,21,22,23]
 
 },
 
 "SPECIAL RUN AND PASS PLAYS":{
 
-"SPECIAL PLAYS":[22,23,24]
+"SPECIAL PLAYS":[22,23,24,25,26]
 
 }
 
@@ -4090,13 +4126,9 @@ cancelFirstTenEdit(false);
 
 }
 
-/* LOAD FORMATION */
-
 formation.value=item.formation;
 
 loadPlays();
-
-/* LOAD PLAY */
 
 play.value=
 
@@ -4108,15 +4140,9 @@ new Event("change")
 
 );
 
-/* CLEAR PLAYER AND YARDS */
-
 player.value="";
 
 yards.value="";
-
-/* IMPORTANT:
-
-PLAYER FIELD IS NOW THE NEXT STEP */
 
 voiceStatus.textContent=
 
@@ -6064,7 +6090,9 @@ const rr=
 
 plays.filter(
 
-x=>x.player===n&&
+x=>
+
+x.player===n&&
 
 x.type==="RUN"
 
@@ -6074,7 +6102,9 @@ const rec=
 
 plays.filter(
 
-x=>x.player===n&&
+x=>
+
+x.player===n&&
 
 x.type==="PASS"
 
@@ -6274,7 +6304,9 @@ renderAll();
 
 }
 
-});
+}
+
+);
 
 /* =====================================================
 
