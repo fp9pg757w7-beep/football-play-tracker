@@ -302,6 +302,92 @@ background:#18bd58
 
 }
 
+/* ROSTER */
+
+.rosterCard{
+
+border:2px solid #18bd58
+
+}
+
+.rosterList{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:7px;
+
+margin-top:12px
+
+}
+
+.rosterItem{
+
+background:#252527;
+
+border:1px solid #444;
+
+border-radius:10px;
+
+padding:9px;
+
+font-size:14px;
+
+font-weight:800
+
+}
+
+.rosterStatus{
+
+text-align:center;
+
+color:#aaa;
+
+font-size:13px;
+
+margin-top:8px;
+
+min-height:18px
+
+}
+
+/* TURNOVERS */
+
+.turnoverCard{
+
+border:2px solid #d71920
+
+}
+
+.turnoverStatus{
+
+text-align:center;
+
+color:#aaa;
+
+font-size:13px;
+
+margin-top:8px;
+
+min-height:18px
+
+}
+
+.turnoverBadge{
+
+background:#d71920;
+
+color:#fff;
+
+padding:4px 7px;
+
+border-radius:6px;
+
+font-weight:900
+
+}
+
 /* ADD CUSTOM PLAY */
 
 .customPlayCard{
@@ -338,7 +424,7 @@ background:#b71920!important
 
 }
 
-/* FIRST 10 */
+/* FIRST 15 */
 
 .firstTenButtons{
 
@@ -872,7 +958,7 @@ margin:0 0 16px
 
 }
 
-/* FIRST 10 */
+/* FIRST 15 */
 
 .firstTenTitle{
 
@@ -1322,6 +1408,12 @@ grid-template-columns:1fr 1fr
 
 }
 
+.rosterList{
+
+grid-template-columns:1fr
+
+}
+
 }
 
 /* PRINT */
@@ -1694,19 +1786,19 @@ Manual scoring or use Voice Entry below.
 
 </div>
 
-<!-- FIRST 10 PLAYS -->
+<!-- FIRST 15 PLAYS -->
 
 <div class="card">
 
 <div class="firstTenTitle">
 
-⭐ FIRST 10 PLAYS
+⭐ FIRST 15 PLAYS
 
 </div>
 
 <div class="firstTenSub">
 
-Select any play from the First 10 list.
+Select any play from the First 15 list.
 
 When you tap <strong>SELECT</strong>, the Formation and Play will automatically load into the play caller below.
 
@@ -1718,7 +1810,7 @@ Then simply choose the <strong>Player</strong> and <strong>Yards Gained</strong>
 
 <div class="firstTenEmpty">
 
-Start a game and add plays to your First 10.
+Start a game and add plays to your First 15.
 
 </div>
 
@@ -1726,7 +1818,7 @@ Start a game and add plays to your First 10.
 
 <div class="firstTenAddStatus" id="firstTenAddStatus">
 
-No First 10 plays added yet.
+No First 15 plays added yet.
 
 </div>
 
@@ -1794,36 +1886,6 @@ Add Player
 
 </option>
 
-<option>#36 Althouse, Frank</option>
-
-<option>#12 Artrip, Carson</option>
-
-<option>#6 Beas, Kai</option>
-
-<option>#60 Boonstra, Brady</option>
-
-<option>#88 Coan, Jaxson</option>
-
-<option>#85 Cornwall, Jensen</option>
-
-<option>#54 Evans, Noah</option>
-
-<option>#32 Gillam, James</option>
-
-<option>#11 Hannah, Knox</option>
-
-<option>#1 Hendrix, Cash</option>
-
-<option>#28 Lawson, Briot</option>
-
-<option>#2 McClurg, Ezra</option>
-
-<option>#25 McCormick, Brian</option>
-
-<option>#7 Rayls, Warren</option>
-
-<option>#34 Scott, Noah</option>
-
 </select>
 
 </div>
@@ -1862,7 +1924,7 @@ Add Yards
 
 <button class="smallAction" id="addFirstTen">
 
-⭐ ADD TO FIRST 10
+⭐ ADD TO FIRST 15
 
 </button>
 
@@ -1903,6 +1965,118 @@ Voice can enter plays, yards, players, formations and scoring.
 CLEAR CURRENT GAME
 
 </button>
+
+</div>
+
+<!-- ROSTER -->
+
+<div class="card rosterCard">
+
+<h2>👤 Roster</h2>
+
+<p class="small">
+
+Add a player to the roster. New players are saved on this device.
+
+</p>
+
+<div class="grid">
+
+<div>
+
+<label>Player Number</label>
+
+<input id="newPlayerNumber"
+
+placeholder="Example: 10"
+
+inputmode="numeric">
+
+</div>
+
+<div>
+
+<label>Player Name</label>
+
+<input id="newPlayerName"
+
+placeholder="Example: Smith, John">
+
+</div>
+
+</div>
+
+<button class="smallAction"
+
+id="addRosterPlayer">
+
+➕ ADD PLAYER TO ROSTER
+
+</button>
+
+<div class="rosterStatus" id="rosterStatus"></div>
+
+<div id="rosterList" class="rosterList"></div>
+
+</div>
+
+<!-- TURNOVERS -->
+
+<div class="card turnoverCard">
+
+<h2>🔄 Turnover</h2>
+
+<div class="grid">
+
+<div class="full">
+
+<label>Turnover Type</label>
+
+<select id="turnoverType">
+
+<option value="NONE">
+
+No Turnover
+
+</option>
+
+<option value="INTERCEPTION">
+
+Interception
+
+</option>
+
+<option value="FUMBLE">
+
+Fumble
+
+</option>
+
+<option value="TURNOVER ON DOWNS">
+
+Turnover on Downs
+
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button class="smallAction"
+
+id="recordTurnover">
+
+🔄 RECORD TURNOVER
+
+</button>
+
+<div class="turnoverStatus" id="turnoverStatus">
+
+No turnover selected.
+
+</div>
 
 </div>
 
@@ -2129,6 +2303,46 @@ No scoring plays yet.
 <div id="empty" class="empty">
 
 No plays recorded for this game.
+
+</div>
+
+</div>
+
+<!-- TURNOVER LOG -->
+
+<div class="card">
+
+<h2>🔄 Turnover Log</h2>
+
+<div class="table">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>#</th>
+
+<th>Turnover</th>
+
+<th>Time</th>
+
+<th></th>
+
+</tr>
+
+</thead>
+
+<tbody id="turnoverLog"></tbody>
+
+</table>
+
+</div>
+
+<div id="turnoverEmpty" class="empty">
+
+No turnovers recorded.
 
 </div>
 
@@ -2496,6 +2710,80 @@ PASS AVG
 
 <div class="card">
 
+<h2>🔄 Season Turnovers</h2>
+
+<div class="stats">
+
+<div class="stat">
+
+<div class="small">
+
+INTERCEPTIONS
+
+</div>
+
+<div class="big" id="seasonInterceptions">
+
+0
+
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="small">
+
+FUMBLES
+
+</div>
+
+<div class="big" id="seasonFumbles">
+
+0
+
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="small">
+
+TURNOVER ON DOWNS
+
+</div>
+
+<div class="big" id="seasonDowns">
+
+0
+
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="small">
+
+TOTAL TURNOVERS
+
+</div>
+
+<div class="big" id="seasonTurnovers">
+
+0
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
 <h2>⭐ Season Play Performance</h2>
 
 <p class="small">
@@ -2749,6 +3037,32 @@ Pass Avg
 </thead>
 
 <tbody id="printPlayLog"></tbody>
+
+</table>
+
+</div>
+
+<div class="printSection">
+
+<h3>🔄 Turnovers</h3>
+
+<table class="printTable">
+
+<thead>
+
+<tr>
+
+<th>#</th>
+
+<th>Turnover</th>
+
+<th>Time</th>
+
+</tr>
+
+</thead>
+
+<tbody id="printTurnoverLog"></tbody>
 
 </table>
 
@@ -3164,6 +3478,84 @@ const PLAY_NUMBERS={
 
 /* =====================================================
 
+ROSTER
+
+===================================================== */
+
+const DEFAULT_ROSTER=[
+
+"#36 Althouse, Frank",
+
+"#12 Artrip, Carson",
+
+"#6 Beas, Kai",
+
+"#63 Bennett, Hayden",
+
+"#60 Boonstra, Brady",
+
+"#88 Coan, Jaxon",
+
+"#85 Cornwall, Jensen",
+
+"#54 Evans, Noah",
+
+"#32 Gillam, James",
+
+"#55 Guardado, Braysen",
+
+"#11 Hannah, Knox",
+
+"#77 Harrison, Isaiah",
+
+"#1 Hendrix, Cash",
+
+"#28 Lawson, Briot",
+
+"#2 McClurg, Ezra",
+
+"#25 McCormick, Brian",
+
+"#7 Rayls, Warren",
+
+"#66 Renbarger, Cael",
+
+"#34 Scott, Noah",
+
+"#3 Smith, Carson",
+
+"#99 Welcher, Jace",
+
+"#5 Whitacre, Gavin",
+
+"#4 Word, Gavin",
+
+"#23 Young, Ethan"
+
+];
+
+let roster=JSON.parse(
+
+localStorage.getItem("footballTrackerRoster")||"null"
+
+);
+
+if(!Array.isArray(roster)||!roster.length){
+
+roster=[...DEFAULT_ROSTER];
+
+localStorage.setItem(
+
+"footballTrackerRoster",
+
+JSON.stringify(roster)
+
+);
+
+}
+
+/* =====================================================
+
 ELEMENTS
 
 ===================================================== */
@@ -3262,7 +3654,15 @@ select.add(new Option(text,""));
 
 }
 
-function getPlayNumber(formationName,seriesName,index){
+function getPlayNumber(
+
+formationName,
+
+seriesName,
+
+index
+
+){
 
 if(
 
@@ -3284,6 +3684,118 @@ return index+1;
 
 /* =====================================================
 
+ROSTER RENDER
+
+===================================================== */
+
+function saveRoster(){
+
+localStorage.setItem(
+
+"footballTrackerRoster",
+
+JSON.stringify(roster)
+
+);
+
+}
+
+function renderRoster(){
+
+player.innerHTML="";
+
+player.add(new Option("Add Player",""));
+
+roster.forEach(name=>{
+
+player.add(
+
+new Option(name,name)
+
+);
+
+});
+
+const list=$("rosterList");
+
+list.innerHTML=roster.map(
+
+name=>`
+
+<div class="rosterItem">
+
+${esc(name)}
+
+</div>
+
+`
+
+).join("");
+
+}
+
+$("addRosterPlayer").addEventListener(
+
+"click",
+
+()=>{
+
+const number=$("newPlayerNumber")
+
+.value
+
+.trim()
+
+.replace(/^#/,"");
+
+const name=$("newPlayerName")
+
+.value
+
+.trim();
+
+if(!number||!name){
+
+alert("Enter both the player number and player name.");
+
+return;
+
+}
+
+const formatted="#"+number+" "+name;
+
+const duplicate=roster.some(
+
+x=>x.toLowerCase()===formatted.toLowerCase()
+
+);
+
+if(duplicate){
+
+alert("That player is already on the roster.");
+
+return;
+
+}
+
+roster.push(formatted);
+
+saveRoster();
+
+renderRoster();
+
+$("newPlayerNumber").value="";
+
+$("newPlayerName").value="";
+
+$("rosterStatus").textContent=
+
+"✅ "+formatted+" added to roster.";
+
+});
+
+/* =====================================================
+
 LOAD FORMATIONS
 
 ===================================================== */
@@ -3292,13 +3804,21 @@ function loadFormations(){
 
 formation.innerHTML="";
 
-formation.add(new Option("Add Formation",""));
+formation.add(
+
+new Option("Add Formation","")
+
+);
 
 FORMATION_ORDER.forEach(f=>{
 
 if(DATA[f]){
 
-formation.add(new Option(f,f));
+formation.add(
+
+new Option(f,f)
+
+);
 
 }
 
@@ -3488,7 +4008,13 @@ t==="PASS"
 
 }
 
-formation.addEventListener("change",loadPlays);
+formation.addEventListener(
+
+"change",
+
+loadPlays
+
+);
 
 play.addEventListener(
 
@@ -3510,9 +4036,7 @@ GAME STORAGE
 
 ===================================================== */
 
-let games=
-
-JSON.parse(
+let games=JSON.parse(
 
 localStorage.getItem(
 
@@ -3524,9 +4048,7 @@ localStorage.getItem(
 
 if(!games){
 
-const oldPlays=
-
-JSON.parse(
+const oldPlays=JSON.parse(
 
 localStorage.getItem(
 
@@ -3558,7 +4080,9 @@ opponent:0,
 
 history:[]
 
-}
+},
+
+turnovers:[]
 
 }];
 
@@ -3614,9 +4138,19 @@ g.firstTen=[];
 
 }
 
-if(g.firstTen.length>10){
+/* FIRST 15 */
 
-g.firstTen=g.firstTen.slice(0,10);
+if(g.firstTen.length>15){
+
+g.firstTen=g.firstTen.slice(0,15);
+
+}
+
+/* TURNOVERS */
+
+if(!Array.isArray(g.turnovers)){
+
+g.turnovers=[];
 
 }
 
@@ -3628,9 +4162,7 @@ CUSTOM PLAY STORAGE
 
 ===================================================== */
 
-let customPlays=
-
-JSON.parse(
+let customPlays=JSON.parse(
 
 localStorage.getItem(
 
@@ -3756,7 +4288,7 @@ renderAll();
 
 /* =====================================================
 
-FIRST 10 ADD / EDIT
+FIRST 15 ADD / EDIT
 
 ===================================================== */
 
@@ -3834,7 +4366,7 @@ resetFirstTenControls();
 
 $("firstTenAddStatus").textContent=
 
-"✅ First 10 Play "+position+" updated.";
+"✅ First 15 Play "+position+" updated.";
 
 renderFirstTen();
 
@@ -3844,11 +4376,11 @@ return true;
 
 /* ADD */
 
-if(game.firstTen.length>=10){
+if(game.firstTen.length>=15){
 
 alert(
 
-"You already have 10 First 10 Plays."
+"You already have 15 First 15 Plays."
 
 );
 
@@ -3878,7 +4410,7 @@ saveGames();
 
 $("firstTenAddStatus").textContent=
 
-"Added as First 10 Play "+
+"Added as First 15 Play "+
 
 game.firstTen.length+".";
 
@@ -3898,15 +4430,13 @@ addFirstTen
 
 /* =====================================================
 
-RESET FIRST 10 CONTROLS
+RESET FIRST 15 CONTROLS
 
 ===================================================== */
 
 function resetFirstTenControls(){
 
-const controls=
-
-$("firstTenEditControls");
+const controls=$("firstTenEditControls");
 
 controls.innerHTML=`
 
@@ -3916,7 +4446,7 @@ class="smallAction"
 
 id="addFirstTen">
 
-⭐ ADD TO FIRST 10
+⭐ ADD TO FIRST 15
 
 </button>
 
@@ -3940,7 +4470,7 @@ $("playEntryCard").classList.remove(
 
 /* =====================================================
 
-FIRST 10 EDIT
+FIRST 15 EDIT
 
 ===================================================== */
 
@@ -3980,9 +4510,7 @@ const position=
 
 game.firstTen.indexOf(item)+1;
 
-const controls=
-
-$("firstTenEditControls");
+const controls=$("firstTenEditControls");
 
 controls.innerHTML=`
 
@@ -4006,7 +4534,7 @@ font-weight:800;
 
 ">
 
-✏️ EDITING FIRST 10 PLAY ${position}
+✏️ EDITING FIRST 15 PLAY ${position}
 
 </div>
 
@@ -4016,7 +4544,7 @@ class="smallAction firstTenSave"
 
 id="saveFirstTenEdit">
 
-💾 SAVE FIRST 10 EDIT
+💾 SAVE FIRST 15 EDIT
 
 </button>
 
@@ -4050,7 +4578,7 @@ $("cancelFirstTenEdit").addEventListener(
 
 $("firstTenAddStatus").textContent=
 
-"Editing First 10 Play "+position+
+"Editing First 15 Play "+position+
 
 ". Change the Formation or Play, then tap SAVE.";
 
@@ -4074,7 +4602,7 @@ window.editFirstTen=editFirstTen;
 
 /* =====================================================
 
-CANCEL FIRST 10 EDIT
+CANCEL FIRST 15 EDIT
 
 ===================================================== */
 
@@ -4088,7 +4616,7 @@ if(showMessage){
 
 $("firstTenAddStatus").textContent=
 
-"First 10 edit cancelled.";
+"First 15 edit cancelled.";
 
 }
 
@@ -4100,7 +4628,7 @@ cancelFirstTenEdit;
 
 /* =====================================================
 
-FIRST 10 SELECT
+FIRST 15 SELECT
 
 ===================================================== */
 
@@ -4146,7 +4674,7 @@ yards.value="";
 
 voiceStatus.textContent=
 
-"⭐ First 10 Play "+item.playNumber+
+"⭐ First 15 Play "+item.playNumber+
 
 " loaded. Choose the PLAYER and YARDS GAINED, then tap ADD PLAY.";
 
@@ -4172,7 +4700,7 @@ window.selectFirstTen=selectFirstTen;
 
 /* =====================================================
 
-DELETE FIRST 10
+DELETE FIRST 15
 
 ===================================================== */
 
@@ -4208,7 +4736,7 @@ renderFirstTen();
 
 $("firstTenAddStatus").textContent=
 
-"First 10 play removed.";
+"First 15 play removed.";
 
 }
 
@@ -4216,7 +4744,7 @@ window.deleteFirstTen=deleteFirstTen;
 
 /* =====================================================
 
-RENDER FIRST 10
+RENDER FIRST 15
 
 ===================================================== */
 
@@ -4236,7 +4764,7 @@ container.innerHTML=`
 
 <div class="firstTenEmpty">
 
-Start a game and add plays to your First 10.
+Start a game and add plays to your First 15.
 
 </div>
 
@@ -4244,7 +4772,7 @@ Start a game and add plays to your First 10.
 
 status.textContent=
 
-"No First 10 plays added yet.";
+"No First 15 plays added yet.";
 
 return;
 
@@ -4256,7 +4784,7 @@ container.innerHTML=`
 
 <div class="firstTenEmpty">
 
-No First 10 plays yet. Select a Formation and Play below, then tap ⭐ ADD TO FIRST 10.
+No First 15 plays yet. Select a Formation and Play below, then tap ⭐ ADD TO FIRST 15.
 
 </div>
 
@@ -4264,7 +4792,7 @@ No First 10 plays yet. Select a Formation and Play below, then tap ⭐ ADD TO FI
 
 status.textContent=
 
-"0 of 10 plays added.";
+"0 of 15 plays added.";
 
 return;
 
@@ -4390,7 +4918,7 @@ status.textContent=
 
 game.firstTen.length+
 
-" of 10 First 10 plays added.";
+" of 15 First 15 plays added.";
 
 }
 
@@ -4712,7 +5240,9 @@ const opponent=
 
 $("opponentInput").value.trim();
 
-const date=$("dateInput").value;
+const date=
+
+$("dateInput").value;
 
 if(!opponent){
 
@@ -4746,7 +5276,9 @@ opponent:0,
 
 history:[]
 
-}
+},
+
+turnovers:[]
 
 };
 
@@ -4989,6 +5521,186 @@ renderAll();
 }
 
 window.del=del;
+
+/* =====================================================
+
+TURNOVERS
+
+===================================================== */
+
+$("recordTurnover").addEventListener(
+
+"click",
+
+()=>{
+
+const game=currentGame();
+
+if(!game){
+
+alert("Start a game first.");
+
+return;
+
+}
+
+const turnoverType=
+
+$("turnoverType").value;
+
+if(turnoverType==="NONE"){
+
+alert("Select a turnover type first.");
+
+return;
+
+}
+
+if(!Array.isArray(game.turnovers)){
+
+game.turnovers=[];
+
+}
+
+game.turnovers.push({
+
+id:Date.now()+Math.random(),
+
+type:turnoverType,
+
+time:new Date().toLocaleTimeString(
+
+[],
+
+{
+
+hour:"numeric",
+
+minute:"2-digit"
+
+}
+
+)
+
+});
+
+saveGames();
+
+$("turnoverStatus").textContent=
+
+"🔄 "+turnoverType+" recorded.";
+
+$("turnoverType").value="NONE";
+
+renderAll();
+
+}
+
+);
+
+function deleteTurnover(id){
+
+const game=currentGame();
+
+if(!game)return;
+
+game.turnovers=
+
+game.turnovers.filter(
+
+x=>String(x.id)!==String(id)
+
+);
+
+saveGames();
+
+renderAll();
+
+}
+
+window.deleteTurnover=deleteTurnover;
+
+function renderTurnovers(){
+
+const game=currentGame();
+
+const log=$("turnoverLog");
+
+const empty=$("turnoverEmpty");
+
+if(!game){
+
+log.innerHTML="";
+
+empty.style.display="block";
+
+return;
+
+}
+
+const turnovers=
+
+Array.isArray(game.turnovers)
+
+?
+
+game.turnovers
+
+:
+
+[];
+
+empty.style.display=
+
+turnovers.length
+
+?
+
+"none"
+
+:
+
+"block";
+
+log.innerHTML=
+
+turnovers.map((x,i)=>`
+
+<tr>
+
+<td>${i+1}</td>
+
+<td>
+
+<span class="turnoverBadge">
+
+${esc(x.type)}
+
+</span>
+
+</td>
+
+<td>${esc(x.time||"")}</td>
+
+<td>
+
+<button
+
+class="deleteBtn"
+
+onclick="deleteTurnover('${x.id}')">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`).join("");
+
+}
 
 /* =====================================================
 
@@ -5418,6 +6130,8 @@ Delete
 
 renderScore();
 
+renderTurnovers();
+
 }
 
 /* =====================================================
@@ -5450,7 +6164,11 @@ select.innerHTML=
 
 names.forEach(n=>{
 
-select.add(new Option(n,n));
+select.add(
+
+new Option(n,n)
+
+);
 
 });
 
@@ -5618,6 +6336,42 @@ date:g.date
 
 /* =====================================================
 
+TURNOVER STATS
+
+===================================================== */
+
+function allSeasonTurnovers(){
+
+return games.flatMap(
+
+g=>
+
+(Array.isArray(g.turnovers)
+
+?
+
+g.turnovers
+
+:
+
+[]).map(t=>({
+
+...t,
+
+gameId:g.id,
+
+opponent:g.opponent,
+
+date:g.date
+
+}))
+
+);
+
+}
+
+/* =====================================================
+
 STATS
 
 ===================================================== */
@@ -5678,11 +6432,19 @@ games.map(g=>{
 
 const r=
 
-g.plays.filter(x=>x.type==="RUN");
+g.plays.filter(
+
+x=>x.type==="RUN"
+
+);
 
 const p=
 
-g.plays.filter(x=>x.type==="PASS");
+g.plays.filter(
+
+x=>x.type==="PASS"
+
+);
 
 const ourScore=
 
@@ -5738,17 +6500,25 @@ ${ourScore}-${oppScore}
 
 const names=[
 
-...new Set(
-
-[...player.options]
-
-.map(o=>o.value)
-
-.filter(Boolean)
-
-)
+...new Set(roster)
 
 ];
+
+season.forEach(x=>{
+
+if(
+
+x.player &&
+
+!names.includes(x.player)
+
+){
+
+names.push(x.player);
+
+}
+
+});
 
 $("playerStats").innerHTML=
 
@@ -5813,6 +6583,52 @@ ${total(rr)+total(receptions)}
 `;
 
 }).join("");
+
+/* TURNOVERS */
+
+const turnovers=
+
+allSeasonTurnovers();
+
+const interceptions=
+
+turnovers.filter(
+
+x=>x.type==="INTERCEPTION"
+
+).length;
+
+const fumbles=
+
+turnovers.filter(
+
+x=>x.type==="FUMBLE"
+
+).length;
+
+const downs=
+
+turnovers.filter(
+
+x=>x.type==="TURNOVER ON DOWNS"
+
+).length;
+
+$("seasonInterceptions").textContent=
+
+interceptions;
+
+$("seasonFumbles").textContent=
+
+fumbles;
+
+$("seasonDowns").textContent=
+
+downs;
+
+$("seasonTurnovers").textContent=
+
+turnovers.length;
 
 /* PLAY PERFORMANCE */
 
@@ -6008,6 +6824,8 @@ $("printPlayLog").innerHTML="";
 
 $("printScoreLog").innerHTML="";
 
+$("printTurnoverLog").innerHTML="";
+
 return;
 
 }
@@ -6048,7 +6866,9 @@ game.score?.opponent||0;
 
 $("printOpponentName").textContent=
 
-(game.opponent||"OPPONENT").toUpperCase();
+(game.opponent||"OPPONENT")
+
+.toUpperCase();
 
 $("printTotalPlays").textContent=
 
@@ -6072,15 +6892,27 @@ const names=[
 
 ...new Set(
 
-[...player.options]
-
-.map(o=>o.value)
-
-.filter(Boolean)
+roster
 
 )
 
 ];
+
+plays.forEach(x=>{
+
+if(
+
+x.player &&
+
+!names.includes(x.player)
+
+){
+
+names.push(x.player);
+
+}
+
+});
 
 $("printPlayerStats").innerHTML=
 
@@ -6182,6 +7014,56 @@ ${esc(x.play)}
 
 `).join("");
 
+/* PRINT TURNOVERS */
+
+const turnovers=
+
+Array.isArray(game.turnovers)
+
+?
+
+game.turnovers
+
+:
+
+[];
+
+$("printTurnoverLog").innerHTML=
+
+turnovers.length
+
+?
+
+turnovers.map((x,i)=>`
+
+<tr>
+
+<td>${i+1}</td>
+
+<td>${esc(x.type)}</td>
+
+<td>${esc(x.time||"")}</td>
+
+</tr>
+
+`).join("")
+
+:
+
+`
+
+<tr>
+
+<td colspan="3">
+
+No turnovers recorded.
+
+</td>
+
+</tr>
+
+`;
+
 /* PRINT SCORE LOG */
 
 const history=
@@ -6280,7 +7162,7 @@ if(confirm(
 
 game.opponent+
 
-"? The First 10 Plays will remain."
+"? The First 15 Plays and turnovers will remain."
 
 )){
 
@@ -7347,6 +8229,8 @@ function renderAll(){
 renderGameSelector();
 
 renderOpponentList();
+
+renderRoster();
 
 renderFirstTen();
 
